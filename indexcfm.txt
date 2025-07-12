@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash for Your Home LLC - Nationwide Real Estate Investment Solutions | Scottsdale, AZ</title>
+
+```
+<!-- SEO Meta Tags -->
+<meta name="description" content="Cash for Your Home LLC connects real estate investors and sellers nationwide. Fast cash offers, wholesale deals, and investment opportunities from Scottsdale, Arizona.">
+<meta name="keywords" content="cash for homes, real estate wholesale, property investment, sell house fast, real estate investors, Scottsdale Arizona, nationwide property deals">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Cash for Your Home LLC">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Cash for Your Home LLC - Fast Cash for Your Property">
+<meta property="og:description" content="Professional real estate wholesale company connecting investors and sellers nationwide. Get cash offers on your property today.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cashforyourhomellc.com">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R60T4YV9KK"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R60T4YV9KK');
+</script>
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Cash for Your Home LLC",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Scottsdale",
+        "
+```

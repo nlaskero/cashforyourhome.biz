@@ -72,8 +72,6 @@
       }
 
       .logo {
-        display: flex;
-        align-items: center;
         font-size: 1.5rem;
         font-weight: bold;
         text-decoration: none;
@@ -95,6 +93,7 @@
         display: flex;
         list-style: none;
         gap: 2rem;
+        margin: 0 auto;
       }
 
       .nav-links a {
@@ -124,17 +123,12 @@
 
       /* Hero Section */
       .hero {
-        background:
-          linear-gradient(
-            135deg,
-            rgba(30, 60, 114, 0.9),
-            rgba(42, 82, 152, 0.9)
-          ),
-          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f8f9fa" width="1200" height="600"/><polygon fill="%23e9ecef" points="0,300 300,150 600,300 900,150 1200,300 1200,600 0,600"/></svg>');
+        background: url("https://cdn.builder.io/api/v1/image/assets%2F8b73c477407048d0945425bdc93ba34d%2F2d63b16a58094abca839757077df9240");
         color: white;
         padding: 120px 0;
         text-align: center;
         background-size: cover;
+        opacity: 0.51;
       }
 
       .hero h1 {
@@ -534,17 +528,13 @@
   <body>
     <header>
       <nav class="container">
-        <a href="index.html" class="logo">
-          <div class="logo-icon">🏠</div>
-          Cash for Your Home LLC
-        </a>
+        <a href="index.html" class="logo"> Cash for Your Home LLC </a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="pages/about-us.html">About</a></li>
           <li><a href="inquiry.html">Get Offer</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="inquiry.html" class="cta-button">Get Cash Offer</a>
       </nav>
     </header>
 

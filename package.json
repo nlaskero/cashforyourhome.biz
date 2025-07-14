@@ -1,13 +1,22 @@
 {
   "name": "cashforyourhome.biz",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Cash for Your Home LLC - Real Estate Wholesale Company Website",
+  "main": "index.html",
   "scripts": {
+    "dev": "live-server --port=3000 --open=false --no-browser",
+    "start": "live-server --port=3000 --open=false --no-browser",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "real estate",
+    "cash home buyers",
+    "property wholesale"
+  ],
+  "author": "Cash for Your Home LLC",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
 }

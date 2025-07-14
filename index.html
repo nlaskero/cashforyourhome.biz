@@ -1202,35 +1202,237 @@
     </div>
 
     <script>
-      // Track page views
-      gtag("event", "page_view", {
-        page_title: "Home",
-        page_location: window.location.href,
+      // Cookie Consent Management
+      class CookieConsent {
+        constructor() {
+          this.consentGiven = this.getConsentStatus();
+          this.init();
+        }
+
+        init() {
+          if (!this.consentGiven) {
+            this.showBanner();
+          } else {
+            this.initializeAnalytics();
+          }
+          this.setupEventListeners();
+        }
+
+        setupEventListeners() {
+          // Banner buttons
+          document
+            .getElementById("cookie-accept-all")
+            .addEventListener("click", () => {
+              this.acceptAll();
+            });
+
+          document
+            .getElementById("cookie-accept-essential")
+            .addEventListener("click", () => {
+              this.acceptEssential();
+            });
+
+          document
+            .getElementById("cookie-settings")
+            .addEventListener("click", () => {
+              this.showModal();
+            });
+
+          // Modal buttons
+          document
+            .getElementById("cookie-modal-close")
+            .addEventListener("click", () => {
+              this.hideModal();
+            });
+
+          document
+            .getElementById("cookie-save-settings")
+            .addEventListener("click", () => {
+              this.saveSettings();
+            });
+
+          document
+            .getElementById("cookie-accept-all-modal")
+            .addEventListener("click", () => {
+              this.acceptAll();
+              this.hideModal();
+            });
+
+          // Modal overlay click
+          document
+            .querySelector(".cookie-modal-overlay")
+            .addEventListener("click", () => {
+              this.hideModal();
+            });
+        }
+
+        showBanner() {
+          document.getElementById("cookie-banner").style.display = "block";
+          // Add small delay for smooth appearance
+          setTimeout(() => {
+            document.getElementById("cookie-banner").style.opacity = "1";
+          }, 100);
+        }
+
+        hideBanner() {
+          document.getElementById("cookie-banner").style.display = "none";
+        }
+
+        showModal() {
+          const modal = document.getElementById("cookie-modal");
+          modal.style.display = "flex";
+          document.body.style.overflow = "hidden";
+
+          // Set current preferences
+          const preferences = this.getPreferences();
+          document.getElementById("analytics-cookies").checked =
+            preferences.analytics;
+          document.getElementById("marketing-cookies").checked =
+            preferences.marketing;
+        }
+
+        hideModal() {
+          document.getElementById("cookie-modal").style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+
+        acceptAll() {
+          const preferences = {
+            essential: true,
+            analytics: true,
+            marketing: true,
+            timestamp: Date.now(),
+          };
+          this.savePreferences(preferences);
+          this.hideBanner();
+          this.initializeAnalytics();
+        }
+
+        acceptEssential() {
+          const preferences = {
+            essential: true,
+            analytics: false,
+            marketing: false,
+            timestamp: Date.now(),
+          };
+          this.savePreferences(preferences);
+          this.hideBanner();
+        }
+
+        saveSettings() {
+          const preferences = {
+            essential: true,
+            analytics: document.getElementById("analytics-cookies").checked,
+            marketing: document.getElementById("marketing-cookies").checked,
+            timestamp: Date.now(),
+          };
+          this.savePreferences(preferences);
+          this.hideModal();
+
+          if (preferences.analytics) {
+            this.initializeAnalytics();
+          }
+        }
+
+        savePreferences(preferences) {
+          localStorage.setItem("cookieConsent", JSON.stringify(preferences));
+          this.consentGiven = true;
+        }
+
+        getPreferences() {
+          const consent = localStorage.getItem("cookieConsent");
+          if (consent) {
+            return JSON.parse(consent);
+          }
+          return {
+            essential: true,
+            analytics: false,
+            marketing: false,
+          };
+        }
+
+        getConsentStatus() {
+          const consent = localStorage.getItem("cookieConsent");
+          if (consent) {
+            const preferences = JSON.parse(consent);
+            // Check if consent is less than 12 months old
+            const twelveMonthsAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
+            return preferences.timestamp > twelveMonthsAgo;
+          }
+          return false;
+        }
+
+        initializeAnalytics() {
+          const preferences = this.getPreferences();
+          if (preferences.analytics) {
+            // Initialize Google Analytics
+            if (typeof gtag !== "undefined") {
+              gtag("consent", "update", {
+                analytics_storage: "granted",
+              });
+
+              // Track page view
+              gtag("event", "page_view", {
+                page_title: "Home",
+                page_location: window.location.href,
+              });
+            }
+          }
+        }
+      }
+
+      // Initialize cookie consent when DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        new CookieConsent();
       });
 
-      // Track CTA button clicks
-      document
-        .querySelectorAll(".btn-primary, .btn-white, .cta-button")
-        .forEach((button) => {
-          button.addEventListener("click", function () {
-            gtag("event", "click", {
-              event_category: "engagement",
-              event_label: "homepage_cta",
+      // Update Google Analytics consent mode
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // Set default consent state
+      gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+      });
+
+      gtag("js", new Date());
+      gtag("config", "G-R60T4YV9KK");
+
+      // Track CTA button clicks (only if analytics consent given)
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .querySelectorAll(".btn-primary, .btn-white, .cta-button")
+          .forEach((button) => {
+            button.addEventListener("click", function () {
+              const preferences = JSON.parse(
+                localStorage.getItem("cookieConsent") || "{}",
+              );
+              if (preferences.analytics && typeof gtag !== "undefined") {
+                gtag("event", "click", {
+                  event_category: "engagement",
+                  event_label: "homepage_cta",
+                });
+              }
             });
           });
-        });
+      });
 
       // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
         });
       });
     </script>

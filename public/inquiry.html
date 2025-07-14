@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Cash Offer - Cash for Your Home LLC</title>
+    <meta name="description" content="Submit your property information to receive a cash offer from Cash for Your Home LLC.">
+    <meta name="keywords" content="sell house fast form, cash offer request">
+    <meta name="robots" content="index, follow">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R60T4YV9KK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-R60T4YV9KK');
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .form-wrapper { max-width: 600px; margin: 0 auto; padding: 40px 0; }
+        form { display: grid; gap: 1rem; }
+        input, textarea { padding: 0.8rem; border-radius: 5px; border: 1px solid #ccc; }
+        button { background: #1e3c72; color: white; padding: 0.7rem; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #2a5298; }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">🏠</div>
+            Cash for Your Home LLC
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="terms.html">Terms</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="section">
+    <div class="container">
+        <h1 class="section-title">Get Your Cash Offer</h1>
+        <div class="form-wrapper">
+            <form action="https://hooks.zapier.com/hooks/catch/YOUR_ZAP_ID" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone" required>
+                <input type="text" name="address" placeholder="Property Address" required>
+                <textarea name="message" placeholder="Additional Details" rows="4"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">&copy; 2024 Cash for Your Home LLC.</div>
+    </div>
+</footer>
+
+<script>
+    gtag('event', 'page_view', {
+        'page_title': 'Inquiry',
+        'page_location': window.location.href
+    });
+</script>
+</body>
+</html>

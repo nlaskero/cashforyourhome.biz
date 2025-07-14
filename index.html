@@ -20,7 +20,7 @@
     />
     <meta name="robots" content="index, follow" />
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics with Consent Mode -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-R60T4YV9KK"
@@ -30,8 +30,18 @@
       function gtag() {
         dataLayer.push(arguments);
       }
+
+      // Set default consent to denied
+      gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        wait_for_update: 500,
+      });
+
       gtag("js", new Date());
-      gtag("config", "G-R60T4YV9KK");
+      gtag("config", "G-R60T4YV9KK", {
+        anonymize_ip: true,
+      });
     </script>
 
     <style>

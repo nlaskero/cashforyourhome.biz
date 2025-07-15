@@ -25,6 +25,51 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-R60T4YV9KK"
     ></script>
+
+    <!-- OpenWidget Live Chat -->
+    <script>
+      window.__ow = window.__ow || {};
+      window.__ow.organizationId = "4dad4618-7d2d-4122-8542-7491536183a7";
+      window.__ow.integration_name = "manual_settings";
+      window.__ow.product_name = "openwidget";
+      (function (n, t, c) {
+        function i(n) {
+          return e._h ? e._h.apply(null, n) : e._q.push(n);
+        }
+        var e = {
+          _q: [],
+          _h: null,
+          _v: "2.0",
+          on: function () {
+            i(["on", c.call(arguments)]);
+          },
+          once: function () {
+            i(["once", c.call(arguments)]);
+          },
+          off: function () {
+            i(["off", c.call(arguments)]);
+          },
+          get: function () {
+            if (!e._h)
+              throw new Error(
+                "[OpenWidget] You can't use getters before load.",
+              );
+            return i(["get", c.call(arguments)]);
+          },
+          call: function () {
+            i(["call", c.call(arguments)]);
+          },
+          init: function () {
+            var n = t.createElement("script");
+            ((n.async = !0),
+              (n.type = "text/javascript"),
+              (n.src = "https://cdn.openwidget.com/openwidget.js"),
+              t.head.appendChild(n));
+          },
+        };
+        (!n.__ow.asyncInit && e.init(), (n.OpenWidget = n.OpenWidget || e));
+      })(window, document, [].slice);
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -53,7 +98,7 @@
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
-        color: #333;
+        color: #5d6d7e;
         background: #fff;
       }
 
@@ -65,8 +110,8 @@
 
       /* Header */
       header {
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-        color: white;
+        background: linear-gradient(135deg, #82e0aa 0%, #2a5298 100%);
+        color: Green;
         padding: 1rem 0;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         position: sticky;
@@ -91,7 +136,7 @@
         width: 40px;
         height: 40px;
         margin-right: 10px;
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #ff6b6b, #5d6d7e);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -106,17 +151,17 @@
       }
 
       .nav-links a {
-        color: white;
+        color: Silver;
         text-decoration: none;
         transition: color 0.3s ease;
       }
 
       .nav-links a:hover {
-        color: #ffa500;
+        color: #82e0aa;
       }
 
       .cta-button {
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
         color: white;
         padding: 0.7rem 1.5rem;
         border: none;
@@ -160,7 +205,7 @@
       }
 
       .btn-primary {
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #ffa500);
         color: white;
         padding: 1rem 2rem;
         border: none;
@@ -190,13 +235,13 @@
 
       .btn-secondary:hover {
         background: white;
-        color: #1e3c72;
+        color: #5d6d7e;
       }
 
       /* Features Section */
       .features {
         padding: 80px 0;
-        background: #f8f9fa;
+        background: #82e0aa;
       }
 
       .features-grid {
@@ -223,7 +268,7 @@
         width: 80px;
         height: 80px;
         margin: 0 auto 1rem;
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -233,7 +278,7 @@
       }
 
       .feature-card h3 {
-        color: #1e3c72;
+        color: #5d6d7e;
         margin-bottom: 1rem;
         font-size: 1.5rem;
       }
@@ -261,7 +306,7 @@
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
         color: white;
         display: flex;
         align-items: center;
@@ -272,14 +317,14 @@
       }
 
       .process-step h3 {
-        color: #1e3c72;
+        color: #5d6d7e;
         margin-bottom: 1rem;
       }
 
       /* Benefits Section */
       .benefits {
         padding: 80px 0;
-        background: #1e3c72;
+        background: #5d6d7e;
         color: white;
       }
 
@@ -304,7 +349,7 @@
 
       .benefits-list li::before {
         content: "✓";
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
         color: white;
         width: 30px;
         height: 30px;
@@ -332,7 +377,7 @@
       .stat-number {
         font-size: 3rem;
         font-weight: bold;
-        color: #ffa500;
+        color: #22c55e;
         display: block;
       }
 
@@ -345,7 +390,7 @@
       /* Testimonials Section */
       .testimonials {
         padding: 80px 0;
-        background: #f8f9fa;
+        background: #82e0aa;
       }
 
       .testimonials-grid {
@@ -380,16 +425,16 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: Green;
         font-weight: bold;
       }
 
       .author-info h4 {
-        color: #1e3c72;
+        color: #82e0aa;
         margin-bottom: 0.2rem;
       }
 
@@ -400,7 +445,7 @@
 
       /* CTA Section */
       .cta-section {
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
         color: white;
         padding: 80px 0;
         text-align: center;
@@ -421,7 +466,7 @@
 
       .btn-white {
         background: white;
-        color: #1e3c72;
+        color: #5d6d7e;
         padding: 1rem 2rem;
         border: none;
         border-radius: 30px;
@@ -453,7 +498,7 @@
 
       .footer-section h3 {
         margin-bottom: 1rem;
-        color: #ffa500;
+        color: #22c55e;
       }
 
       .footer-section ul {
@@ -471,7 +516,7 @@
       }
 
       .footer-section a:hover {
-        color: #ffa500;
+        color: #d5f5e3;
       }
 
       .footer-bottom {
@@ -483,7 +528,7 @@
 
       .section-title {
         font-size: 2.5rem;
-        color: #1e3c72;
+        color: #5d6d7e;
         text-align: center;
         margin-bottom: 1rem;
       }
@@ -494,6 +539,80 @@
         color: #666;
         max-width: 600px;
         margin: 0 auto;
+      }
+
+      /* Location Section */
+      .location-section {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .location-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        margin-top: 3rem;
+      }
+
+      .location-info {
+        padding: 2rem;
+      }
+
+      .location-info h3 {
+        color: #5d6d7e;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .location-info p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .contact-details {
+        background: #d5f5e3;
+        padding: 1.5rem;
+        border-radius: 10px;
+        border-left: 4px solid #ff6b6b;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .contact-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-icon {
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        color: white;
+        font-size: 0.9rem;
+      }
+
+      .google-map {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        height: 450px;
+      }
+
+      .google-map iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
       }
 
       /* Cookie Banner Styles */
@@ -508,7 +627,7 @@
         padding: 20px;
         box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
         z-index: 10000;
-        border-top: 3px solid #ffa500;
+        border-top: 3px solid #22c55e;
       }
 
       .cookie-banner-content {
@@ -530,7 +649,7 @@
 
       .cookie-text h3 {
         margin-bottom: 8px;
-        color: #ffa500;
+        color: #22c55e;
         font-size: 1.2rem;
       }
 
@@ -558,7 +677,7 @@
       }
 
       .cookie-btn-primary {
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
         color: white;
       }
 
@@ -580,13 +699,13 @@
 
       .cookie-btn-text {
         background: transparent;
-        color: #ffa500;
+        color: #d5f5e3;
         padding: 12px 16px;
         text-decoration: underline;
       }
 
       .cookie-btn-text:hover {
-        color: #ff8c42;
+        color: #5d6d7e;
       }
 
       /* Cookie Modal Styles */
@@ -634,7 +753,7 @@
 
       .cookie-modal-header h3 {
         margin: 0;
-        color: #1e3c72;
+        color: ##d5f5e3;
         font-size: 1.5rem;
       }
 
@@ -713,13 +832,13 @@
         width: 18px;
         left: 3px;
         bottom: 3px;
-        background-color: white;
+        background-color: grey;
         transition: 0.3s;
         border-radius: 50%;
       }
 
       .cookie-toggle input:checked + .cookie-slider {
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
       }
 
       .cookie-toggle input:checked + .cookie-slider:before {
@@ -727,7 +846,7 @@
       }
 
       .cookie-toggle-disabled .cookie-slider {
-        background: linear-gradient(135deg, #ff6b6b, #ffa500);
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
         cursor: not-allowed;
       }
 
@@ -777,6 +896,16 @@
 
         .cta-content h2 {
           font-size: 2rem;
+        }
+
+        /* Location Section Mobile */
+        .location-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .google-map {
+          height: 300px;
         }
 
         /* Cookie Banner Mobile Styles */
@@ -1042,6 +1171,60 @@
                 <span>Tampa, FL</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+      <div class="container">
+        <h2 class="section-title">Our Location</h2>
+        <p class="section-subtitle">
+          Based in Scottsdale, Arizona, serving homeowners nationwide with fast,
+          reliable cash offers for your property.
+        </p>
+
+        <div class="location-content">
+          <div class="location-info">
+            <h3>Headquartered in Scottsdale, AZ</h3>
+            <p>
+              While we're based in the heart of Arizona, our network spans
+              across all 50 states. We understand local markets and provide
+              personalized service no matter where your property is located.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <span>Scottsdale, Arizona</span>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <span>(480) XXX-XXXX</span>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <span>info@cashforyourhomellc.com</span>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">⏰</div>
+                <span>Available 24/7 for Consultations</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="google-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d212925.03191319207!2d-111.9286222!3d33.5025837!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1752490228383!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Cash for Your Home LLC Location - Scottsdale, Arizona"
+            >
+            </iframe>
           </div>
         </div>
       </div>
@@ -1445,5 +1628,22 @@
         });
       });
     </script>
+
+    <!-- OpenWidget noscript fallback -->
+    <noscript
+      >You need to
+      <a
+        href="https://www.openwidget.com/enable-javascript"
+        rel="noopener nofollow"
+        >enable JavaScript</a
+      >
+      to use the communication tool powered by
+      <a
+        href="https://www.openwidget.com/"
+        rel="noopener nofollow"
+        target="_blank"
+        >OpenWidget</a
+      ></noscript
+    >
   </body>
 </html>

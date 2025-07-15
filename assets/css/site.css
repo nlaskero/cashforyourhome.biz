@@ -45,7 +45,7 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    background: linear-gradient(135deg, #ff6b6b, #f0f3f4);
+    background: linear-gradient(135deg, #c0c0c0, #f0f3f4);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -70,7 +70,7 @@
   }
 
   .cta-button {
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     color: white;
     padding: 0.7rem 1.5rem;
     border: none;
@@ -114,7 +114,7 @@
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -177,7 +177,7 @@
     width: 80px;
     height: 80px;
     margin: 0 auto 1rem;
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -215,7 +215,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     color: white;
     display: flex;
     align-items: center;
@@ -258,7 +258,7 @@
 
   .benefits-list li::before {
     content: "✓";
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     color: white;
     width: 30px;
     height: 30px;
@@ -334,7 +334,7 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -354,7 +354,7 @@
 
   /* CTA Section */
   .cta-section {
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -532,7 +532,7 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -665,7 +665,7 @@
   select:focus,
   textarea:focus {
     outline: none;
-    border-color: #ff6b6b;
+    border-color: #c0c0c0;
   }
 
   textarea {
@@ -674,7 +674,7 @@
   }
 
   .submit-btn {
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -715,7 +715,7 @@
   .info-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -738,7 +738,7 @@
 
   .checklist li::before {
     content: "✓";
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     color: white;
     width: 20px;
     height: 20px;
@@ -776,7 +776,7 @@
   .step-number {
     width: 30px;
     height: 30px;
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -792,7 +792,7 @@
 
   /* Testimonial Section */
   .testimonial-section {
-    background: linear-gradient(135deg, #ff6b6b, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #1e8449);
     color: white;
     padding: 60px 0;
     text-align: center;

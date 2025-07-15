@@ -1619,22 +1619,6 @@
             });
           });
       });
-
-      // Smooth scrolling for anchor links
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }
-          });
-        });
-      });
     </script>
 
     <!-- OpenWidget noscript fallback -->
@@ -1653,5 +1637,7 @@
         >OpenWidget</a
       ></noscript
     >
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>

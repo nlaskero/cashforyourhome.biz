@@ -1,6 +1,6 @@
 # Cash for Your Home
 
-This repository contains the static site for Cash for Your Home LLC.
+This repository contains the static site for Cash for Your Home.
 
 ## Setup
 

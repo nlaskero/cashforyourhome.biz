@@ -1229,6 +1229,43 @@
     .button-wrap:has(button:active) span {
       text-shadow: 0.025em 0.25em 0.05em rgba(0, 0, 0, 0.12);
     }
+
+    /* Demo styles for embedded CodePen replacements */
+    .button-demo-inner {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .glass-btn {
+      padding: 0.75em 1.5em;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.25);
+      color: #000;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .glass-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .macbook-header-demo {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .macbook-header {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #111, #555);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
     </style>
   </head>
   <body>
@@ -1275,34 +1312,9 @@
 
     <!-- Button Design Demo -->
     <section class="button-demo">
-      <p
-        class="codepen"
-        data-height="300"
-        data-default-tab="html,result"
-        data-slug-hash="KwdpZNV"
-        data-pen-title="Glass Button"
-        data-user="Icantcode45"
-        style="
-          height: 300px;
-          box-sizing: border-box;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: 2px solid;
-          margin: 1em 0;
-          padding: 1em;
-        "
-      >
-        <span
-          >See the Pen
-          <a href="https://codepen.io/Icantcode45/pen/KwdpZNV">Glass Button</a>
-          by Sabacompanyusa (<a href="https://codepen.io/Icantcode45"
-            >@Icantcode45</a
-          >)
-          on <a href="https://codepen.io">CodePen</a>.</span
-        >
-      </p>
-      <script async src="https://public.codepenassets.com/embed/index.js"></script>
+      <div class="button-demo-inner">
+        <button class="glass-btn">Shiny Glass Button</button>
+      </div>
     </section>
 
     <!-- Features Section -->
@@ -2448,36 +2460,9 @@
       ></noscript
     >
 
-    <p
-      class="codepen"
-      data-height="300"
-      data-default-tab="html,result"
-      data-slug-hash="myeJpOv"
-      data-pen-title="Apple MacBook Pro Page Header Text"
-      data-user="Icantcode45"
-      style="
-        height: 300px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid;
-        margin: 1em 0;
-        padding: 1em;
-      "
-    >
-      <span
-        >See the Pen
-        <a href="https://codepen.io/Icantcode45/pen/myeJpOv"
-          >Apple MacBook Pro Page Header Text</a
-        >
-        by Sabacompanyusa (<a href="https://codepen.io/Icantcode45"
-          >@Icantcode45</a
-        >)
-        on <a href="https://codepen.io">CodePen</a>.</span
-      >
-    </p>
-    <script async src="https://public.codepenassets.com/embed/index.js"></script>
+    <div class="macbook-header-demo">
+      <h2 class="macbook-header">Apple MacBook Pro Page Header Text</h2>
+    </div>
     <button id="back-to-top" aria-label="Back to top">↑</button>
     <script type="module" src="assets/js/main.js"></script>
     </div>

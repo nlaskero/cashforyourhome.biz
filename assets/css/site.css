@@ -45,11 +45,14 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    background: linear-gradient(135deg, #c0c0c0, #f0f3f4);
+    background: linear-gradient(135deg, #c0c0c0, #22c55e);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: white;
   }
 
   .nav-links {
@@ -177,12 +180,13 @@
     width: 80px;
     height: 80px;
     margin: 0 auto 1rem;
-    background: linear-gradient(135deg, #c0c0c0, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #22c55e);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    line-height: 1;
     color: white;
   }
 
@@ -532,11 +536,14 @@
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    background: linear-gradient(135deg, #c0c0c0, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #22c55e);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: white;
   }
 
   .nav-links {
@@ -715,13 +722,14 @@
   .info-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #c0c0c0, #1e8449);
+    background: linear-gradient(135deg, #c0c0c0, #22c55e);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: 1.2rem;
+    line-height: 1;
   }
 
   .checklist {
@@ -916,4 +924,41 @@
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   z-index: 9999;
+}
+
+/* Demo styles for embedded CodePen replacements */
+.button-demo-inner {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.macbook-header-demo {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.glass-btn {
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.25);
+  color: #000;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  transition: background .2s;
+  cursor: pointer;
+}
+
+.glass-btn:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+.macbook-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #111, #555);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

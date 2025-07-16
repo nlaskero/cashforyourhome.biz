@@ -118,66 +118,6 @@
         top: 0;
         z-index: 1000;
       }
-
-      <!-- Navigation Bar -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 bg-gray-900/70 backdrop-blur-lg border-b border-cyan-500/30 z-50 transition-all duration-300">
-    <div class="container mx-auto px-6 py-3">
-      <div class="flex items-center justify-between">
-
-      <!-- Navigation Bar -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 bg-gray-900/70 backdrop-blur-lg border-b border-cyan-500/30 z-50 transition-all duration-300">
-    <div class="container mx-auto px-6 py-3">
-      <div class="flex items-center justify-between">
-        <!-- Logo -->
-        <div class="flex items-center">
-          <div class="relative mr-2">
-            <div class="absolute inset-0 bg-cyan-400/30 rounded-md blur-sm"></div>
-            <div class="w-10 h-10 rounded-md bg-gradient-to-br from-indigo-600 to-purple-600 border border-indigo-400/30 flex items-center justify-center relative shadow-lg shadow-indigo-800/20">
-              <div class="absolute inset-[3px] bg-gray-900 rounded-[4px] flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20"></div>
-                <div class="font-bold text-lg bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">$</div>
-              </div>
-            </div>
-          </div>
-          <div class="text-xl font-medium bg-gradient-to-r from-indigo-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent flex items-center">
-            Cash For Your Home
-          </div>
-        </div>
-
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-1">
-          <a href="#home" class="nav-link text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-md transition-colors duration-200">Home</a>
-          <a href="#about" class="nav-link text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-md transition-colors duration-200">About</a>
-          <a href="#services" class="nav-link text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-md transition-colors duration-200">Inquiry Form</a>
-          <a href="#portfolio" class="nav-link text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-md transition-colors duration-200">Portfolio</a>
-          <a href="#contact" class="nav-link text-gray-300 hover:text-cyan-400 px-4 py-2 rounded-md transition-colors duration-200">Terms</a>
-          <div class="relative ml-4 group">
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600/50 to-purple-600/50 rounded-lg blur opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
-            <button class="contact-btn px-4 py-2 bg-gradient-to-r from-indigo-900/90 to-purple-900/90 rounded-lg text-white text-sm font-medium relative z-10 flex items-center justify-center gap-2 group-hover:from-indigo-800/90 group-hover:to-purple-800/90 transition-all duration-300">
-              <span class="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">Connect</span>
-            </button>
-          </div>
-        </div>
-
-      
-        <!-- Logo -->
-        <div class="flex items-center">
-          <div class="relative mr-2">
-            <div class="absolute inset-0 bg-cyan-400/30 rounded-md blur-sm"></div>
-            <div class="w-10 h-10 rounded-md bg-gradient-to-br from-indigo-600 to-purple-600 border border-indigo-400/30 flex items-center justify-center relative shadow-lg shadow-indigo-800/20">
-              <div class="absolute inset-[3px] bg-gray-900 rounded-[4px] flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20"></div>
-                <div class="font-bold text-lg bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent">$</div>
-              </div>
-            </div>
-          </div>
-          <div class="text-xl font-medium bg-gradient-to-r from-indigo-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent flex items-center">
-            Cash For Your Home
-          </div>
-        </div>
-
-      }
-
       .cta-button {
         background: linear-gradient(135deg, #c0c0c0, #22c55e);
         color: white;
@@ -1272,13 +1212,17 @@
     <div class="bg-black text-white font-['Space_Grotesk'] overflow-x-hidden">
     <header>
       <nav class="container">
-        <a href="/index.html" class="logo"> Cash for Your Home LLC </a>
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🏠</div>
+          Cash for Your Home LLC
+        </a>
         <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/public/about.html">About</a></li>
-          <li><a href="/inquiry.html">Get Offer</a></li>
-          <li><a href="/public/terms.html">Terms</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="public/about.html">About</a></li>
+          <li><a href="inquiry.html">Get Offer</a></li>
+          <li><a href="public/terms.html">Terms</a></li>
         </ul>
+        <a href="inquiry.html" class="cta-button">Get Cash Offer</a>
       </nav>
     </header>
 
@@ -1373,6 +1317,18 @@
             </p>
           </div>
         </div>
+        <!-- Google Reviews Widget Placeholder -->
+        <div id="google-reviews-widget" style="margin-bottom: 2rem">
+          <!-- Replace with your Google reviews widget code -->
+          <script src="https://static.elfsight.com/platform/platform.js" defer></script>
+          <div class="elfsight-app-yourappid"></div>
+        </div>
+        <p style="text-align: center">
+          Leave us a review on
+          <a href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID" target="_blank">Google</a>,
+          <a href="https://www.yelp.com/writeareview/biz/YOUR_YELP_ID" target="_blank">Yelp</a>, or
+          <a href="https://www.facebook.com/YOUR_PAGE/reviews" target="_blank">Facebook</a>.
+        </p>
       </div>
     </section>
 

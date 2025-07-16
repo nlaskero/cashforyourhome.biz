@@ -12,6 +12,7 @@ npm install
 
 (The previous command `npm instal` is misspelled and will fail.)
 \nA modern landing page with enhanced styles and a Google Maps widget is available at `public/modern.html`.
+An example demonstrating animated gradient text can be found at `public/gradient-text.html`.
 
 ## React Example
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Gradient Text</title>
+  <style>
+    @property --position {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 0%;
+    }
+    h1.gradient {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff8a00, #e52e71, #9b00ff);
+      background-size: 200% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shift 5s ease-in-out infinite;
+    }
+    @keyframes shift {
+      from { --position: 0%; background-position: var(--position) 0; }
+      to { --position: 100%; background-position: var(--position) 0; }
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <h1 class="gradient">Animated Gradient Text</h1>
+    <p>@property + linear-gradient() + background-clip + text-fill-color</p>
+  </article>
+</body>
+</html>

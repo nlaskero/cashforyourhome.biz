@@ -908,10 +908,19 @@
       }
 
       .feature-card h3 {
+        font-family: var(--font-family-heading);
         color: var(--color-gray-900);
         margin-bottom: var(--space-4);
         font-size: var(--text-xl);
-        font-weight: 700;
+        font-weight: 800;
+        text-shadow:
+          0 1px 0 #ddd,
+          0 2px 0 #ccc,
+          0 3px 0 #bbb,
+          0 4px 2px rgba(0, 0, 0, 0.1),
+          0 2px 5px rgba(0, 0, 0, 0.1);
+        transform: perspective(400px) rotateX(5deg);
+        letter-spacing: 1px;
       }
 
       .feature-card p {

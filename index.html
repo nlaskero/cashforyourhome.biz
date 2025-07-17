@@ -636,8 +636,22 @@
       }
 
       .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-xl);
+        transform: translateY(-3px);
+        background: linear-gradient(
+          145deg,
+          rgba(154, 248, 154, 0.95) 0%,
+          rgba(162, 255, 162, 1) 15%,
+          rgba(154, 248, 154, 0.95) 30%,
+          rgba(162, 255, 162, 1) 45%,
+          rgba(154, 248, 154, 0.95) 60%,
+          rgba(162, 255, 162, 1) 75%,
+          rgba(154, 248, 154, 0.95) 100%
+        );
+        box-shadow:
+          inset 0 3px 6px rgba(255, 255, 255, 0.5),
+          inset 0 -3px 6px rgba(0, 0, 0, 0.15),
+          0 6px 12px rgba(0, 0, 0, 0.25),
+          0 12px 24px rgba(144, 238, 144, 0.4);
       }
 
       .btn-secondary {

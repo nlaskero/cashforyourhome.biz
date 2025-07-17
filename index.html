@@ -294,33 +294,6 @@
             font-size: var(--text-base);
         }
 
-        /* Pill background for list items */
-        nav ul li:after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 100vw;
-            background: white;
-            opacity: 0;
-            scale: 0;
-            transition: all 2s var(--linear-ease) 0.2s;
-            z-index: -1;
-        }
-
-        /* Active state for list items */
-        nav ul li.active {
-            color: black;
-            text-shadow: none;
-        }
-
-        nav ul li.active:after {
-            opacity: 1;
-            scale: 1;
-        }
-
-        nav ul li.active a {
-            color: black;
-        }
 
         /* Effect element for animations */
         .effect {
@@ -1306,344 +1279,349 @@
             }
         }
     </style>
+</script>
 </head>
-
-<body>
-    <!-- Header with Frosted Glass Gooey Gravity Navigation -->
+  <body>
     <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">🏠</div>
-                Cash for Your Home LLC
-            </a>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="#home">home</a></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#services">services</a></li>
-                    <li><a href="#testimonials">reviews</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">☰</button>
-            <a href="#contact" class="cta-button">Get Cash Offer</a>
-        </div>
-        
-        <!-- Glassmorphism Effect Elements -->
-        <span class="effect filter">
-            <div class="particles"></div>
-        </span>
-        <span class="effect text">home</span>
+      <nav class="container nav-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">🏠</div>
+          Cash for Your Home LLC
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="public/about.html">About</a></li>
+          <li><a href="inquiry.html">Get Offer</a></li>
+          <li><a href="public/terms.html">Terms</a></li>
+        </ul>
+        <a href="inquiry.html" class="cta-button">Get Cash Offer</a>
+      </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1>Get Cash for Your Home in 24-48 Hours</h1>
-            <p>
-                Skip the hassle of traditional home selling. We buy houses in any
-                condition, nationwide. No fees, no commissions, no repairs needed.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Get My Cash Offer</a>
-                <a href="#about" class="btn-secondary">Learn More</a>
-            </div>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Get Cash for Your Home in 24-48 Hours</h1>
+    <p>
+      Skip the hassle of traditional home selling. We buy houses in any
+      condition, nationwide. No fees, no commissions, no repairs needed.
+    </p>
+    <div class="hero-buttons">
+      <a href="inquiry.html" class="btn-primary">Get My Cash Offer</a>
+      <a href="public/about.html" class="btn-secondary">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="container">
+    <h2 class="section-title" style="color: rgba(0, 3, 5, 1); font: 800 40px/64px Basic, sans-serif;">
+      Why Choose Cash for Your Home LLC?
+    </h2>
+    <p class="section-subtitle" style="color: rgba(15, 15, 15, 1); font-weight: 600">
+      We make selling your home fast, easy, and profitable with our proven process.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Fast Offers</h3>
+        <p>
+          Get a competitive cash offer within 24-48 hours. No waiting for
+          financing approvals or lengthy negotiations.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>No Fees</h3>
+        <p>
+          Zero real estate commissions, closing fees, or hidden costs. The
+          offer you receive is what you get at closing.
+        </p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3>Your Timeline</h3>
+        <p>
+          Close on your schedule. Whether you need to sell in 7 days or 7
+          weeks, we work with your timeline.
+        </p>
+      </div>
+    </div>
+
+    <!-- Google Reviews Widget Placeholder -->
+    <div id="google-reviews-widget" style="margin-top: 2rem; text-align: center;">
+      <script src="https://static.elfsight.com/platform/platform.js" defer></script>
+      <div class="elfsight-app-yourappid"></div>
+      <p>
+        Leave us a review on
+        <a href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID" target="_blank">Google</a>,
+        <a href="https://www.yelp.com/writeareview/biz/YOUR_YELP_ID" target="_blank">Yelp</a>, or
+        <a href="https://www.facebook.com/YOUR_PAGE/reviews" target="_blank">Facebook</a>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="process">
+  <div class="container">
+    <h2 class="section-title">Our Simple 4-Step Process</h2>
+    <p class="section-subtitle">
+      From first contact to closing, we make selling your home as easy as 1-2-3-4.
+    </p>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h3>Contact Us</h3>
+        <p>
+          Call, text, or fill out our online form. Tell us about your
+          property and your situation.
+        </p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h3>Property Evaluation</h3>
+        <p>
+          We analyze your property using current market data and recent
+          comparable sales in your area.
+        </p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h3>Receive Offer</h3>
+        <p>
+          Get your no-obligation cash offer within 24-48 hours. Take time to
+          review - no pressure.
+        </p>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h3>Close Fast</h3>
+        <p>
+          Accept our offer and choose your closing date. We handle all the
+          paperwork and details.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits">
+  <div class="container">
+    <h2 class="section-title" style="color: white">
+      The Benefits Are Clear
+    </h2>
+    <div class="benefits-content">
+      <div>
+        <ul class="benefits-list">
+          <li>No realtor commissions (save 6%)</li>
+          <li>No closing costs or fees</li>
+          <li>No repairs or renovations needed</li>
+          <li>No showings or open houses</li>
+          <li>No financing contingencies</li>
+          <li>No months of uncertainty</li>
+          <li>Cash in hand, guaranteed</li>
+          <li>Professional, respectful service</li>
+        </ul>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <div class="stat-label">Happy Homeowners</div>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="services" class="features">
-        <div class="container">
-            <h2 class="section-title">Why Choose Cash for Your Home LLC?</h2>
-            <p class="section-subtitle">
-                We make selling your home fast, easy, and profitable with our proven process.
-            </p>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Fast Offers</h3>
-                    <p>
-                        Get a competitive cash offer within 24-48 hours. No waiting for
-                        financing approvals or lengthy negotiations.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>No Fees</h3>
-                    <p>
-                        Zero real estate commissions, closing fees, or hidden costs. The
-                        offer you receive is what you get at closing.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📅</div>
-                    <h3>Your Timeline</h3>
-                    <p>
-                        Close on your schedule. Whether you need to sell in 7 days or 7
-                        weeks, we work with your timeline.
-                    </p>
-                </div>
-            </div>
+        <div class="stat-item">
+          <span class="stat-number">$50M+</span>
+          <div class="stat-label">Paid Out</div>
         </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process">
-        <div class="container">
-            <h2 class="section-title">Our Simple 4-Step Process</h2>
-            <p class="section-subtitle">
-                From first contact to closing, we make selling your home as easy as 1-2-3-4.
-            </p>
-
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Contact Us</h3>
-                    <p>
-                        Call, text, or fill out our online form. Tell us about your
-                        property and your situation.
-                    </p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Property Evaluation</h3>
-                    <p>
-                        We analyze your property using current market data and recent
-                        comparable sales in your area.
-                    </p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Receive Offer</h3>
-                    <p>
-                        Get your no-obligation cash offer within 24-48 hours. Take time to
-                        review - no pressure.
-                    </p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Close Fast</h3>
-                    <p>
-                        Accept our offer and choose your closing date. We handle all the
-                        paperwork and details.
-                    </p>
-                </div>
-            </div>
+        <div class="stat-item">
+          <span class="stat-number">48hrs</span>
+          <div class="stat-label">Average Offer Time</div>
         </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">The Benefits Are Clear</h2>
-            <div class="benefits-content">
-                <div>
-                    <ul class="benefits-list">
-                        <li>No realtor commissions (save 6%)</li>
-                        <li>No closing costs or fees</li>
-                        <li>No repairs or renovations needed</li>
-                        <li>No showings or open houses</li>
-                        <li>No financing contingencies</li>
-                        <li>No months of uncertainty</li>
-                        <li>Cash in hand, guaranteed</li>
-                        <li>Professional, respectful service</li>
-                    </ul>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <div class="stat-label">Happy Homeowners</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">$50M+</span>
-                        <div class="stat-label">Paid Out</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">48hrs</span>
-                        <div class="stat-label">Average Offer Time</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <div class="stat-label">Satisfaction Rate</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <p class="section-subtitle">
-                Don't just take our word for it - hear from homeowners who chose Cash
-                for Your Home LLC.
-            </p>
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-subtitle">
+      Don't just take our word for it - hear from homeowners who chose Cash
+      for Your Home LLC.
+    </p>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "I needed to sell my house quickly due to a job relocation. Cash
-                        for Your Home LLC made me a fair offer and closed in just 10 days.
-                        The process was smooth and professional from start to finish."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MJ</div>
-                        <div class="author-info">
-                            <h4>Maria Johnson</h4>
-                            <span>Phoenix, AZ</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "After my divorce, I needed to sell the house fast. They bought it
-                        as-is, even with all the needed repairs. No stress, no hassle,
-                        just a fair cash offer and quick closing."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RS</div>
-                        <div class="author-info">
-                            <h4>Robert Smith</h4>
-                            <span>Denver, CO</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "We inherited a property that needed significant work. Instead of
-                        dealing with contractors and realtors, we sold to Cash for Your
-                        Home LLC. They handled everything and paid us fairly."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LW</div>
-                        <div class="author-info">
-                            <h4>Linda Wilson</h4>
-                            <span>Tampa, FL</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "I needed to sell my house quickly due to a job relocation. Cash
+          for Your Home LLC made me a fair offer and closed in just 10 days.
+          The process was smooth and professional from start to finish."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MJ</div>
+          <div class="author-info">
+            <h4>Maria Johnson</h4>
+            <span>Phoenix, AZ</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="about" class="location-section">
-        <div class="container">
-            <h2 class="section-title">Our Location</h2>
-            <p class="section-subtitle">
-                Based in Scottsdale, Arizona, serving homeowners nationwide with fast,
-                reliable cash offers for your property.
-            </p>
-
-            <div class="location-content">
-                <div class="location-info">
-                    <h3>Headquartered in Scottsdale, AZ</h3>
-                    <p>
-                        While we're based in the heart of Arizona, our network spans
-                        across all 50 states. We understand local markets and provide
-                        personalized service no matter where your property is located.
-                    </p>
-
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <span>Scottsdale, Arizona</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <span>(480) XXX-XXXX</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <span>info@cashforyourhomellc.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
-                            <span>Available 24/7 for Consultations</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="google-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d212925.03191319207!2d-111.9286222!3d33.5025837!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1752490228383!5m2!1sen!2sus"
-                        width="600"
-                        height="450"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Cash for Your Home LLC Location - Scottsdale, Arizona">
-                    </iframe>
-                </div>
-            </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "After my divorce, I needed to sell the house fast. They bought it
+          as-is, even with all the needed repairs. No stress, no hassle,
+          just a fair cash offer and quick closing."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RS</div>
+          <div class="author-info">
+            <h4>Robert Smith</h4>
+            <span>Denver, CO</span>
+          </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Get Your Cash Offer?</h2>
-                <p>
-                    Join hundreds of satisfied homeowners who chose the fast, easy way
-                    to sell their property. Get your no-obligation cash offer today.
-                </p>
-                <a href="#contact" class="btn-white">Get My Free Cash Offer Now</a>
-            </div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "We inherited a property that needed significant work. Instead of
+          dealing with contractors and realtors, we sold to Cash for Your
+          Home LLC. They handled everything and paid us fairly."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">LW</div>
+          <div class="author-info">
+            <h4>Linda Wilson</h4>
+            <span>Tampa, FL</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Cash for Your Home LLC</h3>
-                    <p>📍 Scottsdale, Arizona</p>
-                    <p>📞 (480) XXX-XXXX</p>
-                    <p>✉️ info@cashforyourhomellc.com</p>
-                    <p>🌐 www.cashforyourhomellc.com</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#testimonials">Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li>Cash Home Purchases</li>
-                        <li>Investment Opportunities</li>
-                        <li>Wholesale Real Estate</li>
-                        <li>Property Consultation</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Service Areas</h3>
-                    <ul>
-                        <li>All 50 States</li>
-                        <li>Arizona (Headquarters)</li>
-                        <li>California</li>
-                        <li>Texas</li>
-                        <li>Florida</li>
-                        <li>And Many More...</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>
-                    &copy; 2024 Cash for Your Home LLC. All rights reserved. Licensed
-                    Real Estate Wholesale Company.
-                </p>
-            </div>
+<!-- Location Section -->
+<section class="location-section">
+  <div class="container">
+    <h2 class="section-title">Our Location</h2>
+    <p class="section-subtitle">
+      Based in Scottsdale, Arizona, serving homeowners nationwide with fast,
+      reliable cash offers for your property.
+    </p>
+
+    <div class="location-content">
+      <div class="location-info">
+        <h3>Headquartered in Scottsdale, AZ</h3>
+        <p>
+          While we're based in the heart of Arizona, our network spans
+          across all 50 states. We understand local markets and provide
+          personalized service no matter where your property is located.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <span>Scottsdale, Arizona</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <span>(480) XXX-XXXX</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <span>info@cashforyourhomellc.com</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <span>Available 24/7 for Consultations</span>
+          </div>
         </div>
-    </footer>
+      </div>
+
+      <div class="google-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d212925.03191319207!2d-111.9286222!3d33.5025837!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1752490228383!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Cash for Your Home LLC Location - Scottsdale, Arizona">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Get Your Cash Offer?</h2>
+      <p>
+        Join hundreds of satisfied homeowners who chose the fast, easy way
+        to sell their property. Get your no-obligation cash offer today.
+      </p>
+      <a href="inquiry.html" class="btn-white">Get My Free Cash Offer Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Cash for Your Home LLC</h3>
+        <p>📍 Scottsdale, Arizona</p>
+        <p>📞 (480) XXX-XXXX</p>
+        <p>✉️ info@cashforyourhomellc.com</p>
+        <p>🌐 www.cashforyourhomellc.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="public/about.html">About Us</a></li>
+          <li><a href="inquiry.html">Get Offer</a></li>
+          <li><a href="public/terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li>Cash Home Purchases</li>
+          <li>Investment Opportunities</li>
+          <li>Wholesale Real Estate</li>
+          <li>Property Consultation</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Service Areas</h3>
+        <ul>
+          <li>All 50 States</li>
+          <li>Arizona (Headquarters)</li>
+          <li>California</li>
+          <li>Texas</li>
+          <li>Florida</li>
+          <li>And Many More...</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2024 Cash for Your Home LLC. All rights reserved. Licensed
+        Real Estate Wholesale Company.
+      </p>
+    </div>
+  </div>
+</footer>
 
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="cookie-banner">

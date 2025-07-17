@@ -1086,6 +1086,36 @@
         color: var(--c-content);
       }
 
+      /* Benefits List Specific Styling */
+      .benefits-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+        padding: 2rem;
+        background: color-mix(in srgb, var(--c-glass) 8%, transparent);
+        border-radius: 1rem;
+        backdrop-filter: blur(8px);
+        border: 1px solid color-mix(in srgb, var(--c-light) 10%, transparent);
+      }
+
+      .benefits-list .benefit-item {
+        padding: 1rem;
+        background: color-mix(in srgb, var(--c-glass) 5%, transparent);
+      }
+
+      .benefits-list .benefit-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+      }
+
+      .benefit-content {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--c-content);
+      }
+
       /* Testimonial Cards */
       .testimonials {
         padding: var(--space-24) 0;

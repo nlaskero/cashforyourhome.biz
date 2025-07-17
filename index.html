@@ -555,22 +555,23 @@
       }
 
       .cta-button:hover {
-        transform: translateY(-3px);
+        transform: translateY(-4px) scale(1.02);
         background: linear-gradient(
           145deg,
-          rgba(154, 248, 154, 0.9) 0%,
-          rgba(162, 255, 162, 0.95) 15%,
-          rgba(154, 248, 154, 0.9) 30%,
-          rgba(162, 255, 162, 0.95) 45%,
-          rgba(154, 248, 154, 0.9) 60%,
-          rgba(162, 255, 162, 0.95) 75%,
-          rgba(154, 248, 154, 0.9) 100%
+          rgba(173, 255, 173, 0.95) 0%,
+          rgba(154, 248, 154, 0.9) 25%,
+          rgba(193, 255, 193, 0.95) 50%,
+          rgba(154, 248, 154, 0.9) 75%,
+          rgba(173, 255, 173, 0.95) 100%
         );
+        backdrop-filter: blur(20px) saturate(200%);
+        -webkit-backdrop-filter: blur(20px) saturate(200%);
         box-shadow:
-          inset 0 3px 6px rgba(255, 255, 255, 0.5),
-          inset 0 -3px 6px rgba(0, 0, 0, 0.15),
-          0 6px 12px rgba(0, 0, 0, 0.25),
-          0 12px 24px rgba(144, 238, 144, 0.4);
+          inset 0 4px 12px rgba(255, 255, 255, 0.8),
+          inset 0 -3px 8px rgba(0, 0, 0, 0.1),
+          0 12px 35px rgba(144, 238, 144, 0.6),
+          0 8px 15px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.9);
       }
 
       /* Hero Section */

@@ -1708,9 +1708,12 @@ nav {
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Sections */
@@ -2817,9 +2820,12 @@ nav {
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Main Content */

@@ -292,6 +292,15 @@
     border-radius: 2px;
   }
 
+  /* Section Subtitle */
+  .section-subtitle {
+    text-align: center;
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
   /* Main Article Title */
   .article h1 {
     font-family: "Inter", "DM Sans", sans-serif;
@@ -314,7 +323,6 @@
       0 6px 12px rgba(0, 0, 0, 0.2),
       0 3px 6px rgba(0, 0, 0, 0.15);
     position: relative;
-    text-align: center;
   }
 
   .article h1::before {
@@ -636,7 +644,7 @@
     }
   }
 
-  /* Navigation Styles */
+  /* Navigation Styles - FIXED FONT SIZE */
   nav {
     width: fit-content;
     margin: 3rem auto;
@@ -700,6 +708,7 @@
     text-decoration: none;
     color: white;
     font-weight: 600;
+    font-size: 16px; /* FIXED: Added explicit font size */
     transition: all 0.3s ease;
     border-radius: 6px;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -738,7 +747,6 @@
   .article h2 {
     font-size: 2em;
     margin: 1.4em 0 0.6em;
-    text-align: center;
   }
 
   .article p {
@@ -752,7 +760,6 @@
     font-size: 2em;
     padding-left: 1em;
     border-left: 0.1em solid currentColor;
-    text-align: center;
   }
 
   .article figure {
@@ -1122,7 +1129,7 @@
 
   /* Testimonial Cards */
   .testimonials {
-    padding: 3rem 0;
+    padding: var(--space-24) 0;
     background: var(--c-bg);
   }
 
@@ -1131,6 +1138,10 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--space-lg);
   }
 
   .testimonial-card {
@@ -1244,17 +1255,9 @@
     font-size: 0.875rem;
   }
 
-  /* Section subtitle styling */
-  .section-subtitle {
-    text-align: center;
-    color: color-mix(in srgb, var(--c-content) 80%, transparent);
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
-  }
-
   /* Google Map */
   .location-section {
-    padding: 3rem 0;
+    padding: var(--space-24) 0;
     background: var(--c-bg);
   }
 
@@ -1267,7 +1270,7 @@
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 2rem;
+    padding: 0 var(--space-lg);
   }
 
   .location-info h3 {
@@ -1327,6 +1330,26 @@
     width: 32px;
     height: 32px;
     margin-right: 1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(
+      135deg,
+      var(--c-action) 0%,
+      var(--c-steel-green) 100%
+    );
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: white;
+    font-size: 0.875rem;
+    box-shadow: 0 2px 8px
+      color-mix(in srgb, var(--c-action) 25%, transparent);
     flex-shrink: 0;
   }
 
@@ -1539,7 +1562,10 @@
     .location-content {
       grid-template-columns: 1fr;
       gap: 2rem;
-      padding: 0 1rem;
+    }
+
+    .testimonials-grid {
+      grid-template-columns: 1fr;
     }
 
     nav {
@@ -1562,7 +1588,6 @@
     }
   }
 </style>
-```
 
   </head>
   <body>
@@ -1638,7 +1663,6 @@
       </label>
     </fieldset>
 
-```
 <main>
   <!-- Navigation -->
   <div class="demo-section">
@@ -1653,12 +1677,10 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="#process">How It Works</a></li>
+        <li><a href="pages/about.html">About Us</a></li>
         <li><a href="#footer">Contact</a></li>
         <li><a href="pages/terms.html">Terms</a></li>
       </ul>
-      <div class="glass-button-container">
-        <a href="#cash-offer" class="glass-button primary">Get Your Cash Offer</a>
-      </div>
     </nav>
   </div>
 
@@ -1809,39 +1831,40 @@
 
     <!-- Testimonials Section -->
     <section class="testimonials">
-      <h2 class="section-title">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F15031dd6d8a647c88beea7976b1a6286?format=webp&width=800"
-          alt="5-Star Reviews"
-          style="
-            width: 40px;
-            height: 40px;
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 12px;
-          "
-        />
-        What Our Clients Say
-      </h2>
-      <div style="text-align: center; margin-bottom: 2rem">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F90e1ee7e5e2b4283a0709ef51fd969dd?format=webp&width=800"
-          alt="Professional Business Meeting"
-          style="
-            width: 200px;
-            height: 140px;
-            border-radius: 12px;
-            object-fit: cover;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
-          "
-        />
-      </div>
-      <p class="section-subtitle">
-        Don't just take our word for it - hear from homeowners who chose
-        Cash for Your Home.
-      </p>
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg);">
+        <h2 class="section-title">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F15031dd6d8a647c88beea7976b1a6286?format=webp&width=800"
+            alt="5-Star Reviews"
+            style="
+              width: 40px;
+              height: 40px;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 12px;
+            "
+          />
+          What Our Clients Say
+        </h2>
+        <div style="text-align: center; margin-bottom: 2rem">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F90e1ee7e5e2b4283a0709ef51fd969dd?format=webp&width=800"
+            alt="Professional Business Meeting"
+            style="
+              width: 200px;
+              height: 140px;
+              border-radius: 12px;
+              object-fit: cover;
+              filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+            "
+          />
+        </div>
+        <p class="section-subtitle">
+          Don't just take our word for it - hear from homeowners who chose
+          Cash for Your Home.
+        </p>
 
-      <div class="testimonials-grid">
+        <div class="testimonials-grid">
         <div class="testimonial-card">
           <div
             class="stars-rating"
@@ -1918,18 +1941,21 @@
             </div>
           </div>
         </div>
+                  </div>
+        </div>
       </div>
     </section>
 
     <!-- Location Section with Google Map -->
     <section class="location-section">
-      <h2 class="section-title">Our Location</h2>
-      <p class="section-subtitle">
-        Based in Scottsdale, Arizona, serving homeowners nationwide with
-        fast, reliable cash offers for your property.
-      </p>
+      <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg);">
+        <h2 class="section-title">Our Location</h2>
+        <p class="section-subtitle">
+          Based in Scottsdale, Arizona, serving homeowners nationwide with
+          fast, reliable cash offers for your property.
+        </p>
 
-      <div class="location-content">
+        <div class="location-content">
         <div class="location-info">
           <h3>Headquartered in Scottsdale, AZ</h3>
           <p>
@@ -1943,6 +1969,7 @@
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F451d843dabbe4b70bc18b0a6b667df67?format=webp&width=800"
                 alt="Location"
+                style="width: 32px; height: 32px"
               />
               <span>Scottsdale, Arizona</span>
             </div>
@@ -1950,6 +1977,7 @@
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F2739971cff9f458c9f54defe84234d30?format=webp&width=800"
                 alt="Phone"
+                style="width: 32px; height: 32px"
               />
               <span>+1 (480) 244-2752</span>
             </div>
@@ -1957,6 +1985,7 @@
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F6d7777eccb924cdc8b54978b763a0c34?format=webp&width=800"
                 alt="Email"
+                style="width: 32px; height: 32px"
               />
               <span>hunter@cashforyourhome.biz</span>
             </div>
@@ -1964,6 +1993,7 @@
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Fb69ba8d0262943378099f80b8e35f2e6?format=webp&width=800"
                 alt="24/7 Available"
+                style="width: 32px; height: 32px"
               />
               <span>Available 24/7 for Consultations</span>
             </div>
@@ -2022,10 +2052,17 @@
 </main>
 
 <script>
-  // Theme switcher functionality
+  // Enhanced error handling and debugging
+  window.addEventListener('error', function(e) {
+    console.error('JavaScript Error:', e.error);
+  });
+
+  // Theme switcher functionality with error handling
   const switcher = document.querySelector(".switcher");
 
   const trackPrevious = (el) => {
+    if (!el) return;
+    
     const radios = el.querySelectorAll('input[type="radio"]');
     let previousValue = null;
 
@@ -2049,24 +2086,37 @@
   };
 
   if (switcher) {
-    trackPrevious(switcher);
+    try {
+      trackPrevious(switcher);
+    } catch (error) {
+      console.error('Theme switcher error:', error);
+    }
   }
 
-  // Smooth scrolling for anchor links
+  // Enhanced smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+      const targetId = this.getAttribute("href");
+      const target = document.querySelector(targetId);
+      
       if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        try {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        } catch (error) {
+          // Fallback for older browsers
+          target.scrollIntoView();
+        }
+      } else {
+        console.warn('Target element not found:', targetId);
       }
     });
   });
 
-  // Add simple form handling for CTA buttons
+  // Enhanced form handling for CTA buttons
   document
     .querySelectorAll(".cta-button, .glass-button")
     .forEach((button) => {
@@ -2082,16 +2132,20 @@
           // Scroll to the "Why Choose Cash For Your Home?" section
           const target = document.querySelector("h2");
           if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
+            try {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            } catch (error) {
+              target.scrollIntoView();
+            }
           }
         }
       });
     });
 
-  // Cookie Consent Management
+  // Enhanced Cookie Consent Management
   class CookieConsent {
     constructor() {
       this.consentGiven = this.getConsentStatus();
@@ -2099,12 +2153,16 @@
     }
 
     init() {
-      if (!this.consentGiven) {
-        this.showBanner();
-      } else {
-        this.initializeAnalytics();
+      try {
+        if (!this.consentGiven) {
+          this.showBanner();
+        } else {
+          this.initializeAnalytics();
+        }
+        this.setupEventListeners();
+      } catch (error) {
+        console.error('Cookie consent initialization error:', error);
       }
-      this.setupEventListeners();
     }
 
     setupEventListeners() {
@@ -2162,38 +2220,54 @@
     }
 
     savePreferences(preferences) {
-      localStorage.setItem("cookieConsent", JSON.stringify(preferences));
-      this.consentGiven = true;
+      try {
+        localStorage.setItem("cookieConsent", JSON.stringify(preferences));
+        this.consentGiven = true;
+      } catch (error) {
+        console.error('Error saving cookie preferences:', error);
+      }
     }
 
     getConsentStatus() {
-      const consent = localStorage.getItem("cookieConsent");
-      if (consent) {
-        const preferences = JSON.parse(consent);
-        const twelveMonthsAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
-        return preferences.timestamp > twelveMonthsAgo;
+      try {
+        const consent = localStorage.getItem("cookieConsent");
+        if (consent) {
+          const preferences = JSON.parse(consent);
+          const twelveMonthsAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
+          return preferences.timestamp > twelveMonthsAgo;
+        }
+      } catch (error) {
+        console.error('Error getting consent status:', error);
       }
       return false;
     }
 
     initializeAnalytics() {
-      const preferences = this.getPreferences();
-      if (preferences.analytics && typeof gtag !== "undefined") {
-        gtag("consent", "update", {
-          analytics_storage: "granted",
-        });
+      try {
+        const preferences = this.getPreferences();
+        if (preferences.analytics && typeof gtag !== "undefined") {
+          gtag("consent", "update", {
+            analytics_storage: "granted",
+          });
 
-        gtag("event", "page_view", {
-          page_title: "Home",
-          page_location: window.location.href,
-        });
+          gtag("event", "page_view", {
+            page_title: "Home",
+            page_location: window.location.href,
+          });
+        }
+      } catch (error) {
+        console.error('Analytics initialization error:', error);
       }
     }
 
     getPreferences() {
-      const consent = localStorage.getItem("cookieConsent");
-      if (consent) {
-        return JSON.parse(consent);
+      try {
+        const consent = localStorage.getItem("cookieConsent");
+        if (consent) {
+          return JSON.parse(consent);
+        }
+      } catch (error) {
+        console.error('Error parsing cookie preferences:', error);
       }
       return {
         essential: true,
@@ -2203,49 +2277,68 @@
     }
   }
 
-  // Back to top button functionality
+  // Enhanced back to top button functionality
   function initBackToTop() {
     const button = document.getElementById("back-to-top");
     if (!button) return;
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        button.style.display = "block";
-      } else {
-        button.style.display = "none";
-      }
-    });
+    try {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      });
 
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        try {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } catch (error) {
+          // Fallback for older browsers
+          window.scrollTo(0, 0);
+        }
+      });
+    } catch (error) {
+      console.error('Back to top button error:', error);
+    }
   }
 
-  // Initialize cookie consent and other features
+  // Initialize all functionality with error handling
   document.addEventListener("DOMContentLoaded", function () {
-    // Initialize cookie consent
-    new CookieConsent();
+    try {
+      // Initialize cookie consent
+      new CookieConsent();
 
-    // Initialize back to top button
-    initBackToTop();
+      // Initialize back to top button
+      initBackToTop();
 
-    // Track CTA button clicks
-    document
-      .querySelectorAll(".glass-button, .cta-button")
-      .forEach((button) => {
-        button.addEventListener("click", function () {
-          const preferences = JSON.parse(
-            localStorage.getItem("cookieConsent") || "{}",
-          );
-          if (preferences.analytics && typeof gtag !== "undefined") {
-            gtag("event", "click", {
-              event_category: "engagement",
-              event_label: "homepage_cta",
-            });
-          }
+      // Track CTA button clicks
+      document
+        .querySelectorAll(".glass-button, .cta-button")
+        .forEach((button) => {
+          button.addEventListener("click", function () {
+            try {
+              const preferences = JSON.parse(
+                localStorage.getItem("cookieConsent") || "{}",
+              );
+              if (preferences.analytics && typeof gtag !== "undefined") {
+                gtag("event", "click", {
+                  event_category: "engagement",
+                  event_label: "homepage_cta",
+                });
+              }
+            } catch (error) {
+              console.error('Analytics tracking error:', error);
+            }
+          });
         });
-      });
+
+      console.log('Website initialized successfully');
+    } catch (error) {
+      console.error('Website initialization error:', error);
+    }
   });
 </script>
 
@@ -2265,7 +2358,6 @@
     >OpenWidget</a
   >
 </noscript>
-```
 
   </body>
 </html>

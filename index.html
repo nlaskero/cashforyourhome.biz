@@ -640,8 +640,22 @@
       nav {
         width: fit-content;
         margin: 3rem auto;
-        padding: 8px;
-        border-radius: 8px;
+        padding: 12px 20px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-logo .logo {
+        height: 35px;
+        width: auto;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
       }
 
       nav::before {

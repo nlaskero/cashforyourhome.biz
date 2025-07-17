@@ -5,11 +5,11 @@ const indexPath = 'index.html';
 let indexHtml = fs.readFileSync(indexPath, 'utf8');
 
 // Combine CSS
-const cssFiles = ['assets/css/site.css', 'public/assets/css/style.css'];
+const cssFiles = ['assets/css/main.css'];
 let cssCombined = cssFiles.map(file => fs.readFileSync(file, 'utf8')).join('\n');
 
 // Combine JS
-const jsFiles = ['assets/js/main.js', 'public/script.js'];
+const jsFiles = ['assets/js/app.js'];
 let jsCombined = jsFiles.map(file => fs.readFileSync(file, 'utf8')).join('\n');
 
 // Insert CSS and JS before closing head

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash For Your Home - Fast, Easy, No Hassle</title>
 
-```
 <!-- SEO Meta Tags -->
 <meta name="description" content="Get a fast cash offer for your home in 24-48 hours! Cash for Your Home LLC is a trusted real estate wholesale company serving nationwide from Scottsdale, Arizona. No fees, no commissions, quick closing." />
 <meta name="keywords" content="cash for homes, sell house fast, cash home buyers, real estate wholesale, property investors, Scottsdale Arizona, quick home sale" />
@@ -81,6 +80,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
     @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
     @import url('https://unpkg.com/normalize.css');
 
     /* Base Styles */
@@ -131,7 +131,7 @@
 
     body {
         font-size: 20px;
-        font-family: "DM Sans", sans-serif;
+        font-family: "Inter", "DM Sans", sans-serif;
         font-optical-sizing: auto;
         background: var(--c-bg);
         color: var(--c-content);
@@ -139,6 +139,161 @@
         padding: 0;
         min-height: 100vh;
         transition: background 400ms cubic-bezier(1, 0.0, 0.4, 1), color 400ms cubic-bezier(1, 0.0, 0.4, 1);
+    }
+
+    /* Enhanced Header with Green Glass Effect */
+    header {
+        background: linear-gradient(135deg, 
+            rgba(34, 197, 94, 0.15) 0%, 
+            rgba(74, 107, 90, 0.25) 25%,
+            rgba(22, 163, 74, 0.20) 50%,
+            rgba(45, 74, 61, 0.30) 75%,
+            rgba(16, 185, 129, 0.18) 100%);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        border-bottom: 1px solid rgba(34, 197, 94, 0.3);
+        box-shadow: 
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            inset 0 -1px 0 rgba(34, 197, 94, 0.2),
+            0 8px 32px rgba(34, 197, 94, 0.15),
+            0 4px 16px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(34, 197, 94, 0.6) 50%, 
+            transparent 100%);
+    }
+
+    header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.04)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    /* Professional Layered Typography */
+    .logo {
+        font-family: "Inter", "DM Sans", sans-serif;
+        font-weight: 800;
+        font-size: 1.5rem;
+        background: linear-gradient(135deg, 
+            #ffffff 0%, 
+            #f0fdf4 25%,
+            #dcfce7 50%, 
+            #bbf7d0 75%,
+            #86efac 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 
+            0 1px 2px rgba(0, 0, 0, 0.1),
+            0 2px 4px rgba(34, 197, 94, 0.2),
+            0 4px 8px rgba(34, 197, 94, 0.1);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        letter-spacing: -0.02em;
+        position: relative;
+    }
+
+    .logo::before {
+        content: 'Cash For Your Home';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.9) 0%, 
+            rgba(34, 197, 94, 0.8) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        z-index: -1;
+        transform: translateY(1px);
+        opacity: 0.3;
+    }
+
+    /* Enhanced Section Titles */
+    .section-title {
+        font-family: "Inter", "DM Sans", sans-serif;
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        font-weight: 800;
+        background: linear-gradient(135deg, 
+            var(--c-content) 0%, 
+            var(--c-steel-green) 50%,
+            var(--c-action) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            var(--c-action) 50%, 
+            transparent 100%);
+        border-radius: 2px;
+    }
+
+    /* Main Article Title */
+    .article h1 {
+        font-family: "Inter", "DM Sans", sans-serif;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 900;
+        background: linear-gradient(135deg, 
+            var(--c-content) 0%, 
+            var(--c-steel-green) 30%,
+            var(--c-action) 70%,
+            var(--c-steel-green) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 1.4em 0 0.6em;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .article h1::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.1) 0%, 
+            transparent 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        z-index: 1;
     }
 
     /* Theme variations */
@@ -542,9 +697,95 @@
         font-weight: 700;
     }
 
-    .glass-button.primary:hover {
-        background-color: color-mix(in srgb, var(--c-action) 25%, transparent);
-        color: color-mix(in srgb, var(--c-action), var(--c-light) 20%);
+    /* 3D Icon Styling */
+    .icon-3d {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        transition: all 400ms cubic-bezier(1, 0.0, 0.4, 1);
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+    }
+
+    .icon-3d:hover {
+        transform: translateY(-8px) scale(1.1);
+        filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.25));
+    }
+
+    .feature-card {
+        background: color-mix(in srgb, var(--c-glass) 8%, transparent);
+        backdrop-filter: blur(12px) saturate(var(--saturation));
+        -webkit-backdrop-filter: blur(12px) saturate(var(--saturation));
+        padding: 2rem;
+        border-radius: 1.5rem;
+        border: 1px solid color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent);
+        box-shadow: 
+            inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 8%), transparent),
+            0px 8px 32px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent);
+        transition: all 400ms cubic-bezier(1, 0.0, 0.4, 1);
+        text-align: center;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 
+            inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 15%), transparent),
+            0px 16px 48px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent);
+    }
+
+    .feature-card h3 {
+        color: var(--c-content);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .feature-card p {
+        color: color-mix(in srgb, var(--c-content) 80%, transparent);
+        line-height: 1.6;
+    }
+
+    /* Benefits Grid with 3D Icons */
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: color-mix(in srgb, var(--c-glass) 8%, transparent);
+        backdrop-filter: blur(12px) saturate(var(--saturation));
+        -webkit-backdrop-filter: blur(12px) saturate(var(--saturation));
+        border-radius: 1rem;
+        border: 1px solid color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent);
+        box-shadow: 
+            inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 8%), transparent),
+            0px 4px 16px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+        transition: all 400ms cubic-bezier(1, 0.0, 0.4, 1);
+    }
+
+    .benefit-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 
+            inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 12%), transparent),
+            0px 8px 24px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 15%), transparent);
+    }
+
+    .benefit-icon {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    }
+
+    .benefit-text {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--c-content);
     }
 
     /* Testimonial Cards */
@@ -856,6 +1097,7 @@
         }
     }
 </style>
+```
 
 </head>
 <body>
@@ -961,6 +1203,9 @@
         <!-- Testimonials Section -->
         <section class="testimonials">
             <h2 class="section-title">What Our Clients Say</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0idGh1bWJUZXN0IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I0ZGQjUwMCIvPgo8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRjkwOUEiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4LDgpIj4KPHJlY3QgeD0iMCIgeT0iMjgiIHdpZHRoPSIxMiIgaGVpZ2h0PSIyMCIgcng9IjYiIGZpbGw9InVybCgjdGh1bWJUZXN0KSIvPgo8cGF0aCBkPSJNMTIgMjhMMTYgMTZMMjQgMTJMMzYgMTZMNDAgMjhMMzYgNDBMMjQgNDRMMTYgNDBMMTIgMjhaIiBmaWxsPSJ1cmwoI3RodW1iVGVzdCkiLz4KPC9nPgo8L3N2Zz4K" alt="Thumbs up" style="filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));">
+            </div>
             <p class="section-subtitle">
                 Don't just take our word for it - hear from homeowners who chose Cash for Your Home.
             </p>
@@ -1025,7 +1270,7 @@
                             <span>Scottsdale, Arizona</span>
                         </div>
                         <div class="contact-item">
-                            <div class="contact-icon">📞</div>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGRlZnM+CjxyYWRpYWxHcmFkaWVudCBpZD0icGhvbmVDb250YWN0IiBjeD0iNTAlIiBjeT0iNTAlIiByPSI1MCUiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNEI1NTYzIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzM3NDE1MSIvPgo8L3JhZGlhbEdyYWRpZW50Pgo8L2RlZnM+CjxwYXRoIGQ9Ik0yOCA2SDEyQzEwIDYgOCA4IDggMTBWMzBDOCAzMiAxMCAzNCAxMiAzNEgyOEMzMCAzNCAzMiAzMiAzMiAzMFYxMEMzMiA4IDMwIDYgMjggNlpNMjAgMzBDMTggMzAgMTYgMjggMTYgMjZDMTYgMjQgMTggMjIgMjAgMjJDMjIgMjIgMjQgMjQgMjQgMjZDMjQgMjggMjIgMzAgMjAgMzBaIiBmaWxsPSJ1cmwoI3Bob25lQ29udGFjdCkiLz4KPHBhdGggZD0iTTEwIDEwSDMwVjI0SDEyTDEwIDEwWiIgZmlsbD0iIzVCNjQ3NCIvPgo8Y2lyY2xlIGN4PSIzMyIgY3k9IjEyIiByPSIzIiBmaWxsPSIjRkZCNTAwIi8+CjxjaXJjbGUgY3g9IjM0IiBjeT0iMTciIHI9IjIuNSIgZmlsbD0iI0ZGQjUwMCIvPgo8L3N2Zz4K" alt="Phone icon" style="width: 40px; height: 40px; margin-right: 1rem; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));">
                             <span>(480) 555-CASH</span>
                         </div>
                         <div class="contact-item">

@@ -520,21 +520,34 @@
 
       .cta-button {
         background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.2),
-          rgba(34, 197, 94, 0.3)
+          145deg,
+          rgba(144, 238, 144, 0.85) 0%,
+          rgba(152, 251, 152, 0.9) 15%,
+          rgba(144, 238, 144, 0.85) 30%,
+          rgba(152, 251, 152, 0.9) 45%,
+          rgba(144, 238, 144, 0.85) 60%,
+          rgba(152, 251, 152, 0.9) 75%,
+          rgba(144, 238, 144, 0.85) 100%
         );
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top: 2px solid rgba(255, 255, 255, 0.6);
+        border-left: 2px solid rgba(255, 255, 255, 0.6);
+        color: #2d5a2d;
         padding: var(--space-3) var(--space-6);
         border-radius: var(--radius-full);
         text-decoration: none;
         font-weight: bold;
         transition: all var(--transition-normal);
+        box-shadow:
+          inset 0 2px 4px rgba(255, 255, 255, 0.4),
+          inset 0 -2px 4px rgba(0, 0, 0, 0.1),
+          0 4px 8px rgba(0, 0, 0, 0.2),
+          0 8px 16px rgba(144, 238, 144, 0.3);
         z-index: 10;
         position: relative;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
       }
 
       .cta-button:hover {

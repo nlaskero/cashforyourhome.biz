@@ -33,358 +33,367 @@
       gtag("config", "G-R60T4YV9KK");
     </script>
 
-    <link rel="stylesheet" href="assets/css/site.css">
-      </head>
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
   <body>
     <div class="bg-black text-white font-['Space_Grotesk'] overflow-x-hidden">
-    <header>
-      <nav class="container">
-        <a href="/index.html" class="logo">
-          <div class="logo-icon">🏠</div>
-          Cash for Your Home LLC
-        </a>
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/public/about.html">About</a></li>
-          <li><a href="/inquiry.html">Get Offer</a></li>
-          <li><a href="/public/terms.html">Terms</a></li>
-        </ul>
-        <a href="/index.html" class="back-home">← Back to Home</a>
-      </nav>
-    </header>
+      <header>
+        <nav class="container">
+          <a href="/index.html" class="logo">
+            <div class="logo-icon">🏠</div>
+            Cash for Your Home LLC
+          </a>
+          <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/public/about.html">About</a></li>
+            <li><a href="/inquiry.html">Get Offer</a></li>
+            <li><a href="/public/terms.html">Terms</a></li>
+          </ul>
+          <a href="/index.html" class="back-home">← Back to Home</a>
+        </nav>
+      </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <h1>Get Your Free Cash Offer</h1>
+          <p>
+            Fill out the form below and receive a no-obligation cash offer for
+            your property within 24-48 hours.
+          </p>
+        </div>
+      </section>
+
+      <!-- Main Content -->
       <div class="container">
-        <h1>Get Your Free Cash Offer</h1>
-        <p>
-          Fill out the form below and receive a no-obligation cash offer for
-          your property within 24-48 hours.
-        </p>
-      </div>
-    </section>
-
-    <!-- Main Content -->
-    <div class="container">
-      <div class="main-content">
-        <!-- Form Section -->
-        <div class="form-section">
-          <div class="form-header">
-            <h2>Property Information</h2>
-            <p>
-              Please provide details about your property to receive an accurate
-              offer.
-            </p>
-          </div>
-
-          <form class="inquiry-form" id="inquiryForm">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input type="text" id="firstName" name="firstName" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name *</label>
-                <input type="text" id="lastName" name="lastName" required />
-              </div>
+        <div class="main-content">
+          <!-- Form Section -->
+          <div class="form-section">
+            <div class="form-header">
+              <h2>Property Information</h2>
+              <p>
+                Please provide details about your property to receive an
+                accurate offer.
+              </p>
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required />
+            <form class="inquiry-form" id="inquiryForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required />
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number *</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="propertyAddress">Property Address *</label>
-              <input
-                type="text"
-                id="propertyAddress"
-                name="propertyAddress"
-                placeholder="Street Address, City, State, ZIP"
-                required
-              />
-            </div>
-
-            <div class="form-row">
               <div class="form-group">
-                <label for="propertyType">Property Type *</label>
-                <select id="propertyType" name="propertyType" required>
-                  <option value="">Select Property Type</option>
-                  <option value="single-family">Single Family Home</option>
-                  <option value="condo">Condo/Townhouse</option>
-                  <option value="multi-family">Multi-Family</option>
-                  <option value="manufactured">Manufactured Home</option>
-                  <option value="land">Vacant Land</option>
-                  <option value="commercial">Commercial Property</option>
+                <label for="propertyAddress">Property Address *</label>
+                <input
+                  type="text"
+                  id="propertyAddress"
+                  name="propertyAddress"
+                  placeholder="Street Address, City, State, ZIP"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="propertyType">Property Type *</label>
+                  <select id="propertyType" name="propertyType" required>
+                    <option value="">Select Property Type</option>
+                    <option value="single-family">Single Family Home</option>
+                    <option value="condo">Condo/Townhouse</option>
+                    <option value="multi-family">Multi-Family</option>
+                    <option value="manufactured">Manufactured Home</option>
+                    <option value="land">Vacant Land</option>
+                    <option value="commercial">Commercial Property</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="yearBuilt">Year Built</label>
+                  <input
+                    type="number"
+                    id="yearBuilt"
+                    name="yearBuilt"
+                    min="1800"
+                    max="2024"
+                    placeholder="e.g., 1995"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="bedrooms">Bedrooms</label>
+                  <select id="bedrooms" name="bedrooms">
+                    <option value="">Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6+">6+</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="bathrooms">Bathrooms</label>
+                  <select id="bathrooms" name="bathrooms">
+                    <option value="">Select</option>
+                    <option value="1">1</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                    <option value="3">3</option>
+                    <option value="3.5">3.5</option>
+                    <option value="4+">4+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="squareFootage">Square Footage</label>
+                  <input
+                    type="number"
+                    id="squareFootage"
+                    name="squareFootage"
+                    placeholder="e.g., 1,500"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lotSize">Lot Size</label>
+                  <input
+                    type="text"
+                    id="lotSize"
+                    name="lotSize"
+                    placeholder="e.g., 0.25 acres"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="propertyCondition">Property Condition *</label>
+                <select
+                  id="propertyCondition"
+                  name="propertyCondition"
+                  required
+                >
+                  <option value="">Select Condition</option>
+                  <option value="excellent">Excellent - Move-in ready</option>
+                  <option value="good">Good - Minor repairs needed</option>
+                  <option value="fair">Fair - Some repairs needed</option>
+                  <option value="poor">Poor - Major repairs needed</option>
+                  <option value="distressed">
+                    Distressed - Extensive repairs needed
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="timeline">When do you need to sell? *</label>
+                <select id="timeline" name="timeline" required>
+                  <option value="">Select Timeline</option>
+                  <option value="asap">As soon as possible</option>
+                  <option value="30-days">Within 30 days</option>
+                  <option value="60-days">Within 60 days</option>
+                  <option value="90-days">Within 90 days</option>
+                  <option value="flexible">I'm flexible</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sellingReason"
+                  >Why are you selling? (Optional)</label
+                >
+                <select id="sellingReason" name="sellingReason">
+                  <option value="">Select Reason (Optional)</option>
+                  <option value="relocation">Job relocation</option>
+                  <option value="divorce">Divorce</option>
+                  <option value="inheritance">Inherited property</option>
+                  <option value="financial">Financial difficulties</option>
+                  <option value="downsizing">Downsizing</option>
+                  <option value="investment">Investment property</option>
+                  <option value="repairs">Too many repairs needed</option>
                   <option value="other">Other</option>
                 </select>
               </div>
+
               <div class="form-group">
-                <label for="yearBuilt">Year Built</label>
-                <input
-                  type="number"
-                  id="yearBuilt"
-                  name="yearBuilt"
-                  min="1800"
-                  max="2024"
-                  placeholder="e.g., 1995"
-                />
+                <label for="additionalInfo">Additional Information</label>
+                <textarea
+                  id="additionalInfo"
+                  name="additionalInfo"
+                  placeholder="Tell us anything else about your property or situation that might help us provide a better offer..."
+                ></textarea>
               </div>
-            </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="bedrooms">Bedrooms</label>
-                <select id="bedrooms" name="bedrooms">
-                  <option value="">Select</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6+">6+</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="bathrooms">Bathrooms</label>
-                <select id="bathrooms" name="bathrooms">
-                  <option value="">Select</option>
-                  <option value="1">1</option>
-                  <option value="1.5">1.5</option>
-                  <option value="2">2</option>
-                  <option value="2.5">2.5</option>
-                  <option value="3">3</option>
-                  <option value="3.5">3.5</option>
-                  <option value="4+">4+</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="squareFootage">Square Footage</label>
-                <input
-                  type="number"
-                  id="squareFootage"
-                  name="squareFootage"
-                  placeholder="e.g., 1,500"
-                />
-              </div>
-              <div class="form-group">
-                <label for="lotSize">Lot Size</label>
-                <input
-                  type="text"
-                  id="lotSize"
-                  name="lotSize"
-                  placeholder="e.g., 0.25 acres"
-                />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="propertyCondition">Property Condition *</label>
-              <select id="propertyCondition" name="propertyCondition" required>
-                <option value="">Select Condition</option>
-                <option value="excellent">Excellent - Move-in ready</option>
-                <option value="good">Good - Minor repairs needed</option>
-                <option value="fair">Fair - Some repairs needed</option>
-                <option value="poor">Poor - Major repairs needed</option>
-                <option value="distressed">
-                  Distressed - Extensive repairs needed
-                </option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="timeline">When do you need to sell? *</label>
-              <select id="timeline" name="timeline" required>
-                <option value="">Select Timeline</option>
-                <option value="asap">As soon as possible</option>
-                <option value="30-days">Within 30 days</option>
-                <option value="60-days">Within 60 days</option>
-                <option value="90-days">Within 90 days</option>
-                <option value="flexible">I'm flexible</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="sellingReason">Why are you selling? (Optional)</label>
-              <select id="sellingReason" name="sellingReason">
-                <option value="">Select Reason (Optional)</option>
-                <option value="relocation">Job relocation</option>
-                <option value="divorce">Divorce</option>
-                <option value="inheritance">Inherited property</option>
-                <option value="financial">Financial difficulties</option>
-                <option value="downsizing">Downsizing</option>
-                <option value="investment">Investment property</option>
-                <option value="repairs">Too many repairs needed</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="additionalInfo">Additional Information</label>
-              <textarea
-                id="additionalInfo"
-                name="additionalInfo"
-                placeholder="Tell us anything else about your property or situation that might help us provide a better offer..."
-              ></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">
-              Get My Free Cash Offer
-            </button>
-          </form>
-        </div>
-
-        <!-- Info Section -->
-        <div class="info-section">
-          <div class="info-card">
-            <h3><span class="info-icon">⚡</span> Fast & Easy Process</h3>
-            <p>
-              Our streamlined process gets you a cash offer quickly with minimal
-              paperwork and no hassle.
-            </p>
-            <ul class="checklist">
-              <li>No inspections or appraisals</li>
-              <li>No real estate agent fees</li>
-              <li>No closing costs or hidden fees</li>
-              <li>Close on your timeline</li>
-            </ul>
+              <button type="submit" class="submit-btn">
+                Get My Free Cash Offer
+              </button>
+            </form>
           </div>
 
-          <div class="info-card">
-            <h3><span class="info-icon">🔒</span> Your Information is Safe</h3>
-            <p>
-              We respect your privacy and will never share your information with
-              third parties.
-            </p>
-            <ul class="checklist">
-              <li>SSL encrypted form submission</li>
-              <li>No spam or unwanted calls</li>
-              <li>Professional service only</li>
-              <li>Completely confidential</li>
-            </ul>
-          </div>
+          <!-- Info Section -->
+          <div class="info-section">
+            <div class="info-card">
+              <h3><span class="info-icon">⚡</span> Fast & Easy Process</h3>
+              <p>
+                Our streamlined process gets you a cash offer quickly with
+                minimal paperwork and no hassle.
+              </p>
+              <ul class="checklist">
+                <li>No inspections or appraisals</li>
+                <li>No real estate agent fees</li>
+                <li>No closing costs or hidden fees</li>
+                <li>Close on your timeline</li>
+              </ul>
+            </div>
 
-          <div class="process-steps">
-            <h3>What Happens Next?</h3>
-            <div class="step">
-              <div class="step-number">1</div>
-              <div class="step-text">
-                We review your property information and research comparable
-                sales
-              </div>
+            <div class="info-card">
+              <h3>
+                <span class="info-icon">🔒</span> Your Information is Safe
+              </h3>
+              <p>
+                We respect your privacy and will never share your information
+                with third parties.
+              </p>
+              <ul class="checklist">
+                <li>SSL encrypted form submission</li>
+                <li>No spam or unwanted calls</li>
+                <li>Professional service only</li>
+                <li>Completely confidential</li>
+              </ul>
             </div>
-            <div class="step">
-              <div class="step-number">2</div>
-              <div class="step-text">
-                You receive a fair cash offer within 24-48 hours
+
+            <div class="process-steps">
+              <h3>What Happens Next?</h3>
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                  We review your property information and research comparable
+                  sales
+                </div>
               </div>
-            </div>
-            <div class="step">
-              <div class="step-number">3</div>
-              <div class="step-text">
-                If you accept, we schedule a quick closing at your convenience
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                  You receive a fair cash offer within 24-48 hours
+                </div>
               </div>
-            </div>
-            <div class="step">
-              <div class="step-number">4</div>
-              <div class="step-text">
-                You get cash in hand and move on with your life
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                  If you accept, we schedule a quick closing at your convenience
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-text">
+                  You get cash in hand and move on with your life
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Testimonial Section -->
-    <section class="testimonial-section">
-      <div class="container">
-        <div class="testimonial">
-          <blockquote>
-            "The form was easy to fill out and I got my offer the next day. No
-            pressure, no hassle, just a fair offer and professional service.
-            Highly recommend!"
-          </blockquote>
-          <div class="testimonial-author">
-            <div class="author-avatar">JS</div>
-            <div class="author-info">
-              <h4>Jennifer Smith</h4>
-              <span>Scottsdale, AZ • Sold in 14 days</span>
+      <!-- Testimonial Section -->
+      <section class="testimonial-section">
+        <div class="container">
+          <div class="testimonial">
+            <blockquote>
+              "The form was easy to fill out and I got my offer the next day. No
+              pressure, no hassle, just a fair offer and professional service.
+              Highly recommend!"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="author-avatar">JS</div>
+              <div class="author-info">
+                <h4>Jennifer Smith</h4>
+                <span>Scottsdale, AZ • Sold in 14 days</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer id="contact">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Cash for Your Home LLC</h3>
-            <p>📍 Scottsdale, Arizona</p>
-            <p>📞 (480) XXX-XXXX</p>
-            <p>✉️ info@cashforyourhomellc.com</p>
+      <!-- Footer -->
+      <footer id="contact">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h3>Cash for Your Home LLC</h3>
+              <p>📍 Scottsdale, Arizona</p>
+              <p>📞 (480) XXX-XXXX</p>
+              <p>✉️ info@cashforyourhomellc.com</p>
+            </div>
+            <div class="footer-section">
+              <h3>Quick Links</h3>
+              <ul style="list-style: none">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="public/about.html">About Us</a></li>
+                <li><a href="inquiry.html">Get Offer</a></li>
+                <li><a href="public/terms.html">Terms & Conditions</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul style="list-style: none">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="public/about.html">About Us</a></li>
-              <li><a href="inquiry.html">Get Offer</a></li>
-              <li><a href="public/terms.html">Terms & Conditions</a></li>
-            </ul>
+          <div class="footer-bottom">
+            <p>&copy; 2024 Cash for Your Home LLC. All rights reserved.</p>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Cash for Your Home LLC. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+      </footer>
 
-    <script>
-      // Track page views
-      gtag("event", "page_view", {
-        page_title: "Get Offer Form",
-        page_location: window.location.href,
-      });
-
-      // Form submission handling
-      document
-        .getElementById("inquiryForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          // Track form submission
-          gtag("event", "form_submit", {
-            event_category: "engagement",
-            event_label: "inquiry_form",
-          });
-
-          // Get form data
-          const formData = new FormData(this);
-          const data = {};
-          for (let [key, value] of formData.entries()) {
-            data[key] = value;
-          }
-
-          // For demo purposes, show success message
-          // In a real application, you would send this data to your server
-          showSuccessMessage();
+      <script src="assets/js/app.js"></script>
+      <script>
+        // Track page views
+        gtag("event", "page_view", {
+          page_title: "Get Offer Form",
+          page_location: window.location.href,
         });
 
-      function showSuccessMessage() {
-        const form = document.getElementById("inquiryForm");
-        form.innerHTML = `
+        // Form submission handling
+        document
+          .getElementById("inquiryForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Track form submission
+            gtag("event", "form_submit", {
+              event_category: "engagement",
+              event_label: "inquiry_form",
+            });
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+              data[key] = value;
+            }
+
+            // For demo purposes, show success message
+            // In a real application, you would send this data to your server
+            showSuccessMessage();
+          });
+
+        function showSuccessMessage() {
+          const form = document.getElementById("inquiryForm");
+          form.innerHTML = `
                 <div style="text-align: center; padding: 2rem;">
                     <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff6b6b, #ffa500); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; color: white;">✓</div>
                     <h3 style="color: #1e3c72; margin-bottom: 1rem;">Thank You!</h3>
@@ -393,17 +402,19 @@
                     <a href="index.html" style="display: inline-block; margin-top: 1rem; background: linear-gradient(135deg, #ff6b6b, #ffa500); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: bold;">Return to Home</a>
                 </div>
             `;
-      }
-
-      // Phone number formatting
-      document.getElementById("phone").addEventListener("input", function (e) {
-        let value = e.target.value.replace(/\D/g, "");
-        if (value.length >= 10) {
-          value = value.slice(0, 10);
-          e.target.value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6)}`;
         }
-      });
-    </script>
+
+        // Phone number formatting
+        document
+          .getElementById("phone")
+          .addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, "");
+            if (value.length >= 10) {
+              value = value.slice(0, 10);
+              e.target.value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6)}`;
+            }
+          });
+      </script>
     </div>
   </body>
 </html>

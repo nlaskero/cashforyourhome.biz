@@ -84,10 +84,6 @@
 
 <!-- Combined Assets -->
 <style>
-/* ========================================
-MODERN CSS DESIGN SYSTEM
-Enhanced with CSS Custom Properties, Modern Layout, & Animations
-======================================== */
 
 /* CSS Custom Properties for Consistent Design */
 :root {
@@ -2969,7 +2965,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </nav>
     </header>
 
-```
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
@@ -3389,16 +3384,6 @@ document.addEventListener('DOMContentLoaded', () => {
   to use the communication tool powered by <a href="https://www.openwidget.com/" rel="noopener nofollow" target="_blank">OpenWidget</a>
 </noscript>
 
-  
-
-
-
-
-
-
-
-
-
 
 
 <section id="about">
@@ -3682,173 +3667,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
 </main>
 
-<!-- social icons -->
-<a class="social-icon codepen" href="https://codepen.io/simeydotme" title="view my codepens">
-    Made by Simey
-</a>
-
-<a class="social-icon twitter" href="https://twitter.com/simeydotme">
-    <svg viewBox="0 0 24 24">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"></path>
-    </svg>
-</a>
-<a class="social-icon github" href="https://github.com/simeydotme">
-    <svg viewBox="0 0 24 24">
-        <path stroke="none" d="M0 0h24v24v24" fill="none"></path>
-        <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
-    </svg>
-</a>
-
 <script>
-const nav = document.querySelector("nav");
-const effectEl = document.querySelector(".effect.filter");
-const textEl = document.querySelector(".effect.text");
-
-let animationTime = 600;
-let pCount = 15;
-const minDistance = 20;
-const maxDistance = 42;
-const maxRotate = 75;
-const colors = [1,2,3,1,2,3,1,4];
-const timeVariance = 300;
-    
-function noise(n = 1) {
-    return n/2 - Math.random() * n;
-}
-function getXY(distance,pointIndex,totalPoints) {
-    const x = (distance) * Math.cos(((360+noise(8))/totalPoints*pointIndex) * Math.PI / 180);
-    const y = (distance) * Math.sin(((360+noise(8))/totalPoints*pointIndex) * Math.PI / 180);
-    return [x, y];
-}
-
-function makeParticles($el) {
-    const d = [90,10];
-    const r = 100;
-
-    const bubbleTime = animationTime * 2 + timeVariance;
-    $el.style.setProperty( '--time', bubbleTime + 'ms' );
-
-    for( let i = 0; i < pCount; i++ ) {
-      const t = animationTime * 2 + noise(timeVariance * 2);
-      const p = createParticle(i, t, d, r);
-      const $place = $el;
-      if ( $place ) {
-        $place.classList.remove('active');
-        setTimeout(() => {
-            const $particle = document.createElement('span');
-            const $point = document.createElement('span');
-            $particle.classList.add('particle');
-            $particle.style = `
-              --start-x: ${p.start[0]}px;
-              --start-y: ${p.start[1]}px;
-              --end-x: ${p.end[0]}px;
-              --end-y: ${p.end[1]}px;
-              --time: ${p.time}ms;
-              --scale: ${p.scale};
-              --color: var( --color-${p.color}, white );
-              --rotate: ${p.rotate}deg;
-            `;
-            $point.classList.add('point');
-            $particle.append( $point );
-            $place.append($particle);
-            requestAnimationFrame(() => {
-              $place.classList.add('active');
-            })
-            setTimeout(() => {
-                try {
-                    $place.removeChild( $particle );
-                } catch(e) {
-                    
-                }
-            }, t );
-        }, 30);
-      };
-    }
-}
-
-function createParticle(i, t, d, r) {
-  let rotate = noise(r/10);
-  let minDistance = d[0];
-  let maxDistance = d[1];
-  return {
-    start: getXY(minDistance,pCount-i,pCount),
-    end: getXY(maxDistance+noise(7),pCount-i,pCount),
-    time: t,
-    scale: 1 + noise(0.2),
-    color: colors[Math.floor(Math.random() * colors.length)],
-    rotate: rotate > 0 ? (rotate  + r/20)*10 : (rotate -  r/20)*10
-  }
-}
-
-
-function updateEffectPosition(element) {
-    const pos = element.getBoundingClientRect();
-    const styles = {
-        left: `${pos.x}px`,
-        top: `${pos.y}px`,
-        width: `${pos.width}px`,
-        height: `${pos.height}px`
-    };
-    
-    Object.assign(effectEl.style, styles);
-    Object.assign(textEl.style, styles);
-    textEl.classList.remove('hidden');
-    textEl.innerText = element.innerText;
-}
-
-const activate = ($el) => {
-    updateEffectPosition($el);
-
-    if (!$el.classList.contains('active')) {
-        nav.querySelectorAll('li').forEach(($el) => {
-            $el.classList.remove('active');
-        });
-        effectEl.querySelectorAll('.particle').forEach(($el) => {
-            effectEl.removeChild($el);
-        });
-        $el.classList.add('active');
-        textEl.classList.remove('active');
-
-        setTimeout(() => {
-            textEl.classList.add('active');
-        }, 100);
-
-        makeParticles(effectEl);
-    }
-};
-
-nav.querySelectorAll('li').forEach(($el) => {
-    const link = $el.querySelector('a');
-    $el.addEventListener('click', () => {
-        activate($el);
-    });
-    link.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            activate($el);
-        }
-    });
-});
-
-// Resize Observer
-const resizeObserver = new ResizeObserver(() => {
-    const activeEl = nav.querySelector('li.active');
-    if (activeEl) {
-        updateEffectPosition(activeEl);
-    }
-});
-
-resizeObserver.observe(document.body);
-
-setTimeout(() => {
-    activate(nav.querySelector('li'));
-},200)
-</script>
-<script src="assets/js/app.js"></script>
-<!-- End frosted-glass-gooey-nav.html -->
+<script src="assets/js/app.js">
+  </script>
+  
 </section>
-
 <section id="frosted-nav">
 <!-- Start frosted-nav.html -->
 <main id="app">
@@ -3894,7 +3717,7 @@ setTimeout(() => {
   });
 </script>
 <script src="assets/js/app.js"></script>
-<!-- End frosted-nav.html -->
+
 </section>
 
 <section id="futuregreen">
@@ -4356,7 +4179,7 @@ setTimeout(() => {
             </div>
           </div>
           <div class="text-lg font-medium bg-gradient-to-r from-green-400 via-green-400 to-gray-400 bg-clip-text text-transparent flex items-center">
-            FutureNav
+            Cash For Your Home
           </div>
         </div>
 
@@ -4387,14 +4210,14 @@ setTimeout(() => {
         </div>
       </div>
       <div class="text-center text-gray-500 text-sm mt-8">
-        © 2025 FutureNav. All rights reserved.
+        © 2025 Cash For Your Home LLc. All rights reserved.
       </div>
     </div>
   </footer>
 
   <script src="assets/js/app.js"></script>
 </div>
-<!-- End futuregreen.html -->
+  
 </section>
 
 <section id="gradient-text">
@@ -4404,11 +4227,11 @@ setTimeout(() => {
     <p>@property + linear-gradient() + background-clip + text-fill-color</p>
   </article>
 <script src="assets/js/app.js"></script>
-<!-- End gradient-text.html -->
+
 </section>
 
 <section id="index">
-<!-- Start index.html -->
+  
 <header>
       <nav class="container">
         <a href="index.html" class="logo">
@@ -4468,8 +4291,7 @@ setTimeout(() => {
           </div>
         </div>
       </div>
-    </section>
-
+    <section>
     <section class="section">
       <div class="container" id="reviews">
         <h2 class="section-title">What Our Clients Say</h2>

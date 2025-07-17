@@ -1627,7 +1627,73 @@
           id="mobile-toggle"
           aria-label="Toggle mobile menu"
         >
-          ☰
+          <svg viewBox="0 0 100 100" style="width: 24px; height: 24px">
+            <defs>
+              <linearGradient
+                id="menu-grad"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #ffffff; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #e0e0e0; stop-opacity: 1"
+                />
+              </linearGradient>
+              <filter
+                id="menu-shadow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
+                <feDropShadow
+                  dx="1"
+                  dy="1"
+                  stdDeviation="1"
+                  flood-color="rgba(0,0,0,0.3)"
+                />
+              </filter>
+            </defs>
+            <rect
+              x="20"
+              y="25"
+              width="60"
+              height="8"
+              rx="4"
+              fill="url(#menu-grad)"
+              filter="url(#menu-shadow)"
+              stroke="#CCC"
+              stroke-width="1"
+            />
+            <rect
+              x="20"
+              y="46"
+              width="60"
+              height="8"
+              rx="4"
+              fill="url(#menu-grad)"
+              filter="url(#menu-shadow)"
+              stroke="#CCC"
+              stroke-width="1"
+            />
+            <rect
+              x="20"
+              y="67"
+              width="60"
+              height="8"
+              rx="4"
+              fill="url(#menu-grad)"
+              filter="url(#menu-shadow)"
+              stroke="#CCC"
+              stroke-width="1"
+            />
+          </svg>
         </button>
         <a href="#contact" class="cta-button">Get Cash Offer</a>
       </div>

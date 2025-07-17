@@ -1,6 +1,10 @@
 // Main site-wide JavaScript utilities
 
-// Smooth scrolling for anchor links
+/**
+ * Enables smooth scrolling behavior for internal anchor links.
+ *
+ * Attaches click event listeners to all anchor elements with hrefs starting with "#". When such a link is clicked and the target element exists, the page scrolls smoothly to the target instead of jumping instantly.
+ */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -14,7 +18,9 @@ function initSmoothScroll() {
   });
 }
 
-// Back to top button functionality
+/**
+ * Initializes the "back to top" button, displaying it when the user scrolls down and enabling smooth scrolling to the top when clicked.
+ */
 function initBackToTop() {
   const button = document.getElementById("back-to-top");
   if (!button) return;
@@ -31,7 +37,9 @@ function initBackToTop() {
   });
 }
 
-// Initialize features when DOM is ready
+/**
+ * Initializes site-wide features such as smooth scrolling and the back-to-top button when the DOM is ready.
+ */
 function initSiteFeatures() {
   initSmoothScroll();
   initBackToTop();

@@ -33,7 +33,11 @@ if (headCloseIdx !== -1) {
     indexHtml.slice(headCloseIdx);
 }
 
-// Extract body content from a file
+/**
+ * Extracts and returns the inner HTML content of the <body> tag from the provided HTML string, removing any references to the global CSS and JS assets to prevent duplication.
+ * @param {string} html - The HTML string to extract the body content from.
+ * @return {string} The cleaned body content, or an empty string if no <body> tag is found.
+ */
 function extractBody(html) {
   const match = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
   if (!match) return "";

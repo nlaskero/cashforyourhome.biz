@@ -629,54 +629,57 @@
       .btn-primary {
         background: linear-gradient(
           145deg,
-          rgba(144, 238, 144, 0.9) 0%,
-          rgba(152, 251, 152, 0.95) 15%,
-          rgba(144, 238, 144, 0.9) 30%,
-          rgba(152, 251, 152, 0.95) 45%,
-          rgba(144, 238, 144, 0.9) 60%,
-          rgba(152, 251, 152, 0.95) 75%,
-          rgba(144, 238, 144, 0.9) 100%
+          rgba(152, 251, 152, 0.95) 0%,
+          rgba(144, 238, 144, 0.9) 25%,
+          rgba(173, 255, 173, 0.95) 50%,
+          rgba(144, 238, 144, 0.9) 75%,
+          rgba(152, 251, 152, 0.95) 100%
         );
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        color: #2d5a2d;
+        backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        color: #1a4a1a;
         padding: var(--space-4) var(--space-8);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-top: 2px solid rgba(255, 255, 255, 0.6);
-        border-left: 2px solid rgba(255, 255, 255, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-top: 1px solid rgba(255, 255, 255, 0.8);
+        border-left: 1px solid rgba(255, 255, 255, 0.6);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: var(--radius-full);
         text-decoration: none;
         font-size: var(--text-lg);
-        font-weight: 600;
-        transition: all var(--transition-normal);
+        font-weight: 700;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow:
-          inset 0 2px 4px rgba(255, 255, 255, 0.4),
-          inset 0 -2px 4px rgba(0, 0, 0, 0.1),
-          0 4px 8px rgba(0, 0, 0, 0.2),
-          0 8px 16px rgba(144, 238, 144, 0.3);
+          inset 0 3px 8px rgba(255, 255, 255, 0.6),
+          inset 0 -2px 6px rgba(0, 0, 0, 0.1),
+          0 8px 25px rgba(144, 238, 144, 0.4),
+          0 4px 10px rgba(0, 0, 0, 0.15);
         display: inline-flex;
         align-items: center;
         gap: var(--space-2);
-        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+        position: relative;
+        overflow: hidden;
       }
 
       .btn-primary:hover {
-        transform: translateY(-3px);
+        transform: translateY(-4px) scale(1.02);
         background: linear-gradient(
           145deg,
-          rgba(154, 248, 154, 0.95) 0%,
-          rgba(162, 255, 162, 1) 15%,
-          rgba(154, 248, 154, 0.95) 30%,
-          rgba(162, 255, 162, 1) 45%,
-          rgba(154, 248, 154, 0.95) 60%,
-          rgba(162, 255, 162, 1) 75%,
-          rgba(154, 248, 154, 0.95) 100%
+          rgba(173, 255, 173, 1) 0%,
+          rgba(154, 248, 154, 0.95) 25%,
+          rgba(193, 255, 193, 1) 50%,
+          rgba(154, 248, 154, 0.95) 75%,
+          rgba(173, 255, 173, 1) 100%
         );
+        backdrop-filter: blur(20px) saturate(200%);
+        -webkit-backdrop-filter: blur(20px) saturate(200%);
         box-shadow:
-          inset 0 3px 6px rgba(255, 255, 255, 0.5),
-          inset 0 -3px 6px rgba(0, 0, 0, 0.15),
-          0 6px 12px rgba(0, 0, 0, 0.25),
-          0 12px 24px rgba(144, 238, 144, 0.4);
+          inset 0 4px 12px rgba(255, 255, 255, 0.8),
+          inset 0 -3px 8px rgba(0, 0, 0, 0.1),
+          0 12px 35px rgba(144, 238, 144, 0.6),
+          0 8px 15px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.9);
       }
 
       .btn-secondary {

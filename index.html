@@ -30,1972 +30,2082 @@
 
     <!-- OpenWidget Live Chat -->
     <script>
-        window.__ow = window.__ow || {};
-        window.__ow.organizationId = "4dad4618-7d2d-4122-8542-7491536183a7";
-        window.__ow.integration_name = "manual_settings";
-        window.__ow.product_name = "openwidget";
-        (function (n, t, c) {
-            function i(n) {
-                return e._h ? e._h.apply(null, n) : e._q.push(n);
-            }
-            var e = {
-                _q: [],
-                _h: null,
-                _v: "2.0",
-                on: function () {
-                    i(["on", c.call(arguments)]);
-                },
-                once: function () {
-                    i(["once", c.call(arguments)]);
-                },
-                off: function () {
-                    i(["off", c.call(arguments)]);
-                },
-                get: function () {
-                    if (!e._h)
-                        throw new Error(
-                            "[OpenWidget] You can't use getters before load.",
-                        );
-                    return i(["get", c.call(arguments)]);
-                },
-                call: function () {
-                    i(["call", c.call(arguments)]);
-                },
-                init: function () {
-                    var n = t.createElement("script");
-                    ((n.async = !0),
-                        (n.type = "text/javascript"),
-                        (n.src = "https://cdn.openwidget.com/openwidget.js"),
-                        t.head.appendChild(n));
-                },
-            };
-            (!n.__ow.asyncInit && e.init(), (n.OpenWidget = n.OpenWidget || e));
-        })(window, document, [].slice);
+      window.__ow = window.__ow || {};
+      window.__ow.organizationId = "4dad4618-7d2d-4122-8542-7491536183a7";
+      window.__ow.integration_name = "manual_settings";
+      window.__ow.product_name = "openwidget";
+      (function (n, t, c) {
+        function i(n) {
+          return e._h ? e._h.apply(null, n) : e._q.push(n);
+        }
+        var e = {
+          _q: [],
+          _h: null,
+          _v: "2.0",
+          on: function () {
+            i(["on", c.call(arguments)]);
+          },
+          once: function () {
+            i(["once", c.call(arguments)]);
+          },
+          off: function () {
+            i(["off", c.call(arguments)]);
+          },
+          get: function () {
+            if (!e._h)
+              throw new Error(
+                "[OpenWidget] You can't use getters before load.",
+              );
+            return i(["get", c.call(arguments)]);
+          },
+          call: function () {
+            i(["call", c.call(arguments)]);
+          },
+          init: function () {
+            var n = t.createElement("script");
+            ((n.async = !0),
+              (n.type = "text/javascript"),
+              (n.src = "https://cdn.openwidget.com/openwidget.js"),
+              t.head.appendChild(n));
+          },
+        };
+        (!n.__ow.asyncInit && e.init(), (n.OpenWidget = n.OpenWidget || e));
+      })(window, document, [].slice);
     </script>
 
     <style>
-        :root {
-            /* Color Palette */
-            --color-primary: #1e40af;
-            --color-primary-light: #3b82f6;
-            --color-primary-dark: #1e3a8a;
-            --color-secondary: #10b981;
-            --color-secondary-light: #34d399;
-            --color-secondary-dark: #059669;
-            --color-accent: #f59e0b;
-            --color-accent-light: #fbbf24;
+      :root {
+        /* Color Palette */
+        --color-primary: #1e40af;
+        --color-primary-light: #3b82f6;
+        --color-primary-dark: #1e3a8a;
+        --color-secondary: #10b981;
+        --color-secondary-light: #34d399;
+        --color-secondary-dark: #059669;
+        --color-accent: #f59e0b;
+        --color-accent-light: #fbbf24;
 
-            /* Neutral Colors */
-            --color-white: #ffffff;
-            --color-gray-50: #f9fafb;
-            --color-gray-100: #f3f4f6;
-            --color-gray-200: #e5e7eb;
-            --color-gray-300: #d1d5db;
-            --color-gray-400: #9ca3af;
-            --color-gray-500: #6b7280;
-            --color-gray-600: #4b5563;
-            --color-gray-700: #374151;
-            --color-gray-800: #1f2937;
-            --color-gray-900: #111827;
+        /* Neutral Colors */
+        --color-white: #ffffff;
+        --color-gray-50: #f9fafb;
+        --color-gray-100: #f3f4f6;
+        --color-gray-200: #e5e7eb;
+        --color-gray-300: #d1d5db;
+        --color-gray-400: #9ca3af;
+        --color-gray-500: #6b7280;
+        --color-gray-600: #4b5563;
+        --color-gray-700: #374151;
+        --color-gray-800: #1f2937;
+        --color-gray-900: #111827;
 
-            /* Typography */
-            --font-family-sans: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem;
-            --text-4xl: 2.25rem;
-            --text-5xl: 3rem;
+        /* Typography */
+        --font-family-sans:
+          "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+        --text-sm: 0.875rem;
+        --text-base: 1rem;
+        --text-lg: 1.125rem;
+        --text-xl: 1.25rem;
+        --text-2xl: 1.5rem;
+        --text-3xl: 1.875rem;
+        --text-4xl: 2.25rem;
+        --text-5xl: 3rem;
 
-            /* Spacing */
-            --space-2: 0.5rem;
-            --space-3: 0.75rem;
-            --space-4: 1rem;
-            --space-5: 1.25rem;
-            --space-6: 1.5rem;
-            --space-8: 2rem;
-            --space-10: 2.5rem;
-            --space-12: 3rem;
-            --space-16: 4rem;
-            --space-20: 5rem;
-            --space-24: 6rem;
+        /* Spacing */
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+        --space-20: 5rem;
+        --space-24: 6rem;
 
-            /* Border Radius */
-            --radius-lg: 0.5rem;
-            --radius-xl: 0.75rem;
-            --radius-2xl: 1rem;
-            --radius-3xl: 1.5rem;
-            --radius-full: 9999px;
+        /* Border Radius */
+        --radius-lg: 0.5rem;
+        --radius-xl: 0.75rem;
+        --radius-2xl: 1rem;
+        --radius-3xl: 1.5rem;
+        --radius-full: 9999px;
 
-            /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg:
+          0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --shadow-xl:
+          0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
-            /* Transitions */
-            --transition-fast: 150ms ease-in-out;
-            --transition-normal: 250ms ease-in-out;
-            --transition-slow: 350ms ease-in-out;
+        /* Transitions */
+        --transition-fast: 150ms ease-in-out;
+        --transition-normal: 250ms ease-in-out;
+        --transition-slow: 350ms ease-in-out;
 
-            /* Custom animation easing function */
-            --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
+        /* Custom animation easing function */
+        --linear-ease: linear(
+          0,
+          0.068,
+          0.19 2.7%,
+          0.804 8.1%,
+          1.037,
+          1.199 13.2%,
+          1.245,
+          1.27 15.8%,
+          1.274,
+          1.272 17.4%,
+          1.249 19.1%,
+          0.996 28%,
+          0.949,
+          0.928 33.3%,
+          0.926,
+          0.933 36.8%,
+          1.001 45.6%,
+          1.013,
+          1.019 50.8%,
+          1.018 54.4%,
+          1 63.1%,
+          0.995 68%,
+          1.001 85%,
+          1
+        );
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-family-sans);
+        line-height: 1.6;
+        color: var(--color-gray-700);
+        background: #e8f5e8;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--space-5);
+      }
+
+      /* Advanced Glassmorphism Navigation Header */
+      header {
+        background: linear-gradient(
+          135deg,
+          rgba(130, 224, 170, 0.95) 0%,
+          rgba(42, 82, 152, 0.95) 100%
+        );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: var(--space-4) 0;
+        box-shadow: var(--shadow-lg);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        font-size: var(--text-xl);
+        font-weight: bold;
+        z-index: 10;
+      }
+
+      .logo-icon {
+        margin-right: var(--space-2);
+        font-size: var(--text-2xl);
+      }
+
+      /* Glassmorphism Navigation Styles */
+      nav {
+        display: flex;
+        position: relative;
+        transform: translate3d(0, 0, 0.01px);
+        opacity: 0.999;
+        background: hsl(205deg 0% 0% / 0.1);
+        backdrop-filter: blur(9px) brightness(1.1);
+        border-radius: 100vw;
+        padding: 0.4em;
+        box-shadow:
+          0 4px 20px hsl(205deg 50% 30% / 0.15),
+          0 4px 10px hsl(205deg 30% 10% / 0.075),
+          inset 0 -4px 15px 6px hsl(205deg 70% 90% / 0.2),
+          inset 0 -2px 5px hsl(205deg 70% 90% / 0.15),
+          inset 0 -1px 1px hsl(205deg 70% 90% / 0.4),
+          inset 0 10px 15px hsl(205deg 30% 10% / 0.2),
+          inset 0 1px 2px hsl(205deg 70% 90% / 0.3);
+      }
+
+      /* First noise texture layer */
+      nav:before {
+        content: "";
+        inset: 0;
+        position: absolute;
+        mask-image: url(https://assets.codepen.io/13471/nnnoise%281%29.png);
+        mask-mode: luminance;
+        mask-repeat: repeat;
+        mask-size: 55%;
+        border-radius: 100vw;
+        z-index: 1;
+        backdrop-filter: blur(7px) brightness(1.05);
+        background: hsl(205deg 0% 100% / 0.1);
+      }
+
+      /* Second noise texture layer */
+      nav:after {
+        content: "";
+        inset: 0;
+        position: absolute;
+        mask-image: url(https://assets.codepen.io/13471/nnnoise%281%29.png);
+        mask-mode: green;
+        mask-size: 50%;
+        mask-repeat: repeat;
+        border-radius: 100vw;
+        z-index: 2;
+        backdrop-filter: blur(5px) brightness(0.95);
+        box-shadow:
+          inset 0 -4px 15px 5px hsl(205deg 70% 90% / 0.3),
+          inset 0 -2px 5px hsl(205deg 70% 90% / 0.15),
+          inset 0 -1px 1px hsl(205deg 70% 90% / 0.4),
+          inset 0 1px 2px hsl(205deg 70% 90% / 0.3);
+        background: hsl(205deg 0% 20% / 0.05);
+      }
+
+      /* Navigation list styling */
+      nav ul {
+        display: flex;
+        gap: 2em;
+        list-style: none;
+        padding: 0 1em;
+        margin: 0;
+        position: relative;
+        z-index: 3;
+        color: white;
+        text-shadow: 0 1px 1px hsl(205deg 30% 10% / 0.2);
+      }
+
+      /* Navigation list items */
+      nav ul li {
+        padding: 0.6em 1em;
+        border-radius: 100vw;
+        position: relative;
+        transition:
+          all 1.8s var(--linear-ease) 0.2s,
+          box-shadow 0.3s ease;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 0 0.5px 1.5px transparent;
+      }
+
+      nav ul li:focus-within:has(:focus-visible) {
+        box-shadow: 0 0 0.5px 1.5px white;
+      }
+
+      nav ul li a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 500;
+        text-transform: lowercase;
+        font-size: var(--text-base);
+      }
+
+      /* Pill background for list items */
+      nav ul li:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 100vw;
+        background: white;
+        opacity: 0;
+        scale: 0;
+        transition: all 2s var(--linear-ease) 0.2s;
+        z-index: -1;
+      }
+
+      /* Active state for list items */
+      nav ul li.active {
+        color: black;
+        text-shadow: none;
+      }
+
+      nav ul li.active:after {
+        opacity: 1;
+        scale: 1;
+      }
+
+      nav ul li.active a {
+        color: black;
+      }
+
+      /* Effect element for animations */
+      .effect {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+        pointer-events: none;
+        display: grid;
+        place-items: center;
+        z-index: 1;
+      }
+
+      /* Text effect styling */
+      .effect.text {
+        color: white;
+        z-index: 1;
+        transition: color 0s ease;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .effect.text.active {
+        color: black;
+        transition: color 1.8s var(--linear-ease) 0.2s;
+      }
+
+      .effect.text.hidden {
+        opacity: 0;
+      }
+
+      /* Filter effect styling */
+      .effect.filter {
+        filter: blur(7px) contrast(20) blur(0);
+        mix-blend-mode: lighten;
+        position: absolute;
+      }
+
+      .effect.filter::before {
+        content: "";
+        position: absolute;
+        inset: -75px;
+        z-index: -2;
+        background: black;
+      }
+
+      .effect.filter::after {
+        content: "";
+        position: absolute;
+        inset: 0px;
+        background: white;
+        scale: 0;
+        opacity: 0;
+        z-index: -1;
+        border-radius: 100vw;
+      }
+
+      /* Active effect animation */
+      .effect.active:after {
+        animation: pill 2s var(--linear-ease) 0.2s both;
+      }
+
+      /* Particle container */
+      .particles {
+        position: absolute;
+        inset: 0;
+        transform: translate3d(0, 0, 0px);
+      }
+
+      /* Particle elements */
+      .particle,
+      .point {
+        display: block;
+        opacity: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        transform-origin: center;
+      }
+
+      .particle {
+        --time: 5s;
+        opacity: 0;
+        position: absolute;
+        top: calc(50% - 8px);
+        left: calc(50% - 8px);
+        animation: particle calc(var(--time)) ease 1 -350ms;
+      }
+
+      .point {
+        background: var(--color);
+        opacity: 1;
+        animation: point calc(var(--time)) ease 1 -350ms;
+      }
+
+      /* Animation keyframes */
+      @keyframes particle {
+        0% {
+          transform: rotate(0deg)
+            translate(calc(var(--start-x) * 1), calc(var(--start-y) * 1));
+          opacity: 1;
+          animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        70% {
+          transform: rotate(calc(var(--rotate) * 0.5))
+            translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
+          opacity: 1;
+          animation-timing-function: ease;
         }
-
-        body {
-            font-family: var(--font-family-sans);
-            line-height: 1.6;
-            color: var(--color-gray-700);
-            background: var(--color-white);
+        85% {
+          transform: rotate(calc(var(--rotate) * 0.66))
+            translate(calc(var(--end-x) * 1), calc(var(--end-y) * 1));
+          opacity: 1;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--space-5);
+        100% {
+          transform: rotate(calc(var(--rotate) * 1.2))
+            translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
+          opacity: 1;
         }
+      }
 
-        /* Advanced Glassmorphism Navigation Header */
-        header {
-            background: linear-gradient(135deg, rgba(130, 224, 170, 0.95) 0%, rgba(42, 82, 152, 0.95) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: var(--space-4) 0;
-            box-shadow: var(--shadow-lg);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+      @keyframes point {
+        0% {
+          scale: 0;
+          opacity: 0;
+          animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
         }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
+        25% {
+          scale: calc(var(--scale) * 0.25);
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            font-size: var(--text-xl);
-            font-weight: bold;
-            z-index: 10;
+        38% {
+          opacity: 1;
         }
-
-        .logo-icon {
-            margin-right: var(--space-2);
-            font-size: var(--text-2xl);
+        65% {
+          scale: var(--scale);
+          opacity: 1;
+          animation-timing-function: ease;
         }
+        85% {
+          scale: var(--scale);
+          opacity: 1;
+        }
+        100% {
+          scale: 0;
+          opacity: 0;
+        }
+      }
 
-        /* Glassmorphism Navigation Styles */
+      @keyframes pill {
+        to {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+
+      @keyframes pillOff {
+        from {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+
+      .cta-button {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.2),
+          rgba(34, 197, 94, 0.3)
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: var(--space-3) var(--space-6);
+        border-radius: var(--radius-full);
+        text-decoration: none;
+        font-weight: bold;
+        transition: all var(--transition-normal);
+        z-index: 10;
+        position: relative;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.3),
+          rgba(34, 197, 94, 0.4)
+        );
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          rgba(130, 224, 170, 0.9) 0%,
+          rgba(42, 82, 152, 0.9) 100%
+        );
+        color: white;
+        padding: var(--space-24) 0;
+        text-align: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+        font-weight: 800;
+        margin-bottom: var(--space-4);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        color: white;
+      }
+
+      .hero p {
+        max-width: 700px;
+        color: white;
+        margin: 0 auto var(--space-8);
+        font-size: var(--text-lg);
+        opacity: 0.95;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: var(--space-4);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        color: white;
+        padding: var(--space-4) var(--space-8);
+        border: none;
+        border-radius: var(--radius-full);
+        text-decoration: none;
+        font-size: var(--text-lg);
+        font-weight: 600;
+        transition: all var(--transition-normal);
+        box-shadow: var(--shadow-lg);
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-2);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: var(--space-4) var(--space-8);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: var(--radius-full);
+        text-decoration: none;
+        font-size: var(--text-lg);
+        font-weight: 600;
+        transition: all var(--transition-normal);
+      }
+
+      .btn-secondary:hover {
+        background: var(--color-white);
+        color: var(--color-primary);
+        transform: translateY(-2px);
+      }
+
+      /* Sections */
+      .features,
+      .process,
+      .testimonials,
+      .location-section {
+        padding: var(--space-24) 0;
+      }
+
+      .features {
+        background: var(--color-white);
+      }
+
+      .process {
+        background: var(--color-gray-50);
+      }
+
+      .benefits {
+        padding: var(--space-24) 0;
+        background: linear-gradient(
+          135deg,
+          var(--color-gray-900) 0%,
+          var(--color-gray-800) 100%
+        );
+        color: var(--color-white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-title {
+        font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+        font-weight: 800;
+        color: var(--color-gray-900);
+        text-align: center;
+        margin-bottom: var(--space-4);
+        line-height: 1.2;
+      }
+
+      .benefits .section-title {
+        color: var(--color-white);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: var(--text-lg);
+        color: var(--color-gray-600);
+        max-width: 700px;
+        margin: 0 auto var(--space-12);
+        line-height: 1.6;
+      }
+
+      .benefits .section-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Grid Layouts */
+      .features-grid,
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: var(--space-8);
+        margin-top: var(--space-12);
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--space-8);
+        margin-top: var(--space-12);
+      }
+
+      .benefits-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-12);
+        align-items: center;
+        margin-top: var(--space-12);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+      }
+
+      .location-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-12);
+        align-items: center;
+        margin-top: var(--space-12);
+      }
+
+      /* Cards */
+      .feature-card,
+      .testimonial-card {
+        background: var(--color-white);
+        padding: var(--space-8);
+        border-radius: var(--radius-2xl);
+        box-shadow: var(--shadow-lg);
+        transition: all var(--transition-normal);
+        text-align: center;
+      }
+
+      .feature-card:hover,
+      .testimonial-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-2xl);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto var(--space-6);
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-secondary) 100%
+        );
+        border-radius: var(--radius-2xl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--text-3xl);
+        color: var(--color-white);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .feature-card h3 {
+        color: var(--color-gray-900);
+        margin-bottom: var(--space-4);
+        font-size: var(--text-xl);
+        font-weight: 700;
+      }
+
+      .feature-card p {
+        color: var(--color-gray-600);
+        line-height: 1.6;
+      }
+
+      .process-step {
+        text-align: center;
+        padding: var(--space-8);
+        background: var(--color-white);
+        border-radius: var(--radius-2xl);
+        box-shadow: var(--shadow-md);
+        transition: all var(--transition-normal);
+      }
+
+      .process-step:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .step-number {
+        width: 80px;
+        height: 80px;
+        border-radius: var(--radius-full);
+        background: linear-gradient(
+          135deg,
+          var(--color-accent) 0%,
+          var(--color-accent-light) 100%
+        );
+        color: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--text-2xl);
+        font-weight: 800;
+        margin: 0 auto var(--space-6);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .process-step h3 {
+        color: var(--color-gray-900);
+        margin-bottom: var(--space-4);
+        font-size: var(--text-xl);
+        font-weight: 700;
+      }
+
+      .process-step p {
+        color: var(--color-gray-600);
+        line-height: 1.6;
+      }
+
+      .benefits-list {
+        list-style: none;
+      }
+
+      .benefits-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: var(--space-4);
+        font-size: var(--text-lg);
+        color: var(--color-white);
+      }
+
+      .benefits-list li::before {
+        content: "✓";
+        background: linear-gradient(
+          135deg,
+          var(--color-secondary) 0%,
+          var(--color-secondary-dark) 100%
+        );
+        color: var(--color-white);
+        width: 32px;
+        height: 32px;
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: var(--space-4);
+        font-weight: 700;
+        font-size: var(--text-sm);
+        flex-shrink: 0;
+        box-shadow: var(--shadow-md);
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: var(--space-8);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius-2xl);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all var(--transition-normal);
+      }
+
+      .stat-item:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-4px);
+      }
+
+      .stat-number {
+        font-size: var(--text-4xl);
+        font-weight: 800;
+        color: var(--color-secondary);
+        display: block;
+        line-height: 1;
+      }
+
+      .stat-label {
+        color: var(--color-white);
+        font-weight: 600;
+        margin-top: var(--space-3);
+        font-size: var(--text-lg);
+      }
+
+      /* Testimonials */
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: var(--space-6);
+        font-size: var(--text-lg);
+        line-height: 1.7;
+        color: var(--color-gray-700);
+        position: relative;
+      }
+
+      .testimonial-text::before {
+        content: '"';
+        font-size: var(--text-5xl);
+        color: var(--color-primary);
+        position: absolute;
+        top: -10px;
+        left: -20px;
+        font-family: Georgia, serif;
+        line-height: 1;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+      }
+
+      .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: var(--radius-full);
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-secondary) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-white);
+        font-weight: 700;
+        font-size: var(--text-lg);
+        box-shadow: var(--shadow-md);
+        flex-shrink: 0;
+      }
+
+      .author-info h4 {
+        color: var(--color-gray-900);
+        font-weight: 700;
+        margin-bottom: var(--space-1);
+      }
+
+      .author-info span {
+        color: var(--color-gray-500);
+        font-size: var(--text-sm);
+      }
+
+      /* Location */
+      .location-info {
+        padding: var(--space-8);
+      }
+
+      .location-info h3 {
+        color: var(--color-gray-900);
+        font-size: var(--text-2xl);
+        font-weight: 700;
+        margin-bottom: var(--space-4);
+      }
+
+      .location-info p {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-6);
+        line-height: 1.6;
+        color: var(--color-gray-600);
+      }
+
+      .contact-details {
+        background: linear-gradient(
+          135deg,
+          var(--color-gray-50) 0%,
+          var(--color-white) 100%
+        );
+        padding: var(--space-6);
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--color-gray-200);
+        box-shadow: var(--shadow-md);
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: var(--space-4);
+        font-size: var(--text-base);
+        color: var(--color-gray-700);
+      }
+
+      .contact-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-secondary) 100%
+        );
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: var(--space-4);
+        color: var(--color-white);
+        font-size: var(--text-sm);
+        box-shadow: var(--shadow-md);
+        flex-shrink: 0;
+      }
+
+      .google-map {
+        border-radius: var(--radius-2xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-xl);
+        height: 500px;
+      }
+
+      .google-map iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-secondary) 100%
+        );
+        color: var(--color-white);
+        padding: var(--space-24) 0;
+        text-align: center;
+      }
+
+      .cta-content h2 {
+        font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+        font-weight: 800;
+        margin-bottom: var(--space-6);
+        line-height: 1.2;
+      }
+
+      .cta-content p {
+        font-size: var(--text-xl);
+        margin-bottom: var(--space-8);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.95;
+        line-height: 1.6;
+      }
+
+      .btn-white {
+        background: var(--color-white);
+        color: var(--color-primary);
+        padding: var(--space-4) var(--space-8);
+        border: none;
+        border-radius: var(--radius-full);
+        text-decoration: none;
+        font-size: var(--text-lg);
+        font-weight: 600;
+        transition: all var(--transition-normal);
+        box-shadow: var(--shadow-lg);
+        display: inline-block;
+      }
+
+      .btn-white:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-xl);
+        background: var(--color-gray-50);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--color-gray-900);
+        color: var(--color-gray-300);
+        padding: var(--space-16) 0 var(--space-8);
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-8);
+        margin-bottom: var(--space-8);
+      }
+
+      .footer-section h3 {
+        margin-bottom: var(--space-4);
+        color: var(--color-white);
+        font-weight: 700;
+        font-size: var(--text-lg);
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: var(--space-2);
+      }
+
+      .footer-section a {
+        color: var(--color-gray-400);
+        text-decoration: none;
+        transition: color var(--transition-fast);
+      }
+
+      .footer-section a:hover {
+        color: var(--color-secondary);
+      }
+
+      .footer-bottom {
+        padding-top: var(--space-8);
+        border-top: 1px solid var(--color-gray-700);
+        text-align: center;
+        color: var(--color-gray-500);
+        font-size: var(--text-sm);
+      }
+
+      /* Cookie Banner */
+      .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(30, 60, 114, 0.95);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: var(--space-5);
+        box-shadow: var(--shadow-2xl);
+        z-index: 10000;
+        border-top: 3px solid var(--color-secondary);
+        display: none;
+      }
+
+      .cookie-banner-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: var(--space-5);
+      }
+
+      .cookie-icon {
+        font-size: var(--text-2xl);
+        flex-shrink: 0;
+      }
+
+      .cookie-text {
+        flex: 1;
+      }
+
+      .cookie-text h3 {
+        margin-bottom: var(--space-2);
+        color: var(--color-secondary);
+        font-size: var(--text-lg);
+      }
+
+      .cookie-text p {
+        margin: 0;
+        font-size: var(--text-sm);
+        line-height: 1.4;
+        opacity: 0.9;
+      }
+
+      .cookie-buttons {
+        display: flex;
+        gap: var(--space-3);
+        flex-shrink: 0;
+      }
+
+      .cookie-btn {
+        padding: var(--space-3) var(--space-5);
+        border: none;
+        border-radius: var(--radius-full);
+        font-weight: bold;
+        cursor: pointer;
+        transition: all var(--transition-normal);
+        font-size: var(--text-sm);
+      }
+
+      .cookie-btn-primary {
+        background: linear-gradient(135deg, #c0c0c0, #22c55e);
+        color: white;
+      }
+
+      .cookie-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .cookie-btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .cookie-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: white;
+      }
+
+      /* Back to top button */
+      #back-to-top {
+        position: fixed;
+        bottom: var(--space-8);
+        right: var(--space-8);
+        display: none;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-secondary) 100%
+        );
+        color: var(--color-white);
+        border: none;
+        border-radius: var(--radius-full);
+        width: 56px;
+        height: 56px;
+        font-size: var(--text-xl);
+        cursor: pointer;
+        box-shadow: var(--shadow-xl);
+        z-index: 1000;
+        transition: all var(--transition-normal);
+      }
+
+      #back-to-top:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-2xl);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .benefits-content,
+        .location-content {
+          grid-template-columns: 1fr;
+          gap: var(--space-8);
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* Mobile Navigation */
         nav {
-            display: flex;
-            position: relative;
-            transform: translate3d(0, 0, 0.01px);
-            opacity: 0.999;
-            background: hsl(205deg 0% 0% / 0.1);
-            backdrop-filter: blur(9px) brightness(1.1);
-            border-radius: 100vw;
-            padding: 0.4em;
-            box-shadow: 
-                0 4px 20px hsl(205deg 50% 30% / 0.15),
-                0 4px 10px hsl(205deg 30% 10% / 0.075),
-                inset 0 -4px 15px 6px hsl(205deg 70% 90% / 0.2),
-                inset 0 -2px 5px hsl(205deg 70% 90% / 0.15),
-                inset 0 -1px 1px hsl(205deg 70% 90% / 0.4),
-                inset 0 10px 15px hsl(205deg 30% 10% / 0.2),
-                inset 0 1px 2px hsl(205deg 70% 90% / 0.3);
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: var(--radius-xl);
+          padding: var(--space-2);
+          box-shadow: var(--shadow-md);
         }
 
-        /* First noise texture layer */
-        nav:before {
-            content: "";
-            inset: 0;
-            position: absolute;
-            mask-image: url(https://assets.codepen.io/13471/nnnoise%281%29.png);
-            mask-mode: luminance;
-            mask-repeat: repeat;
-            mask-size: 55%;
-            border-radius: 100vw;
-            z-index: 1;
-            backdrop-filter: blur(7px) brightness(1.05);
-            background: hsl(205deg 0% 100% / 0.1);
-        }
-
-        /* Second noise texture layer */
+        nav:before,
         nav:after {
-            content: "";
-            inset: 0;
-            position: absolute;
-            mask-image: url(https://assets.codepen.io/13471/nnnoise%281%29.png);
-            mask-mode: green;
-            mask-size: 50%;
-            mask-repeat: repeat;
-            border-radius: 100vw;
-            z-index: 2;
-            backdrop-filter: blur(5px) brightness(0.95);
-            box-shadow: 
-                inset 0 -4px 15px 5px hsl(205deg 70% 90% / 0.3),
-                inset 0 -2px 5px hsl(205deg 70% 90% / 0.15),
-                inset 0 -1px 1px hsl(205deg 70% 90% / 0.4),
-                inset 0 1px 2px hsl(205deg 70% 90% / 0.3);
-            background: hsl(205deg 0% 20% / 0.05);
+          display: none;
         }
 
-        /* Navigation list styling */
         nav ul {
-            display: flex;
-            gap: 2em;
-            list-style: none;
-            padding: 0 1em;
-            margin: 0;
-            position: relative;
-            z-index: 3;
-            color: white;
-            text-shadow: 0 1px 1px hsl(205deg 30% 10% / 0.2);
+          flex-direction: column;
+          gap: var(--space-2);
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: var(--radius-xl);
+          padding: var(--space-4);
+          position: absolute;
+          top: 100%;
+          right: 0;
+          min-width: 200px;
+          display: none;
+          text-shadow: none;
         }
 
-        /* Navigation list items */
+        nav ul.active {
+          display: flex;
+        }
+
         nav ul li {
-            padding: 0.6em 1em;
-            border-radius: 100vw;
-            position: relative;
-            transition: all 1.8s var(--linear-ease) 0.2s, box-shadow 0.3s ease;
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 0 0.5px 1.5px transparent;
+          padding: var(--space-3) var(--space-4);
+          text-align: center;
+          transition: none;
         }
 
-        nav ul li:focus-within:has(:focus-visible) {
-            box-shadow: 0 0 0.5px 1.5px white;
+        nav ul li:after {
+          display: none;
         }
 
         nav ul li a {
-            color: inherit;
-            text-decoration: none;
-            font-weight: 500;
-            text-transform: lowercase;
-            font-size: var(--text-base);
+          color: white;
         }
 
-        /* Pill background for list items */
-        nav ul li:after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 100vw;
-            background: white;
-            opacity: 0;
-            scale: 0;
-            transition: all 2s var(--linear-ease) 0.2s;
-            z-index: -1;
+        .nav-container {
+          position: relative;
         }
 
-        /* Active state for list items */
-        nav ul li.active {
-            color: black;
-            text-shadow: none;
+        .mobile-menu-toggle {
+          display: block;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          padding: var(--space-2);
+          border-radius: var(--radius-lg);
+          cursor: pointer;
+          font-size: var(--text-lg);
+          transition: all var(--transition-normal);
         }
 
-        nav ul li.active:after {
-            opacity: 1;
-            scale: 1;
+        .mobile-menu-toggle:hover {
+          background: rgba(255, 255, 255, 0.2);
         }
 
-        nav ul li.active a {
-            color: black;
-        }
-
-        /* Effect element for animations */
-        .effect {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 0px;
-            height: 0px;
-            opacity: 1;
-            pointer-events: none;
-            display: grid;
-            place-items: center;
-            z-index: 1;
-        }
-
-        /* Text effect styling */
-        .effect.text {
-            color: white;
-            z-index: 1;
-            transition: color 0s ease;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .effect.text.active {
-            color: black;
-            transition: color 1.8s var(--linear-ease) 0.2s;
-        }
-
-        .effect.text.hidden {
-            opacity: 0;
-        }
-
-        /* Filter effect styling */
-        .effect.filter {
-            filter: blur(7px) contrast(20) blur(0);
-            mix-blend-mode: lighten;
-            position: absolute;
-        }
-
-        .effect.filter::before {
-            content: "";
-            position: absolute;
-            inset: -75px;
-            z-index: -2;
-            background: black;
-        }
-
-        .effect.filter::after {
-            content: "";
-            position: absolute;
-            inset: 0px;
-            background: white;
-            scale: 0;
-            opacity: 0;
-            z-index: -1;
-            border-radius: 100vw;
-        }
-
-        /* Active effect animation */
-        .effect.active:after {
-            animation: pill 2s var(--linear-ease) 0.2s both;
-        }
-
-        /* Particle container */
-        .particles {
-            position: absolute;
-            inset: 0;
-            transform: translate3d(0, 0, 0px);
-        }
-
-        /* Particle elements */
-        .particle, .point {
-            display: block;
-            opacity: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 100%;
-            transform-origin: center;
-        }
-
-        .particle {
-            --time: 5s;
-            opacity: 0;
-            position: absolute;
-            top: calc(50% - 8px);
-            left: calc(50% - 8px);
-            animation: particle calc(var(--time)) ease 1 -350ms;
-        }
-
+        /* Hide glassmorphism effects on mobile */
+        .effect.filter,
+        .effect.text,
+        .particles,
+        .particle,
         .point {
-            background: var(--color);
-            opacity: 1;
-            animation: point calc(var(--time)) ease 1 -350ms;
-        }
-
-        /* Animation keyframes */
-        @keyframes particle {
-            0% {
-                transform: rotate(0deg) translate(calc(var(--start-x) * 1), calc(var(--start-y) * 1));
-                opacity: 1;
-                animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
-            }
-            70% {
-                transform: rotate(calc(var(--rotate) * 0.5)) translate(calc(var(--end-x) * 1.2), calc(var(--end-y) * 1.2));
-                opacity: 1;
-                animation-timing-function: ease;
-            }
-            85% {
-                transform: rotate(calc(var(--rotate) * 0.66)) translate(calc(var(--end-x) * 1), calc(var(--end-y) * 1));
-                opacity: 1;
-            }
-            100% {
-                transform: rotate(calc(var(--rotate) * 1.2)) translate(calc(var(--end-x) * 0.5), calc(var(--end-y) * 0.5));
-                opacity: 1;
-            }
-        }
-
-        @keyframes point {
-            0% {
-                scale: 0;
-                opacity: 0;
-                animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
-            }
-            25% {
-                scale: calc(var(--scale) * 0.25);
-            }
-            38% {
-                opacity: 1;
-            }
-            65% {
-                scale: var(--scale);
-                opacity: 1;
-                animation-timing-function: ease;
-            }
-            85% {
-                scale: var(--scale);
-                opacity: 1;
-            }
-            100% {
-                scale: 0;
-                opacity: 0;
-            }
-        }
-
-        @keyframes pill {
-            to {
-                scale: 1;
-                opacity: 1;
-            }
-        }
-
-        @keyframes pillOff {
-            from {
-                scale: 1;
-                opacity: 1;
-            }
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(34, 197, 94, 0.3));
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: var(--space-3) var(--space-6);
-            border-radius: var(--radius-full);
-            text-decoration: none;
-            font-weight: bold;
-            transition: all var(--transition-normal);
-            z-index: 10;
-            position: relative;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(34, 197, 94, 0.4));
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(
-                135deg,
-                rgba(130, 224, 170, 0.9) 0%,
-                rgba(42, 82, 152, 0.9) 100%
-            );
-            color: white;
-            padding: var(--space-24) 0;
-            text-align: center;
-            background-size: cover;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
-            font-weight: 800;
-            margin-bottom: var(--space-4);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-
-        .hero p {
-            max-width: 700px;
-            color: white;
-            margin: 0 auto var(--space-8);
-            font-size: var(--text-lg);
-            opacity: 0.95;
+          display: none !important;
         }
 
         .hero-buttons {
-            display: flex;
-            gap: var(--space-4);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            color: white;
-            padding: var(--space-4) var(--space-8);
-            border: none;
-            border-radius: var(--radius-full);
-            text-decoration: none;
-            font-size: var(--text-lg);
-            font-weight: 600;
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-lg);
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: var(--space-4) var(--space-8);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: var(--radius-full);
-            text-decoration: none;
-            font-size: var(--text-lg);
-            font-weight: 600;
-            transition: all var(--transition-normal);
-        }
-
-        .btn-secondary:hover {
-            background: var(--color-white);
-            color: var(--color-primary);
-            transform: translateY(-2px);
-        }
-
-        /* Sections */
-        .features,
-        .process,
-        .testimonials,
-        .location-section {
-            padding: var(--space-24) 0;
-        }
-
-        .features {
-            background: var(--color-white);
-        }
-
-        .process {
-            background: var(--color-gray-50);
-        }
-
-        .benefits {
-            padding: var(--space-24) 0;
-            background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-gray-800) 100%);
-            color: var(--color-white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .section-title {
-            font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
-            font-weight: 800;
-            color: var(--color-gray-900);
-            text-align: center;
-            margin-bottom: var(--space-4);
-            line-height: 1.2;
-        }
-
-        .benefits .section-title {
-            color: var(--color-white);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: var(--text-lg);
-            color: var(--color-gray-600);
-            max-width: 700px;
-            margin: 0 auto var(--space-12);
-            line-height: 1.6;
-        }
-
-        .benefits .section-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Grid Layouts */
-        .features-grid,
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-8);
-            margin-top: var(--space-12);
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-8);
-            margin-top: var(--space-12);
-        }
-
-        .benefits-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-12);
-            align-items: center;
-            margin-top: var(--space-12);
+          flex-direction: column;
+          align-items: center;
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-6);
+          grid-template-columns: 1fr;
         }
 
-        .location-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-12);
-            align-items: center;
-            margin-top: var(--space-12);
-        }
-
-        /* Cards */
-        .feature-card,
-        .testimonial-card {
-            background: var(--color-white);
-            padding: var(--space-8);
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-lg);
-            transition: all var(--transition-normal);
-            text-align: center;
-        }
-
-        .feature-card:hover,
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto var(--space-6);
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            border-radius: var(--radius-2xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--text-3xl);
-            color: var(--color-white);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .feature-card h3 {
-            color: var(--color-gray-900);
-            margin-bottom: var(--space-4);
-            font-size: var(--text-xl);
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: var(--color-gray-600);
-            line-height: 1.6;
-        }
-
-        .process-step {
-            text-align: center;
-            padding: var(--space-8);
-            background: var(--color-white);
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-normal);
-        }
-
-        .process-step:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--radius-full);
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
-            color: var(--color-white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--text-2xl);
-            font-weight: 800;
-            margin: 0 auto var(--space-6);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .process-step h3 {
-            color: var(--color-gray-900);
-            margin-bottom: var(--space-4);
-            font-size: var(--text-xl);
-            font-weight: 700;
-        }
-
-        .process-step p {
-            color: var(--color-gray-600);
-            line-height: 1.6;
-        }
-
-        .benefits-list {
-            list-style: none;
-        }
-
-        .benefits-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--space-4);
-            font-size: var(--text-lg);
-            color: var(--color-white);
-        }
-
-        .benefits-list li::before {
-            content: "✓";
-            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
-            color: var(--color-white);
-            width: 32px;
-            height: 32px;
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: var(--space-4);
-            font-weight: 700;
-            font-size: var(--text-sm);
-            flex-shrink: 0;
-            box-shadow: var(--shadow-md);
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: var(--space-8);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--radius-2xl);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all var(--transition-normal);
-        }
-
-        .stat-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
-        }
-
-        .stat-number {
-            font-size: var(--text-4xl);
-            font-weight: 800;
-            color: var(--color-secondary);
-            display: block;
-            line-height: 1;
-        }
-
-        .stat-label {
-            color: var(--color-white);
-            font-weight: 600;
-            margin-top: var(--space-3);
-            font-size: var(--text-lg);
-        }
-
-        /* Testimonials */
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: var(--space-6);
-            font-size: var(--text-lg);
-            line-height: 1.7;
-            color: var(--color-gray-700);
-            position: relative;
-        }
-
-        .testimonial-text::before {
-            content: '"';
-            font-size: var(--text-5xl);
-            color: var(--color-primary);
-            position: absolute;
-            top: -10px;
-            left: -20px;
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: var(--space-4);
-        }
-
-        .author-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-full);
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-white);
-            font-weight: 700;
-            font-size: var(--text-lg);
-            box-shadow: var(--shadow-md);
-            flex-shrink: 0;
-        }
-
-        .author-info h4 {
-            color: var(--color-gray-900);
-            font-weight: 700;
-            margin-bottom: var(--space-1);
-        }
-
-        .author-info span {
-            color: var(--color-gray-500);
-            font-size: var(--text-sm);
-        }
-
-        /* Location */
-        .location-info {
-            padding: var(--space-8);
-        }
-
-        .location-info h3 {
-            color: var(--color-gray-900);
-            font-size: var(--text-2xl);
-            font-weight: 700;
-            margin-bottom: var(--space-4);
-        }
-
-        .location-info p {
-            font-size: var(--text-lg);
-            margin-bottom: var(--space-6);
-            line-height: 1.6;
-            color: var(--color-gray-600);
-        }
-
-        .contact-details {
-            background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
-            padding: var(--space-6);
-            border-radius: var(--radius-xl);
-            border: 1px solid var(--color-gray-200);
-            box-shadow: var(--shadow-md);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--space-4);
-            font-size: var(--text-base);
-            color: var(--color-gray-700);
-        }
-
-        .contact-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: var(--space-4);
-            color: var(--color-white);
-            font-size: var(--text-sm);
-            box-shadow: var(--shadow-md);
-            flex-shrink: 0;
+        .features-grid,
+        .process-grid,
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+          gap: var(--space-6);
         }
 
         .google-map {
-            border-radius: var(--radius-2xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-            height: 500px;
-        }
-
-        .google-map iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            color: var(--color-white);
-            padding: var(--space-24) 0;
-            text-align: center;
-        }
-
-        .cta-content h2 {
-            font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
-            font-weight: 800;
-            margin-bottom: var(--space-6);
-            line-height: 1.2;
-        }
-
-        .cta-content p {
-            font-size: var(--text-xl);
-            margin-bottom: var(--space-8);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.95;
-            line-height: 1.6;
-        }
-
-        .btn-white {
-            background: var(--color-white);
-            color: var(--color-primary);
-            padding: var(--space-4) var(--space-8);
-            border: none;
-            border-radius: var(--radius-full);
-            text-decoration: none;
-            font-size: var(--text-lg);
-            font-weight: 600;
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-lg);
-            display: inline-block;
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-            background: var(--color-gray-50);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-gray-900);
-            color: var(--color-gray-300);
-            padding: var(--space-16) 0 var(--space-8);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-8);
-            margin-bottom: var(--space-8);
-        }
-
-        .footer-section h3 {
-            margin-bottom: var(--space-4);
-            color: var(--color-white);
-            font-weight: 700;
-            font-size: var(--text-lg);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: var(--space-2);
-        }
-
-        .footer-section a {
-            color: var(--color-gray-400);
-            text-decoration: none;
-            transition: color var(--transition-fast);
-        }
-
-        .footer-section a:hover {
-            color: var(--color-secondary);
-        }
-
-        .footer-bottom {
-            padding-top: var(--space-8);
-            border-top: 1px solid var(--color-gray-700);
-            text-align: center;
-            color: var(--color-gray-500);
-            font-size: var(--text-sm);
-        }
-
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(30, 60, 114, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: var(--space-5);
-            box-shadow: var(--shadow-2xl);
-            z-index: 10000;
-            border-top: 3px solid var(--color-secondary);
-            display: none;
+          height: 350px;
         }
 
         .cookie-banner-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: var(--space-5);
-        }
-
-        .cookie-icon {
-            font-size: var(--text-2xl);
-            flex-shrink: 0;
-        }
-
-        .cookie-text {
-            flex: 1;
-        }
-
-        .cookie-text h3 {
-            margin-bottom: var(--space-2);
-            color: var(--color-secondary);
-            font-size: var(--text-lg);
-        }
-
-        .cookie-text p {
-            margin: 0;
-            font-size: var(--text-sm);
-            line-height: 1.4;
-            opacity: 0.9;
+          flex-direction: column;
+          text-align: center;
+          gap: var(--space-4);
         }
 
         .cookie-buttons {
-            display: flex;
-            gap: var(--space-3);
-            flex-shrink: 0;
+          flex-direction: column;
+          width: 100%;
         }
 
         .cookie-btn {
-            padding: var(--space-3) var(--space-5);
-            border: none;
-            border-radius: var(--radius-full);
-            font-weight: bold;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            font-size: var(--text-sm);
+          width: 100%;
         }
 
-        .cookie-btn-primary {
-            background: linear-gradient(135deg, #c0c0c0, #22c55e);
-            color: white;
-        }
-
-        .cookie-btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .cookie-btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-        }
-
-        .cookie-btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: white;
-        }
-
-        /* Back to top button */
         #back-to-top {
-            position: fixed;
-            bottom: var(--space-8);
-            right: var(--space-8);
-            display: none;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            color: var(--color-white);
-            border: none;
-            border-radius: var(--radius-full);
-            width: 56px;
-            height: 56px;
-            font-size: var(--text-xl);
-            cursor: pointer;
-            box-shadow: var(--shadow-xl);
-            z-index: 1000;
-            transition: all var(--transition-normal);
+          bottom: var(--space-4);
+          right: var(--space-4);
+          width: 48px;
+          height: 48px;
+        }
+      }
+
+      @media (min-width: 769px) {
+        .mobile-menu-toggle {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 var(--space-4);
         }
 
-        #back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-2xl);
+        .hero {
+          padding: var(--space-12) 0;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .benefits-content,
-            .location-content {
-                grid-template-columns: 1fr;
-                gap: var(--space-8);
-            }
+        .logo {
+          font-size: var(--text-lg);
         }
 
-        @media (max-width: 768px) {
-            /* Mobile Navigation */
-            nav {
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                border-radius: var(--radius-xl);
-                padding: var(--space-2);
-                box-shadow: var(--shadow-md);
-            }
-
-            nav:before,
-            nav:after {
-                display: none;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: var(--space-2);
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                border-radius: var(--radius-xl);
-                padding: var(--space-4);
-                position: absolute;
-                top: 100%;
-                right: 0;
-                min-width: 200px;
-                display: none;
-                text-shadow: none;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            nav ul li {
-                padding: var(--space-3) var(--space-4);
-                text-align: center;
-                transition: none;
-            }
-
-            nav ul li:after {
-                display: none;
-            }
-
-            nav ul li a {
-                color: white;
-            }
-
-            .nav-container {
-                position: relative;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                color: white;
-                padding: var(--space-2);
-                border-radius: var(--radius-lg);
-                cursor: pointer;
-                font-size: var(--text-lg);
-                transition: all var(--transition-normal);
-            }
-
-            .mobile-menu-toggle:hover {
-                background: rgba(255, 255, 255, 0.2);
-            }
-
-            /* Hide glassmorphism effects on mobile */
-            .effect.filter,
-            .effect.text,
-            .particles,
-            .particle,
-            .point {
-                display: none !important;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features-grid,
-            .process-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-6);
-            }
-
-            .google-map {
-                height: 350px;
-            }
-
-            .cookie-banner-content {
-                flex-direction: column;
-                text-align: center;
-                gap: var(--space-4);
-            }
-
-            .cookie-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .cookie-btn {
-                width: 100%;
-            }
-
-            #back-to-top {
-                bottom: var(--space-4);
-                right: var(--space-4);
-                width: 48px;
-                height: 48px;
-            }
+        .nav-container {
+          flex-wrap: wrap;
+          gap: var(--space-2);
         }
-
-        @media (min-width: 769px) {
-            .mobile-menu-toggle {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 var(--space-4);
-            }
-
-            .hero {
-                padding: var(--space-12) 0;
-            }
-
-            .logo {
-                font-size: var(--text-lg);
-            }
-
-            .nav-container {
-                flex-wrap: wrap;
-                gap: var(--space-2);
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Header with Frosted Glass Gooey Gravity Navigation -->
     <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">🏠</div>
-                Cash for Your Home LLC
-            </a>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="#home">home</a></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#services">services</a></li>
-                    <li><a href="#testimonials">reviews</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle mobile menu">☰</button>
-            <a href="#contact" class="cta-button">Get Cash Offer</a>
-        </div>
-        
-        <!-- Glassmorphism Effect Elements -->
-        <span class="effect filter">
-            <div class="particles"></div>
-        </span>
-        <span class="effect text">home</span>
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">🏠</div>
+          Cash for Your Home LLC
+        </a>
+        <nav>
+          <ul id="nav-menu">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="#testimonials">reviews</a></li>
+            <li><a href="#contact">contact</a></li>
+          </ul>
+        </nav>
+        <button
+          class="mobile-menu-toggle"
+          id="mobile-toggle"
+          aria-label="Toggle mobile menu"
+        >
+          ☰
+        </button>
+        <a href="#contact" class="cta-button">Get Cash Offer</a>
+      </div>
+
+      <!-- Glassmorphism Effect Elements -->
+      <span class="effect filter">
+        <div class="particles"></div>
+      </span>
+      <span class="effect text">home</span>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h1>Get Cash for Your Home in 24-48 Hours</h1>
-            <p>
-                Skip the hassle of traditional home selling. We buy houses in any
-                condition, nationwide. No fees, no commissions, no repairs needed.
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Get My Cash Offer</a>
-                <a href="#about" class="btn-secondary">Learn More</a>
-            </div>
+      <div class="container">
+        <h1>Get Cash for Your Home in 24-48 Hours</h1>
+        <p>
+          Skip the hassle of traditional home selling. We buy houses in any
+          condition, nationwide. No fees, no commissions, no repairs needed.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">Get My Cash Offer</a>
+          <a href="#about" class="btn-secondary">Learn More</a>
         </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section id="services" class="features">
-        <div class="container">
-            <h2 class="section-title">Why Choose Cash for Your Home LLC?</h2>
-            <p class="section-subtitle">
-                We make selling your home fast, easy, and profitable with our proven process.
-            </p>
+      <div class="container">
+        <h2 class="section-title">Why Choose Cash for Your Home LLC?</h2>
+        <p class="section-subtitle">
+          We make selling your home fast, easy, and profitable with our proven
+          process.
+        </p>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Fast Offers</h3>
-                    <p>
-                        Get a competitive cash offer within 24-48 hours. No waiting for
-                        financing approvals or lengthy negotiations.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>No Fees</h3>
-                    <p>
-                        Zero real estate commissions, closing fees, or hidden costs. The
-                        offer you receive is what you get at closing.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📅</div>
-                    <h3>Your Timeline</h3>
-                    <p>
-                        Close on your schedule. Whether you need to sell in 7 days or 7
-                        weeks, we work with your timeline.
-                    </p>
-                </div>
-            </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Offers</h3>
+            <p>
+              Get a competitive cash offer within 24-48 hours. No waiting for
+              financing approvals or lengthy negotiations.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>No Fees</h3>
+            <p>
+              Zero real estate commissions, closing fees, or hidden costs. The
+              offer you receive is what you get at closing.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Your Timeline</h3>
+            <p>
+              Close on your schedule. Whether you need to sell in 7 days or 7
+              weeks, we work with your timeline.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Process Section -->
     <section class="process">
-        <div class="container">
-            <h2 class="section-title">Our Simple 4-Step Process</h2>
-            <p class="section-subtitle">
-                From first contact to closing, we make selling your home as easy as 1-2-3-4.
-            </p>
+      <div class="container">
+        <h2 class="section-title">Our Simple 4-Step Process</h2>
+        <p class="section-subtitle">
+          From first contact to closing, we make selling your home as easy as
+          1-2-3-4.
+        </p>
 
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Contact Us</h3>
-                    <p>
-                        Call, text, or fill out our online form. Tell us about your
-                        property and your situation.
-                    </p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Property Evaluation</h3>
-                    <p>
-                        We analyze your property using current market data and recent
-                        comparable sales in your area.
-                    </p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Receive Offer</h3>
-                    <p>
-                        Get your no-obligation cash offer within 24-48 hours. Take time to
-                        review - no pressure.
-                    </p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Close Fast</h3>
-                    <p>
-                        Accept our offer and choose your closing date. We handle all the
-                        paperwork and details.
-                    </p>
-                </div>
-            </div>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>Contact Us</h3>
+            <p>
+              Call, text, or fill out our online form. Tell us about your
+              property and your situation.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>Property Evaluation</h3>
+            <p>
+              We analyze your property using current market data and recent
+              comparable sales in your area.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>Receive Offer</h3>
+            <p>
+              Get your no-obligation cash offer within 24-48 hours. Take time to
+              review - no pressure.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>Close Fast</h3>
+            <p>
+              Accept our offer and choose your closing date. We handle all the
+              paperwork and details.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Benefits Section -->
     <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">The Benefits Are Clear</h2>
-            <div class="benefits-content">
-                <div>
-                    <ul class="benefits-list">
-                        <li>No realtor commissions (save 6%)</li>
-                        <li>No closing costs or fees</li>
-                        <li>No repairs or renovations needed</li>
-                        <li>No showings or open houses</li>
-                        <li>No financing contingencies</li>
-                        <li>No months of uncertainty</li>
-                        <li>Cash in hand, guaranteed</li>
-                        <li>Professional, respectful service</li>
-                    </ul>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <div class="stat-label">Happy Homeowners</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">$50M+</span>
-                        <div class="stat-label">Paid Out</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">48hrs</span>
-                        <div class="stat-label">Average Offer Time</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">The Benefits Are Clear</h2>
+        <div class="benefits-content">
+          <div>
+            <ul class="benefits-list">
+              <li>No realtor commissions (save 6%)</li>
+              <li>No closing costs or fees</li>
+              <li>No repairs or renovations needed</li>
+              <li>No showings or open houses</li>
+              <li>No financing contingencies</li>
+              <li>No months of uncertainty</li>
+              <li>Cash in hand, guaranteed</li>
+              <li>Professional, respectful service</li>
+            </ul>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <div class="stat-label">Happy Homeowners</div>
             </div>
+            <div class="stat-item">
+              <span class="stat-number">$50M+</span>
+              <div class="stat-label">Paid Out</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">48hrs</span>
+              <div class="stat-label">Average Offer Time</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">98%</span>
+              <div class="stat-label">Satisfaction Rate</div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <p class="section-subtitle">
-                Don't just take our word for it - hear from homeowners who chose Cash
-                for Your Home LLC.
-            </p>
+      <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">
+          Don't just take our word for it - hear from homeowners who chose Cash
+          for Your Home LLC.
+        </p>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "I needed to sell my house quickly due to a job relocation. Cash
-                        for Your Home LLC made me a fair offer and closed in just 10 days.
-                        The process was smooth and professional from start to finish."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MJ</div>
-                        <div class="author-info">
-                            <h4>Maria Johnson</h4>
-                            <span>Phoenix, AZ</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "After my divorce, I needed to sell the house fast. They bought it
-                        as-is, even with all the needed repairs. No stress, no hassle,
-                        just a fair cash offer and quick closing."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RS</div>
-                        <div class="author-info">
-                            <h4>Robert Smith</h4>
-                            <span>Denver, CO</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "We inherited a property that needed significant work. Instead of
-                        dealing with contractors and realtors, we sold to Cash for Your
-                        Home LLC. They handled everything and paid us fairly."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">LW</div>
-                        <div class="author-info">
-                            <h4>Linda Wilson</h4>
-                            <span>Tampa, FL</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "I needed to sell my house quickly due to a job relocation. Cash
+              for Your Home LLC made me a fair offer and closed in just 10 days.
+              The process was smooth and professional from start to finish."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MJ</div>
+              <div class="author-info">
+                <h4>Maria Johnson</h4>
+                <span>Phoenix, AZ</span>
+              </div>
             </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "After my divorce, I needed to sell the house fast. They bought it
+              as-is, even with all the needed repairs. No stress, no hassle,
+              just a fair cash offer and quick closing."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">RS</div>
+              <div class="author-info">
+                <h4>Robert Smith</h4>
+                <span>Denver, CO</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">
+              "We inherited a property that needed significant work. Instead of
+              dealing with contractors and realtors, we sold to Cash for Your
+              Home LLC. They handled everything and paid us fairly."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">LW</div>
+              <div class="author-info">
+                <h4>Linda Wilson</h4>
+                <span>Tampa, FL</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Location Section -->
     <section id="about" class="location-section">
-        <div class="container">
-            <h2 class="section-title">Our Location</h2>
-            <p class="section-subtitle">
-                Based in Scottsdale, Arizona, serving homeowners nationwide with fast,
-                reliable cash offers for your property.
+      <div class="container">
+        <h2 class="section-title">Our Location</h2>
+        <p class="section-subtitle">
+          Based in Scottsdale, Arizona, serving homeowners nationwide with fast,
+          reliable cash offers for your property.
+        </p>
+
+        <div class="location-content">
+          <div class="location-info">
+            <h3>Headquartered in Scottsdale, AZ</h3>
+            <p>
+              While we're based in the heart of Arizona, our network spans
+              across all 50 states. We understand local markets and provide
+              personalized service no matter where your property is located.
             </p>
 
-            <div class="location-content">
-                <div class="location-info">
-                    <h3>Headquartered in Scottsdale, AZ</h3>
-                    <p>
-                        While we're based in the heart of Arizona, our network spans
-                        across all 50 states. We understand local markets and provide
-                        personalized service no matter where your property is located.
-                    </p>
-
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">📍</div>
-                            <span>Scottsdale, Arizona</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <span>(480) XXX-XXXX</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <span>info@cashforyourhomellc.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
-                            <span>Available 24/7 for Consultations</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="google-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d212925.03191319207!2d-111.9286222!3d33.5025837!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1752490228383!5m2!1sen!2sus"
-                        width="600"
-                        height="450"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Cash for Your Home LLC Location - Scottsdale, Arizona">
-                    </iframe>
-                </div>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <span>Scottsdale, Arizona</span>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <span>(480) XXX-XXXX</span>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <span>info@cashforyourhomellc.com</span>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">⏰</div>
+                <span>Available 24/7 for Consultations</span>
+              </div>
             </div>
+          </div>
+
+          <div class="google-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d212925.03191319207!2d-111.9286222!3d33.5025837!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1752490228383!5m2!1sen!2sus"
+              width="600"
+              height="450"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Cash for Your Home LLC Location - Scottsdale, Arizona"
+            >
+            </iframe>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Get Your Cash Offer?</h2>
-                <p>
-                    Join hundreds of satisfied homeowners who chose the fast, easy way
-                    to sell their property. Get your no-obligation cash offer today.
-                </p>
-                <a href="#contact" class="btn-white">Get My Free Cash Offer Now</a>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Get Your Cash Offer?</h2>
+          <p>
+            Join hundreds of satisfied homeowners who chose the fast, easy way
+            to sell their property. Get your no-obligation cash offer today.
+          </p>
+          <a href="#contact" class="btn-white">Get My Free Cash Offer Now</a>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Cash for Your Home LLC</h3>
-                    <p>📍 Scottsdale, Arizona</p>
-                    <p>📞 (480) XXX-XXXX</p>
-                    <p>✉️ info@cashforyourhomellc.com</p>
-                    <p>🌐 www.cashforyourhomellc.com</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#testimonials">Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li>Cash Home Purchases</li>
-                        <li>Investment Opportunities</li>
-                        <li>Wholesale Real Estate</li>
-                        <li>Property Consultation</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Service Areas</h3>
-                    <ul>
-                        <li>All 50 States</li>
-                        <li>Arizona (Headquarters)</li>
-                        <li>California</li>
-                        <li>Texas</li>
-                        <li>Florida</li>
-                        <li>And Many More...</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>
-                    &copy; 2024 Cash for Your Home LLC. All rights reserved. Licensed
-                    Real Estate Wholesale Company.
-                </p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Cash for Your Home LLC</h3>
+            <p>📍 Scottsdale, Arizona</p>
+            <p>📞 (480) XXX-XXXX</p>
+            <p>✉️ info@cashforyourhomellc.com</p>
+            <p>🌐 www.cashforyourhomellc.com</p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#testimonials">Reviews</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Our Services</h3>
+            <ul>
+              <li>Cash Home Purchases</li>
+              <li>Investment Opportunities</li>
+              <li>Wholesale Real Estate</li>
+              <li>Property Consultation</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Service Areas</h3>
+            <ul>
+              <li>All 50 States</li>
+              <li>Arizona (Headquarters)</li>
+              <li>California</li>
+              <li>Texas</li>
+              <li>Florida</li>
+              <li>And Many More...</li>
+            </ul>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Cash for Your Home LLC. All rights reserved. Licensed
+            Real Estate Wholesale Company.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-banner-content">
-            <div class="cookie-icon">🍪</div>
-            <div class="cookie-text">
-                <h3>We Use Cookies</h3>
-                <p>
-                    We use essential cookies to make our site work and analytics cookies
-                    to understand how visitors use our site. By clicking "Accept All",
-                    you consent to our use of cookies for analytics and marketing.
-                </p>
-            </div>
-            <div class="cookie-buttons">
-                <button id="cookie-accept-all" class="cookie-btn cookie-btn-primary">
-                    Accept All
-                </button>
-                <button id="cookie-accept-essential" class="cookie-btn cookie-btn-secondary">
-                    Essential Only
-                </button>
-            </div>
+      <div class="cookie-banner-content">
+        <div class="cookie-icon">🍪</div>
+        <div class="cookie-text">
+          <h3>We Use Cookies</h3>
+          <p>
+            We use essential cookies to make our site work and analytics cookies
+            to understand how visitors use our site. By clicking "Accept All",
+            you consent to our use of cookies for analytics and marketing.
+          </p>
         </div>
+        <div class="cookie-buttons">
+          <button id="cookie-accept-all" class="cookie-btn cookie-btn-primary">
+            Accept All
+          </button>
+          <button
+            id="cookie-accept-essential"
+            class="cookie-btn cookie-btn-secondary"
+          >
+            Essential Only
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Back to Top Button -->
     <button id="back-to-top" aria-label="Back to top">↑</button>
 
     <script>
-        // Enhanced Glassmorphism Navigation with Gooey Gravity Effects
-        function initAdvancedFrostedNavigation() {
-            const nav = document.querySelector("nav");
-            const filter = document.querySelector(".effect.filter");
-            const text = document.querySelector(".effect.text");
-            const particlesContainer = document.querySelector(".particles");
-            
-            if (!nav || !filter || !text) return;
-            
-            let currentItem = null;
-            let animationId = null;
-            
-            // Create particle system
-            function createParticles(x, y) {
-                if (!particlesContainer) return;
-                
-                particlesContainer.innerHTML = '';
-                
-                const colors = ['#22c55e', '#16a34a', '#10b981', '#059669'];
-                
-                for (let i = 0; i < 12; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    
-                    const point = document.createElement('div');
-                    point.className = 'point';
-                    
-                    const color = colors[Math.floor(Math.random() * colors.length)];
-                    const scale = Math.random() * 0.8 + 0.4;
-                    const startDistance = Math.random() * 20 + 10;
-                    const endDistance = Math.random() * 60 + 40;
-                    const angle = (Math.PI * 2 * i) / 12 + Math.random() * 0.5;
-                    
-                    const startX = Math.cos(angle) * startDistance;
-                    const startY = Math.sin(angle) * startDistance;
-                    const endX = Math.cos(angle) * endDistance;
-                    const endY = Math.sin(angle) * endDistance;
-                    const rotate = Math.random() * 360;
-                    
-                    particle.style.setProperty('--color', color);
-                    particle.style.setProperty('--scale', scale);
-                    particle.style.setProperty('--start-x', `${startX}px`);
-                    particle.style.setProperty('--start-y', `${startY}px`);
-                    particle.style.setProperty('--end-x', `${endX}px`);
-                    particle.style.setProperty('--end-y', `${endY}px`);
-                    particle.style.setProperty('--rotate', `${rotate}deg`);
-                    
-                    point.style.background = color;
-                    particle.appendChild(point);
-                    particlesContainer.appendChild(particle);
-                }
-            }
-            
-            nav.addEventListener("mousemove", (e) => {
-                const link = e.target.closest("a");
-                if (!link || link === currentItem) return;
-                
-                currentItem = link;
-                const rect = link.getBoundingClientRect();
-                const navRect = nav.getBoundingClientRect();
-                
-                const centerX = rect.left - navRect.left + rect.width / 2;
-                const centerY = rect.top - navRect.top + rect.height / 2;
-                
-                // Position the frosted glass filter with smooth transition
-                filter.style.transform = `translate(${centerX}px, ${centerY}px)`;
-                filter.style.width = `${rect.width + 20}px`;
-                filter.style.height = `${rect.height + 10}px`;
-                filter.classList.add('active');
-                
-                // Position and update the text effect
-                text.textContent = link.textContent;
-                text.style.left = `${centerX}px`;
-                text.style.top = `${centerY - 15}px`;
-                text.classList.add('active');
-                text.classList.remove('hidden');
-                
-                // Create particle explosion
-                createParticles(centerX, centerY);
-                
-                // Add active state to nav item
-                nav.querySelectorAll('li').forEach(li => li.classList.remove('active'));
-                link.closest('li').classList.add('active');
-            });
-            
-            nav.addEventListener("mouseleave", () => {
-                currentItem = null;
-                filter.classList.remove('active');
-                text.classList.remove('active');
-                text.classList.add('hidden');
-                
-                if (particlesContainer) {
-                    particlesContainer.innerHTML = '';
-                }
-                
-                nav.querySelectorAll('li').forEach(li => li.classList.remove('active'));
-                
-                if (animationId) {
-                    cancelAnimationFrame(animationId);
-                }
-            });
-            
-            nav.addEventListener("mouseenter", () => {
-                filter.style.opacity = "1";
-                text.style.opacity = "1";
-            });
+      // Enhanced Glassmorphism Navigation with Gooey Gravity Effects
+      function initAdvancedFrostedNavigation() {
+        const nav = document.querySelector("nav");
+        const filter = document.querySelector(".effect.filter");
+        const text = document.querySelector(".effect.text");
+        const particlesContainer = document.querySelector(".particles");
+
+        if (!nav || !filter || !text) return;
+
+        let currentItem = null;
+        let animationId = null;
+
+        // Create particle system
+        function createParticles(x, y) {
+          if (!particlesContainer) return;
+
+          particlesContainer.innerHTML = "";
+
+          const colors = ["#22c55e", "#16a34a", "#10b981", "#059669"];
+
+          for (let i = 0; i < 12; i++) {
+            const particle = document.createElement("div");
+            particle.className = "particle";
+
+            const point = document.createElement("div");
+            point.className = "point";
+
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const scale = Math.random() * 0.8 + 0.4;
+            const startDistance = Math.random() * 20 + 10;
+            const endDistance = Math.random() * 60 + 40;
+            const angle = (Math.PI * 2 * i) / 12 + Math.random() * 0.5;
+
+            const startX = Math.cos(angle) * startDistance;
+            const startY = Math.sin(angle) * startDistance;
+            const endX = Math.cos(angle) * endDistance;
+            const endY = Math.sin(angle) * endDistance;
+            const rotate = Math.random() * 360;
+
+            particle.style.setProperty("--color", color);
+            particle.style.setProperty("--scale", scale);
+            particle.style.setProperty("--start-x", `${startX}px`);
+            particle.style.setProperty("--start-y", `${startY}px`);
+            particle.style.setProperty("--end-x", `${endX}px`);
+            particle.style.setProperty("--end-y", `${endY}px`);
+            particle.style.setProperty("--rotate", `${rotate}deg`);
+
+            point.style.background = color;
+            particle.appendChild(point);
+            particlesContainer.appendChild(particle);
+          }
         }
 
-        // Mobile menu functionality
-        function initMobileMenu() {
-            const mobileToggle = document.getElementById("mobile-toggle");
-            const navMenu = document.getElementById("nav-menu");
-            
-            if (!mobileToggle || !navMenu) return;
-            
-            mobileToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                const isOpen = navMenu.classList.contains('active');
-                mobileToggle.textContent = isOpen ? '✕' : '☰';
-                mobileToggle.setAttribute('aria-expanded', isOpen);
-            });
+        nav.addEventListener("mousemove", (e) => {
+          const link = e.target.closest("a");
+          if (!link || link === currentItem) return;
 
-            // Close mobile menu when clicking on nav items
-            navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        navMenu.classList.remove('active');
-                        mobileToggle.textContent = '☰';
-                        mobileToggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
+          currentItem = link;
+          const rect = link.getBoundingClientRect();
+          const navRect = nav.getBoundingClientRect();
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768 && 
-                    !navMenu.contains(e.target) && 
-                    !mobileToggle.contains(e.target)) {
-                    navMenu.classList.remove('active');
-                    mobileToggle.textContent = '☰';
-                    mobileToggle.setAttribute('aria-expanded', 'false');
-                }
-            });
-        }
+          const centerX = rect.left - navRect.left + rect.width / 2;
+          const centerY = rect.top - navRect.top + rect.height / 2;
 
-        // Cookie Consent Management
-        class CookieConsent {
-            constructor() {
-                this.consentGiven = this.getConsentStatus();
-                this.init();
-            }
+          // Position the frosted glass filter with smooth transition
+          filter.style.transform = `translate(${centerX}px, ${centerY}px)`;
+          filter.style.width = `${rect.width + 20}px`;
+          filter.style.height = `${rect.height + 10}px`;
+          filter.classList.add("active");
 
-            init() {
-                if (!this.consentGiven) {
-                    this.showBanner();
-                } else {
-                    this.initializeAnalytics();
-                }
-                this.setupEventListeners();
-            }
+          // Position and update the text effect
+          text.textContent = link.textContent;
+          text.style.left = `${centerX}px`;
+          text.style.top = `${centerY - 15}px`;
+          text.classList.add("active");
+          text.classList.remove("hidden");
 
-            setupEventListeners() {
-                const acceptAllBtn = document.getElementById("cookie-accept-all");
-                const acceptEssentialBtn = document.getElementById("cookie-accept-essential");
-                
-                if (acceptAllBtn) {
-                    acceptAllBtn.addEventListener("click", () => this.acceptAll());
-                }
-                
-                if (acceptEssentialBtn) {
-                    acceptEssentialBtn.addEventListener("click", () => this.acceptEssential());
-                }
-            }
+          // Create particle explosion
+          createParticles(centerX, centerY);
 
-            showBanner() {
-                const banner = document.getElementById("cookie-banner");
-                if (banner) {
-                    banner.style.display = "block";
-                }
-            }
-
-            hideBanner() {
-                const banner = document.getElementById("cookie-banner");
-                if (banner) {
-                    banner.style.display = "none";
-                }
-            }
-
-            acceptAll() {
-                const preferences = {
-                    essential: true,
-                    analytics: true,
-                    marketing: true,
-                    timestamp: Date.now(),
-                };
-                this.savePreferences(preferences);
-                this.hideBanner();
-                this.initializeAnalytics();
-            }
-
-            acceptEssential() {
-                const preferences = {
-                    essential: true,
-                    analytics: false,
-                    marketing: false,
-                    timestamp: Date.now(),
-                };
-                this.savePreferences(preferences);
-                this.hideBanner();
-            }
-
-            savePreferences(preferences) {
-                localStorage.setItem("cookieConsent", JSON.stringify(preferences));
-                this.consentGiven = true;
-            }
-
-            getConsentStatus() {
-                const consent = localStorage.getItem("cookieConsent");
-                if (consent) {
-                    const preferences = JSON.parse(consent);
-                    const twelveMonthsAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
-                    return preferences.timestamp > twelveMonthsAgo;
-                }
-                return false;
-            }
-
-            initializeAnalytics() {
-                const preferences = this.getPreferences();
-                if (preferences.analytics && typeof gtag !== "undefined") {
-                    gtag("consent", "update", {
-                        analytics_storage: "granted",
-                    });
-
-                    gtag("event", "page_view", {
-                        page_title: "Home",
-                        page_location: window.location.href,
-                    });
-                }
-            }
-
-            getPreferences() {
-                const consent = localStorage.getItem("cookieConsent");
-                if (consent) {
-                    return JSON.parse(consent);
-                }
-                return {
-                    essential: true,
-                    analytics: false,
-                    marketing: false,
-                };
-            }
-        }
-
-        // Smooth scrolling for anchor links
-        function initSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetSelector = this.getAttribute('href');
-                    const target = document.querySelector(targetSelector);
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-        }
-
-        // Back to top button functionality
-        function initBackToTop() {
-            const button = document.getElementById('back-to-top');
-            if (!button) return;
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    button.style.display = 'block';
-                } else {
-                    button.style.display = 'none';
-                }
-            });
-            
-            button.addEventListener('click', e => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-
-        // Initialize when DOM is ready
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize advanced frosted glass navigation (only on desktop)
-            if (window.innerWidth > 768) {
-                initAdvancedFrostedNavigation();
-            }
-            
-            // Initialize mobile menu
-            initMobileMenu();
-            
-            // Initialize other features
-            new CookieConsent();
-            initSmoothScroll();
-            initBackToTop();
-
-            // Track CTA button clicks
-            document.querySelectorAll(".btn-primary, .btn-white, .cta-button").forEach((button) => {
-                button.addEventListener("click", function () {
-                    const preferences = JSON.parse(localStorage.getItem("cookieConsent") || "{}");
-                    if (preferences.analytics && typeof gtag !== "undefined") {
-                        gtag("event", "click", {
-                            event_category: "engagement",
-                            event_label: "homepage_cta",
-                        });
-                    }
-                });
-            });
-            
-            // Reinitialize advanced frosted glass navigation on window resize
-            let resizeTimeout;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                    if (window.innerWidth > 768) {
-                        initAdvancedFrostedNavigation();
-                    }
-                }, 250);
-            });
+          // Add active state to nav item
+          nav
+            .querySelectorAll("li")
+            .forEach((li) => li.classList.remove("active"));
+          link.closest("li").classList.add("active");
         });
+
+        nav.addEventListener("mouseleave", () => {
+          currentItem = null;
+          filter.classList.remove("active");
+          text.classList.remove("active");
+          text.classList.add("hidden");
+
+          if (particlesContainer) {
+            particlesContainer.innerHTML = "";
+          }
+
+          nav
+            .querySelectorAll("li")
+            .forEach((li) => li.classList.remove("active"));
+
+          if (animationId) {
+            cancelAnimationFrame(animationId);
+          }
+        });
+
+        nav.addEventListener("mouseenter", () => {
+          filter.style.opacity = "1";
+          text.style.opacity = "1";
+        });
+      }
+
+      // Mobile menu functionality
+      function initMobileMenu() {
+        const mobileToggle = document.getElementById("mobile-toggle");
+        const navMenu = document.getElementById("nav-menu");
+
+        if (!mobileToggle || !navMenu) return;
+
+        mobileToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("active");
+          const isOpen = navMenu.classList.contains("active");
+          mobileToggle.textContent = isOpen ? "✕" : "☰";
+          mobileToggle.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Close mobile menu when clicking on nav items
+        navMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+              navMenu.classList.remove("active");
+              mobileToggle.textContent = "☰";
+              mobileToggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", (e) => {
+          if (
+            window.innerWidth <= 768 &&
+            !navMenu.contains(e.target) &&
+            !mobileToggle.contains(e.target)
+          ) {
+            navMenu.classList.remove("active");
+            mobileToggle.textContent = "☰";
+            mobileToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      // Cookie Consent Management
+      class CookieConsent {
+        constructor() {
+          this.consentGiven = this.getConsentStatus();
+          this.init();
+        }
+
+        init() {
+          if (!this.consentGiven) {
+            this.showBanner();
+          } else {
+            this.initializeAnalytics();
+          }
+          this.setupEventListeners();
+        }
+
+        setupEventListeners() {
+          const acceptAllBtn = document.getElementById("cookie-accept-all");
+          const acceptEssentialBtn = document.getElementById(
+            "cookie-accept-essential",
+          );
+
+          if (acceptAllBtn) {
+            acceptAllBtn.addEventListener("click", () => this.acceptAll());
+          }
+
+          if (acceptEssentialBtn) {
+            acceptEssentialBtn.addEventListener("click", () =>
+              this.acceptEssential(),
+            );
+          }
+        }
+
+        showBanner() {
+          const banner = document.getElementById("cookie-banner");
+          if (banner) {
+            banner.style.display = "block";
+          }
+        }
+
+        hideBanner() {
+          const banner = document.getElementById("cookie-banner");
+          if (banner) {
+            banner.style.display = "none";
+          }
+        }
+
+        acceptAll() {
+          const preferences = {
+            essential: true,
+            analytics: true,
+            marketing: true,
+            timestamp: Date.now(),
+          };
+          this.savePreferences(preferences);
+          this.hideBanner();
+          this.initializeAnalytics();
+        }
+
+        acceptEssential() {
+          const preferences = {
+            essential: true,
+            analytics: false,
+            marketing: false,
+            timestamp: Date.now(),
+          };
+          this.savePreferences(preferences);
+          this.hideBanner();
+        }
+
+        savePreferences(preferences) {
+          localStorage.setItem("cookieConsent", JSON.stringify(preferences));
+          this.consentGiven = true;
+        }
+
+        getConsentStatus() {
+          const consent = localStorage.getItem("cookieConsent");
+          if (consent) {
+            const preferences = JSON.parse(consent);
+            const twelveMonthsAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
+            return preferences.timestamp > twelveMonthsAgo;
+          }
+          return false;
+        }
+
+        initializeAnalytics() {
+          const preferences = this.getPreferences();
+          if (preferences.analytics && typeof gtag !== "undefined") {
+            gtag("consent", "update", {
+              analytics_storage: "granted",
+            });
+
+            gtag("event", "page_view", {
+              page_title: "Home",
+              page_location: window.location.href,
+            });
+          }
+        }
+
+        getPreferences() {
+          const consent = localStorage.getItem("cookieConsent");
+          if (consent) {
+            return JSON.parse(consent);
+          }
+          return {
+            essential: true,
+            analytics: false,
+            marketing: false,
+          };
+        }
+      }
+
+      // Smooth scrolling for anchor links
+      function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const targetSelector = this.getAttribute("href");
+            const target = document.querySelector(targetSelector);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        });
+      }
+
+      // Back to top button functionality
+      function initBackToTop() {
+        const button = document.getElementById("back-to-top");
+        if (!button) return;
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            button.style.display = "block";
+          } else {
+            button.style.display = "none";
+          }
+        });
+
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      // Initialize when DOM is ready
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize advanced frosted glass navigation (only on desktop)
+        if (window.innerWidth > 768) {
+          initAdvancedFrostedNavigation();
+        }
+
+        // Initialize mobile menu
+        initMobileMenu();
+
+        // Initialize other features
+        new CookieConsent();
+        initSmoothScroll();
+        initBackToTop();
+
+        // Track CTA button clicks
+        document
+          .querySelectorAll(".btn-primary, .btn-white, .cta-button")
+          .forEach((button) => {
+            button.addEventListener("click", function () {
+              const preferences = JSON.parse(
+                localStorage.getItem("cookieConsent") || "{}",
+              );
+              if (preferences.analytics && typeof gtag !== "undefined") {
+                gtag("event", "click", {
+                  event_category: "engagement",
+                  event_label: "homepage_cta",
+                });
+              }
+            });
+          });
+
+        // Reinitialize advanced frosted glass navigation on window resize
+        let resizeTimeout;
+        window.addEventListener("resize", () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            if (window.innerWidth > 768) {
+              initAdvancedFrostedNavigation();
+            }
+          }, 250);
+        });
+      });
     </script>
 
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-</body>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+  </body>
 </html>

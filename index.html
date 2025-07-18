@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cash For Your Home - Fast, Easy, No Hassle</title>
 
+```
 <!-- SEO Meta Tags -->
 <meta
   name="description"
@@ -839,7 +840,636 @@
     box-shadow: 0 6px 12px rgba(34, 197, 94, 0.3);
   }
 
-  /* Glass Button Styles */
+  /* Enhanced Cash Offer Section */
+  .cash-offer-section {
+    background: color-mix(in srgb, var(--c-glass) 8%, transparent);
+    backdrop-filter: blur(12px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(12px) saturate(var(--saturation));
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid color-mix(in srgb, var(--c-light) 10%, transparent);
+    box-shadow: var(--shadow-lg);
+    margin: var(--space-xl) 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .offer-hero {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .offer-title {
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--c-content) 0%, var(--c-steel-green) 50%, var(--c-action) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+  }
+
+  .offer-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--c-content) 85%, transparent);
+    margin-bottom: var(--space-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .house-graphics {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+  }
+
+  .house-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .house-icon {
+    font-size: 3rem;
+    padding: var(--space-lg);
+    background: color-mix(in srgb, var(--c-action) 10%, transparent);
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+  }
+
+  .house-icon:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .house-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--c-content);
+    letter-spacing: 0.1em;
+  }
+
+  .how-it-works {
+    background: color-mix(in srgb, var(--c-light) 5%, transparent);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid color-mix(in srgb, var(--c-action) 20%, transparent);
+  }
+
+  .works-title {
+    font-family: "Inter", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--c-action);
+    text-align: center;
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.1em;
+  }
+
+  .works-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--c-content);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .step-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: color-mix(in srgb, var(--c-glass) 5%, transparent);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--c-action);
+  }
+
+  .step-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    padding: var(--space-sm);
+    background: color-mix(in srgb, var(--c-action) 15%, transparent);
+    border-radius: 50%;
+  }
+
+  .step-content h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--c-content);
+    margin: 0 0 var(--space-xs) 0;
+  }
+
+  .step-content p {
+    margin: 0;
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
+    line-height: 1.5;
+  }
+
+  .phone-link {
+    color: var(--c-action);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+  }
+
+  .phone-link:hover {
+    color: var(--c-steel-green);
+    text-decoration: underline;
+  }
+
+  /* Quick Survey Form */
+  .survey-form {
+    background: color-mix(in srgb, var(--c-light) 8%, transparent);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    border: 1px solid color-mix(in srgb, var(--c-action) 25%, transparent);
+  }
+
+  .quick-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-field label {
+    font-weight: 600;
+    color: var(--c-content);
+    font-size: 0.9rem;
+  }
+
+  .form-field input,
+  .form-field select {
+    padding: 12px 16px;
+    border: 2px solid color-mix(in srgb, var(--c-content) 20%, transparent);
+    border-radius: var(--border-radius);
+    background: color-mix(in srgb, var(--c-light) 95%, transparent);
+    color: var(--c-content);
+    font-size: 16px;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus {
+    outline: none;
+    border-color: var(--c-action);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--c-action) 20%, transparent);
+  }
+
+  .submit-survey-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    min-width: 220px;
+    height: 60px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "DM Sans", sans-serif;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #1a1a1a 0%, #22c55e 100%);
+    border: 1px solid #22c55e;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(34, 197, 94, 0.2);
+    transition:
+      background 400ms cubic-bezier(1, 0, 0.4, 1),
+      box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
+      transform 200ms cubic-bezier(0.5, 0, 0, 1),
+      color 200ms;
+    cursor: pointer;
+    margin-top: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .submit-survey-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .submit-survey-btn:hover::before {
+    left: 100%;
+  }
+
+  .submit-survey-btn:hover {
+    background: linear-gradient(135deg, #22c55e 0%, #1a1a1a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(34, 197, 94, 0.3);
+  }
+
+  .submit-survey-btn:active {
+    transform: translateY(0);
+  }
+
+  /* Secondary Cash Offer Section */
+  .secondary-offer-section {
+    background: linear-gradient(135deg, 
+      color-mix(in srgb, var(--c-action) 8%, transparent) 0%, 
+      color-mix(in srgb, var(--c-steel-green) 12%, transparent) 100%);
+    backdrop-filter: blur(12px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(12px) saturate(var(--saturation));
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    border: 2px solid color-mix(in srgb, var(--c-action) 25%, transparent);
+    box-shadow: var(--shadow-xl);
+    margin: var(--space-xl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .secondary-offer-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(34,197,94,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .offer-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: var(--space-xl);
+  }
+
+  .secondary-offer-title {
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--c-content) 0%, var(--c-action) 50%, var(--c-steel-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .secondary-offer-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: color-mix(in srgb, var(--c-content) 85%, transparent);
+    margin-bottom: var(--space-lg);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .property-types {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .property-type-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: color-mix(in srgb, var(--c-light) 15%, transparent);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid color-mix(in srgb, var(--c-action) 30%, transparent);
+    transition: all var(--transition-base);
+  }
+
+  .property-type-item:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+    background: color-mix(in srgb, var(--c-action) 15%, transparent);
+  }
+
+  .property-icon {
+    font-size: 2.5rem;
+    padding: var(--space-md);
+    background: color-mix(in srgb, var(--c-action) 20%, transparent);
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+  }
+
+  .property-type-item:hover .property-icon {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .property-label {
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--c-content);
+    letter-spacing: 0.15em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .process-info {
+    position: relative;
+    z-index: 1;
+    background: color-mix(in srgb, var(--c-light) 10%, transparent);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid color-mix(in srgb, var(--c-action) 30%, transparent);
+    margin-top: var(--space-xl);
+  }
+
+  .process-title {
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--c-action);
+    margin-bottom: var(--space-xs);
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .process-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--c-content);
+    margin-bottom: var(--space-lg);
+    font-style: italic;
+  }
+
+  .process-step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+    background: color-mix(in srgb, var(--c-glass) 8%, transparent);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--c-action);
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .process-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    padding: var(--space-sm);
+    background: color-mix(in srgb, var(--c-action) 20%, transparent);
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .process-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--c-content);
+  }
+
+  .contact-link {
+    color: var(--c-action);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all var(--transition-fast);
+    border-bottom: 2px solid transparent;
+  }
+
+  .contact-link:hover {
+    color: var(--c-steel-green);
+    border-bottom-color: var(--c-steel-green);
+    transform: translateY(-1px);
+  }
+
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .primary-action-btn,
+  .secondary-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    height: 52px;
+    min-width: 180px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 99em;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "DM Sans", sans-serif;
+    text-decoration: none;
+    color: var(--c-content);
+    background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    box-shadow:
+      inset 0 0 0 1px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 10%),
+          transparent
+        ),
+      inset 1.8px 3px 0px -2px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 90%),
+          transparent
+        ),
+      inset -2px -2px 0px -2px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 80%),
+          transparent
+        ),
+      inset -3px -8px 1px -6px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 60%),
+          transparent
+        ),
+      inset -0.3px -1px 4px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 12%),
+          transparent
+        ),
+      inset -1.5px 2.5px 0px -2px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 20%),
+          transparent
+        ),
+      inset 0px 3px 4px -2px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 20%),
+          transparent
+        ),
+      inset 2px -6.5px 1px -4px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+          transparent
+        ),
+      0px 1px 5px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+          transparent
+        ),
+      0px 6px 16px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 8%),
+          transparent
+        );
+    transition:
+      background-color 400ms cubic-bezier(1, 0, 0.4, 1),
+      box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
+      transform 200ms cubic-bezier(0.5, 0, 0, 1),
+      color 200ms;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .primary-action-btn::before,
+  .secondary-action-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .primary-action-btn:hover::before,
+  .secondary-action-btn:hover::before {
+    left: 100%;
+  }
+
+  .primary-action-btn:hover,
+  .secondary-action-btn:hover {
+    background-color: color-mix(in srgb, var(--c-glass) 20%, transparent);
+    transform: translateY(-2px) scale(1.02);
+    color: var(--c-action);
+  }
+
+  .primary-action-btn.primary {
+    background: linear-gradient(135deg, #1a1a1a 0%, #22c55e 100%);
+    color: white;
+    font-weight: 700;
+    border: 1px solid #22c55e;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(34, 197, 94, 0.2);
+  }
+
+  .primary-action-btn.primary:hover {
+    background: linear-gradient(135deg, #22c55e 0%, #1a1a1a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(34, 197, 94, 0.3);
+    color: white;
+  }
+
+  /* Responsive adjustments for secondary offer section */
+  @media (max-width: 768px) {
+    .secondary-offer-section {
+      padding: var(--space-lg);
+      margin: var(--space-lg) 0;
+    }
+
+    .property-types {
+      gap: var(--space-md);
+    }
+
+    .property-icon {
+      font-size: 2rem;
+      padding: var(--space-sm);
+    }
+
+    .process-step {
+      flex-direction: column;
+      text-align: center;
+      gap: var(--space-sm);
+    }
+
+    .action-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .primary-action-btn,
+    .secondary-action-btn {
+      width: 100%;
+      max-width: 280px;
+      min-width: 200px;
+    }
+  }
+  @media (max-width: 768px) {
+    .cash-offer-section {
+      padding: var(--space-lg);
+      margin: var(--space-lg) 0;
+    }
+
+    .house-graphics {
+      gap: var(--space-lg);
+    }
+
+    .house-icon {
+      font-size: 2.5rem;
+      padding: var(--space-md);
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .step-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
   .glass-button-container {
     display: flex;
     gap: 1rem;
@@ -1449,39 +2079,110 @@
   }
 
   .cookie-btn {
-    padding: 0.75rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    min-width: 120px;
+    height: 52px;
+    box-sizing: border-box;
     border: none;
-    border-radius: 50px;
+    border-radius: 99em;
+    font-size: 14px;
     font-weight: 600;
+    font-family: "DM Sans", sans-serif;
+    color: var(--c-content);
+    background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
+    box-shadow:
+      inset 0 0 0 1px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 10%),
+          transparent
+        ),
+      inset 1.8px 3px 0px -2px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 90%),
+          transparent
+        ),
+      inset -2px -2px 0px -2px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 80%),
+          transparent
+        ),
+      inset -3px -8px 1px -6px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 60%),
+          transparent
+        ),
+      inset -0.3px -1px 4px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 12%),
+          transparent
+        ),
+      inset -1.5px 2.5px 0px -2px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 20%),
+          transparent
+        ),
+      inset 0px 3px 4px -2px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 20%),
+          transparent
+        ),
+      inset 2px -6.5px 1px -4px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+          transparent
+        ),
+      0px 1px 5px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+          transparent
+        ),
+      0px 6px 16px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 8%),
+          transparent
+        );
+    transition:
+      background-color 400ms cubic-bezier(1, 0, 0.4, 1),
+      box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
+      transform 200ms cubic-bezier(0.5, 0, 0, 1),
+      color 200ms;
     cursor: pointer;
-    transition: all 200ms;
-    font-size: 0.875rem;
   }
 
   .cookie-btn-primary {
-    background: linear-gradient(
-      135deg,
-      var(--c-action),
-      var(--c-steel-green)
-    );
-    color: white;
+    color: var(--c-action);
+    font-weight: 700;
   }
 
   .cookie-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px
-      color-mix(in srgb, var(--c-action) 40%, transparent);
+    background-color: color-mix(in srgb, var(--c-glass) 20%, transparent);
+    transform: translateY(-2px) scale(1.02);
+    color: var(--c-steel-green);
   }
 
   .cookie-btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: color-mix(in srgb, var(--c-content) 80%, transparent);
   }
 
   .cookie-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: white;
+    background-color: color-mix(in srgb, var(--c-glass) 20%, transparent);
+    transform: translateY(-2px) scale(1.02);
+    color: var(--c-content);
   }
 
   /* Back to Top Button */
@@ -1490,21 +2191,18 @@
     bottom: 2rem;
     right: 2rem;
     display: none;
-    background: color-mix(in srgb, var(--c-glass) 15%, transparent);
-    backdrop-filter: blur(12px) saturate(var(--saturation));
-    -webkit-backdrop-filter: blur(12px) saturate(var(--saturation));
-    color: var(--c-action);
-    border: 1px solid
-      color-mix(
-        in srgb,
-        var(--c-light) calc(var(--glass-reflex-light) * 15%),
-        transparent
-      );
-    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
     width: 56px;
     height: 56px;
+    border: none;
+    border-radius: 99em;
     font-size: 1.25rem;
-    cursor: pointer;
+    font-weight: 600;
+    color: var(--c-content);
+    background-color: color-mix(in srgb, var(--c-glass) 12%, transparent);
+    backdrop-filter: blur(8px) saturate(var(--saturation));
+    -webkit-backdrop-filter: blur(8px) saturate(var(--saturation));
     box-shadow:
       inset 0 0 0 1px
         color-mix(
@@ -1512,32 +2210,73 @@
           var(--c-light) calc(var(--glass-reflex-light) * 10%),
           transparent
         ),
-      0px 8px 32px 0px
+      inset 1.8px 3px 0px -2px
         color-mix(
           in srgb,
-          var(--c-dark) calc(var(--glass-reflex-dark) * 15%),
+          var(--c-light) calc(var(--glass-reflex-light) * 90%),
+          transparent
+        ),
+      inset -2px -2px 0px -2px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 80%),
+          transparent
+        ),
+      inset -3px -8px 1px -6px
+        color-mix(
+          in srgb,
+          var(--c-light) calc(var(--glass-reflex-light) * 60%),
+          transparent
+        ),
+      inset -0.3px -1px 4px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 12%),
+          transparent
+        ),
+      inset -1.5px 2.5px 0px -2px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 20%),
+          transparent
+        ),
+      inset 0px 3px 4px -2px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 20%),
+          transparent
+        ),
+      inset 2px -6.5px 1px -4px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+          transparent
+        ),
+      0px 1px 5px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 10%),
+          transparent
+        ),
+      0px 6px 16px 0px
+        color-mix(
+          in srgb,
+          var(--c-dark) calc(var(--glass-reflex-dark) * 8%),
           transparent
         );
     z-index: 1000;
-    transition: all 400ms cubic-bezier(1, 0, 0.4, 1);
+    transition:
+      background-color 400ms cubic-bezier(1, 0, 0.4, 1),
+      box-shadow 400ms cubic-bezier(1, 0, 0.4, 1),
+      transform 200ms cubic-bezier(0.5, 0, 0, 1),
+      color 200ms;
+    cursor: pointer;
   }
 
   #back-to-top:hover {
-    transform: translateY(-4px) scale(1.1);
-    box-shadow:
-      inset 0 0 0 1px
-        color-mix(
-          in srgb,
-          var(--c-light) calc(var(--glass-reflex-light) * 15%),
-          transparent
-        ),
-      0px 16px 48px 0px
-        color-mix(
-          in srgb,
-          var(--c-dark) calc(var(--glass-reflex-dark) * 25%),
-          transparent
-        );
-    background: color-mix(in srgb, var(--c-action) 10%, transparent);
+    background-color: color-mix(in srgb, var(--c-glass) 20%, transparent);
+    transform: translateY(-2px) scale(1.02);
+    color: var(--c-action);
   }
 
   /* Responsive Design */
@@ -1591,78 +2330,6 @@
 
   </head>
   <body>
-    <!-- Theme Switcher -->
-    <fieldset class="switcher">
-      <legend class="switcher__legend">Choose theme</legend>
-      <label class="switcher__option">
-        <input
-          class="switcher__input"
-          type="radio"
-          name="theme"
-          value="light"
-          c-option="1"
-          checked
-        />
-        <svg
-          class="switcher__icon"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 36 36"
-        >
-          <path
-            fill="var(--c)"
-            fill-rule="evenodd"
-            d="M18 12a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
-            clip-rule="evenodd"
-          />
-          <path
-            fill="var(--c)"
-            d="M17 6.038a1 1 0 1 1 2 0v3a1 1 0 0 1-2 0v-3ZM24.244 7.742a1 1 0 1 1 1.618 1.176L24.1 11.345a1 1 0 1 1-1.618-1.176l1.763-2.427ZM29.104 13.379a1 1 0 0 1 .618 1.902l-2.854.927a1 1 0 1 1-.618-1.902l2.854-.927ZM29.722 20.795a1 1 0 0 1-.619 1.902l-2.853-.927a1 1 0 1 1 .618-1.902l2.854.927ZM25.862 27.159a1 1 0 0 1-1.618 1.175l-1.763-2.427a1 1 0 1 1 1.618-1.175l1.763 2.427ZM19 30.038a1 1 0 0 1-2 0v-3a1 1 0 1 1 2 0v3ZM11.755 28.334a1 1 0 0 1-1.618-1.175l1.764-2.427a1 1 0 1 1 1.618 1.175l-1.764 2.427ZM6.896 22.697a1 1 0 1 1-.618-1.902l2.853-.927a1 1 0 1 1 .618 1.902l-2.853.927ZM6.278 15.28a1 1 0 1 1 .618-1.901l2.853.927a1 1 0 1 1-.618 1.902l-2.853-.927ZM10.137 8.918a1 1 0 0 1 1.618-1.176l1.764 2.427a1 1 0 0 1-1.618 1.176l-1.764-2.427Z"
-          />
-        </svg>
-      </label>
-      <label class="switcher__option">
-        <input
-          class="switcher__input"
-          type="radio"
-          name="theme"
-          value="dark"
-          c-option="2"
-        />
-        <svg
-          class="switcher__icon"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 36 36"
-        >
-          <path
-            fill="var(--c)"
-            d="M12.5 8.473a10.968 10.968 0 0 1 8.785-.97 7.435 7.435 0 0 0-3.737 4.672l-.09.373A7.454 7.454 0 0 0 28.732 20.4a10.97 10.97 0 0 1-5.232 7.125l-.497.27c-5.014 2.566-11.175.916-14.234-3.813l-.295-.483C5.53 18.403 7.13 11.93 12.017 8.77l.483-.297Zm4.234.616a8.946 8.946 0 0 0-2.805.883l-.429.234A9 9 0 0 0 10.206 22.5l.241.395A9 9 0 0 0 22.5 25.794l.416-.255a8.94 8.94 0 0 0 2.167-1.99 9.433 9.433 0 0 1-2.782-.313c-5.043-1.352-8.036-6.535-6.686-11.578l.147-.491c.242-.745.573-1.44.972-2.078Z"
-          />
-        </svg>
-      </label>
-      <label class="switcher__option">
-        <input
-          class="switcher__input"
-          type="radio"
-          name="theme"
-          value="dim"
-          c-option="3"
-        />
-        <svg
-          class="switcher__icon"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 36 36"
-        >
-          <path
-            fill="var(--c)"
-            d="M5 21a1 1 0 0 1 1-1h24a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1ZM12 25a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H13a1 1 0 0 1-1-1ZM15 29a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1ZM18 13a6 6 0 0 1 5.915 7h-2.041A4.005 4.005 0 0 0 18 15a4 4 0 0 0-3.874 5h-2.041A6 6 0 0 1 18 13ZM17 7.038a1 1 0 1 1 2 0v3a1 1 0 0 1-2 0v-3ZM24.244 8.742a1 1 0 1 1 1.618 1.176L24.1 12.345a1 1 0 1 1-1.618-1.176l1.763-2.427ZM29.104 14.379a1 1 0 0 1 .618 1.902l-2.854.927a1 1 0 1 1-.618-1.902l2.854-.927ZM6.278 16.28a1 1 0 1 1 .618-1.901l2.853.927a1 1 0 1 1-.618 1.902l-2.853-.927ZM10.137 9.918a1 1 0 0 1 1.618-1.176l1.764 2.427a1 1 0 0 1-1.618 1.176l-1.764-2.427Z"
-          />
-        </svg>
-      </label>
-    </fieldset>
-
 <main>
   <!-- Navigation -->
   <div class="demo-section">
@@ -1715,7 +2382,6 @@
     </p>
 
     <div class="glass-button-container">
-      <a href="#cash-offer" class="glass-button primary">Get Your Cash Offer</a>
       <a href="#learn-more" class="glass-button">Learn More</a>
     </div>
 
@@ -1724,7 +2390,49 @@
       minutes!
     </blockquote>
 
-    <a href="#offer" class="cta-button">Get My Cash Offer Now</a>
+    <div class="glass-button-container">
+      <a href="#offer" class="cta-button">Get My Cash Offer Now</a>
+    </div>
+
+    <!-- Secondary Cash Offer Section -->
+    <section class="secondary-offer-section">
+      <div class="offer-header">
+        <h3 class="secondary-offer-title">Get a cash offer to sell your house fast.</h3>
+        <p class="secondary-offer-description">
+          Avoid the tedious process of selling your home. Forget about worrying about repairs, 
+          cleaning for showings, or facing unpredictable costs.
+        </p>
+      </div>
+      
+      <div class="property-types">
+        <div class="property-type-item">
+          <div class="property-icon">🏠</div>
+          <span class="property-label">HOUSE</span>
+        </div>
+        <div class="property-type-item">
+          <div class="property-icon">🏢</div>
+          <span class="property-label">UNIT</span>
+        </div>
+      </div>
+
+      <div class="process-info">
+        <h4 class="process-title">IT'S EASY</h4>
+        <h5 class="process-subtitle">This is how it works</h5>
+        
+        <div class="process-step">
+          <div class="process-icon">✏️</div>
+          <div class="process-text">
+            <strong>Enter your home info.</strong><br>
+            Fill out our survey in five minutes or <a href="tel:480-244-2752" class="contact-link">call us directly at (480) 244-2752</a>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <a href="tel:480-244-2752" class="primary-action-btn primary">📞 Call Now</a>
+          <a href="mailto:hunter@cashforyourhome.biz" class="secondary-action-btn">✉️ Email Us</a>
+        </div>
+      </div>
+    </section>
 
     <h2>Why Choose Cash For Your Home?</h2>
 

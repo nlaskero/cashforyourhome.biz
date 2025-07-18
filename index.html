@@ -2679,40 +2679,6 @@
         console.error('JavaScript Error:', e.error);
       });
 
-      // Theme switcher functionality with error handling
-      const switcher = document.querySelector(".switcher");
-
-      const trackPrevious = (el) => {
-        if (!el) return;
-        
-        const radios = el.querySelectorAll('input[type="radio"]');
-        let previousValue = null;
-
-        const initiallyChecked = el.querySelector(
-          'input[type="radio"]:checked',
-        );
-        if (initiallyChecked) {
-          previousValue = initiallyChecked.getAttribute("c-option");
-          el.setAttribute("c-previous", previousValue);
-        }
-
-        radios.forEach((radio) => {
-          radio.addEventListener("change", () => {
-            if (radio.checked) {
-              el.setAttribute("c-previous", previousValue ?? "");
-              previousValue = radio.getAttribute("c-option");
-            }
-          });
-        });
-      };
-
-      if (switcher) {
-        try {
-          trackPrevious(switcher);
-        } catch (error) {
-          console.error('Theme switcher error:', error);
-        }
-      }
 
       // Enhanced Intersection Observer for scroll animations
       const observerOptions = {

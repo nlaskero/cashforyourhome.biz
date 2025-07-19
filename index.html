@@ -1,12 +1,9 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cash For Your Home - Fast, Easy, No Hassle</title>
-
-    <!-- SEO Meta Tags -->
     <meta
       name="description"
       content="Get a fast cash offer for your home in 24-48 hours! Cash for Your Home LLC is a trusted real estate wholesale company serving nationwide from Scottsdale, Arizona. No fees, no commissions, quick closing."
@@ -15,15 +12,29 @@
       name="keywords"
       content="cash for homes, sell house fast, cash home buyers, real estate wholesale, property investors, Scottsdale Arizona, quick home sale"
     />
-    <meta name="robots" content="index, follow" />
 
-    <!-- Professional Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Luckiest+Guy&family=Montserrat:wght@400;500;600;700;800&family=Paytone+One&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
 
     <!-- Google Analytics -->
     <script
@@ -47,6 +58,658 @@
         anonymize_ip: true,
       });
     </script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+      <div class="nav-container">
+        <div class="nav-content">
+          <!-- Logo -->
+          <div class="nav-logo shine-effect">
+            <div class="logo-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" class="logo-svg">
+                <rect width="32" height="32" rx="8" fill="currentColor" />
+                <path
+                  d="M8 12h16v2H8v-2zm0 4h16v2H8v-2zm0 4h10v2H8v-2z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+            <span class="brand-text">Cash For Your Home</span>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="nav-desktop">
+            <ul class="nav-menu">
+              <li class="nav-item">
+                <button class="nav-link active" data-section="home">
+                  Home
+                </button>
+              </li>
+              <li class="nav-item dropdown-container">
+                <button
+                  class="nav-link dropdown-toggle"
+                  data-dropdown="services"
+                >
+                  <span>Services</span>
+                  <svg
+                    class="dropdown-arrow"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <a href="#services" class="dropdown-item"
+                    >Quick Home Evaluation</a
+                  >
+                  <a href="#services" class="dropdown-item">Fair Cash Offers</a>
+                  <a href="#services" class="dropdown-item"
+                    >Fast Closing Process</a
+                  >
+                  <a href="#services" class="dropdown-item"
+                    >No Fees or Commissions</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" data-section="about">
+                  Testimonials
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" data-section="contact">Contact</button>
+              </li>
+              <li class="nav-item">
+                <button
+                  class="nav-link"
+                  onclick="window.open('/pages/terms.html', '_blank')"
+                >
+                  Terms
+                </button>
+              </li>
+            </ul>
+
+            <!-- CTA Button -->
+            <button class="glass-button primary" data-section="contact">
+              <span class="button-content">
+                <span>Get Started</span>
+                <svg
+                  class="button-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <div class="mobile-menu-content">
+            <button class="mobile-nav-link" data-section="home">Home</button>
+            <button class="mobile-nav-link" data-section="services">
+              How It Works
+            </button>
+            <button class="mobile-nav-link" data-section="about">
+              Testimonials
+            </button>
+            <button class="mobile-nav-link" data-section="contact">
+              Contact
+            </button>
+            <button
+              class="mobile-nav-link"
+              onclick="window.open('/pages/terms.html', '_blank')"
+            >
+              Terms
+            </button>
+            <div class="mobile-cta">
+              <button
+                class="glass-button primary w-full"
+                data-section="contact"
+              >
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <article class="hero-content">
+          <h1 class="hero-title">Cash For Your Home</h1>
+
+          <p class="hero-description">
+            Need to sell your house quickly? We buy houses for cash in any
+            condition, anywhere in the area. Skip the traditional real estate
+            process and get a <span class="highlight">fair cash offer</span> in
+            24 hours. No repairs, no showings, no hassles - just a fast, simple
+            sale that closes on your timeline.
+          </p>
+
+          <figure class="hero-image">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F1b06a222b39e4282a1cabedef9028688?format=webp&width=800"
+              alt="Beautiful modern home with landscaping"
+              class="hero-img"
+            />
+            <figcaption class="hero-caption">
+              We've helped thousands of homeowners sell their properties quickly
+              and easily
+            </figcaption>
+          </figure>
+
+          <p class="hero-subtext">
+            Whether you're facing foreclosure, dealing with an inherited
+            property, going through a divorce, or simply need to relocate
+            quickly, we provide a stress-free solution. Our experienced team
+            evaluates your property and makes competitive cash offers that
+            reflect current market conditions.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#learn-more" class="glass-button secondary">
+              Learn More
+            </a>
+          </div>
+
+          <blockquote class="hero-quote">
+            Get your no-obligation cash offer today - it takes less than 2
+            minutes!
+          </blockquote>
+        </article>
+      </section>
+
+      <!-- Hero Address Section -->
+      <section id="hero-address" class="hero-address-section">
+        <div class="address-container">
+          <div class="address-grid">
+            <div class="address-image">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F1b06a222b39e4282a1cabedef9028688?format=webp&width=800"
+                alt="Happy homeowners who sold their house for cash"
+                class="address-img"
+              />
+            </div>
+
+            <div class="address-content">
+              <h2 class="address-title">
+                Sell your house today at the highest value with the
+                <span class="highlight"> leading Home Buying Company</span> in
+                the nation.
+              </h2>
+
+              <form class="address-form" id="addressForm">
+                <div class="address-input-group">
+                  <input
+                    type="text"
+                    name="property-address"
+                    placeholder="Enter Address"
+                    class="address-input"
+                    required
+                  />
+                  <button type="submit" class="glass-button primary">GO</button>
+                </div>
+              </form>
+
+              <p class="address-subtext">
+                Get started by receiving your
+                <strong class="highlight">CASH OFFER</strong> in just a few
+                clicks.
+              </p>
+
+              <div class="rating-display">
+                <div class="rating-card">
+                  <div class="stars">★★★★★</div>
+                  <span class="rating-text">5.0/5.0</span>
+                </div>
+              </div>
+
+              <div class="testimonial-card">
+                <h3 class="testimonial-title">
+                  Join our happy homeowners who sold to Cash For Your Home!
+                </h3>
+                <div class="testimonial-stat">
+                  <span class="stat-icon">🏡</span>
+                  <span class="stat-text"
+                    >Over 10,000 homes purchased nationwide</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services-section">
+        <div class="services-container">
+          <h2 class="section-title">Why Choose Cash For Your Home?</h2>
+          <p class="section-description">
+            Traditional real estate sales can take months and cost thousands in
+            fees, repairs, and commissions. Our cash buying process eliminates
+            these delays and expenses. We handle all the paperwork, pay closing
+            costs, and can close in as little as 7 days - or on the timeline
+            that works best for you.
+          </p>
+
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Ff857d660271545f3bf959b7343077ea8?format=webp&width=800"
+                alt="Key to Your Solution"
+                class="benefit-icon"
+              />
+              <div class="benefit-content">
+                <strong>Key to Your Solution:</strong> We can close in as little
+                as 7 days or on your preferred timeline. No waiting for buyer
+                financing approvals or lengthy inspections.
+              </div>
+            </div>
+            <div class="benefit-item">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F7f14f88d13734f308a2b270615ac2e40?format=webp&width=800"
+                alt="No Repairs Needed"
+                class="benefit-icon"
+              />
+              <div class="benefit-content">
+                <strong>No Repairs Needed:</strong> Sell your home exactly
+                as-is. We buy houses in any condition - from move-in ready to
+                complete fixer-uppers.
+              </div>
+            </div>
+            <div class="benefit-item">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Fca5f3566ea884abaaf2d45dbe84b6531?format=webp&width=800"
+                alt="No Fees or Commissions"
+                class="benefit-icon"
+              />
+              <div class="benefit-content">
+                <strong>No Fees or Commissions:</strong> We pay all closing
+                costs and there are no realtor commissions or hidden fees.
+              </div>
+            </div>
+            <div class="benefit-item">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F348fb0e487334ba0ad83f23c9410883a?format=webp&width=800"
+                alt="Guaranteed Sale"
+                class="benefit-icon"
+              />
+              <div class="benefit-content">
+                <strong>Guaranteed Sale:</strong> Once you accept our offer, the
+                sale is guaranteed - no risk of buyers backing out.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process Section -->
+      <section id="process" class="process-section">
+        <div class="process-container">
+          <h2 class="section-title">Our Simple 4-Step Process</h2>
+
+          <div class="process-steps">
+            <div class="process-step">
+              <h3 class="step-title">Step 1: Get Your Offer</h3>
+              <p class="step-description">
+                Fill out our simple online form or call us directly. We'll
+                provide you with a no-obligation cash offer within 24 hours.
+              </p>
+            </div>
+            <div class="process-step">
+              <h3 class="step-title">Step 2: Property Evaluation</h3>
+              <p class="step-description">
+                If you're interested in our offer, we'll schedule a brief
+                property walk-through at your convenience to finalize the
+                details.
+              </p>
+            </div>
+            <div class="process-step">
+              <h3 class="step-title">Step 3: Review Contract</h3>
+              <p class="step-description">
+                We'll present you with a straightforward purchase agreement with
+                no hidden terms or surprise fees.
+              </p>
+            </div>
+            <div class="process-step">
+              <h3 class="step-title">Step 4: Close & Get Paid</h3>
+              <p class="step-description">
+                Choose your closing date and get your cash. We handle all the
+                paperwork and coordinate with the title company.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-cta">
+            <div class="contact-icon">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Fdd45ae97a5434f98a8d9d8557f1bcc75?format=webp&width=800"
+                alt="Contact Us"
+                class="contact-img"
+              />
+            </div>
+            <p class="contact-text">
+              Ready to sell your house for cash? Contact us today at{' '}
+              <a href="tel:(602) 755-2654" class="phone-link">
+                (602) 755-2654 </a
+              >{' '} or fill out our online form to get started. We're here to
+              help make your home sale as smooth and stress-free as possible.
+            </p>
+            <button class="glass-button primary" data-section="contact">
+              Get Your Cash Offer Now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="about" class="testimonials-section">
+        <div class="testimonials-container">
+          <div class="testimonials-header">
+            <div class="testimonials-icons">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F15031dd6d8a647c88beea7976b1a6286?format=webp&width=800"
+                alt="5-Star Reviews"
+                class="testimonial-icon"
+              />
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F90e1ee7e5e2b4283a0709ef51fd969dd?format=webp&width=800"
+                alt="Professional Business Meeting"
+                class="testimonial-icon"
+              />
+            </div>
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-description">
+              Don't just take our word for it - hear from homeowners who chose
+              Cash for Your Home.
+            </p>
+          </div>
+
+          <div class="testimonials-grid" id="testimonialsGrid">
+            <!-- Testimonials will be populated by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Location Section -->
+      <section class="location-section">
+        <div class="location-container">
+          <h2 class="section-title">Our Location</h2>
+          <p class="section-description">
+            Based in Scottsdale, Arizona, serving homeowners nationwide with
+            fast, reliable cash offers for your property.
+          </p>
+
+          <div class="location-grid">
+            <div class="location-content">
+              <h3 class="location-title">Headquartered in Scottsdale, AZ</h3>
+              <p class="location-description">
+                While we're based in the heart of Arizona, our network spans
+                across all 50 states. We understand local markets and provide
+                personalized service no matter where your property is located.
+              </p>
+
+              <div class="contact-info">
+                <div class="contact-item">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F6d7777eccb924cdc8b54978b763a0c34?format=webp&width=800"
+                    alt="Email"
+                    class="contact-icon"
+                  />
+                  <span class="contact-detail">hunter@cashforyourhome.biz</span>
+                </div>
+                <div class="contact-item">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Fb69ba8d0262943378099f80b8e35f2e6?format=webp&width=800"
+                    alt="24/7 Available"
+                    class="contact-icon"
+                  />
+                  <span class="contact-detail"
+                    >Available 24/7 for Consultations</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107462.51595659521!2d-111.9925987!3d33.5025837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed50a179cb%3A0x8c69c7f8354a1bac!2sScottsdale%2C%20AZ!5e0!3m2!1sen!2sus!4v1652490228383!5m2!1sen!2sus"
+                width="100%"
+                height="400"
+                style="border: 0; border-radius: 0.75rem"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Cash for Your Home LLC Location - Scottsdale, Arizona"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="contact-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-description">
+            Ready to sell your house for cash? Get your no-obligation cash offer
+            today.
+          </p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <div class="form-background">
+            <div class="background-shape shape-1"></div>
+            <div class="background-shape shape-2"></div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-content">
+                <h3 class="form-title">Get Your Cash Offer</h3>
+                <p class="form-subtitle">
+                  Fast, Fair, No Hassles - We Buy Houses As-Is
+                </p>
+
+                <label for="property-address" class="form-label"
+                  >Property Address *</label
+                >
+                <input
+                  type="text"
+                  id="property-address"
+                  name="property-address"
+                  placeholder="Enter your home address"
+                  class="form-input"
+                  required
+                />
+
+                <label for="property-condition" class="form-label"
+                  >Property Condition</label
+                >
+                <select
+                  id="property-condition"
+                  name="property-condition"
+                  class="form-select"
+                >
+                  <option value="">Select condition</option>
+                  <option value="excellent">Excellent</option>
+                  <option value="good">Good</option>
+                  <option value="fair">Fair</option>
+                  <option value="needs-work">Needs Work</option>
+                  <option value="major-repairs">Major Repairs Needed</option>
+                </select>
+
+                <label for="timeline" class="form-label"
+                  >When do you need to sell?</label
+                >
+                <select id="timeline" name="timeline" class="form-select">
+                  <option value="">Select timeline</option>
+                  <option value="asap">ASAP</option>
+                  <option value="30-days">Within 30 days</option>
+                  <option value="60-days">Within 60 days</option>
+                  <option value="90-days">Within 90 days</option>
+                  <option value="flexible">Flexible</option>
+                </select>
+
+                <label for="seller-name" class="form-label">Your Name *</label>
+                <input
+                  type="text"
+                  id="seller-name"
+                  name="seller-name"
+                  placeholder="Full name"
+                  class="form-input"
+                  required
+                />
+
+                <label for="seller-phone" class="form-label"
+                  >Phone Number *</label
+                >
+                <input
+                  type="tel"
+                  id="seller-phone"
+                  name="seller-phone"
+                  placeholder="(555) 123-4567"
+                  class="form-input"
+                  required
+                />
+
+                <label for="seller-email" class="form-label"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="seller-email"
+                  name="seller-email"
+                  placeholder="your@email.com"
+                  class="form-input"
+                />
+
+                <label for="additional-info" class="form-label"
+                  >Additional Information</label
+                >
+                <textarea
+                  id="additional-info"
+                  name="additional-info"
+                  placeholder="Tell us about your situation, any repairs needed, or special circumstances..."
+                  rows="3"
+                  class="form-textarea"
+                ></textarea>
+
+                <button type="submit" class="glass-button primary form-submit">
+                  Get My Cash Offer
+                </button>
+
+                <div class="trust-indicators">
+                  <div class="trust-badge">⭐ 5-Star Rated</div>
+                  <div class="trust-badge">🏆 BBB Accredited</div>
+                  <div class="trust-badge">⚡ 24Hr Response</div>
+                </div>
+
+                <p class="form-disclaimer">
+                  No repairs • No commissions • No stress<br />
+                  We buy houses in any condition
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-info-grid">
+            <div class="contact-detail">
+              <h3 class="detail-title">📧 Email</h3>
+              <p class="detail-text">hello@premiumnavbar.com</p>
+            </div>
+            <div class="contact-detail">
+              <h3 class="detail-title">📞 Phone</h3>
+              <p class="detail-text">+1 (555) 123-4567</p>
+            </div>
+            <div class="contact-detail">
+              <h3 class="detail-title">���� Location</h3>
+              <p class="detail-text">
+                123 Business Ave<br />Suite 100<br />City, State 12345
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <h3 class="cookie-title">We Use Cookies</h3>
+          <p class="cookie-description">
+            We use essential cookies to make our site work and analytics cookies
+            to understand how visitors use our site. By clicking "Accept All",
+            you consent to our use of cookies for analytics and marketing.
+          </p>
+        </div>
+        <div class="cookie-buttons">
+          <button class="glass-button primary" id="acceptAllCookies">
+            Accept All
+          </button>
+          <button class="glass-button secondary" id="essentialOnlyCookies">
+            Essential Only
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <svg
+        class="back-to-top-icon"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        />
+      </svg>
+    </button>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+      <span id="notificationText"></span>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/app.js"></script>
 
     <!-- OpenWidget Live Chat -->
     <script>
@@ -54,6 +717,7 @@
       window.__ow.organizationId = "4dad4618-7d2d-4122-8542-7491536183a7";
       window.__ow.integration_name = "manual_settings";
       window.__ow.product_name = "openwidget";
+
       (function (n, t, c) {
         function i(n) {
           return e._h ? e._h.apply(null, n) : e._q.push(n);
@@ -92,3363 +756,5 @@
         (!n.__ow.asyncInit && e.init(), (n.OpenWidget = n.OpenWidget || e));
       })(window, document, [].slice);
     </script>
-
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap");
-      @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
-      @import url("https://unpkg.com/normalize.css");
-
-      /* Enhanced Base Styles with Premium Variables */
-      :root {
-        --c-glass: #bbbbbc;
-        --c-light: #fff;
-        --c-dark: #2d4a3d;
-        --c-steel-green: #22c55e;
-        --c-content: #224;
-        --c-action: #22c55e;
-        --c-bg: linear-gradient(135deg, #f0f8f4 0%, #e8f4ec 50%, #e8e8e9 100%);
-        --glass-reflex-dark: 1;
-        --glass-reflex-light: 1;
-        --saturation: 180%;
-
-        /* Enhanced Color Palette */
-        --c-primary: #22c55e;
-        --c-secondary: #16a34a;
-        --c-accent: #34d399;
-        --c-neutral-50: #fafafa;
-        --c-neutral-100: #f5f5f5;
-        --c-neutral-900: #171717;
-        --c-gold: #fbbf24;
-        --c-luxury: #8b5cf6;
-        
-        /* Ultra-Premium Gradients */
-        --gradient-primary: linear-gradient(135deg, #22c55e 0%, #16a34a 35%, #15803d 70%, #10b981 100%);
-        --gradient-secondary: linear-gradient(135deg, #34d399 0%, #22c55e 40%, #16a34a 80%, #059669 100%);
-        --gradient-hero: linear-gradient(135deg, rgba(34,197,94,0.95) 0%, rgba(16,185,129,0.9) 25%, rgba(5,150,105,0.85) 50%, rgba(4,120,87,0.9) 75%, rgba(6,78,59,0.95) 100%);
-        --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.05) 100%);
-        --gradient-dark: linear-gradient(135deg, #1f2937 0%, #111827 35%, #0f172a 70%, #030712 100%);
-        --gradient-luxury: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 25%, #6d28d9 50%, #5b21b6 75%, #4c1d95 100%);
-        --gradient-gold: linear-gradient(135deg, #fbbf24 0%, #f59e0b 25%, #d97706 50%, #b45309 75%, #92400e 100%);
-        
-        /* Enhanced Animation Curves */
-        --ease-premium: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        --ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        --ease-power: cubic-bezier(0.77, 0, 0.175, 1);
-
-        /* Spacing System */
-        --space-xs: 0.25rem;
-        --space-sm: 0.5rem;
-        --space-md: 1rem;
-        --space-lg: 1.5rem;
-        --space-xl: 2rem;
-        --space-2xl: 3rem;
-        --space-3xl: 4rem;
-        --space-4xl: 5rem;
-        --space-5xl: 6rem;
-        
-        /* Premium Border Radius */
-        --border-radius: 0.75rem;
-        --border-radius-lg: 1.25rem;
-        --border-radius-xl: 2rem;
-        --border-radius-2xl: 2.5rem;
-        --border-radius-full: 9999px;
-        
-        /* Ultra-Premium Shadows */
-        --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-        --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.08);
-        --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
-        --shadow-xl: 0 32px 64px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 0, 0, 0.15);
-        --shadow-2xl: 0 48px 96px rgba(0, 0, 0, 0.25), 0 24px 48px rgba(0, 0, 0, 0.2);
-        --shadow-green: 0 16px 48px rgba(34, 197, 94, 0.35), 0 8px 24px rgba(34, 197, 94, 0.25);
-        --shadow-green-lg: 0 32px 80px rgba(34, 197, 94, 0.4), 0 16px 40px rgba(34, 197, 94, 0.3);
-        --shadow-luxury: 0 24px 60px rgba(139, 92, 246, 0.3), 0 12px 30px rgba(139, 92, 246, 0.2);
-        --shadow-gold: 0 20px 50px rgba(251, 191, 36, 0.3), 0 10px 25px rgba(251, 191, 36, 0.2);
-        
-        /* Transition System */
-        --transition-fast: 200ms var(--ease-premium);
-        --transition-base: 350ms var(--ease-premium);
-        --transition-slow: 600ms var(--ease-premium);
-        --transition-bounce: 500ms var(--ease-bounce);
-
-        /* Enhanced Typography */
-        --font-display: "Playfair Display", Georgia, serif;
-        --font-body: "Inter", "DM Sans", system-ui, sans-serif;
-        --font-accent: "DM Sans", system-ui, sans-serif;
-
-        /* Premium Typography Scale */
-        --text-xs: 0.75rem;
-        --text-sm: 0.875rem;
-        --text-base: 1rem;
-        --text-lg: 1.125rem;
-        --text-xl: 1.25rem;
-        --text-2xl: 1.5rem;
-        --text-3xl: 1.875rem;
-        --text-4xl: 2.25rem;
-        --text-5xl: 3rem;
-        --text-6xl: 3.75rem;
-        --text-7xl: 4.5rem;
-        --text-8xl: 6rem;
-        --text-9xl: 8rem;
-
-        /* Theme toggle variables */
-        --font-size: 64px;
-        --bg-light: hsl(235 5% 85%);
-        --bg-dark: hsl(220 27% 6%);
-        --button-light: hsl(223 4% 73%);
-        --button-dark: hsl(220 27% 6%);
-
-        /* Animation speeds */
-        --speed-factor: 4;
-        --step: 0.5s;
-        --ease: linear(
-          0 0%,
-          0.2342 12.49%,
-          0.4374 24.99%,
-          0.6093 37.49%,
-          0.6835 43.74%,
-          0.7499 49.99%,
-          0.8086 56.25%,
-          0.8593 62.5%,
-          0.9023 68.75%,
-          0.9375 75%,
-          0.9648 81.25%,
-          0.9844 87.5%,
-          0.9961 93.75%,
-          1 100%
-        );
-      }
-
-      html {
-        color-scheme: light dark;
-        scroll-behavior: smooth;
-      }
-
-      /* Enhanced Body with Ultra-Premium Background */
-      body {
-        font-size: 20px;
-        font-family: var(--font-body);
-        font-optical-sizing: auto;
-        background: 
-          radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 50%),
-          linear-gradient(135deg, #f8fafc 0%, #f1f5f9 25%, #e2e8f0 50%, #cbd5e1 75%, #94a3b8 100%);
-        color: var(--c-content);
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        transition: all 400ms var(--ease-premium);
-        overflow-x: hidden;
-        position: relative;
-      }
-
-      /* Ultra-Premium Animated Background with Particles */
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: 
-          radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.08) 0%, transparent 60%),
-          radial-gradient(circle at 80% 20%, rgba(22, 163, 74, 0.06) 0%, transparent 60%),
-          radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.04) 0%, transparent 60%),
-          radial-gradient(circle at 60% 80%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
-          radial-gradient(circle at 90% 10%, rgba(251, 191, 36, 0.02) 0%, transparent 40%);
-        animation: floatingBg 25s ease-in-out infinite;
-        z-index: -2;
-        pointer-events: none;
-      }
-
-      body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: 
-          radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.8) 0px, transparent 2px),
-          radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.3) 0px, transparent 1px),
-          radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.2) 0px, transparent 1px);
-        animation: particleFloat 20s linear infinite;
-        z-index: -1;
-        pointer-events: none;
-        opacity: 0.6;
-      }
-
-      @keyframes floatingBg {
-        0%, 100% { 
-          transform: translate(0, 0) rotate(0deg) scale(1); 
-          filter: hue-rotate(0deg);
-        }
-        25% { 
-          transform: translate(30px, -30px) rotate(1deg) scale(1.02); 
-          filter: hue-rotate(5deg);
-        }
-        50% { 
-          transform: translate(-20px, 20px) rotate(-1deg) scale(0.98); 
-          filter: hue-rotate(10deg);
-        }
-        75% { 
-          transform: translate(40px, 10px) rotate(0.5deg) scale(1.01); 
-          filter: hue-rotate(5deg);
-        }
-      }
-
-      @keyframes particleFloat {
-        0% { transform: translateY(0px) rotate(0deg); }
-        100% { transform: translateY(-20px) rotate(360deg); }
-      }
-
-      /* Ultra-Premium Header with Advanced Glass Morphism */
-      header {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.25) 0%,
-          rgba(34, 197, 94, 0.15) 25%,
-          rgba(16, 185, 129, 0.2) 50%,
-          rgba(139, 92, 246, 0.1) 75%,
-          rgba(255, 255, 255, 0.2) 100%
-        );
-        backdrop-filter: blur(60px) saturate(200%) brightness(1.1);
-        -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(1.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.4),
-          inset 0 -1px 0 rgba(34, 197, 94, 0.2),
-          0 12px 40px rgba(34, 197, 94, 0.15),
-          0 6px 20px rgba(0, 0, 0, 0.1),
-          0 25px 80px rgba(34, 197, 94, 0.1);
-        position: relative;
-        overflow: hidden;
-      }
-
-      header::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          transparent 0%,
-          rgba(34, 197, 94, 0.8) 20%,
-          rgba(139, 92, 246, 1) 40%,
-          rgba(251, 191, 36, 1) 60%,
-          rgba(34, 197, 94, 0.8) 80%,
-          transparent 100%
-        );
-        animation: premiumShimmer 4s ease-in-out infinite;
-      }
-
-      @keyframes premiumShimmer {
-        0%, 100% { 
-          opacity: 0.6; 
-          transform: translateX(-100%) scaleX(0.5); 
-        }
-        50% { 
-          opacity: 1; 
-          transform: translateX(100%) scaleX(1.5); 
-        }
-      }
-
-      header::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="premium-grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1.2" fill="rgba(255,255,255,0.12)"/><circle cx="80" cy="40" r="0.8" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="10" r="0.6" fill="rgba(34,197,94,0.15)"/><circle cx="90" cy="70" r="0.9" fill="rgba(139,92,246,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23premium-grain)"/></svg>'),
-          radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
-          radial-gradient(circle at 70% 80%, rgba(34,197,94,0.1) 0%, transparent 50%);
-        opacity: 0.9;
-        pointer-events: none;
-        animation: subtleFloat 12s ease-in-out infinite;
-      }
-
-      @keyframes subtleFloat {
-        0%, 100% { 
-          transform: translateY(0) scale(1) rotate(0deg); 
-          opacity: 0.9;
-        }
-        33% { 
-          transform: translateY(-3px) scale(1.01) rotate(0.5deg); 
-          opacity: 1;
-        }
-        66% { 
-          transform: translateY(2px) scale(0.99) rotate(-0.3deg); 
-          opacity: 0.95;
-        }
-      }
-
-      /* Ultra-Premium Typography with Advanced Effects */
-      .logo {
-        font-family: var(--font-display);
-        font-weight: 900;
-        font-size: 1.8rem;
-        background: linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #f0fdf4 15%,
-          #dcfce7 30%,
-          #bbf7d0 45%,
-          #86efac 60%,
-          #22c55e 75%,
-          #16a34a 90%,
-          #15803d 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        background-size: 300% 300%;
-        animation: luxuryGradientShift 6s ease-in-out infinite;
-        text-shadow:
-          0 3px 6px rgba(0, 0, 0, 0.15),
-          0 6px 12px rgba(34, 197, 94, 0.25),
-          0 12px 24px rgba(34, 197, 94, 0.15);
-        filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
-        letter-spacing: -0.025em;
-        position: relative;
-        transition: all var(--transition-slow);
-      }
-
-      @keyframes luxuryGradientShift {
-        0%, 100% { 
-          background-position: 0% 50%; 
-          transform: scale(1);
-        }
-        33% { 
-          background-position: 50% 100%; 
-          transform: scale(1.02);
-        }
-        66% { 
-          background-position: 100% 0%; 
-          transform: scale(0.98);
-        }
-      }
-
-      .logo:hover {
-        transform: scale(1.08) translateY(-2px);
-        filter: drop-shadow(0 10px 20px rgba(34, 197, 94, 0.4));
-        animation-duration: 2s;
-      }
-
-      .logo::before {
-        content: "Cash For Your Home";
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.95) 0%,
-          rgba(139, 92, 246, 0.8) 50%,
-          rgba(34, 197, 94, 0.9) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        z-index: -1;
-        transform: translateY(2px);
-        opacity: 0.6;
-        filter: blur(2px);
-      }
-
-      /* Enhanced Section Titles with Premium Animations */
-      .section-title {
-        font-family: var(--font-display);
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 900;
-        background: var(--gradient-luxury);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-align: center;
-        margin-bottom: 2rem;
-        line-height: 1.1;
-        letter-spacing: -0.04em;
-        text-shadow:
-          0 6px 12px rgba(0, 0, 0, 0.2),
-          0 3px 6px rgba(0, 0, 0, 0.15);
-        position: relative;
-        opacity: 0;
-        transform: translateY(50px) scale(0.9);
-        animation: luxuryFadeInUp 1.2s var(--ease-bounce) forwards;
-      }
-
-      @keyframes luxuryFadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -1.2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 120px;
-        height: 6px;
-        background: var(--gradient-gold);
-        border-radius: 3px;
-        box-shadow: 
-          0 4px 12px rgba(251, 191, 36, 0.4),
-          0 2px 6px rgba(251, 191, 36, 0.3);
-        animation: titleUnderlineGlow 2s ease-in-out infinite alternate;
-      }
-
-      @keyframes titleUnderlineGlow {
-        from { 
-          box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
-          transform: translateX(-50%) scale(1);
-        }
-        to { 
-          box-shadow: 0 8px 24px rgba(251, 191, 36, 0.6);
-          transform: translateX(-50%) scale(1.05);
-        }
-      }
-
-      .section-title::before {
-        content: "";
-        position: absolute;
-        bottom: -1rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 140px;
-        height: 12px;
-        background: var(--gradient-gold);
-        border-radius: 6px;
-        opacity: 0.4;
-        filter: blur(8px);
-        animation: titleUnderlineFloat 3s ease-in-out infinite;
-      }
-
-      @keyframes titleUnderlineFloat {
-        0%, 100% { transform: translateX(-50%) translateY(0); }
-        50% { transform: translateX(-50%) translateY(-2px); }
-      }
-
-      /* Enhanced Section Subtitle */
-      .section-subtitle {
-        text-align: center;
-        color: color-mix(in srgb, var(--c-content) 85%, transparent);
-        font-size: 1.3rem;
-        margin-bottom: 3rem;
-        line-height: 1.8;
-        font-weight: 500;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: luxuryFadeInUp 1s var(--ease-premium) 0.3s forwards;
-        font-family: var(--font-accent);
-      }
-
-      /* Ultra-Premium Main Article Title */
-      .article h1 {
-        font-family: var(--font-display);
-        font-size: clamp(3.5rem, 8vw, 6.5rem);
-        font-weight: 900;
-        background: linear-gradient(
-          135deg,
-          var(--c-content) 0%,
-          var(--c-luxury) 20%,
-          var(--c-action) 40%,
-          var(--c-gold) 60%,
-          var(--c-steel-green) 80%,
-          var(--c-content) 100%
-        );
-        background-size: 400% 400%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin: 1.8em 0 1em;
-        letter-spacing: -0.05em;
-        line-height: 1.05;
-        text-shadow:
-          0 12px 24px rgba(0, 0, 0, 0.25),
-          0 6px 12px rgba(0, 0, 0, 0.2);
-        position: relative;
-        animation: luxuryTitleGlow 8s ease-in-out infinite;
-        opacity: 0;
-        transform: translateY(80px) scale(0.8);
-        animation: luxuryTitleEntrance 1.8s var(--ease-bounce) forwards;
-      }
-
-      @keyframes luxuryTitleGlow {
-        0%, 100% { background-position: 0% 50%; }
-        25% { background-position: 100% 0%; }
-        50% { background-position: 100% 100%; }
-        75% { background-position: 0% 100%; }
-      }
-
-      @keyframes luxuryTitleEntrance {
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1);
-        }
-      }
-
-      .article h1::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.3) 0%,
-          transparent 30%,
-          rgba(139, 92, 246, 0.2) 50%,
-          transparent 70%,
-          rgba(34, 197, 94, 0.15) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        z-index: 1;
-        animation: luxuryHighlight 4s ease-in-out infinite;
-      }
-
-      @keyframes luxuryHighlight {
-        0%, 100% { opacity: 0; transform: scale(1); }
-        50% { opacity: 0.9; transform: scale(1.02); }
-      }
-
-      /* Theme variations with enhanced luxury */
-      body:has(input[value="dark"]:checked) {
-        --c-glass: #bbbbbc;
-        --c-light: #fff;
-        --c-dark: #2d4a3d;
-        --c-steel-green: #22c55e;
-        --c-content: #e1e1e1;
-        --c-action: #22c55e;
-        --c-bg: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
-        --glass-reflex-dark: 2.5;
-        --glass-reflex-light: 0.4;
-        --saturation: 200%;
-      }
-
-      body:has(input[value="dim"]:checked) {
-        --c-light: #99deff;
-        --c-dark: #20001b;
-        --c-steel-green: #22c55e;
-        --c-glass: hsl(335 250% 74% / 1);
-        --c-content: #d5dbe2;
-        --c-action: #22c55e;
-        --c-bg: linear-gradient(135deg, #0a1628 0%, #1a202c 25%, #2d3748 50%, #4a5568 75%, #718096 100%);
-        --glass-reflex-dark: 2.5;
-        --glass-reflex-light: 0.8;
-        --saturation: 250%;
-      }
-
-      /* Ultra-Premium Theme Switcher */
-      .switcher {
-        position: fixed;
-        z-index: 1000;
-        top: 50px;
-        left: 50%;
-        translate: -50%;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 220px;
-        max-width: 220px;
-        height: 68px;
-        box-sizing: border-box;
-        padding: 10px 15px;
-        margin: 0 auto;
-        border: none;
-        border-radius: 99em;
-        font-size: var(--fz);
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.25) 0%,
-          color-mix(in srgb, var(--c-glass) 20%, transparent) 25%,
-          color-mix(in srgb, var(--c-glass) 15%, transparent) 50%,
-          color-mix(in srgb, var(--c-glass) 10%, transparent) 75%,
-          rgba(255, 255, 255, 0.15) 100%
-        );
-        backdrop-filter: blur(40px) saturate(var(--saturation)) brightness(1.1);
-        -webkit-backdrop-filter: blur(40px) saturate(var(--saturation)) brightness(1.1);
-        box-shadow:
-          inset 0 0 0 1px rgba(255, 255, 255, 0.3),
-          inset 3px 6px 0px -3px rgba(255, 255, 255, 0.4),
-          inset -4px -4px 0px -3px rgba(255, 255, 255, 0.35),
-          inset -6px -16px 3px -10px rgba(255, 255, 255, 0.25),
-          inset -1px -3px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
-          inset -3px 4px 0px -3px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 30%), transparent),
-          inset 0px 6px 8px -3px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 25%), transparent),
-          inset 4px -10px 3px -6px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 15%), transparent),
-          0px 4px 12px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 15%), transparent),
-          0px 12px 32px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
-          0px 24px 48px 0px rgba(34, 197, 94, 0.15),
-          0px 32px 64px 0px rgba(139, 92, 246, 0.1);
-        transition: all 600ms var(--ease-premium);
-      }
-
-      .switcher:hover {
-        transform: translateX(-50%) translateY(-4px) scale(1.05);
-        box-shadow:
-          inset 0 0 0 1px rgba(255, 255, 255, 0.4),
-          inset 3px 6px 0px -3px rgba(255, 255, 255, 0.5),
-          inset -4px -4px 0px -3px rgba(255, 255, 255, 0.45),
-          inset -6px -16px 3px -10px rgba(255, 255, 255, 0.35),
-          inset -1px -3px 8px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 25%), transparent),
-          inset -3px 4px 0px -3px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 35%), transparent),
-          inset 0px 6px 8px -3px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 30%), transparent),
-          inset 4px -10px 3px -6px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
-          0px 8px 20px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
-          0px 20px 48px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 15%), transparent),
-          0px 32px 64px 0px rgba(34, 197, 94, 0.2),
-          0px 48px 96px 0px rgba(139, 92, 246, 0.15);
-      }
-
-      .switcher__legend {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        border: 0;
-        padding: 0;
-        white-space: nowrap;
-        clip-path: inset(100%);
-        clip: rect(0 0 0 0);
-        overflow: hidden;
-      }
-
-      .switcher__input {
-        clip: rect(0 0 0 0);
-        clip-path: inset(100%);
-        height: 1px;
-        width: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-      }
-
-      .switcher__icon {
-        display: block;
-        width: 100%;
-        transition: all 400ms var(--ease-premium);
-        filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
-      }
-
-      .switcher__option {
-        --c: var(--c-content);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 16px;
-        width: 64px;
-        height: 100%;
-        box-sizing: border-box;
-        border-radius: 99em;
-        opacity: 1;
-        transition: all 300ms var(--ease-premium);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .switcher__option::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle, var(--c-action) 0%, var(--c-luxury) 50%, transparent 80%);
-        opacity: 0;
-        transform: scale(0);
-        transition: all 400ms var(--ease-bounce);
-        border-radius: 99em;
-      }
-
-      .switcher__option:hover {
-        --c: var(--c-action);
-        cursor: pointer;
-      }
-
-      .switcher__option:hover::before {
-        opacity: 0.15;
-        transform: scale(1.2);
-      }
-
-      .switcher__option:hover .switcher__icon {
-        scale: 1.25;
-        filter: drop-shadow(0 6px 12px rgba(34,197,94,0.4));
-      }
-
-      .switcher__option:has(input:checked) {
-        --c: var(--c-content);
-        cursor: auto;
-      }
-
-      .switcher__option:has(input:checked) .switcher__icon {
-        scale: 1.1;
-        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-      }
-
-      .switcher::after {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 5px;
-        display: block;
-        width: 74px;
-        height: calc(100% - 10px);
-        border-radius: 99em;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.4) 0%,
-          color-mix(in srgb, var(--c-glass) 50%, transparent) 25%,
-          color-mix(in srgb, var(--c-glass) 35%, transparent) 75%,
-          rgba(255, 255, 255, 0.3) 100%
-        );
-        z-index: -1;
-        box-shadow:
-          inset 0 0 0 1px rgba(255, 255, 255, 0.2),
-          inset 4px 3px 0px -1px rgba(255, 255, 255, 0.4),
-          inset -3px -3px 0px -1px rgba(255, 255, 255, 0.35),
-          inset -4px -12px 3px -8px rgba(255, 255, 255, 0.25),
-          inset -3px 4px 6px -1px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 30%), transparent),
-          inset 0px -8px 3px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 15%), transparent),
-          0px 6px 12px 0px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent);
-        transition: all 600ms var(--ease-bounce);
-      }
-
-      .switcher:has(input[c-option="1"]:checked)::after {
-        translate: 0 0;
-        animation: luxuryToggleBounce 800ms var(--ease-bounce);
-      }
-
-      .switcher:has(input[c-option="2"]:checked)::after {
-        translate: 70px 0;
-        animation: luxuryToggleBounce 800ms var(--ease-bounce);
-      }
-
-      .switcher:has(input[c-option="3"]:checked)::after {
-        translate: 140px 0;
-        animation: luxuryToggleBounce 800ms var(--ease-bounce);
-      }
-
-      @keyframes luxuryToggleBounce {
-        0% { scale: 1 1; }
-        20% { scale: 1.2 0.8; }
-        40% { scale: 0.9 1.1; }
-        60% { scale: 1.05 0.95; }
-        80% { scale: 0.98 1.02; }
-        100% { scale: 1 1; }
-      }
-
-      /* Enhanced Navigation with Premium Glass Effect */
-      nav {
-        width: fit-content;
-        margin: 4rem auto;
-        padding: 16px 25px;
-        border-radius: var(--border-radius-xl);
-        display: flex;
-        align-items: center;
-        gap: 2.5rem;
-        flex-wrap: wrap;
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.2) 0%,
-          rgba(34, 197, 94, 0.1) 50%,
-          rgba(139, 92, 246, 0.08) 100%
-        );
-        backdrop-filter: blur(30px) saturate(180%);
-        -webkit-backdrop-filter: blur(30px) saturate(180%);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: var(--shadow-xl);
-      }
-
-      .nav-logo {
-        display: flex;
-        align-items: center;
-      }
-
-      .nav-logo .logo {
-        height: 40px;
-        width: auto;
-        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
-      }
-
-      nav > ul {
-        position: relative;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      nav > ul::after {
-        content: "";
-        position: absolute;
-        z-index: -3;
-        inset: -12px;
-        border-radius: var(--border-radius-lg);
-        background: var(--gradient-primary);
-        backdrop-filter: blur(4px);
-        opacity: 0.8;
-      }
-
-      nav a {
-        display: block;
-        padding: 1.25rem 1.5rem;
-        text-decoration: none;
-        color: white;
-        font-weight: 700;
-        font-size: 16px;
-        transition: all var(--transition-base);
-        border-radius: var(--border-radius);
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-        position: relative;
-        overflow: hidden;
-      }
-
-      nav a::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-        transition: left 0.6s;
-      }
-
-      nav a:hover::before {
-        left: 100%;
-      }
-
-      nav a:hover {
-        background: rgba(34, 197, 94, 0.3);
-        color: #22c55e;
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
-      }
-
-      /* Enhanced Article Styles with Premium Typography */
-      .article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 6em 2em;
-        max-width: 1400px;
-        margin: 0 auto;
-        background: 
-          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
-        border-radius: var(--border-radius-2xl);
-        position: relative;
-      }
-
-      .article::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="article-pattern" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="rgba(34,197,94,0.05)"/><circle cx="10" cy="30" r="1" fill="rgba(139,92,246,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23article-pattern)"/></svg>');
-        opacity: 0.6;
-        pointer-events: none;
-        border-radius: var(--border-radius-2xl);
-      }
-
-      .article h1,
-      .article h2,
-      .article p,
-      .article blockquote {
-        width: 100%;
-        max-width: 700px;
-        box-sizing: border-box;
-        position: relative;
-        z-index: 1;
-      }
-
-      .article h1 {
-        font-size: clamp(3rem, 7vw, 5rem);
-        margin: 1.6em 0 0.8em;
-      }
-
-      .article h2 {
-        font-family: var(--font-display);
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 800;
-        margin: 2em 0 1em;
-        background: var(--gradient-secondary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1.2;
-      }
-
-      .article p {
-        line-height: 180%;
-        margin: 0 0 1.5em;
-        font-size: 1.125rem;
-        font-weight: 400;
-        color: color-mix(in srgb, var(--c-content) 90%, transparent);
-      }
-
-      .article blockquote {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: clamp(1.5rem, 3vw, 2.5rem);
-        font-family: var(--font-display);
-        font-weight: 600;
-        font-style: italic;
-        padding: 2rem;
-        border-left: 6px solid var(--c-action);
-        background: linear-gradient(
-          135deg,
-          rgba(34, 197, 94, 0.08) 0%,
-          rgba(139, 92, 246, 0.05) 100%
-        );
-        border-radius: var(--border-radius-lg);
-        backdrop-filter: blur(10px);
-        box-shadow: var(--shadow-lg);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .article blockquote::before {
-        content: """;
-        position: absolute;
-        top: -10px;
-        left: 20px;
-        font-size: 6rem;
-        color: var(--c-action);
-        opacity: 0.3;
-        font-family: Georgia, serif;
-        line-height: 1;
-      }
-
-      .article figure {
-        margin: 2em 0 3em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-      }
-
-      .article figcaption {
-        max-width: 700px;
-        margin-top: 1.5rem;
-        font-size: 0.9rem;
-        font-style: italic;
-        color: color-mix(in srgb, var(--c-content) 70%, var(--c-bg));
-        text-align: center;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: var(--border-radius);
-        backdrop-filter: blur(10px);
-      }
-
-      .article a {
-        color: var(--c-action);
-        text-decoration-thickness: 0.08em;
-        text-underline-position: under;
-        text-decoration-color: color-mix(
-          in srgb,
-          currentColor,
-          transparent 60%
-        );
-        transition: all var(--transition-base);
-        font-weight: 600;
-      }
-
-      .article a:hover {
-        color: var(--c-luxury);
-        text-decoration-color: color-mix(
-          in srgb,
-          currentColor,
-          transparent 20%
-        );
-        transform: translateY(-1px);
-      }
-
-      .article img {
-        display: block;
-        border-radius: var(--border-radius-xl);
-        width: 100%;
-        max-width: 800px;
-        aspect-ratio: 16 / 10;
-        object-fit: cover;
-        box-shadow: var(--shadow-2xl);
-        transition: all var(--transition-slow);
-      }
-
-      .article img:hover {
-        transform: scale(1.02) translateY(-5px);
-        box-shadow: var(--shadow-luxury);
-      }
-
-      .article .box {
-        padding: 2rem 2.5rem;
-        border-top: 6px solid var(--c-action);
-        border-radius: var(--border-radius-xl);
-        background: linear-gradient(
-          135deg,
-          color-mix(in srgb, var(--c-action) 12%, var(--c-bg)) 0%,
-          color-mix(in srgb, var(--c-luxury) 8%, var(--c-bg)) 100%
-        );
-        backdrop-filter: blur(20px);
-        box-shadow: var(--shadow-lg);
-        transition: all var(--transition-base);
-      }
-
-      .article .box:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-xl);
-      }
-
-      /* Ultra-Premium CTA Button Styles */
-      .cta-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.5rem 3rem;
-        background: var(--gradient-hero);
-        color: white;
-        text-decoration: none;
-        border-radius: var(--border-radius-full);
-        font-weight: 800;
-        font-size: 1.125rem;
-        letter-spacing: 0.025em;
-        transition: all var(--transition-base);
-        margin: 2rem 0;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-        box-shadow: var(--shadow-green-lg);
-        position: relative;
-        overflow: hidden;
-        text-transform: uppercase;
-        min-width: 280px;
-        height: 64px;
-      }
-
-      .cta-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-        transition: left 0.8s;
-      }
-
-      .cta-button:hover::before {
-        left: 100%;
-      }
-
-      .cta-button:hover {
-        background: var(--gradient-luxury);
-        transform: translateY(-4px) scale(1.05);
-        box-shadow: var(--shadow-luxury);
-        border-color: rgba(255, 255, 255, 0.5);
-      }
-
-      .cta-button:active {
-        transform: translateY(-2px) scale(1.02);
-      }
-
-      /* Ultra-Premium Hero Address Section */
-      .hero-address-section {
-        background: linear-gradient(135deg, 
-          rgba(255, 255, 255, 0.25) 0%,
-          rgba(34, 197, 94, 0.15) 20%,
-          rgba(16, 185, 129, 0.18) 40%,
-          rgba(139, 92, 246, 0.12) 60%,
-          rgba(251, 191, 36, 0.1) 80%,
-          rgba(255, 255, 255, 0.2) 100%);
-        backdrop-filter: blur(40px) saturate(200%) brightness(1.05);
-        -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(1.05);
-        padding: var(--space-5xl) var(--space-2xl);
-        border-radius: var(--border-radius-2xl);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        box-shadow: var(--shadow-2xl);
-        margin: var(--space-5xl) 0;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-address-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hero-luxury-dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(34,197,94,0.1)"/><circle cx="5" cy="25" r="1" fill="rgba(139,92,246,0.08)"/><circle cx="25" cy="5" r="1.5" fill="rgba(251,191,36,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23hero-luxury-dots)"/></svg>'),
-          radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
-          radial-gradient(circle at 75% 75%, rgba(34,197,94,0.08) 0%, transparent 50%);
-        opacity: 0.8;
-        pointer-events: none;
-        animation: heroPatternFloat 15s ease-in-out infinite;
-      }
-
-      @keyframes heroPatternFloat {
-        0%, 100% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(-10px) rotate(1deg); }
-      }
-
-      .hero-address-section::after {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        height: 4px;
-        background: var(--gradient-gold);
-        border-radius: var(--border-radius-2xl) var(--border-radius-2xl) 0 0;
-        animation: heroTopGlow 3s ease-in-out infinite alternate;
-      }
-
-      @keyframes heroTopGlow {
-        from { opacity: 0.6; transform: scaleX(1); }
-        to { opacity: 1; transform: scaleX(1.02); }
-      }
-
-      .hero-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-4xl);
-        align-items: center;
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-image {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-      }
-
-      .hero-image::before {
-        content: "";
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
-        background: var(--gradient-luxury);
-        border-radius: var(--border-radius-2xl);
-        opacity: 0.1;
-        animation: heroImageGlow 4s ease-in-out infinite alternate;
-      }
-
-      @keyframes heroImageGlow {
-        from { opacity: 0.1; transform: scale(1); }
-        to { opacity: 0.2; transform: scale(1.02); }
-      }
-
-      .hero-couple-image {
-        width: 100%;
-        max-width: 450px;
-        height: auto;
-        border-radius: var(--border-radius-2xl);
-        box-shadow: var(--shadow-2xl);
-        filter: brightness(1.1) contrast(1.08) saturate(1.1);
-        transition: all var(--transition-slow);
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-couple-image:hover {
-        transform: scale(1.03) translateY(-5px);
-        box-shadow: var(--shadow-luxury);
-        filter: brightness(1.15) contrast(1.1) saturate(1.15);
-      }
-
-      .hero-text-content {
-        text-align: left;
-        position: relative;
-      }
-
-      .hero-main-title {
-        font-family: var(--font-display);
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
-        font-weight: 900;
-        color: var(--c-content);
-        line-height: 1.2;
-        margin-bottom: var(--space-2xl);
-        text-shadow: 0 3px 6px rgba(0,0,0,0.15);
-        position: relative;
-      }
-
-      .hero-main-title::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        right: -10px;
-        bottom: -10px;
-        background: radial-gradient(ellipse at center, rgba(34,197,94,0.1) 0%, transparent 70%);
-        border-radius: var(--border-radius-xl);
-        z-index: -1;
-        animation: heroTitleGlow 3s ease-in-out infinite alternate;
-      }
-
-      @keyframes heroTitleGlow {
-        from { opacity: 0.5; }
-        to { opacity: 0.8; }
-      }
-
-      .highlight-text {
-        background: var(--gradient-luxury);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 900;
-        position: relative;
-        display: inline-block;
-      }
-
-      .highlight-text::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--gradient-gold);
-        border-radius: 2px;
-        animation: highlightUnderline 2s ease-in-out infinite alternate;
-      }
-
-      @keyframes highlightUnderline {
-        from { transform: scaleX(0.8); opacity: 0.6; }
-        to { transform: scaleX(1); opacity: 1; }
-      }
-
-      .address-form-container {
-        margin: var(--space-2xl) 0;
-      }
-
-      .address-form {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-lg);
-      }
-
-      .address-input-group {
-        display: flex;
-        gap: var(--space-sm);
-        background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.95) 100%);
-        padding: 8px;
-        border-radius: var(--border-radius-full);
-        border: 3px solid transparent;
-        background-clip: padding-box;
-        box-shadow: 
-          0 12px 40px rgba(34, 197, 94, 0.2),
-          inset 0 2px 0 rgba(255, 255, 255, 0.3);
-        transition: all var(--transition-base);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .address-input-group::before {
-        content: "";
-        position: absolute;
-        inset: -3px;
-        background: var(--gradient-primary);
-        border-radius: var(--border-radius-full);
-        z-index: -1;
-        opacity: 0;
-        transition: all var(--transition-base);
-      }
-
-      .address-input-group:focus-within::before {
-        opacity: 1;
-      }
-
-      .address-input-group:focus-within {
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 
-          0 0 0 6px color-mix(in srgb, var(--c-action) 25%, transparent),
-          0 20px 50px rgba(34, 197, 94, 0.3);
-      }
-
-      .address-input {
-        flex: 1;
-        padding: 18px 25px;
-        border: none;
-        background: transparent;
-        font-size: 1.125rem;
-        font-family: inherit;
-        color: var(--c-content);
-        outline: none;
-        font-weight: 600;
-      }
-
-      .address-input::placeholder {
-        color: color-mix(in srgb, var(--c-content) 60%, transparent);
-        font-weight: 500;
-      }
-
-      .go-button {
-        padding: 18px 35px;
-        background: var(--gradient-hero);
-        color: white;
-        border: none;
-        border-radius: var(--border-radius-full);
-        font-size: 1.125rem;
-        font-weight: 800;
-        font-family: inherit;
-        cursor: pointer;
-        transition: all var(--transition-base);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        min-width: 100px;
-        box-shadow: 
-          0 8px 20px rgba(34, 197, 94, 0.4),
-          inset 0 2px 0 rgba(255, 255, 255, 0.2);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .go-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-        transition: left 0.6s;
-      }
-
-      .go-button:hover::before {
-        left: 100%;
-      }
-
-      .go-button:hover {
-        background: var(--gradient-luxury);
-        transform: translateY(-3px) scale(1.08);
-        box-shadow: 
-          0 12px 30px rgba(139, 92, 246, 0.5),
-          inset 0 2px 0 rgba(255, 255, 255, 0.3);
-      }
-
-      .go-button:active {
-        transform: translateY(-1px) scale(1.05);
-      }
-
-      .hero-subtitle {
-        font-size: 1.125rem;
-        color: color-mix(in srgb, var(--c-content) 85%, transparent);
-        text-align: center;
-        line-height: 1.6;
-        margin: 0;
-        font-weight: 500;
-      }
-
-      .hero-subtitle strong {
-        color: var(--c-action);
-        font-weight: 800;
-        background: var(--gradient-gold);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .trust-indicators {
-        margin-top: var(--space-3xl);
-        position: relative;
-        z-index: 1;
-      }
-
-      .media-logos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: var(--space-xl);
-        flex-wrap: wrap;
-        margin-bottom: var(--space-2xl);
-        padding: var(--space-xl);
-        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
-        border-radius: var(--border-radius-xl);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(20px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .media-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: var(--space-md) var(--space-lg);
-        background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%);
-        border-radius: var(--border-radius-lg);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        transition: all var(--transition-base);
-        min-width: 100px;
-        height: 55px;
-        box-shadow: var(--shadow-md);
-      }
-
-      .media-logo:hover {
-        transform: translateY(-4px) scale(1.05);
-        box-shadow: var(--shadow-xl);
-        background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
-      }
-
-      .logo-text {
-        font-weight: 800;
-        font-size: 0.95rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-
-      .logo-text.usa-today {
-        color: #1e40af;
-      }
-
-      .logo-text.fox {
-        color: #dc2626;
-      }
-
-      .logo-text.nbc {
-        color: #7c3aed;
-      }
-
-      .logo-text.cbs {
-        color: #1f2937;
-      }
-
-      .reviews-badge {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-      }
-
-      .stars {
-        color: var(--c-gold);
-        font-size: 1.1rem;
-        letter-spacing: 2px;
-        filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
-      }
-
-      .rating-text {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: var(--c-content);
-      }
-
-      .happy-homeowners {
-        text-align: center;
-        background: linear-gradient(135deg, rgba(34,197,94,0.12) 0%, rgba(139,92,246,0.08) 100%);
-        padding: var(--space-2xl);
-        border-radius: var(--border-radius-xl);
-        border: 2px solid rgba(34, 197, 94, 0.3);
-        backdrop-filter: blur(20px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .homeowners-title {
-        font-family: var(--font-display);
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--c-action);
-        margin-bottom: var(--space-lg);
-        letter-spacing: 0.02em;
-      }
-
-      .success-indicator {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--space-md);
-        background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
-        padding: var(--space-lg);
-        border-radius: var(--border-radius-lg);
-        border: 2px solid rgba(34, 197, 94, 0.4);
-        backdrop-filter: blur(15px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .success-icon {
-        font-size: 1.5rem;
-        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-      }
-
-      .success-text {
-        font-weight: 700;
-        color: var(--c-content);
-        font-size: 1.05rem;
-      }
-
-      /* Enhanced Glass Button Container */
-      .glass-button-container {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        margin: 3rem 0;
-        flex-wrap: wrap;
-      }
-
-      .glass-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 40px;
-        min-width: 220px;
-        height: 70px;
-        box-sizing: border-box;
-        border: none;
-        border-radius: var(--border-radius-full);
-        font-size: 1.125rem;
-        font-weight: 700;
-        font-family: var(--font-accent);
-        text-decoration: none;
-        color: var(--c-content);
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.2) 0%,
-          rgba(34, 197, 94, 0.15) 50%,
-          rgba(139, 92, 246, 0.1) 100%
-        );
-        backdrop-filter: blur(20px) saturate(200%);
-        -webkit-backdrop-filter: blur(20px) saturate(200%);
-        box-shadow: var(--shadow-lg);
-        transition: all var(--transition-base);
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .glass-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        transition: left 0.8s;
-      }
-
-      .glass-button:hover::before {
-        left: 100%;
-      }
-
-      .glass-button:hover {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.3) 0%,
-          rgba(34, 197, 94, 0.25) 50%,
-          rgba(139, 92, 246, 0.2) 100%
-        );
-        transform: translateY(-4px) scale(1.05);
-        color: var(--c-action);
-        box-shadow: var(--shadow-xl);
-      }
-
-      .glass-button.primary {
-        background: var(--gradient-hero);
-        color: white;
-        font-weight: 800;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-        box-shadow: var(--shadow-green-lg);
-      }
-
-      .glass-button.primary:hover {
-        background: var(--gradient-luxury);
-        transform: translateY(-4px) scale(1.05);
-        box-shadow: var(--shadow-luxury);
-      }
-
-      /* Enhanced Benefits List */
-      .benefits-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-        margin: 3rem 0;
-        padding: 3rem;
-        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(34,197,94,0.05) 100%);
-        border-radius: var(--border-radius-2xl);
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: var(--shadow-xl);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .benefits-list::before {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        height: 4px;
-        background: var(--gradient-primary);
-        border-radius: var(--border-radius-2xl) var(--border-radius-2xl) 0 0;
-      }
-
-      .benefit-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 1.5rem;
-        padding: 2rem;
-        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-        backdrop-filter: blur(25px) saturate(200%);
-        -webkit-backdrop-filter: blur(25px) saturate(200%);
-        border-radius: var(--border-radius-xl);
-        border: 2px solid rgba(255, 255, 255, 0.15);
-        box-shadow: var(--shadow-lg);
-        transition: all var(--transition-base);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .benefit-item::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: var(--gradient-secondary);
-        transition: all var(--transition-base);
-      }
-
-      .benefit-item:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: var(--shadow-xl);
-        border-color: rgba(34, 197, 94, 0.3);
-      }
-
-      .benefit-item:hover::before {
-        width: 8px;
-        background: var(--gradient-luxury);
-      }
-
-      .benefit-icon {
-        width: 50px;
-        height: 50px;
-        flex-shrink: 0;
-        filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.15));
-        transition: all var(--transition-base);
-      }
-
-      .benefit-item:hover .benefit-icon {
-        transform: scale(1.1) translateY(-2px);
-        filter: drop-shadow(0 8px 16px rgba(34, 197, 94, 0.3));
-      }
-
-      .benefit-content {
-        font-size: 1.125rem;
-        line-height: 1.7;
-        color: var(--c-content);
-        font-weight: 500;
-      }
-
-      .benefit-content strong {
-        color: var(--c-action);
-        font-weight: 800;
-        display: block;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-      }
-
-      /* Enhanced Testimonials */
-      .testimonials {
-        padding: 6rem 0;
-        background: 
-          radial-gradient(circle at 30% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-          var(--c-bg);
-        position: relative;
-      }
-
-      .testimonials::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="testimonial-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="3" fill="rgba(34,197,94,0.03)"/><circle cx="10" cy="40" r="1.5" fill="rgba(139,92,246,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23testimonial-pattern)"/></svg>');
-        opacity: 0.6;
-        pointer-events: none;
-      }
-
-      .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 3rem;
-        margin-top: 4rem;
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 var(--space-xl);
-        position: relative;
-        z-index: 1;
-      }
-
-      .testimonial-card {
-        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
-        backdrop-filter: blur(30px) saturate(200%);
-        -webkit-backdrop-filter: blur(30px) saturate(200%);
-        padding: 3rem;
-        border-radius: var(--border-radius-2xl);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: var(--shadow-xl);
-        transition: all var(--transition-slow);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .testimonial-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--gradient-luxury);
-        opacity: 0;
-        transition: all var(--transition-base);
-      }
-
-      .testimonial-card:hover {
-        transform: translateY(-12px) scale(1.02);
-        box-shadow: var(--shadow-2xl);
-        border-color: rgba(34, 197, 94, 0.3);
-      }
-
-      .testimonial-card:hover::before {
-        opacity: 1;
-      }
-
-      .testimonial-text {
-        font-style: italic;
-        margin-bottom: 2rem;
-        font-size: 1.25rem;
-        line-height: 1.8;
-        color: var(--c-content);
-        position: relative;
-        font-weight: 500;
-      }
-
-      .testimonial-text::before {
-        content: '"';
-        font-size: 4rem;
-        color: var(--c-action);
-        position: absolute;
-        top: -15px;
-        left: -25px;
-        font-family: Georgia, serif;
-        line-height: 1;
-        opacity: 0.4;
-        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-      }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-      }
-
-      .author-avatar {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        background: var(--gradient-luxury);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 800;
-        font-size: 1.5rem;
-        box-shadow: var(--shadow-luxury);
-        flex-shrink: 0;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-      }
-
-      .author-avatar-img {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .author-info h4 {
-        color: var(--c-content);
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        font-size: 1.25rem;
-        font-family: var(--font-display);
-      }
-
-      .author-info span {
-        color: color-mix(in srgb, var(--c-content) 70%, transparent);
-        font-size: 1rem;
-        font-weight: 600;
-      }
-
-      /* Enhanced Location Section */
-      .location-section {
-        padding: 6rem 0;
-        background: var(--c-bg);
-        position: relative;
-      }
-
-      .location-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-        margin-top: 4rem;
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 var(--space-xl);
-      }
-
-      .location-info h3 {
-        color: var(--c-content);
-        font-size: 2rem;
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        font-family: var(--font-display);
-        background: var(--gradient-secondary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .location-info p {
-        font-size: 1.25rem;
-        margin-bottom: 2rem;
-        line-height: 1.7;
-        color: color-mix(in srgb, var(--c-content) 85%, transparent);
-        font-weight: 500;
-      }
-
-      .contact-details {
-        background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%);
-        backdrop-filter: blur(25px) saturate(200%);
-        -webkit-backdrop-filter: blur(25px) saturate(200%);
-        padding: 2.5rem;
-        border-radius: var(--border-radius-xl);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: var(--shadow-xl);
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1.5rem;
-        font-size: 1.125rem;
-        color: var(--c-content);
-        font-weight: 600;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: var(--border-radius-lg);
-        transition: all var(--transition-base);
-      }
-
-      .contact-item:hover {
-        background: rgba(34, 197, 94, 0.1);
-        transform: translateX(5px);
-      }
-
-      .contact-item:last-child {
-        margin-bottom: 0;
-      }
-
-      .contact-item img {
-        width: 40px;
-        height: 40px;
-        margin-right: 1.5rem;
-        flex-shrink: 0;
-        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-      }
-
-      .google-map {
-        border-radius: var(--border-radius-2xl);
-        overflow: hidden;
-        box-shadow: var(--shadow-2xl);
-        height: 500px;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 3px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .google-map iframe {
-        width: 100%;
-        height: 100%;
-        border: 0;
-        border-radius: var(--border-radius-2xl);
-        filter: brightness(1.1) contrast(1.05);
-      }
-
-      /* Enhanced Cookie Consent Banner */
-      .cookie-banner {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(135deg, rgba(22,163,74,0.95) 0%, rgba(139,92,246,0.9) 100%);
-        backdrop-filter: blur(40px) saturate(200%);
-        -webkit-backdrop-filter: blur(40px) saturate(200%);
-        color: white;
-        padding: 2rem;
-        box-shadow: var(--shadow-2xl);
-        z-index: 10000;
-        border-top: 3px solid var(--c-gold);
-        display: none;
-      }
-
-      .cookie-banner-content {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
-
-      .cookie-icon {
-        font-size: 2rem;
-        flex-shrink: 0;
-        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-      }
-
-      .cookie-text {
-        flex: 1;
-        min-width: 350px;
-      }
-
-      .cookie-text h3 {
-        margin-bottom: 0.75rem;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: 800;
-        font-family: var(--font-display);
-      }
-
-      .cookie-text p {
-        margin: 0;
-        font-size: 1rem;
-        line-height: 1.5;
-        opacity: 0.95;
-        font-weight: 500;
-      }
-
-      .cookie-buttons {
-        display: flex;
-        gap: 1rem;
-        flex-shrink: 0;
-      }
-
-      .cookie-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 25px;
-        min-width: 140px;
-        height: 60px;
-        box-sizing: border-box;
-        border: none;
-        border-radius: var(--border-radius-full);
-        font-size: 1rem;
-        font-weight: 700;
-        font-family: var(--font-accent);
-        color: var(--c-content);
-        background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
-        backdrop-filter: blur(20px) saturate(200%);
-        -webkit-backdrop-filter: blur(20px) saturate(200%);
-        transition: all var(--transition-base);
-        cursor: pointer;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .cookie-btn-primary {
-        color: white;
-        font-weight: 800;
-        background: var(--gradient-gold);
-        box-shadow: var(--shadow-gold);
-      }
-
-      .cookie-btn-primary:hover {
-        background: var(--gradient-luxury);
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: var(--shadow-luxury);
-      }
-
-      .cookie-btn-secondary {
-        color: rgba(255, 255, 255, 0.9);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-      }
-
-      .cookie-btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-3px) scale(1.05);
-        color: white;
-      }
-
-      /* Enhanced Back to Top Button */
-      #back-to-top {
-        position: fixed;
-        bottom: 3rem;
-        right: 3rem;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        width: 70px;
-        height: 70px;
-        border: none;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: white;
-        background: var(--gradient-luxury);
-        backdrop-filter: blur(20px) saturate(200%);
-        -webkit-backdrop-filter: blur(20px) saturate(200%);
-        z-index: 1000;
-        transition: all var(--transition-base);
-        cursor: pointer;
-        box-shadow: var(--shadow-luxury);
-        border: 3px solid rgba(255, 255, 255, 0.3);
-      }
-
-      #back-to-top:hover {
-        background: var(--gradient-gold);
-        transform: translateY(-5px) scale(1.1);
-        box-shadow: var(--shadow-gold);
-      }
-
-      /* Enhanced Responsive Design */
-      @media (max-width: 768px) {
-        .article {
-          padding: 3em 1.5em;
-        }
-
-        .article h1 {
-          font-size: clamp(2.5rem, 6vw, 3.5rem);
-        }
-
-        .article h2 {
-          font-size: clamp(1.5rem, 4vw, 2rem);
-        }
-
-        .switcher {
-          width: 180px;
-          height: 58px;
-          top: 30px;
-        }
-
-        .switcher__option {
-          width: 54px;
-          padding: 0 12px;
-        }
-
-        .switcher::after {
-          width: 64px;
-        }
-
-        .switcher:has(input[c-option="2"]:checked)::after {
-          translate: 58px 0;
-        }
-
-        .switcher:has(input[c-option="3"]:checked)::after {
-          translate: 116px 0;
-        }
-
-        .hero-address-section {
-          padding: var(--space-3xl) var(--space-lg);
-          margin: var(--space-3xl) var(--space-sm);
-        }
-
-        .hero-content {
-          grid-template-columns: 1fr;
-          gap: var(--space-2xl);
-          text-align: center;
-        }
-
-        .hero-text-content {
-          text-align: center;
-        }
-
-        .hero-main-title {
-          font-size: clamp(1.5rem, 5vw, 2rem);
-        }
-
-        .address-input-group {
-          flex-direction: column;
-          gap: var(--space-lg);
-          padding: var(--space-lg);
-        }
-
-        .address-input {
-          text-align: center;
-          padding: 20px 25px;
-        }
-
-        .go-button {
-          width: 100%;
-          padding: 20px 35px;
-        }
-
-        .media-logos {
-          gap: var(--space-lg);
-          padding: var(--space-lg);
-        }
-
-        .media-logo {
-          min-width: 80px;
-          height: 50px;
-        }
-
-        .logo-text {
-          font-size: 0.85rem;
-        }
-
-        .success-indicator {
-          flex-direction: column;
-          gap: var(--space-sm);
-          text-align: center;
-        }
-
-        .location-content {
-          grid-template-columns: 1fr;
-          gap: 2.5rem;
-        }
-
-        .testimonials-grid {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .benefits-list {
-          grid-template-columns: 1fr;
-          padding: 2rem;
-        }
-
-        .benefit-item {
-          padding: 1.5rem;
-        }
-
-        nav {
-          flex-direction: column;
-          gap: 1.5rem;
-          margin: 2rem auto;
-          padding: 20px;
-        }
-
-        nav > ul {
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 0.5rem;
-        }
-
-        nav a {
-          padding: 1rem 1.25rem;
-          font-size: 14px;
-        }
-
-        .cookie-banner-content {
-          flex-direction: column;
-          text-align: center;
-          gap: 1.5rem;
-        }
-
-        .cookie-buttons {
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        .cookie-btn {
-          min-width: 120px;
-          height: 50px;
-          font-size: 0.9rem;
-        }
-
-        .glass-button-container {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .glass-button {
-          width: 100%;
-          max-width: 300px;
-        }
-
-        #back-to-top {
-          width: 60px;
-          height: 60px;
-          bottom: 2rem;
-          right: 2rem;
-          font-size: 1.25rem;
-        }
-
-        .google-map {
-          height: 350px;
-        }
-
-        .contact-item {
-          font-size: 1rem;
-          padding: 0.75rem;
-        }
-
-        .contact-item img {
-          width: 32px;
-          height: 32px;
-          margin-right: 1rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero-address-section {
-          padding: var(--space-2xl) var(--space-md);
-        }
-
-        .testimonial-card {
-          padding: 2rem;
-        }
-
-        .testimonial-text {
-          font-size: 1.125rem;
-        }
-
-        .author-avatar,
-        .author-avatar-img {
-          width: 60px;
-          height: 60px;
-        }
-
-        .benefit-item {
-          flex-direction: column;
-          text-align: center;
-          gap: 1rem;
-        }
-
-        .cookie-banner {
-          padding: 1.5rem;
-        }
-
-        .cookie-text h3 {
-          font-size: 1.25rem;
-        }
-
-        .cookie-text p {
-          font-size: 0.9rem;
-        }
-      }
-
-      /* Enhanced scroll animations */
-      @keyframes slideInFromLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-100px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes slideInFromRight {
-        from {
-          opacity: 0;
-          transform: translateX(100px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes scaleIn {
-        from {
-          opacity: 0;
-          transform: scale(0.8);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      /* Intersection Observer classes for animations */
-      .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s var(--ease-premium);
-      }
-
-      .animate-on-scroll.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .animate-slide-left {
-        opacity: 0;
-        transform: translateX(-100px);
-        transition: all 0.8s var(--ease-premium);
-      }
-
-      .animate-slide-left.visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .animate-slide-right {
-        opacity: 0;
-        transform: translateX(100px);
-        transition: all 0.8s var(--ease-premium);
-      }
-
-      .animate-slide-right.visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .animate-scale {
-        opacity: 0;
-        transform: scale(0.8);
-        transition: all 0.8s var(--ease-bounce);
-      }
-
-      .animate-scale.visible {
-        opacity: 1;
-        transform: scale(1);
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Theme Switcher -->
-    <fieldset class="switcher">
-      <legend class="switcher__legend">Choose theme</legend>
-      <label class="switcher__option">
-        <input
-          class="switcher__input"
-          type="radio"
-          name="theme"
-          value="light"
-          c-option="1"
-          checked
-        />
-        <svg
-          class="switcher__icon"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 36 36"
-        >
-          <path
-            fill="var(--c)"
-            fill-rule="evenodd"
-            d="M18 12a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
-            clip-rule="evenodd"
-          />
-          <path
-            fill="var(--c)"
-            d="M17 6.038a1 1 0 1 1 2 0v3a1 1 0 0 1-2 0v-3ZM24.244 7.742a1 1 0 1 1 1.618 1.176L24.1 11.345a1 1 0 1 1-1.618-1.176l1.763-2.427ZM29.104 13.379a1 1 0 0 1 .618 1.902l-2.854.927a1 1 0 1 1-.618-1.902l2.854-.927ZM29.722 20.795a1 1 0 0 1-.619 1.902l-2.853-.927a1 1 0 1 1 .618-1.902l2.854.927ZM25.862 27.159a1 1 0 0 1-1.618 1.175l-1.763-2.427a1 1 0 1 1 1.618-1.175l1.763 2.427ZM19 30.038a1 1 0 0 1-2 0v-3a1 1 0 1 1 2 0v3ZM11.755 28.334a1 1 0 0 1-1.618-1.175l1.764-2.427a1 1 0 1 1 1.618 1.175l-1.764 2.427ZM6.896 22.697a1 1 0 1 1-.618-1.902l2.853-.927a1 1 0 1 1 .618 1.902l-2.853.927ZM6.278 15.28a1 1 0 1 1 .618-1.901l2.853.927a1 1 0 1 1-.618 1.902l-2.853-.927ZM10.137 8.918a1 1 0 0 1 1.618-1.176l1.764 2.427a1 1 0 0 1-1.618 1.176l-1.764-2.427Z"
-          />
-        </svg>
-      </label>
-      <label class="switcher__option">
-        <input
-          class="switcher__input"
-          type="radio"
-          name="theme"
-          value="dark"
-          c-option="2"
-        />
-        <svg
-          class="switcher__icon"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 36 36"
-        >
-          <path
-            fill="var(--c)"
-            d="M12.5 8.473a10.968 10.968 0 0 1 8.785-.97 7.435 7.435 0 0 0-3.737 4.672l-.09.373A7.454 7.454 0 0 0 28.732 20.4a10.97 10.97 0 0 1-5.232 7.125l-.497.27c-5.014 2.566-11.175.916-14.234-3.813l-.295-.483C5.53 18.403 7.13 11.93 12.017 8.77l.483-.297Zm4.234.616a8.946 8.946 0 0 0-2.805.883l-.429.234A9 9 0 0 0 10.206 22.5l.241.395A9 9 0 0 0 22.5 25.794l.416-.255a8.94 8.94 0 0 0 2.167-1.99 9.433 9.433 0 0 1-2.782-.313c-5.043-1.352-8.036-6.535-6.686-11.578l.147-.491c.242-.745.573-1.44.972-2.078Z"
-          />
-        </svg>
-      </label>
-      <label class="switcher__option">
-        <input
-          class="switcher__input"
-          type="radio"
-          name="theme"
-          value="dim"
-          c-option="3"
-        />
-        <svg
-          class="switcher__icon"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 36 36"
-        >
-          <path
-            fill="var(--c)"
-            d="M5 21a1 1 0 0 1 1-1h24a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1ZM12 25a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H13a1 1 0 0 1-1-1ZM15 29a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1ZM18 13a6 6 0 0 1 5.915 7h-2.041A4.005 4.005 0 0 0 18 15a4 4 0 0 0-3.874 5h-2.041A6 6 0 0 1 18 13ZM17 7.038a1 1 0 1 1 2 0v3a1 1 0 0 1-2 0v-3ZM24.244 8.742a1 1 0 1 1 1.618 1.176L24.1 12.345a1 1 0 1 1-1.618-1.176l1.763-2.427ZM29.104 14.379a1 1 0 0 1 .618 1.902l-2.854.927a1 1 0 1 1-.618-1.902l2.854-.927ZM6.278 16.28a1 1 0 1 1 .618-1.901l2.853.927a1 1 0 1 1-.618 1.902l-2.853-.927ZM10.137 9.918a1 1 0 0 1 1.618-1.176l1.764 2.427a1 1 0 0 1-1.618 1.176l-1.764-2.427Z"
-          />
-        </svg>
-      </label>
-    </fieldset>
-
-    <main>
-      <!-- Navigation -->
-      <div class="demo-section">
-        <nav class="animate-on-scroll">
-          <div class="nav-logo">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F9471c73de1804d068d23dbacdd0914a7?format=webp&width=200"
-              alt="Cash For Your Home Logo"
-              class="logo"
-            />
-          </div>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#process">How It Works</a></li>
-            <li><a href="pages/about.html">About Us</a></li>
-            <li><a href="#footer">Contact</a></li>
-            <li><a href="pages/terms.html">Terms</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Main Content -->
-      <article class="article">
-        <h1 class="animate-scale">Cash For Your Home</h1>
-        <p class="animate-on-scroll">
-          Need to sell your house quickly? We buy houses for cash in any
-          condition, anywhere in the area. Skip the traditional real estate
-          process and get a <a href="#offer">fair cash offer</a> in 24 hours. No
-          repairs, no showings, no hassles - just a fast, simple sale that
-          closes on your timeline.
-        </p>
-
-        <figure class="animate-on-scroll">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F1b06a222b39e4282a1cabedef9028688?format=webp&width=800"
-            alt="Beautiful modern home with landscaping"
-          />
-          <figcaption>
-            We've helped thousands of homeowners sell their properties quickly
-            and easily
-          </figcaption>
-        </figure>
-
-        <p class="animate-slide-left">
-          Whether you're facing foreclosure, dealing with an inherited property,
-          going through a divorce, or simply need to relocate quickly, we
-          provide a stress-free solution. Our experienced team evaluates your
-          property and makes competitive cash offers that reflect current market
-          conditions.
-        </p>
-
-        <div class="glass-button-container animate-on-scroll">
-          <a href="#learn-more" class="glass-button">Learn More</a>
-        </div>
-
-        <blockquote class="animate-slide-right">
-          Get your no-obligation cash offer today - it takes less than 2
-          minutes!
-        </blockquote>
-
-        <div class="glass-button-container animate-on-scroll">
-          <a href="#offer" class="cta-button">Get My Cash Offer Now</a>
-        </div>
-
-        <!-- 🏡 HERO ADDRESS SECTION - Like the mobile screenshot -->
-        <section class="hero-address-section animate-scale">
-          <div class="hero-content">
-            <div class="hero-image">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F1b06a222b39e4282a1cabedef9028688?format=webp&width=800"
-                alt="Happy homeowners who sold their house for cash"
-                class="hero-couple-image"
-              />
-            </div>
-            
-            <div class="hero-text-content">
-              <h2 class="hero-main-title">
-                Sell your house today at the highest value with the 
-                <span class="highlight-text">leading Home Buying Company</span> in the nation.
-              </h2>
-              
-              <div class="address-form-container">
-                <form class="address-form" id="quick-address-form">
-                  <div class="address-input-group">
-                    <input 
-                      type="text" 
-                      placeholder="Enter Address" 
-                      class="address-input"
-                      id="property-address"
-                      required
-                    />
-                    <button type="submit" class="go-button">GO</button>
-                  </div>
-                </form>
-              </div>
-              
-              <p class="hero-subtitle">
-                Get started by receiving your <strong>CASH OFFER</strong> in just a few clicks.
-              </p>
-            </div>
-          </div>
-          
-          <!-- Trust Indicators -->
-          <div class="trust-indicators">
-            <div class="media-logos">
-              <div class="media-logo">
-                <span class="logo-text usa-today">USA TODAY</span>
-              </div>
-              <div class="media-logo">
-                <span class="logo-text fox">FOX</span>
-              </div>
-              <div class="media-logo">
-                <div class="reviews-badge">
-                  <div class="stars">★★★★★</div>
-                  <span class="rating-text">4.8/5</span>
-                </div>
-              </div>
-              <div class="media-logo">
-                <span class="logo-text nbc">NBC</span>
-              </div>
-              <div class="media-logo">
-                <span class="logo-text cbs">CBS</span>
-              </div>
-            </div>
-            
-            <div class="happy-homeowners">
-              <h3 class="homeowners-title">Join our happy homeowners who sold to Cash For Your Home!</h3>
-              <div class="success-indicator">
-                <span class="success-icon">🏡</span>
-                <span class="success-text">Over 10,000 homes purchased nationwide</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <h2 class="animate-slide-left">Why Choose Cash For Your Home?</h2>
-
-        <p class="animate-slide-right">
-          Traditional real estate sales can take months and cost thousands in
-          fees, repairs, and commissions. Our cash buying process eliminates
-          these delays and expenses. We handle all the paperwork, pay closing
-          costs, and can close in as little as 7 days - or on the timeline that
-          works best for you.
-        </p>
-
-        <div class="benefits-list animate-on-scroll">
-          <div class="benefit-item">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Ff857d660271545f3bf959b7343077ea8?format=webp&width=800"
-              alt="Key to Solution"
-              class="benefit-icon"
-            />
-            <div class="benefit-content">
-              <strong>Key to Your Solution:</strong> We can close in as little
-              as 7 days or on your preferred timeline. No waiting for buyer
-              financing approvals or lengthy inspections.
-            </div>
-          </div>
-          <div class="benefit-item">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F7f14f88d13734f308a2b270615ac2e40?format=webp&width=800"
-              alt="No Repairs"
-              class="benefit-icon"
-            />
-            <div class="benefit-content">
-              <strong>No Repairs Needed:</strong> Sell your home exactly as-is.
-              We buy houses in any condition - from move-in ready to complete
-              fixer-uppers.
-            </div>
-          </div>
-          <div class="benefit-item">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Fca5f3566ea884abaaf2d45dbe84b6531?format=webp&width=800"
-              alt="No Fees"
-              class="benefit-icon"
-            />
-            <div class="benefit-content">
-              <strong>No Fees or Commissions:</strong> We pay all closing costs
-              and there are no realtor commissions or hidden fees.
-            </div>
-          </div>
-          <div class="benefit-item">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F348fb0e487334ba0ad83f23c9410883a?format=webp&width=800"
-              alt="Guaranteed Sale"
-              class="benefit-icon"
-            />
-            <div class="benefit-content">
-              <strong>Guaranteed Sale:</strong> Once you accept our offer, the
-              sale is guaranteed - no risk of buyers backing out.
-            </div>
-          </div>
-        </div>
-
-        <h2 class="animate-slide-left">Our Simple 4-Step Process</h2>
-
-        <p class="animate-on-scroll">
-          <strong>Step 1: Get Your Offer</strong> - Fill out our simple online
-          form or call us directly. We'll provide you with a no-obligation cash
-          offer within 24 hours.
-        </p>
-
-        <p class="animate-on-scroll">
-          <strong>Step 2: Property Evaluation</strong> - If you're interested in
-          our offer, we'll schedule a brief property walk-through at your
-          convenience to finalize the details.
-        </p>
-
-        <p class="animate-on-scroll">
-          <strong>Step 3: Review Contract</strong> - We'll present you with a
-          straightforward purchase agreement with no hidden terms or surprise
-          fees.
-        </p>
-
-        <p class="animate-on-scroll">
-          <strong>Step 4: Close & Get Paid</strong> - Choose your closing date
-          and get your cash. We handle all the paperwork and coordinate with the
-          title company.
-        </p>
-
-        <p class="animate-slide-right">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Fdd45ae97a5434f98a8d9d8557f1bcc75?format=webp&width=800"
-            alt="Contact Us"
-            style="
-              width: 28px;
-              height: 28px;
-              display: inline-block;
-              vertical-align: middle;
-              margin-right: 8px;
-            "
-          />
-          Ready to sell your house for cash? Contact us today at
-          <a href="tel:555-CASH-NOW">(555) CASH-NOW</a> or fill out our online
-          form to get started. We're here to help make your home sale as smooth
-          and stress-free as possible.
-        </p>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials">
-          <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg);">
-            <h2 class="section-title animate-scale">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F15031dd6d8a647c88beea7976b1a6286?format=webp&width=800"
-                alt="5-Star Reviews"
-                style="
-                  width: 40px;
-                  height: 40px;
-                  display: inline-block;
-                  vertical-align: middle;
-                  margin-right: 12px;
-                "
-              />
-              What Our Clients Say
-            </h2>
-            <div style="text-align: center; margin-bottom: 2rem" class="animate-on-scroll">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F90e1ee7e5e2b4283a0709ef51fd969dd?format=webp&width=800"
-                alt="Professional Business Meeting"
-                style="
-                  width: 200px;
-                  height: 140px;
-                  border-radius: 12px;
-                  object-fit: cover;
-                  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
-                "
-              />
-            </div>
-            <p class="section-subtitle animate-on-scroll">
-              Don't just take our word for it - hear from homeowners who chose
-              Cash for Your Home.
-            </p>
-
-            <div class="testimonials-grid">
-            <div class="testimonial-card animate-slide-left">
-              <div
-                class="stars-rating"
-                style="margin-bottom: 1rem; text-align: center"
-              >
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F2ca4d2d95beb49ea8dfac4bd2fd46469?format=webp&width=800"
-                  alt="5 Star Rating"
-                  style="width: 120px; height: auto"
-                />
-              </div>
-              <p class="testimonial-text">
-                I needed to sell my house quickly due to a job relocation. Cash
-                for Your Home made me a fair offer and closed in just 10 days.
-                The process was smooth and professional from start to finish.
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">M</div>
-                <div class="author-info">
-                  <h4>Maria Johnson</h4>
-                  <span>Phoenix, AZ</span>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-card animate-on-scroll">
-              <div
-                class="stars-rating"
-                style="margin-bottom: 1rem; text-align: center"
-              >
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F2ca4d2d95beb49ea8dfac4bd2fd46469?format=webp&width=800"
-                  alt="5 Star Rating"
-                  style="width: 120px; height: auto"
-                />
-              </div>
-              <p class="testimonial-text">
-                After my divorce, I needed to sell the house fast. They bought
-                it as-is, even with all the needed repairs. No stress, no
-                hassle, just a fair cash offer and quick closing.
-              </p>
-              <div class="testimonial-author">
-                <div class="author-avatar">R</div>
-                <div class="author-info">
-                  <h4>Robert Smith</h4>
-                  <span>Denver, CO</span>
-                </div>
-              </div>
-            </div>
-            <div class="testimonial-card animate-slide-right">
-              <div
-                class="stars-rating"
-                style="margin-bottom: 1rem; text-align: center"
-              >
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F2ca4d2d95beb49ea8dfac4bd2fd46469?format=webp&width=800"
-                  alt="5 Star Rating"
-                  style="width: 120px; height: auto"
-                />
-              </div>
-              <p class="testimonial-text">
-                We inherited a property that needed significant work. Instead of
-                dealing with contractors and realtors, we sold to Cash for Your
-                Home. They handled everything and paid us fairly.
-              </p>
-              <div class="testimonial-author">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Fad97ba1a54974d608993255c2a7be5f3?format=webp&width=800"
-                  alt="Satisfied Client"
-                  class="author-avatar-img"
-                />
-                <div class="author-info">
-                  <h4>Linda Wilson</h4>
-                  <span>Tampa, FL</span>
-                </div>
-              </div>
-            </div>
-                      </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Location Section with Google Map -->
-        <section class="location-section">
-          <div style="max-width: 1200px; margin: 0 auto; padding: 0 var(--space-lg);">
-            <h2 class="section-title animate-scale">Our Location</h2>
-            <p class="section-subtitle animate-on-scroll">
-              Based in Scottsdale, Arizona, serving homeowners nationwide with
-              fast, reliable cash offers for your property.
-            </p>
-
-            <div class="location-content">
-            <div class="location-info animate-slide-left">
-              <h3>Headquartered in Scottsdale, AZ</h3>
-              <p>
-                While we're based in the heart of Arizona, our network spans
-                across all 50 states. We understand local markets and provide
-                personalized service no matter where your property is located.
-              </p>
-
-              <div class="contact-details">
-                <div class="contact-item">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F6d7777eccb924cdc8b54978b763a0c34?format=webp&width=800"
-                    alt="Email"
-                    style="width: 32px; height: 32px"
-                  />
-                  <span>hunter@cashforyourhome.biz</span>
-                </div>
-                <div class="contact-item">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2Fb69ba8d0262943378099f80b8e35f2e6?format=webp&width=800"
-                    alt="24/7 Available"
-                    style="width: 32px; height: 32px"
-                  />
-                  <span>Available 24/7 for Consultations</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="google-map animate-slide-right">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107462.51595659521!2d-111.9925987!3d33.5025837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed50a179cb%3A0x8c69c7f8354a1bac!2sScottsdale%2C%20AZ!5e0!3m2!1sen!2sus!4v1652490228383!5m2!1sen!2sus"
-                width="100%"
-                height="400"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Cash for Your Home LLC Location - Scottsdale, Arizona"
-              >
-              </iframe>
-            </div>
-          </div>
-        </section>
-      </article>
-
-      <!-- Cookie Consent Banner -->
-      <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-banner-content">
-          <div class="cookie-icon">🍪</div>
-          <div class="cookie-text">
-            <h3>We Use Cookies</h3>
-            <p>
-              We use essential cookies to make our site work and analytics
-              cookies to understand how visitors use our site. By clicking
-              "Accept All", you consent to our use of cookies for analytics and
-              marketing.
-            </p>
-          </div>
-          <div class="cookie-buttons">
-            <button
-              id="cookie-accept-all"
-              class="cookie-btn cookie-btn-primary"
-            >
-              Accept All
-            </button>
-            <button
-              id="cookie-accept-essential"
-              class="cookie-btn cookie-btn-secondary"
-            >
-              Essential Only
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Back to Top Button -->
-      <button id="back-to-top" aria-label="Back to top">↑</button>
-    </main>
-
-    <script>
-      // Enhanced error handling and debugging
-      window.addEventListener('error', function(e) {
-        console.error('JavaScript Error:', e.error);
-      });
-
-      // Theme switcher functionality with error handling
-      const switcher = document.querySelector(".switcher");
-
-      const trackPrevious = (el) => {
-        if (!el) return;
-        
-        const radios = el.querySelectorAll('input[type="radio"]');
-        let previousValue = null;
-
-        const initiallyChecked = el.querySelector(
-          'input[type="radio"]:checked',
-        );
-        if (initiallyChecked) {
-          previousValue = initiallyChecked.getAttribute("c-option");
-          el.setAttribute("c-previous", previousValue);
-        }
-
-        radios.forEach((radio) => {
-          radio.addEventListener("change", () => {
-            if (radio.checked) {
-              el.setAttribute("c-previous", previousValue ?? "");
-              previousValue = radio.getAttribute("c-option");
-            }
-          });
-        });
-      };
-
-      if (switcher) {
-        try {
-          trackPrevious(switcher);
-        } catch (error) {
-          console.error('Theme switcher error:', error);
-        }
-      }
-
-      // Enhanced Intersection Observer for scroll animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Add staggered delay for multiple elements
-            const siblings = Array.from(entry.target.parentElement.children)
-              .filter(el => el.classList.contains('animate-on-scroll'));
-            const index = siblings.indexOf(entry.target);
-            entry.target.style.transitionDelay = `${index * 0.1}s`;
-          }
-        });
-      }, observerOptions);
-
-      // Observe all animatable elements
-      document.addEventListener('DOMContentLoaded', () => {
-        const animateElements = document.querySelectorAll(
-          '.animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale'
-        );
-        
-        animateElements.forEach(el => {
-          observer.observe(el);
-        });
-      });
-
-      // Enhanced smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          const target = document.querySelector(targetId);
-          
-          if (target) {
-            try {
-              target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            } catch (error) {
-              target.scrollIntoView();
-            }
-          } else {
-            console.warn('Target element not found:', targetId);
-          }
-        });
-      });
-
-      // Enhanced form handling for CTA buttons
-      document
-        .querySelectorAll(".cta-button, .glass-button")
-        .forEach((button) => {
-          button.addEventListener("click", function (e) {
-            const href = this.getAttribute("href");
-            if (href === "#offer" || href === "#cash-offer") {
-              e.preventDefault();
-              const heroSection = document.querySelector('.hero-address-section');
-              if (heroSection) {
-                heroSection.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                });
-              }
-            } else if (href === "#learn-more") {
-              e.preventDefault();
-              const target = document.querySelector("h2");
-              if (target) {
-                try {
-                  target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                } catch (error) {
-                  target.scrollIntoView();
-                }
-              }
-            }
-          });
-        });
-
-      // Enhanced Cookie Consent Management
-      class CookieConsent {
-        constructor() {
-          this.consentGiven = this.getConsentStatus();
-          this.init();
-        }
-
-        init() {
-          try {
-            if (!this.consentGiven) {
-              this.showBanner();
-            } else {
-              this.initializeAnalytics();
-            }
-            this.setupEventListeners();
-          } catch (error) {
-            console.error('Cookie consent initialization error:', error);
-          }
-        }
-
-        setupEventListeners() {
-          const acceptAllBtn = document.getElementById("cookie-accept-all");
-          const acceptEssentialBtn = document.getElementById(
-            "cookie-accept-essential",
-          );
-
-          if (acceptAllBtn) {
-            acceptAllBtn.addEventListener("click", () => this.acceptAll());
-          }
-
-          if (acceptEssentialBtn) {
-            acceptEssentialBtn.addEventListener("click", () =>
-              this.acceptEssential(),
-            );
-          }
-        }
-
-        showBanner() {
-          const banner = document.getElementById("cookie-banner");
-          if (banner) {
-            banner.style.display = "block";
-          }
-        }
-
-        hideBanner() {
-          const banner = document.getElementById("cookie-banner");
-          if (banner) {
-            banner.style.display = "none";
-          }
-        }
-
-        acceptAll() {
-          const preferences = {
-            essential: true,
-            analytics: true,
-            marketing: true,
-            timestamp: Date.now(),
-          };
-          this.savePreferences(preferences);
-          this.hideBanner();
-          this.initializeAnalytics();
-        }
-
-        acceptEssential() {
-          const preferences = {
-            essential: true,
-            analytics: false,
-            marketing: false,
-            timestamp: Date.now(),
-          };
-          this.savePreferences(preferences);
-          this.hideBanner();
-        }
-
-        savePreferences(preferences) {
-          try {
-            localStorage.setItem("cookieConsent", JSON.stringify(preferences));
-            this.consentGiven = true;
-          } catch (error) {
-            console.error('Error saving cookie preferences:', error);
-          }
-        }
-
-        getConsentStatus() {
-          try {
-            const consent = localStorage.getItem("cookieConsent");
-            if (consent) {
-              const preferences = JSON.parse(consent);
-              const twelveMonthsAgo = Date.now() - 365 * 24 * 60 * 60 * 1000;
-              return preferences.timestamp > twelveMonthsAgo;
-            }
-          } catch (error) {
-            console.error('Error getting consent status:', error);
-          }
-          return false;
-        }
-
-        initializeAnalytics() {
-          try {
-            const preferences = this.getPreferences();
-            if (preferences.analytics && typeof gtag !== "undefined") {
-              gtag("consent", "update", {
-                analytics_storage: "granted",
-              });
-
-              gtag("event", "page_view", {
-                page_title: "Home",
-                page_location: window.location.href,
-              });
-            }
-          } catch (error) {
-            console.error('Analytics initialization error:', error);
-          }
-        }
-
-        getPreferences() {
-          try {
-            const consent = localStorage.getItem("cookieConsent");
-            if (consent) {
-              return JSON.parse(consent);
-            }
-          } catch (error) {
-            console.error('Error parsing cookie preferences:', error);
-          }
-          return {
-            essential: true,
-            analytics: false,
-            marketing: false,
-          };
-        }
-      }
-
-      // Enhanced back to top button functionality
-      function initBackToTop() {
-        const button = document.getElementById("back-to-top");
-        if (!button) return;
-
-        try {
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-              button.style.display = "flex";
-            } else {
-              button.style.display = "none";
-            }
-          });
-
-          button.addEventListener("click", (e) => {
-            e.preventDefault();
-            try {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            } catch (error) {
-              window.scrollTo(0, 0);
-            }
-          });
-        } catch (error) {
-          console.error('Back to top button error:', error);
-        }
-      }
-
-      // Quick Address Form Handler
-      function initQuickAddressForm() {
-        const form = document.getElementById('quick-address-form');
-        if (!form) return;
-
-        const addressInput = form.querySelector('#property-address');
-        const goButton = form.querySelector('.go-button');
-
-        form.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          
-          const address = addressInput.value.trim();
-          
-          if (!address) {
-            showAddressError('Please enter a valid address');
-            return;
-          }
-
-          showAddressLoading(goButton);
-
-          try {
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            showAddressSuccess(goButton);
-            trackAddressSubmission(address);
-            showAddressMessage(`Great! We're preparing your cash offer for ${address}. You'll be contacted within 24 hours.`);
-            
-            setTimeout(() => {
-              resetAddressForm(form, goButton);
-            }, 3000);
-
-          } catch (error) {
-            console.error('Address form submission error:', error);
-            showAddressError('There was an error processing your address. Please try again or call us directly.');
-            resetAddressForm(form, goButton);
-          }
-        });
-
-        addressInput.addEventListener('input', function() {
-          clearAddressError();
-          if (this.value.trim()) {
-            this.style.borderColor = 'var(--c-action)';
-          }
-        });
-      }
-
-      function showAddressLoading(button) {
-        button.disabled = true;
-        button.textContent = '...';
-        button.style.opacity = '0.8';
-      }
-
-      function showAddressSuccess(button) {
-        button.textContent = '✓';
-        button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-      }
-
-      function resetAddressForm(form, button) {
-        form.reset();
-        button.disabled = false;
-        button.textContent = 'GO';
-        button.style.opacity = '1';
-        button.style.background = '';
-        clearAddressError();
-      }
-
-      function showAddressError(message) {
-        const form = document.getElementById('quick-address-form');
-        let errorEl = form.querySelector('.address-error');
-        
-        if (!errorEl) {
-          errorEl = document.createElement('div');
-          errorEl.className = 'address-error';
-          errorEl.style.cssText = `
-            color: #ef4444;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-            text-align: center;
-            font-weight: 500;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-          `;
-          form.appendChild(errorEl);
-        }
-        
-        errorEl.textContent = message;
-        setTimeout(() => {
-          errorEl.style.opacity = '1';
-          errorEl.style.transform = 'translateY(0)';
-        }, 10);
-      }
-
-      function clearAddressError() {
-        const errorEl = document.querySelector('.address-error');
-        if (errorEl) {
-          errorEl.style.opacity = '0';
-          errorEl.style.transform = 'translateY(-10px)';
-          setTimeout(() => errorEl.remove(), 300);
-        }
-      }
-
-      function showAddressMessage(message) {
-        const form = document.getElementById('quick-address-form');
-        let messageEl = form.querySelector('.address-success');
-        
-        if (!messageEl) {
-          messageEl = document.createElement('div');
-          messageEl.className = 'address-success';
-          messageEl.style.cssText = `
-            background: color-mix(in srgb, #10b981 15%, transparent);
-            color: #065f46;
-            border: 1px solid #10b981;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: 600;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-          `;
-          form.appendChild(messageEl);
-        }
-        
-        messageEl.textContent = message;
-        setTimeout(() => {
-          messageEl.style.opacity = '1';
-          messageEl.style.transform = 'translateY(0)';
-        }, 10);
-
-        setTimeout(() => {
-          messageEl.style.opacity = '0';
-          messageEl.style.transform = 'translateY(-10px)';
-          setTimeout(() => messageEl.remove(), 300);
-        }, 4000);
-      }
-
-      function trackAddressSubmission(address) {
-        try {
-          const preferences = JSON.parse(localStorage.getItem("cookieConsent") || "{}");
-          if (preferences.analytics && typeof gtag !== "undefined") {
-            gtag("event", "address_submit", {
-              event_category: "engagement",
-              event_label: "quick_address_form",
-              custom_parameters: {
-                address_entered: address
-              }
-            });
-          }
-        } catch (error) {
-          console.error('Analytics tracking error:', error);
-        }
-      }
-
-      // Initialize all functionality with error handling
-      document.addEventListener("DOMContentLoaded", function () {
-        try {
-          new CookieConsent();
-          initBackToTop();
-          initQuickAddressForm();
-
-          document
-            .querySelectorAll(".glass-button, .cta-button")
-            .forEach((button) => {
-              button.addEventListener("click", function () {
-                try {
-                  const preferences = JSON.parse(
-                    localStorage.getItem("cookieConsent") || "{}",
-                  );
-                  if (preferences.analytics && typeof gtag !== "undefined") {
-                    gtag("event", "click", {
-                      event_category: "engagement",
-                      event_label: "homepage_cta",
-                    });
-                  }
-                } catch (error) {
-                  console.error('Analytics tracking error:', error);
-                }
-              });
-            });
-
-          console.log('Website initialized successfully');
-        } catch (error) {
-          console.error('Website initialization error:', error);
-        }
-      });
-    </script>
-
-    <!-- OpenWidget noscript fallback -->
-    <noscript>
-      You need to
-      <a
-        href="https://www.openwidget.com/enable-javascript"
-        rel="noopener nofollow"
-        >enable JavaScript</a
-      >
-      to use the communication tool powered by
-      <a
-        href="https://www.openwidget.com/"
-        rel="noopener nofollow"
-        target="_blank"
-        >OpenWidget</a
-      >
-    </noscript>
   </body>
 </html>

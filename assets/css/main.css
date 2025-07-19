@@ -593,9 +593,9 @@ body {
 
 /* Hero Address Section */
 .hero-address-section {
-  padding: 60px 16px 80px;
+  padding: 20px 16px 40px;
   animation: scaleIn 0.8s ease-out;
-  margin-top: -40px;
+  margin-top: -20px;
 }
 
 .address-container {

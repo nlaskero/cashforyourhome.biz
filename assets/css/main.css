@@ -5,6 +5,20 @@
   box-sizing: border-box;
 }
 
+/* Fix for TrustIndex widget positioning */
+#trustindex-container,
+.trustindex-container,
+[class*="trustindex"],
+[id*="trustindex"] {
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: auto !important;
+}
+
 :root {
   --gradient-color-1: #8e8e93;
   --gradient-color-2: #1b4332;

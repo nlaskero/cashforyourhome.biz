@@ -797,7 +797,19 @@ body {
 
 .benefit-content {
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefit-content strong {
+  color: #6ee7b7;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
 }
 
 /* Process Section */

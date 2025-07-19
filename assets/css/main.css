@@ -898,6 +898,18 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+  position: static;
+  z-index: 1;
+  overflow: visible;
+  padding: 20px;
+}
+
+.trustindex-widget script,
+.trustindex-widget iframe,
+.trustindex-widget > div {
+  position: static !important;
+  transform: none !important;
+  margin: 0 auto !important;
 }
 
 .testimonial-card {

@@ -656,6 +656,7 @@ body {
 .rating-display {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -765,7 +766,8 @@ body {
   width: 64px;
   height: 64px;
   object-fit: contain;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
+  display: block;
 }
 
 .benefit-content {
@@ -824,8 +826,8 @@ body {
 }
 
 .contact-img {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
 }
 
@@ -871,8 +873,9 @@ body {
 }
 
 .testimonial-icon {
-  width: 96px;
+  width: 64px;
   height: auto;
+  object-fit: contain;
 }
 
 .professional-photo {
@@ -917,9 +920,10 @@ body {
 }
 
 .rating-img {
-  width: 96px;
+  width: 80px;
   height: auto;
   margin: 0 auto;
+  display: block;
 }
 
 .testimonial-text {

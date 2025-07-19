@@ -894,10 +894,10 @@ body {
   box-shadow: 0 4px 20px rgba(64, 145, 108, 0.3);
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+.trustindex-widget {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .testimonial-card {

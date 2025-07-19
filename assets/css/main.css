@@ -1559,6 +1559,30 @@ body {
     gap: 32px;
   }
 
+  .about-owner-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .owner-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .owner-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hero-section {
+    padding: 20px 16px 60px;
+  }
+
+  .hero-img {
+    max-width: 100%;
+  }
+
   .cookie-content {
     flex-direction: column;
     gap: 16px;

@@ -250,8 +250,10 @@ body {
 
 .brand-text {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   color: #374151;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: -0.5px;
 }
 
 .shine-effect {

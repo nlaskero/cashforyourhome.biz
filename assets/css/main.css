@@ -1537,19 +1537,6 @@ body {
     display: flex;
   }
 
-  .address-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .address-image {
-    order: 1;
-  }
-
-  .address-content {
-    order: 2;
-  }
-
   .address-input-group {
     flex-direction: column;
   }

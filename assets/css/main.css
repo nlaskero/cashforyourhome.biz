@@ -548,18 +548,19 @@ body {
   animation: fadeInUp 0.8s ease-out 0.4s both;
   margin-bottom: 32px;
   text-align: center;
-  padding: 0 16px;
+  padding: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .hero-img {
-  border-radius: 16px;
+  border-radius: 0;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  max-width: 600px;
   width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .hero-caption {
@@ -592,9 +593,9 @@ body {
 
 /* Hero Address Section */
 .hero-address-section {
-  padding: 60px 16px 80px;
+  padding: 20px 16px 40px;
   animation: scaleIn 0.8s ease-out;
-  margin-top: -40px;
+  margin-top: -20px;
 }
 
 .address-container {
@@ -759,38 +760,56 @@ body {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
   animation: fadeInUp 0.8s ease-out;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .benefit-item {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px 16px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 140px;
 }
 
 .benefit-item:hover {
   background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .benefit-icon {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  margin: 0 auto 16px;
-  display: block;
+  width: 40px;
+  height: 40px;
+  color: #6ee7b7;
+  margin-bottom: 12px;
+  flex-shrink: 0;
 }
 
 .benefit-content {
   color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefit-content strong {
+  color: #6ee7b7;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
 }
 
 /* Process Section */
@@ -913,6 +932,12 @@ body {
   border-radius: 50%;
   border: 3px solid #40916c;
   box-shadow: 0 4px 20px rgba(64, 145, 108, 0.3);
+}
+
+.trustindex-section {
+  padding: 40px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(5px);
 }
 
 .trustindex-widget {
@@ -1467,6 +1492,21 @@ body {
 
 .detail-text {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-cta {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.contact-cta .glass-button {
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+.contact-cta .button-icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* Cookie Banner */

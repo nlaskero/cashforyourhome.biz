@@ -153,7 +153,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <button class="nav-link" data-section="about">
+                                <button class="nav-link" data-section="testimonials">
                   Testimonials
                 </button>
               </li>
@@ -161,9 +161,9 @@
                 <button class="nav-link" data-section="contact">Contact</button>
               </li>
               <li class="nav-item">
-                <button
+                                <button
                   class="nav-link"
-                  onclick= window.open('/pages/terms.html'>Terms</button>
+                  onclick="window.open('/pages/terms.html', '_blank')">Terms</button>
               </li>
             </ul>
 
@@ -203,7 +203,7 @@
             <button class="mobile-nav-link" data-section="services">
               How It Works
             </button>
-            <button class="mobile-nav-link" data-section="about">
+                        <button class="mobile-nav-link" data-section="testimonials">
               Testimonials
             </button>
             <button class="mobile-nav-link" data-section="contact">
@@ -323,15 +323,15 @@
                 <label for="seller-email" class="form-label"
                   >Email Address</label
                 >
-                <input
+                                <input
                   type="email"
                   id="seller-email"
                   name="seller-email"
                   placeholder="your@email.com"
                   class="form-input"
                 />
-                <button>
-                    <button type="submit" class="glass-button primary">Submit</button>
+
+                <button type="submit" class="glass-button primary form-submit">Submit</button>
               </div>
 
                 <label for="additional-info" class="form-label"
@@ -345,33 +345,24 @@
       <section id="hero-address" class="hero-address-section">
         <div class="address-container">
           <div class="address-content">
-            <h2 class="address-title">
+                        <h2 class="address-title">
               Sell your house today at the highest value with the
               <span class="highlight"> leading Home Buying Company</span> in the
               nation.
             </h2>
-              </div>
-            </form>
-          </div>
-        </div>
-            </div>
           </div>
         </div>
       </section>
       
-          <div class="trustindex-widget">
-            <script
-              defer
-              async
-              src="https://cdn.trustindex.io/loader.js?0aea3415062b342715464b82a2d"
-            ></script>
-          </div>
+          
 
-          <div class="trustindex-secure-widget">
-          </div>
+
+                  <!-- TrustIndex Widget -->
+      <section id="testimonials" class="trustindex-section">
+        <div class="trustindex-widget">
+          <script defer async src='https://cdn.trustindex.io/loader.js?935697350f73362adf26f771a4c'></script>
         </div>
       </section>
-
 
       <!-- Services Section -->
       <section id="services" class="services-section">
@@ -385,41 +376,40 @@
             that works best for you.
           </p>
 
-          <div class="benefits-grid">
+                    <div class="benefits-grid">
             <div class="benefit-item">
+              <svg class="benefit-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <div class="benefit-content">
+                <strong>Fast Closing:</strong> Close in as little as 7 days or on your timeline.
+              </div>
+            </div>
 
-              <div class="benefit-content">
-                <strong>Key to Your Solution:</strong> We can close in as little
-                as 7 days or on your preferred timeline. No waiting for buyer
-                financing approvals or lengthy inspections.
-              </div>
-            </div>
-              <div class="benefit-content">
-                <strong>No Repairs Needed:</strong> Sell your home exactly
-                as-is. We buy houses in any condition - from move-in ready to
-                complete fixer-uppers.
-              </div>
-            </div>
             <div class="benefit-item">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F02c5debff3b741ab9a5ce91dee21eb1c?format=webp&width=800"
-                alt="No Fees or Commissions"
-                class="benefit-icon"
-              />
+              <svg class="benefit-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              </svg>
               <div class="benefit-content">
-                <strong>No Fees or Commissions:</strong> We pay all closing
-                costs and there are no realtor commissions or hidden fees.
+                <strong>No Repairs Needed:</strong> Sell your home exactly as-is in any condition.
               </div>
             </div>
+
             <div class="benefit-item">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fc692f649e3794ca1b190800c26841a83%2F1be1411e2b8d47d0ba2dbaad2f9c578f?format=webp&width=800"
-                alt="Guaranteed Sale"
-                class="benefit-icon"
-              />
+              <svg class="benefit-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.4 3.5-1.68 3.5-3.72 0-2.84-2.11-3.81-4.7-4.24z"/>
+              </svg>
               <div class="benefit-content">
-                <strong>Guaranteed Sale:</strong> Once you accept our offer, the
-                sale is guaranteed - no risk of buyers backing out.
+                <strong>No Fees or Commissions:</strong> We pay all closing costs and fees.
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <svg class="benefit-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+              <div class="benefit-content">
+                <strong>Guaranteed Sale:</strong> No risk of buyers backing out once accepted.
               </div>
             </div>
           </div>
@@ -456,13 +446,7 @@
           </div>
 
           <div class="process-cta">
-            <div class="contact-icon">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F44e549b39a454bf7bd574fac642a6969?format=webp&width=800"
-                alt="Contact Us"
-                class="contact-img"
-              />
-            </div>
+            
             <p class="contact-text">
               Ready to sell your house for cash? Contact us today at
               <a href="tel:(602) 755-2654" class="phone-link">
@@ -475,56 +459,16 @@
         </div>
       </section>
       
-      <!-- About the Owner Section -->
-      <section id="about-owner" class="about-owner-section">
-        <div class="about-owner-container">
-          <div class="about-owner-grid">
-            <div class="owner-photo-container">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F7297656ff2c6484ba63c68872ede2b4b?format=webp&width=800"
-                alt="Hunter Figueroa - Owner of Cash for Your Home"
-                class="owner-photo"
-              />
-              <div class="owner-credentials">
-                <div class="credential-item">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fc692f649e3794ca1b190800c26841a83%2F0b5797b9bdaf4b68b7e0e01077fb32db?format=webp&width=800"
-                    alt="Award"
-                    class="credential-icon"
-                  />
-                  <span> Experienced Real Estate Professional</span>
-                </div>
-                <div class="credential-item">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fc692f649e3794ca1b190800c26841a83%2F1be1411e2b8d47d0ba2dbaad2f9c578f?format=webp&width=800"
-                    alt="Shield"
-                    class="credential-icon"
-                  />
-                  <span>10+ Years Experience</span>
-                </div>
-              </div>
-            </div>
+      
+        
+              
 
-            <div class="owner-content">
-              <h2 class="section-title">Meet Your Home Buying Expert</h2>
-              <h3 class="owner-name">Hunter Figueroa</h3>
-              <p class="owner-title">Founder & CEO, Cash for Your Home LLC</p>
+            
+              
+              
 
               <div class="owner-story">
-                <p>
-                  "I founded Cash for Your Home with a simple mission: to
-                  provide homeowners with a fast, fair, and stress-free way to
-                  sell their properties. Having helped thousands of families
-                  through challenging situations, I understand that selling your
-                  home is often more than just a financial decision—it's
-                  personal."
-                </p>
-                <p>
-                  "Whether you're facing foreclosure, dealing with an inherited
-                  property, going through a divorce, or simply need to relocate
-                  quickly, my team and I are here to provide you with a solution
-                  that works for your unique situation."
-                </p>
+                
               </div>
 
               <div class="owner-stats">
@@ -560,22 +504,7 @@
                 </div>
               </div>
 
-              <div class="owner-cta">
-                <button class="glass-button primary" data-section="contact">
-                  <span class="button-content">
-                    <img
-                      src="https://cdn.builder.io/api/v1/image/assets%2Fc692f649e3794ca1b190800c26841a83%2F661d6171520940d9808f86fc4c2d7571?format=webp&width=800"
-                      alt="Phone"
-                      class="button-icon"
-                    />
-                    <span>Call Me Directly: (602) 755-2654</span>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+              
 
       <!-- Location Section -->
       <section class="location-section">
@@ -620,7 +549,7 @@
           <h2 class="section-title">Get In Touch</h2>
         </div>
 
-        <div class="contact-info-card">
+                <div class="contact-info-card">
           <div class="contact-info-grid">
             <div class="contact-detail">
               <h3 class="detail-title">
@@ -642,6 +571,19 @@
                 Scottsdale, Arizona<br />Serving Nationwide
               </p>
             </div>
+          </div>
+
+          <div class="contact-cta">
+            <button class="glass-button primary">
+              <span class="button-content">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fc692f649e3794ca1b190800c26841a83%2F661d6171520940d9808f86fc4c2d7571?format=webp&width=800"
+                  alt="Phone"
+                  class="button-icon"
+                />
+                <span>Call Me Directly: (602) 755-2654</span>
+              </span>
+            </button>
           </div>
         </div>
       </section>

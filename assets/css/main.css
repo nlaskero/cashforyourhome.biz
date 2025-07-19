@@ -933,6 +933,24 @@ body {
   margin: 0 auto !important;
 }
 
+.trustindex-secure-widget {
+  max-width: 1000px;
+  margin: 20px auto 0;
+  text-align: center;
+  position: static;
+  z-index: 1;
+  overflow: visible;
+  padding: 20px;
+}
+
+.trustindex-secure-widget script,
+.trustindex-secure-widget iframe,
+.trustindex-secure-widget > div {
+  position: static !important;
+  transform: none !important;
+  margin: 0 auto !important;
+}
+
 .testimonial-card {
   position: relative;
   background: rgba(255, 255, 255, 0.3);

@@ -588,11 +588,11 @@ body {
   margin: 0 auto;
 }
 
-.address-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+.address-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
 }
 
 .address-image {

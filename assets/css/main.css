@@ -873,6 +873,13 @@ body {
 .testimonials-section {
   padding: 80px 16px;
   margin-top: 40px;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.testimonials-section * {
+  position: static !important;
 }
 
 .testimonials-container {

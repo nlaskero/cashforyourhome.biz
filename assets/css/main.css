@@ -1114,6 +1114,14 @@ body {
   width: 32px;
   height: 32px;
   object-fit: contain;
+  color: #6ee7b7;
+}
+
+.stat-icon-img {
+  width: 24px;
+  height: 24px;
+  color: #6ee7b7;
+  flex-shrink: 0;
 }
 
 .stat-content {

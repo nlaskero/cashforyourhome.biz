@@ -934,6 +934,12 @@ body {
   box-shadow: 0 4px 20px rgba(64, 145, 108, 0.3);
 }
 
+.trustindex-section {
+  padding: 40px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(5px);
+}
+
 .trustindex-widget {
   max-width: 1000px;
   margin: 0 auto;

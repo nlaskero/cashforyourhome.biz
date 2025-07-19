@@ -489,13 +489,13 @@ body {
 
 /* Hero Section */
 .hero-section {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 80px 16px;
+  padding: 40px 16px 80px;
 }
 
 .hero-content {
@@ -533,13 +533,19 @@ body {
 .hero-image {
   animation: fadeInUp 0.8s ease-out 0.4s both;
   margin-bottom: 32px;
+  text-align: center;
+  padding: 0 16px;
 }
 
 .hero-img {
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  max-width: 100%;
+  max-width: 600px;
+  width: 100%;
   height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 .hero-caption {

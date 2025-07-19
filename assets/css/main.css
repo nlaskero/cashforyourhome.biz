@@ -1089,8 +1089,8 @@ body {
 }
 
 .credential-icon {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
@@ -1416,8 +1416,8 @@ body {
 }
 
 .trust-icon {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }
 

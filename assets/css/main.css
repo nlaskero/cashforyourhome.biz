@@ -1592,18 +1592,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .address-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .address-image {
-    order: 2;
-  }
-
-  .address-content {
-    order: 1;
-  }
-
   .location-grid {
     grid-template-columns: 1fr 1fr;
   }

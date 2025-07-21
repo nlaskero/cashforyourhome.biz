@@ -49,12 +49,13 @@ function sanitizeHTML(str) {
   return sanitizeHtml(str);
 }
 
-function validateElement(element, elementName = ‘Element’) {
-if (!element) {
-console.warn(`${elementName} not found`);
-return false;
-}
-return true;
+function validateElement(element, elementName = 'Element') {
+  if (!element) {
+    // Avoid leaking potentially sensitive element names in logs
+    console.warn('Requested DOM element not found');
+    return false;
+  }
+  return true;
 }
 
 function showNotification(message) {

@@ -63,7 +63,7 @@ const notification = document.getElementById(“notification”);
 const notificationText = document.getElementById(“notificationText”);
 
 if (!validateElement(notification, ‘Notification’) || !validateElement(notificationText, ‘NotificationText’)) {
-console.error(‘Notification elements not found’);
+console.error(‘Required UI elements missing’);
 return;
 }
 
@@ -405,7 +405,7 @@ console.error(‘Analytics error:’, error);
 }
 }
 
-console.log(“Form submitted with sanitized data:”, sanitizedData);
+console.log('Form submitted successfully.');
 showNotification(“Thank you! We’ll contact you within 24 hours with your cash offer.”);
 
 // Reset form
@@ -443,7 +443,7 @@ console.error(‘Analytics error:’, error);
 }
 }
 
-console.log(“Address submitted:”, sanitizeHTML(address));
+console.log('Address submitted');
 showNotification(“Thank you! We’ll analyze your property and contact you soon.”);
 
 // Reset form

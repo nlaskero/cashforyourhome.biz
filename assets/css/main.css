@@ -153,7 +153,6 @@ body {
 .glass-button {
   position: relative;
   padding: 12px 24px;
-  border: none;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
@@ -1564,7 +1563,6 @@ body {
   right: 24px;
   width: 56px;
   height: 56px;
-  border: none;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);

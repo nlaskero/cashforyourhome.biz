@@ -1,141 +1,159 @@
-// Enhanced & Secured Cash For Your Home App
-(function(){
+(function() {
   'use strict';
 
+  // State
   const state = {
     isMobileMenuOpen: false,
     activeDropdown: null,
-    isScrolled: false,
-    activeSection: "home"
+    colors: ["#8E8E93","#1B4332","#40916C","#F1F3F4"],
+    gradientAngle: -45,
+    animationSpeed: 15,
+    backgroundSize: 400
+  };
+  const CONFIG = { SCROLL_THRESHOLD:10, DEBOUNCE:20 };
+
+  const testimonials = [
+    { text:"Fast sale, fair offer!", author:"Maria J.", location:"Phoenix, AZ" },
+    { text:"No hassle, closed quick!", author:"Robert S.", location:"Denver, CO" },
+    { text:"Easy process, professional.", author:"Linda W.", location:"Tampa, FL" }
+  ];
+
+  // Utility
+  const validate = el => el instanceof Element ? el : null;
+  const debounce = (fn,wait) => {
+    let t; return (...a) => { clearTimeout(t); t = setTimeout(()=>fn(...a), wait); };
+  };
+  const sanitize = str => { const d=document.createElement("div"); d.textContent=str; return d.innerHTML; };
+  const notify = msg => {
+    const n=validate(document.getElementById("notification")),
+          t=validate(document.getElementById("notificationText"));
+    if(!n||!t) return;
+    t.textContent=msg; n.classList.add("visible");
+    setTimeout(()=>n.classList.remove("visible"),3000);
   };
 
-  const CONFIG = {
-    SCROLL_THRESHOLD: 10,
-    DEBOUNCE_DELAY: 20
-  };
-
-  function validate(el) {
-    if (!(el instanceof Element)) console.warn("Element not found or invalid:", el);
-    return el;
-  }
-
-  function debounce(fn, wait) {
-    let t;
-    return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); };
-  }
-
-  function updateNavActive(sectionId) {
-    state.activeSection = sectionId;
-    document.querySelectorAll(".nav-link, .mobile-nav-link")
-      .forEach(btn => {
-        btn.classList.toggle("active", btn.getAttribute("data-section") === sectionId);
-      });
-  }
-
-  function scrollToSection(sectionId) {
-    const el = document.getElementById(sectionId);
-    if (!el) return console.error("Section not found:", sectionId);
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    updateNavActive(sectionId);
-    if (state.isMobileMenuOpen) toggleMobileMenu();
-    closeDropdown();
-  }
-
-  function toggleMobileMenu() {
-    state.isMobileMenuOpen = !state.isMobileMenuOpen;
-    const btn = validate(document.getElementById("mobileMenuBtn"));
-    const menu = validate(document.getElementById("mobileMenu"));
-    const overlay = validate(document.getElementById("mobileOverlay"));
-
-    if (!btn || !menu || !overlay) return;
-    btn.classList.toggle("active", state.isMobileMenuOpen);
-    menu.classList.toggle("active", state.isMobileMenuOpen);
-    overlay.classList.toggle("active", state.isMobileMenuOpen);
-    document.body.style.overflow = state.isMobileMenuOpen ? "hidden" : "";
-    btn.setAttribute("aria-expanded", state.isMobileMenuOpen);
-  }
-
-  function handleScroll() {
-    const scrolled = window.scrollY > CONFIG.SCROLL_THRESHOLD;
-    state.isScrolled = scrolled;
-    validate(document.getElementById("navbar"))?.classList.toggle("scrolled", scrolled);
-    validate(document.getElementById("backToTop"))?.classList.toggle("visible", scrolled);
-  }
-
-  function setupNav() {
+  // UI Controls
+  function updateNav(section) {
     document.querySelectorAll("[data-section]").forEach(btn => {
-      btn.addEventListener("click", e => {
-        e.preventDefault();
-        const sec = btn.getAttribute("data-section");
-        scrollToSection(sec);
-      });
+      btn.classList.toggle("active", btn.getAttribute("data-section")===section);
     });
   }
-
-  function setupMobileMenu() {
-    validate(document.getElementById("mobileMenuBtn"))?.addEventListener("click", e => {
-      e.preventDefault();
-      toggleMobileMenu();
-    });
-    validate(document.getElementById("mobileOverlay"))?.addEventListener("click", e => {
-      e.preventDefault();
-      toggleMobileMenu();
-    });
-  }
-
-  function setupDropdowns() {
-    document.querySelectorAll("[data-dropdown]").forEach(btn => {
-      btn.addEventListener("click", e => {
-        e.preventDefault();
-        const name = btn.getAttribute("data-dropdown");
-        const container = btn.closest(".dropdown-container");
-        if (!container) return;
-
-        const isOpen = state.activeDropdown === name;
-        closeDropdown();
-
-        if (!isOpen) {
-          state.activeDropdown = name;
-          container.classList.add("active");
-          btn.setAttribute("aria-expanded", "true");
-        }
-      });
-    });
-
-    document.addEventListener("click", e => {
-      if (!e.target.closest(".dropdown-container")) closeDropdown();
-    });
-
-    function closeDropdown() {
-      if (!state.activeDropdown) return;
+  function closeDropdown() {
+    if(state.activeDropdown) {
       const btn = document.querySelector(`[data-dropdown="${state.activeDropdown}"]`);
-      btn?.closest(".dropdown-container")?.classList.remove("active");
-      btn?.setAttribute("aria-expanded", "false");
-      state.activeDropdown = null;
+      btn && btn.closest(".dropdown-container")?.classList.remove("active");
+      state.activeDropdown=null;
     }
-    window.closeDropdown = closeDropdown;
+  }
+  function toggleDropdown(name) {
+    if(state.activeDropdown===name){ closeDropdown(); return; }
+    closeDropdown();
+    const btn = document.querySelector(`[data-dropdown="${name}"]`);
+    btn && btn.closest(".dropdown-container")?.classList.add("active");
+    state.activeDropdown=name;
+  }
+  function toggleMobile() {
+    state.isMobileMenuOpen = !state.isMobileMenuOpen;
+    ["mobileMenuBtn","mobileMenu","mobileOverlay"].forEach(id => {
+      validate(document.getElementById(id))?.classList.toggle("active", state.isMobileMenuOpen);
+    });
+    document.body.style.overflow = state.isMobileMenuOpen ? "hidden" : "";
+  }
+  function scrollToSection(id) {
+    const el = validate(document.getElementById(id)); if(!el) return;
+    el.scrollIntoView({behavior:"smooth",block:"start"});
+    updateNav(id); toggleMobile(); closeDropdown();
+  }
+  function handleScroll() {
+    const sc = window.scrollY>CONFIG.SCROLL_THRESHOLD;
+    validate(document.getElementById("navbar"))?.classList.toggle("scrolled",sc);
+    validate(document.getElementById("backToTop"))?.classList.toggle("visible",sc);
   }
 
-  function setupBackToTop() {
-    validate(document.getElementById("backToTop"))?.addEventListener("click", e => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+  // Forms
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target,
+          data = Object.fromEntries(new FormData(form)),
+          errs = [];
+    ["property-address","seller-name","seller-phone"].forEach(f => {
+      if(!data[f]?.trim()) errs.push(f+" required");
     });
+    if(data["seller-email"] && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data["seller-email"]))
+      errs.push("Invalid email");
+    const errBox = validate(document.getElementById("formErrors"));
+    errBox.innerHTML = errs.length ? errs.map(e=>`<div>${e}</div>`).join("") : "";
+    if(errs.length) return;
+    notify("Thanks! You'll hear from us shortly.");
+    form.reset();
+  }
+
+  // Cookie
+  function handleCookie(type) {
+    localStorage.setItem("cookieConsent", type);
+    validate(document.getElementById("cookieBanner"))?.classList.add("hidden");
+  }
+  function initCookie() {
+    const saved = localStorage.getItem("cookieConsent");
+    if(saved) handleCookie(saved);
+    else {
+      validate(document.getElementById("acceptAllCookies"))?.addEventListener("click", ()=>handleCookie("all"));
+      validate(document.getElementById("essentialOnlyCookies"))?.addEventListener("click", ()=>handleCookie("essential"));
+    }
+  }
+
+  // Gradient & Motion
+  function updateGradient() {
+    const r = document.documentElement;
+    state.colors.forEach((c,i)=>r.style.setProperty(`--gradient-color-${i+1}`,c));
+    r.style.setProperty("--gradient-angle", state.gradientAngle+"deg");
+    r.style.setProperty("--animation-speed", state.animationSpeed+"s");
+    r.style.setProperty("--background-size", state.backgroundSize+"%");
+  }
+  function respectMotion(){
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      document.documentElement.style.setProperty("--animation-speed","0s");
+      document.documentElement.style.scrollBehavior="auto";
+    }
+  }
+
+  // Render Testimonials
+  function renderTestimonials() {
+    const grid = validate(document.getElementById("testimonialsGrid"));
+    grid.innerHTML = testimonials.map(t=>`
+      <div class="testimonial-card">
+        <blockquote>"${sanitize(t.text)}"</blockquote>
+        <footer><cite>${sanitize(t.author)}</cite> – ${sanitize(t.location)}</footer>
+      </div>`).join("");
+  }
+
+  // Setup
+  function bind() {
+    document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",e=>{
+      e.preventDefault(); scrollToSection(b.getAttribute("data-section"));
+    }));
+    document.querySelectorAll("[data-dropdown]").forEach(b=>b.addEventListener("click",e=>{
+      e.preventDefault(); toggleDropdown(b.getAttribute("data-dropdown"));
+    }));
+    document.addEventListener("click", e=>{
+      if(!e.target.closest(".dropdown-container")) closeDropdown();
+    });
+    validate(document.getElementById("mobileMenuBtn"))?.addEventListener("click",e=>{e.preventDefault(); toggleMobile();});
+    validate(document.getElementById("mobileOverlay"))?.addEventListener("click",e=>{e.preventDefault(); toggleMobile();});
+    validate(document.getElementById("backToTop"))?.addEventListener("click",e=>{e.preventDefault(); window.scrollTo({top:0,behavior:"smooth"});});
+    validate(document.getElementById("contactForm"))?.addEventListener("submit", handleSubmit);
+    window.addEventListener("scroll", debounce(handleScroll, CONFIG.DEBOUNCE), {passive:true});
   }
 
   function init() {
-    setupNav();
-    setupMobileMenu();
-    setupDropdowns();
-    setupBackToTop();
-
-    window.addEventListener("scroll", debounce(handleScroll, CONFIG.DEBOUNCE_DELAY), { passive: true });
-    document.addEventListener("DOMContentLoaded", () => scrollToSection(state.activeSection));
-
-    console.log("App initialized");
+    bind();
+    renderTestimonials();
+    updateGradient();
+    respectMotion();
+    initCookie();
+    handleScroll();
+    console.log("UI ready");
   }
 
-  init();
-
-  window.CashForYourHome = { scrollToSection };
+  document.readyState==="loading" ? document.addEventListener("DOMContentLoaded", init) : init();
 })();

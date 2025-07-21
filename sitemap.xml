@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.cashforyourhome.biz/</loc>
+    <priority>1.00</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cashforyourhome.biz/#services</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.cashforyourhome.biz/#testimonials</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.cashforyourhome.biz/#contact</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.cashforyourhome.biz/terms.html</loc>
+    <priority>0.50</priority>
+  </url>
+  
+</urlset>

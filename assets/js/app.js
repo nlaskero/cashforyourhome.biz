@@ -1,5 +1,4 @@
 // Enhanced and Secured Cash For Your Home App
-import sanitizeHtml from 'sanitize-html';
 
 (function() {
   'use strict';
@@ -46,7 +45,9 @@ const MOBILE_BREAKPOINT = 768;
 
 // Utility Functions
 function sanitizeHTML(str) {
-  return sanitizeHtml(str);
+  const temp = document.createElement('div');
+  temp.textContent = str;
+  return temp.innerHTML;
 }
 
 function validateElement(element, elementName = 'Element') {

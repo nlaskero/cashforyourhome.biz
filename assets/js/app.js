@@ -1,821 +1,456 @@
-// Enhanced and Secured Cash For Your Home App
-
-(function() {
+// Enhanced & Secured Cash For Your Home App
+(function(){
   'use strict';
 
-  // CSS.escape polyfill for older browsers
-  if (typeof window.CSS === 'undefined') {
-    window.CSS = {};
+  // --- GLOBAL STATE ---
+  const state = {
+    isMobileMenuOpen: false,
+    activeDropdown: null,
+    isScrolled: false,
+    activeSection: "home",
+    showCookieBanner: true,
+    colors: ["#8E8E93", "#1B4332", "#40916C", "#F1F3F4"],
+    animationSpeed: 15,
+    gradientAngle: -45,
+    backgroundSize: 400
+  };
+
+  // --- TESTIMONIALS DATA ---
+  const testimonials = [
+    {
+      text: "I needed to sell my house quickly due to a job relocation. Cash for Your Home made me a fair offer and closed in just 10 days. The process was smooth and professional from start to finish.",
+      author: "Maria Johnson",
+      location: "Phoenix, AZ"
+    },
+    {
+      text: "After my divorce, I needed to sell the house fast. They bought it as-is, even with all the needed repairs. No stress, no hassle, just a fair cash offer and quick closing.",
+      author: "Robert Smith",
+      location: "Denver, CO"
+    },
+    {
+      text: "We inherited a property that needed significant work. Instead of dealing with contractors and realtors, we sold to Cash for Your Home. They handled everything and paid us fairly.",
+      author: "Linda Wilson",
+      location: "Tampa, FL"
+    }
+  ];
+
+  const CONFIG = Object.freeze({
+    SCROLL_THRESHOLD: 10,
+    NOTIFICATION_TIMEOUT: 3000,
+    ANIMATION_DELAY: 200,
+    DEBOUNCE_DELAY: 10,
+    SECTION_OFFSET: 100,
+    MOBILE_BREAKPOINT: 768
+  });
+
+  // --- UTILITY FUNCTIONS ---
+  function sanitizeHTML(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
   }
-  if (typeof window.CSS.escape !== 'function') {
-    window.CSS.escape = function(value) {
-      return String(value).replace(/[\s\W]/g, '\\$&');
+
+  function validateElement(el, name = "Element"){
+    if( !(el instanceof Element) ){
+      console.warn(`${name} not found or invalid`);
+      return false;
+    }
+    return true;
+  }
+
+  function debounce(fn, wait){
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), wait);
     };
   }
 
-// Global State - Using Object.freeze to prevent mutation
-const state = Object.seal({
-isMobileMenuOpen: false,
-activeDropdown: null,
-isScrolled: false,
-activeSection: "home",
-showCookieBanner: true,
-colors: Object.freeze(["#8E8E93", "#1B4332", "#40916C", "#F1F3F4"]),
-animationSpeed: 15,
-gradientAngle: -45,
-backgroundSize: 400,
-});
+  // --- NOTIFICATIONS ---
+  function showNotification(msg){
+    const note = document.getElementById("notification");
+    const noteT = document.getElementById("notificationText");
+    if(!validateElement(note, "Notification") || !validateElement(noteT,"NotificationText")) return;
 
-// Testimonials Data - Sanitized and validated
-const testimonials = Object.freeze([
-{
-text: "I needed to sell my house quickly due to a job relocation. Cash for Your Home made me a fair offer and closed in just 10 days. The process was smooth and professional from start to finish.",
-author: "Maria Johnson",
-location: "Phoenix, AZ",
-},
-{
-text: "After my divorce, I needed to sell the house fast. They bought it as-is, even with all the needed repairs. No stress, no hassle, just a fair cash offer and quick closing.",
-author: "Robert Smith",
-location: "Denver, CO",
-},
-{
-text: "We inherited a property that needed significant work. Instead of dealing with contractors and realtors, we sold to Cash for Your Home. They handled everything and paid us fairly.",
-author: "Linda Wilson",
-location: "Tampa, FL",
-},
-]);
-
-// Constants
-const SCROLL_THRESHOLD = 10;
-const NOTIFICATION_TIMEOUT = 3000;
-const ANIMATION_DELAY = 200;
-const DEBOUNCE_DELAY = 10;
-const SECTION_OFFSET = 100;
-const MOBILE_BREAKPOINT = 768;
-
-// Utility Functions
-function sanitizeHTML(str) {
-  const temp = document.createElement('div');
-  temp.textContent = str;
-  return temp.innerHTML;
-}
-
-function validateElement(element, elementName = 'Element') {
-  if (!element) {
-    // Avoid leaking potentially sensitive element names in logs
-    console.warn('Requested DOM element not found');
-    return false;
+    noteT.textContent = String(msg);
+    note.classList.add("visible");
+    setTimeout(() => note.classList.remove("visible"), CONFIG.NOTIFICATION_TIMEOUT);
   }
-  return true;
-}
 
-function showNotification(message) {
-const notification = document.getElementById("notification");
-const notificationText = document.getElementById("notificationText");
-
-if (!validateElement(notification, 'Notification') || !validateElement(notificationText, 'NotificationText')) {
-console.error('Required UI elements missing');
-return;
-}
-
-// Sanitize the message to prevent XSS
-notificationText.textContent = String(message);
-notification.classList.add("visible");
-
-setTimeout(() => {
-notification.classList.remove("visible");
-}, NOTIFICATION_TIMEOUT);
-}
-
-function scrollToSection(sectionId) {
-// Validate section ID to prevent potential issues
-if (typeof sectionId !== 'string' || !sectionId.match(/^[a-zA-Z0-9-_]+$/)) {
-console.error('Invalid section ID:', sectionId);
-return;
-}
-
-const element = document.getElementById(sectionId);
-if (!validateElement(element, `Section ${sectionId}`)) return;
-
-try {
-element.scrollIntoView({ behavior: "smooth", block: "start" });
-updateActiveSection(sectionId);
-
-
-if (state.isMobileMenuOpen) {
-  toggleMobileMenu();
-}
-
-if (state.activeDropdown) {
-  closeDropdown();
-}
-
-
-} catch (error) {
-console.error('Error scrolling to section:', error);
-}
-}
-
-function scrollToTop() {
-try {
-window.scrollTo({
-top: 0,
-behavior: "smooth",
-});
-
-
-// Track back to top button usage - with safety check
-if (typeof window.gtag === 'function') {
-  window.gtag("event", "click", {
-    event_category: "Navigation",
-    event_label: "Back to Top",
-  });
-}
-
-
-} catch (error) {
-console.error('Error scrolling to top:', error);
-}
-}
-
-function updateActiveSection(sectionId) {
-if (typeof sectionId !== 'string') return;
-
-state.activeSection = sectionId;
-
-// Update navigation active states
-document.querySelectorAll(".nav-link").forEach((link) => {
-link.classList.remove("active");
-});
-
-const activeLink = document.querySelector(`[data-section="${CSS.escape(sectionId)}"]`);
-if (activeLink && activeLink.classList.contains("nav-link")) {
-activeLink.classList.add("active");
-}
-}
-
-function toggleMobileMenu() {
-state.isMobileMenuOpen = !state.isMobileMenuOpen;
-
-const elements = {
-mobileMenuBtn: document.getElementById("mobileMenuBtn"),
-mobileMenu: document.getElementById("mobileMenu"),
-mobileOverlay: document.getElementById("mobileOverlay")
-};
-
-// Validate all required elements exist
-const allElementsExist = Object.values(elements).every(el => validateElement(el));
-if (!allElementsExist) return;
-
-const { mobileMenuBtn, mobileMenu, mobileOverlay } = elements;
-
-if (state.isMobileMenuOpen) {
-mobileMenuBtn.classList.add("active");
-mobileMenu.classList.add("active");
-mobileOverlay.classList.add("active");
-document.body.style.overflow = "hidden";
-
-
-// Add ARIA attributes for accessibility
-mobileMenuBtn.setAttribute('aria-expanded', 'true');
-mobileMenu.setAttribute('aria-hidden', 'false');
-
-
-} else {
-mobileMenuBtn.classList.remove("active");
-mobileMenu.classList.remove("active");
-mobileOverlay.classList.remove("active");
-document.body.style.overflow = "";
-
-
-// Update ARIA attributes
-mobileMenuBtn.setAttribute('aria-expanded', 'false');
-mobileMenu.setAttribute('aria-hidden', 'true');
-
-
-}
-
-if (state.activeDropdown) {
-closeDropdown();
-}
-}
-
-function toggleDropdown(dropdownName) {
-if (typeof dropdownName !== 'string') return;
-
-const dropdownTrigger = document.querySelector(`[data-dropdown="${CSS.escape(dropdownName)}"]`);
-if (!dropdownTrigger) return;
-
-const dropdown = dropdownTrigger.closest(".dropdown-container");
-if (!validateElement(dropdown, 'Dropdown container')) return;
-
-if (state.activeDropdown === dropdownName) {
-closeDropdown();
-} else {
-// Close any open dropdown first
-closeDropdown();
-
-
-state.activeDropdown = dropdownName;
-dropdown.classList.add("active");
-
-// Add ARIA attributes
-dropdownTrigger.setAttribute('aria-expanded', 'true');
-
-
-}
-}
-
-function closeDropdown() {
-if (state.activeDropdown) {
-const dropdownTrigger = document.querySelector(`[data-dropdown="${CSS.escape(state.activeDropdown)}"]`);
-if (dropdownTrigger) {
-const dropdown = dropdownTrigger.closest(".dropdown-container");
-if (dropdown) {
-dropdown.classList.remove("active");
-dropdownTrigger.setAttribute('aria-expanded', 'false');
-}
-}
-state.activeDropdown = null;
-}
-}
-
-function handleScroll() {
-const scrollY = window.scrollY;
-const newIsScrolled = scrollY > SCROLL_THRESHOLD;
-
-if (newIsScrolled !== state.isScrolled) {
-state.isScrolled = newIsScrolled;
-
-
-const navbar = document.getElementById("navbar");
-const backToTop = document.getElementById("backToTop");
-
-if (navbar) {
-  navbar.classList.toggle("scrolled", state.isScrolled);
-}
-
-if (backToTop) {
-  backToTop.classList.toggle("visible", state.isScrolled);
-}
-
-
-}
-
-// Update active section based on scroll position
-updateActiveSectionOnScroll();
-}
-
-function updateActiveSectionOnScroll() {
-const sections = ["home", "services", "about", "contact"];
-const sectionElements = sections
-.map((id) => document.getElementById(id))
-.filter(Boolean);
-
-for (let i = sectionElements.length - 1; i >= 0; i--) {
-const element = sectionElements[i];
-if (element && element.getBoundingClientRect().top <= SECTION_OFFSET) {
-if (state.activeSection !== sections[i]) {
-updateActiveSection(sections[i]);
-}
-break;
-}
-}
-}
-
-function handleKeyDown(e) {
-// Don't interfere with form inputs
-const activeElement = document.activeElement;
-if (activeElement && (
-activeElement.tagName === "INPUT" ||
-activeElement.tagName === "TEXTAREA" ||
-activeElement.tagName === "SELECT" ||
-activeElement.isContentEditable
-)) return;
-
-switch (e.key) {
-case "Home":
-e.preventDefault();
-scrollToTop();
-break;
-case "End":
-e.preventDefault();
-window.scrollTo({
-top: document.documentElement.scrollHeight,
-behavior: "smooth",
-});
-break;
-case "Escape":
-if (state.isMobileMenuOpen) {
-toggleMobileMenu();
-}
-if (state.activeDropdown) {
-closeDropdown();
-}
-break;
-}
-}
-
-function handleResize() {
-if (window.innerWidth > MOBILE_BREAKPOINT && state.isMobileMenuOpen) {
-toggleMobileMenu();
-}
-}
-
-function handleCookieConsent(type) {
-if (typeof type !== 'string' || !['all', 'essential'].includes(type)) {
-console.error('Invalid cookie consent type:', type);
-return;
-}
-
-if (typeof window.gtag === 'function') {
-try {
-if (type === "all") {
-window.gtag("consent", "update", {
-analytics_storage: "granted",
-ad_storage: "granted",
-});
-} else {
-window.gtag("consent", "update", {
-analytics_storage: "denied",
-ad_storage: "denied",
-});
-}
-} catch (error) {
-console.error('Error updating consent:', error);
-}
-}
-
-state.showCookieBanner = false;
-const cookieBanner = document.getElementById("cookieBanner");
-if (cookieBanner) {
-cookieBanner.classList.add("hidden");
-}
-
-// Store consent preference
-try {
-localStorage.setItem('cookieConsent', type);
-} catch (error) {
-console.warn('Could not store cookie consent:', error);
-}
-}
-
-function validateFormData(data) {
-const requiredFields = ['name', 'email', 'phone', 'property-address'];
-const errors = [];
-
-requiredFields.forEach(field => {
-if (!data[field] || String(data[field]).trim() === '') {
-errors.push(`${field} is required`);
-}
-});
-
-// Email validation
-if (data.email && !/^[^\s@]+@[^\s@]+.[^\s@]+$/.test(data.email)) {
-errors.push('Invalid email format');
-}
-
-// Phone validation (basic)
-if (data.phone && !/^[\d\s-+()]{10,}$/.test(data.phone)) {
-errors.push('Invalid phone number');
-}
-
-return errors;
-}
-
-function handleFormSubmit(e) {
-e.preventDefault();
-
-const form = e.target;
-const formData = new FormData(form);
-const data = Object.fromEntries(formData.entries());
-
-// Validate form data
-const errors = validateFormData(data);
-if (errors.length > 0) {
-showNotification(`Please fix the following errors: ${errors.join(', ')}`);
-return;
-}
-
-// Sanitize data
-const sanitizedData = {};
-for (const [key, value] of Object.entries(data)) {
-sanitizedData[key] = sanitizeHTML(String(value).trim());
-}
-
-// Google Analytics event tracking - with safety check
-if (typeof window.gtag === 'function') {
-try {
-window.gtag("event", "form_submit", {
-event_category: "Lead Generation",
-event_label: "Cash Offer Form",
-value: 1,
-});
-} catch (error) {
-console.error('Analytics error:', error);
-}
-}
-
-console.log('Form submitted successfully.');
-showNotification("Thank you! We'll contact you within 24 hours with your cash offer.");
-
-// Reset form
-form.reset();
-}
-
-function handleAddressFormSubmit(e) {
-e.preventDefault();
-
-const addressInput = e.target.elements["property-address"];
-if (!addressInput) return;
-
-const address = String(addressInput.value).trim();
-
-if (!address) {
-showNotification("Please enter a property address.");
-return;
-}
-
-// Basic address validation
-if (address.length < 10) {
-showNotification("Please enter a complete address.");
-return;
-}
-
-if (typeof window.gtag === 'function') {
-try {
-window.gtag("event", "address_submit", {
-event_category: "Lead Generation",
-event_label: "Quick Address Form",
-value: 1,
-});
-} catch (error) {
-console.error('Analytics error:', error);
-}
-}
-
-console.log('Address submitted');
-showNotification("Thank you! We'll analyze your property and contact you soon.");
-
-// Reset form
-e.target.reset();
-}
-function renderTestimonials() {
-  const testimonialsGrid = document.getElementById("testimonialsGrid");
-  if (!validateElement(testimonialsGrid, "Testimonials grid")) return;
-
-  try {
-    testimonialsGrid.innerHTML = "";
-    testimonials.forEach((testimonial) => {
-      const sanitizedText = sanitizeHTML(testimonial.text);
-      const sanitizedAuthor = sanitizeHTML(testimonial.author);
-      const sanitizedLocation = sanitizeHTML(testimonial.location);
-      const authorInitial = sanitizedAuthor.charAt(0).toUpperCase();
-
-      const card = document.createElement("div");
-      card.className = "testimonial-card";
-
-      const ratingDiv = document.createElement("div");
-      ratingDiv.className = "testimonial-rating";
-
-      const ratingImg = document.createElement("img");
-      ratingImg.src = "https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F2ca4d2d95beb49ea8dfac4bd2fd46469?format=webp&width=800";
-      ratingImg.alt = "5 Star Rating";
-      ratingImg.className = "rating-img";
-      ratingImg.loading = "lazy";
-      ratingDiv.appendChild(ratingImg);
-
-      const quote = document.createElement("blockquote");
-      quote.className = "testimonial-text";
-      quote.textContent = `"${sanitizedText}"`;
-
-      const footer = document.createElement("footer");
-      footer.className = "testimonial-footer";
-
-      const authorDiv = document.createElement("div");
-      authorDiv.className = "testimonial-author";
-
-      const avatar = document.createElement("div");
-      avatar.className = "author-avatar";
-      avatar.setAttribute("aria-hidden", "true");
-      avatar.textContent = authorInitial;
-
-      const info = document.createElement("div");
-      info.className = "author-info";
-
-      const cite = document.createElement("cite");
-      cite.className = "author-name";
-      cite.textContent = sanitizedAuthor;
-
-      const location = document.createElement("div");
-      location.className = "author-location";
-      location.textContent = sanitizedLocation;
-
-      info.appendChild(cite);
-      info.appendChild(location);
-      authorDiv.appendChild(avatar);
-      authorDiv.appendChild(info);
-      footer.appendChild(authorDiv);
-
-      card.appendChild(ratingDiv);
-      card.appendChild(quote);
-      card.appendChild(footer);
-
-      testimonialsGrid.appendChild(card);
-    });
-  } catch (error) {
-    console.error("Error rendering testimonials:", error);
+  // --- NAV, SCROLL, MENU ---
+  function updateActiveSection(id){
+    if(typeof id !== "string") return;
+    state.activeSection = id;
+
+    document.querySelectorAll(".nav-link").forEach(l => l.classList.remove("active"));
+    const active = document.querySelector(`[data-section="${CSS.escape(id)}"]`);
+    if(active && active.classList.contains("nav-link")) active.classList.add("active");
   }
-}
 
-
-function updateGradient() {
-try {
-const root = document.documentElement;
-
-
-// Validate colors array
-if (!Array.isArray(state.colors) || state.colors.length < 4) {
-  console.error('Invalid colors array');
-  return;
-}
-
-state.colors.forEach((color, index) => {
-  if (typeof color === 'string' && color.match(/^#[0-9A-Fa-f]{6}$/)) {
-    root.style.setProperty(`--gradient-color-${index + 1}`, color);
-  }
-});
-
-// Validate numeric values
-if (typeof state.gradientAngle === 'number') {
-  root.style.setProperty("--gradient-angle", `${state.gradientAngle}deg`);
-}
-if (typeof state.animationSpeed === 'number' && state.animationSpeed > 0) {
-  root.style.setProperty("--animation-speed", `${state.animationSpeed}s`);
-}
-if (typeof state.backgroundSize === 'number' && state.backgroundSize > 0) {
-  root.style.setProperty("--background-size", `${state.backgroundSize}%`);
-}
-
-
-} catch (error) {
-console.error('Error updating gradient:', error);
-}
-}
-
-// Event Listeners Setup
-function setupEventListeners() {
-// Navigation - with error handling
-document.querySelectorAll("[data-section]").forEach((element) => {
-element.addEventListener("click", (e) => {
-e.preventDefault();
-const section = element.getAttribute("data-section");
-if (section) {
-scrollToSection(section);
-}
-});
-});
-
-// Mobile Menu
-const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-if (mobileMenuBtn) {
-mobileMenuBtn.addEventListener("click", (e) => {
-e.preventDefault();
-toggleMobileMenu();
-});
-}
-
-const mobileOverlay = document.getElementById("mobileOverlay");
-if (mobileOverlay) {
-mobileOverlay.addEventListener("click", toggleMobileMenu);
-}
-
-// Dropdown
-document.querySelectorAll("[data-dropdown]").forEach((element) => {
-element.addEventListener("click", (e) => {
-e.preventDefault();
-const dropdown = element.getAttribute("data-dropdown");
-if (dropdown) {
-toggleDropdown(dropdown);
-}
-});
-});
-
-// Close dropdown when clicking outside
-document.addEventListener("click", (e) => {
-if (!e.target.closest(".dropdown-container") && state.activeDropdown) {
-closeDropdown();
-}
-});
-
-// Forms with enhanced error handling
-const contactForm = document.getElementById("contactForm");
-if (contactForm) {
-contactForm.addEventListener("submit", handleFormSubmit);
-}
-
-const addressForm = document.getElementById("addressForm");
-if (addressForm) {
-addressForm.addEventListener("submit", handleAddressFormSubmit);
-}
-
-// Cookie Banner
-const acceptAllCookies = document.getElementById("acceptAllCookies");
-if (acceptAllCookies) {
-acceptAllCookies.addEventListener("click", () => handleCookieConsent("all"));
-}
-
-const essentialOnlyCookies = document.getElementById("essentialOnlyCookies");
-if (essentialOnlyCookies) {
-essentialOnlyCookies.addEventListener("click", () => handleCookieConsent("essential"));
-}
-
-// Back to Top
-const backToTop = document.getElementById("backToTop");
-if (backToTop) {
-backToTop.addEventListener("click", (e) => {
-e.preventDefault();
-scrollToTop();
-});
-}
-
-// Dropdown menu items
-document.querySelectorAll(".dropdown-item").forEach((item) => {
-item.addEventListener("click", (e) => {
-e.preventDefault();
-const href = item.getAttribute("href");
-if (href && href.startsWith("#")) {
-const sectionId = href.substring(1);
-scrollToSection(sectionId);
-}
-});
-});
-}
-
-// Intersection Observer for animations
-function setupIntersectionObserver() {
-if (!('IntersectionObserver' in window)) {
-console.warn('IntersectionObserver not supported');
-return;
-}
-
-const observerOptions = {
-threshold: 0.1,
-rootMargin: "0px 0px -50px 0px",
-};
-
-const observer = new IntersectionObserver((entries) => {
-entries.forEach((entry) => {
-if (entry.isIntersecting) {
-entry.target.classList.add("animate-on-scroll");
-observer.unobserve(entry.target);
-}
-});
-}, observerOptions);
-
-// Observe elements that should animate
-document.querySelectorAll(
-".services-section, .process-section, .testimonials-section, .location-section"
-).forEach((section) => {
-observer.observe(section);
-});
-}
-
-// Page Load Animation
-function animatePageLoad() {
-// Add loading class to body initially
-document.body.classList.add("loading");
-
-// Remove loading class and trigger animations
-setTimeout(() => {
-document.body.classList.remove("loading");
-
-
-// Trigger hero animations
-const heroElements = document.querySelectorAll(
-  ".hero-title, .hero-description, .hero-image, .hero-subtext, .hero-cta, .hero-quote"
-);
-
-heroElements.forEach((element, index) => {
-  setTimeout(() => {
-    if (element) {
-      element.style.opacity = "1";
-      element.style.transform = "translateY(0)";
+  function scrollToSection(id){
+    if(!/^[\w-]+$/.test(id)){
+      console.error("Invalid section ID:", id); return;
     }
-  }, index * ANIMATION_DELAY);
-});
+    const el = document.getElementById(id);
+    if(!validateElement(el, `Section ${id}`)) return;
 
+    el.scrollIntoView({behavior:"smooth",block:"start"});
+    updateActiveSection(id);
+    if(state.isMobileMenuOpen) toggleMobileMenu();
+    if(state.activeDropdown) closeDropdown();
+  }
 
-}, 100);
-}
+  function scrollToTop(){
+    window.scrollTo({top:0,behavior:"smooth"});
+    if(typeof window.gtag === "function"){
+      window.gtag("event","click",{event_category:"Navigation",event_label:"Back to Top"});
+    }
+  }
 
-// Initialize smooth scrolling for anchor links
-function initSmoothScrolling() {
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-anchor.addEventListener("click", function (e) {
-e.preventDefault();
-const href = this.getAttribute("href");
-if (href && href !== "#") {
-const target = document.querySelector(href);
-if (target) {
-target.scrollIntoView({
-behavior: "smooth",
-block: "start",
-});
-}
-}
-});
-});
-}
+  function handleScroll(){
+    const newScrolled = window.scrollY > CONFIG.SCROLL_THRESHOLD;
+    if(newScrolled !== state.isScrolled){
+      state.isScrolled = newScrolled;
+      ["navbar","backToTop"].forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.classList.toggle(id==="navbar"?"scrolled":"visible", newScrolled);
+      });
+    }
+    // update active by scroll pos
+    ["home","services","about","contact"].reverse().some(sectionId => {
+      const sec = document.getElementById(sectionId);
+      if(sec && sec.getBoundingClientRect().top <= CONFIG.SECTION_OFFSET){
+        if(state.activeSection !== sectionId) updateActiveSection(sectionId);
+        return true;
+      }
+    });
+  }
 
-// Check if user prefers reduced motion
-function respectMotionPreferences() {
-if (!window.matchMedia) return;
+  function toggleMobileMenu(){
+    state.isMobileMenuOpen = !state.isMobileMenuOpen;
+    const btn = document.getElementById("mobileMenuBtn"),
+          menu = document.getElementById("mobileMenu"),
+          overlay = document.getElementById("mobileOverlay");
+    if(!validateElement(btn,"MenuBtn") || !validateElement(menu,"Menu") || !validateElement(overlay,"Overlay")) return;
 
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    btn.classList.toggle("active",state.isMobileMenuOpen);
+    menu.classList.toggle("active",state.isMobileMenuOpen);
+    overlay.classList.toggle("active",state.isMobileMenuOpen);
+    document.body.style.overflow = state.isMobileMenuOpen ? "hidden" : "";
 
-if (prefersReducedMotion) {
-// Disable animations
-document.documentElement.style.setProperty("--animation-speed", "0s");
+    btn.setAttribute("aria-expanded",state.isMobileMenuOpen);
+    menu.setAttribute("aria-hidden",!state.isMobileMenuOpen);
 
+    if(state.activeDropdown) closeDropdown();
+  }
 
-// Override smooth scrolling
-document.documentElement.style.scrollBehavior = "auto";
+  function toggleDropdown(name){
+    if(typeof name !== "string") return;
+    const trigger = document.querySelector(`[data-dropdown="${CSS.escape(name)}"]`);
+    if(!trigger) return;
+    if(state.activeDropdown === name){
+      closeDropdown(); return;
+    }
+    closeDropdown();
+    const container = trigger.closest(".dropdown-container");
+    if(!validateElement(container,name)) return;
 
+    state.activeDropdown = name;
+    container.classList.add("active");
+    trigger.setAttribute("aria-expanded","true");
+  }
 
-}
-}
+  function closeDropdown(){
+    const name = state.activeDropdown;
+    if(!name) return;
+    const trigger = document.querySelector(`[data-dropdown="${CSS.escape(name)}"]`);
+    if(trigger){
+      const c = trigger.closest(".dropdown-container");
+      if(c){
+        c.classList.remove("active");
+        trigger.setAttribute("aria-expanded","false");
+      }
+    }
+    state.activeDropdown = null;
+  }
 
-// Performance optimization: Debounce function
-function debounce(func, wait) {
-let timeout;
-return function executedFunction(...args) {
-const later = () => {
-clearTimeout(timeout);
-func.apply(this, args);
-};
-clearTimeout(timeout);
-timeout = setTimeout(later, wait);
-};
-}
+  function handleKeyDown(e){
+    if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) ||
+       document.activeElement.isContentEditable) return;
 
-// Check for stored cookie consent
-function checkStoredConsent() {
-try {
-const storedConsent = localStorage.getItem('cookieConsent');
-if (storedConsent) {
-handleCookieConsent(storedConsent);
-}
-} catch (error) {
-console.warn('Could not check stored consent:', error);
-}
-}
+    switch(e.key){
+      case "Home": e.preventDefault(); scrollToTop(); break;
+      case "End": e.preventDefault(); window.scrollTo({top:document.documentElement.scrollHeight,behavior:"smooth"}); break;
+      case "Escape":
+        if(state.isMobileMenuOpen) toggleMobileMenu();
+        if(state.activeDropdown) closeDropdown();
+        break;
+    }
+  }
 
-// Initialize everything when DOM is loaded
-function init() {
-try {
-// Setup all functionality
-setupEventListeners();
-setupIntersectionObserver();
-renderTestimonials();
-updateGradient();
-initSmoothScrolling();
-respectMotionPreferences();
-checkStoredConsent();
+  function handleResize(){
+    if(window.innerWidth > CONFIG.MOBILE_BREAKPOINT && state.isMobileMenuOpen){
+      toggleMobileMenu();
+    }
+  }
 
+  // --- FORM HANDLING ---
+  function validateFormData(data){
+    const errors = [];
+    ["name","email","phone","property-address"].forEach(f => {
+      if(!data[f] || !data[f].trim()) errors.push(`${f} is required`);
+    });
+    if(data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.push("Invalid email format");
+    if(data.phone && !/^[\d\s\-+()]{10,}$/.test(data.phone)) errors.push("Invalid phone number");
+    return errors;
+  }
 
-// Optimize scroll handler with debouncing
-const debouncedScroll = debounce(handleScroll, DEBOUNCE_DELAY);
-window.addEventListener("scroll", debouncedScroll, { passive: true });
-window.addEventListener("resize", debounce(handleResize, 100), { passive: true });
-window.addEventListener("keydown", handleKeyDown);
+  function handleFormSubmit(e){
+    e.preventDefault();
+    const form = e.target, data = Object.fromEntries(new FormData(form).entries());
+    const errors = validateFormData(data);
+    if(errors.length){
+      showNotification(`Please fix: ${errors.join(', ')}`);
+      return;
+    }
+    const sanitized = {};
+    Object.entries(data).forEach(([k,v])=>{
+      sanitized[k] = sanitizeHTML(v.trim());
+    });
+    if(typeof window.gtag==="function"){
+      try{
+        window.gtag("event","form_submit",{event_category:"Lead Generation",event_label:"Cash Offer Form",value:1});
+      }catch(err){ console.error("Analytics error",err); }
+    }
+    console.log("Submitted:",sanitized);
+    showNotification("Thank you! We’ll contact you within 24 hours with your cash offer.");
+    form.reset();
+  }
 
-// Initial page load animation
-animatePageLoad();
+  function handleAddressFormSubmit(e){
+    e.preventDefault();
+    const addrEl = e.target.elements["property-address"];
+    if(!addrEl) return;
+    const addr = addrEl.value.trim();
+    if(!addr) return showNotification("Please enter a property address.");
+    if(addr.length < 10) return showNotification("Please enter a complete address.");
+    if(typeof window.gtag==="function"){
+      try{
+        window.gtag("event","address_submit",{event_category:"Lead Generation",event_label:"Quick Address Form",value:1});
+      }catch(err){ console.error("Analytics error",err); }
+    }
+    console.log("Address:",sanitizeHTML(addr));
+    showNotification("Thank you! We’ll analyze your property and contact you soon.");
+    e.target.reset();
+  }
 
-// Handle initial scroll state
-handleScroll();
+  // --- TESTIMONIALS RENDER ---
+  function renderTestimonials(){
+    const grid = document.getElementById("testimonialsGrid");
+    if(!validateElement(grid,"TestimonialsGrid")) return;
+    grid.innerHTML = testimonials.map(t=>{
+      const text = sanitizeHTML(t.text),
+            author = sanitizeHTML(t.author),
+            loc = sanitizeHTML(t.location),
+            init = author.charAt(0).toUpperCase();
+      return `
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            <img src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F2ca4d2d95beb49ea8dfac4bd2fd46469?format=webp&width=800"
+                 alt="5 Star Rating" class="rating-img" loading="lazy">
+          </div>
+          <blockquote class="testimonial-text">"${text}"</blockquote>
+          <footer class="testimonial-footer">
+            <div class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">${init}</div>
+              <div class="author-info">
+                <cite class="author-name">${author}</cite>
+                <div class="author-location">${loc}</div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      `;
+    }).join('');
+  }
 
-console.log("Cash For Your Home website initialized successfully!");
+  // --- GRADIENT & ANIMATION STYLING ---
+  function updateGradient(){
+    const root = document.documentElement;
+    if(!Array.isArray(state.colors) || state.colors.length < 4) {
+      console.error("Invalid colors"); return;
+    }
+    state.colors.forEach((c,i)=>{
+      if(/^#[0-9A-Fa-f]{6}$/.test(c)){
+        root.style.setProperty(`--gradient-color-${i+1}`,c);
+      }
+    });
+    if(typeof state.gradientAngle==="number")
+      root.style.setProperty("--gradient-angle",`${state.gradientAngle}deg`);
+    if(typeof state.animationSpeed==="number" && state.animationSpeed>0)
+      root.style.setProperty("--animation-speed",`${state.animationSpeed}s`);
+    if(typeof state.backgroundSize==="number" && state.backgroundSize>0)
+      root.style.setProperty("--background-size",`${state.backgroundSize}%`);
+  }
 
+  function respectMotionPreferences(){
+    if(!window.matchMedia) return;
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      document.documentElement.style.setProperty("--animation-speed","0s");
+      document.documentElement.style.scrollBehavior = "auto";
+    }
+  }
 
-} catch (error) {
-console.error("Error initializing website:", error);
-}
-}
+  function initSmoothScrolling(){
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener("click",e=>{
+        e.preventDefault();
+        const href = anchor.getAttribute("href");
+        if(href && href !== "#" && href.startsWith("#")){
+          const targ = document.querySelector(href);
+          if(targ) targ.scrollIntoView({behavior:"smooth",block:"start"});
+        }
+      });
+    });
+  }
 
-// Wait for DOM to be ready
-if (document.readyState === 'loading') {
-document.addEventListener("DOMContentLoaded", init);
-} else {
-init();
-}
+  function setupIntersectionObserver(){
+    if(!("IntersectionObserver" in window)){
+      console.warn("Observer not supported");
+      return;
+    }
+    const obs = new IntersectionObserver((ents, ob)=>{
+      ents.forEach(en=>{
+        if(en.isIntersecting){
+          en.target.classList.add("animate-on-scroll");
+          ob.unobserve(en.target);
+        }
+      });
+    },{threshold:0.1,rootMargin:"0px 0px -50px 0px"});
+    document.querySelectorAll(".services-section, .process-section, .testimonials-section, .location-section")
+      .forEach(el => obs.observe(el));
+  }
 
-// Export for potential external use (with validation)
-window.CashForYourHome = Object.freeze({
-scrollToSection,
-showNotification,
-state: Object.freeze(state),
-});
+  function animatePageLoad(){
+    document.body.classList.add("loading");
+    setTimeout(()=>{
+      document.body.classList.remove("loading");
+      document.querySelectorAll(".hero-title, .hero-description, .hero-image, .hero-subtext, .hero-cta, .hero-quote")
+        .forEach((el, idx)=>{
+          if(el){
+            setTimeout(()=>{
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+            }, idx * CONFIG.ANIMATION_DELAY);
+          }
+        });
+    }, 100);
+  }
+
+  function checkStoredConsent(){
+    try{
+      const c = localStorage.getItem("cookieConsent");
+      if(c) handleCookieConsent(c);
+    }catch(e){ console.warn("Consent check error", e); }
+  }
+
+  function handleCookieConsent(type){
+    if(!["all","essential"].includes(type)) return console.error("Invalid consent type");
+    if(typeof window.gtag==="function"){
+      try{
+        window.gtag("consent","update",{
+          analytics_storage: type==="all"?"granted":"denied",
+          ad_storage: type==="all"?"granted":"denied"
+        });
+      }catch(e){console.error("gtag error",e);}
+    }
+    state.showCookieBanner = false;
+    const banner = document.getElementById("cookieBanner");
+    if(banner) banner.classList.add("hidden");
+    try{
+      localStorage.setItem("cookieConsent",type);
+    }catch(e){ console.warn("Consent save error", e); }
+  }
+
+  // --- INIT & EVENT BINDING ---
+  function init(){
+    try{
+      document.querySelectorAll("[data-section]").forEach(el=>{
+        el.addEventListener("click",e=>{
+          e.preventDefault();
+          scrollToSection(el.getAttribute("data-section"));
+        });
+      });
+      ["mobileMenuBtn","mobileOverlay","acceptAllCookies","essentialOnlyCookies","backToTop"]
+        .forEach(id=>{
+          const el = document.getElementById(id);
+          if(el){
+            const handler = {
+              mobileMenuBtn: toggleMobileMenu,
+              mobileOverlay: toggleMobileMenu,
+              acceptAllCookies: () => handleCookieConsent("all"),
+              essentialOnlyCookies: () => handleCookieConsent("essential"),
+              backToTop: scrollToTop
+            }[id];
+            el.addEventListener("click", e => {
+              e.preventDefault();
+              handler(e);
+            });
+          }
+        });
+      document.querySelectorAll("[data-dropdown]").forEach(el=>{
+        el.addEventListener("click",e=>{
+          e.preventDefault();
+          toggleDropdown(el.getAttribute("data-dropdown"));
+        });
+      });
+      document.addEventListener("click", e=>{
+        if(!e.target.closest(".dropdown-container") && state.activeDropdown){
+          closeDropdown();
+        }
+      });
+      const cf = document.getElementById("contactForm");
+      if(cf) cf.addEventListener("submit", handleFormSubmit);
+      const af = document.getElementById("addressForm");
+      if(af) af.addEventListener("submit", handleAddressFormSubmit);
+      document.querySelectorAll(".dropdown-item").forEach(item=>{
+        item.addEventListener("click",e=>{
+          e.preventDefault();
+          const href = item.getAttribute("href");
+          if(href.startsWith("#")) scrollToSection(href.slice(1));
+        });
+      });
+
+      setupIntersectionObserver();
+      renderTestimonials();
+      updateGradient();
+      initSmoothScrolling();
+      respectMotionPreferences();
+      checkStoredConsent();
+
+      window.addEventListener("scroll", debounce(handleScroll, CONFIG.DEBOUNCE_DELAY), {passive:true});
+      window.addEventListener("resize", debounce(handleResize, 100), {passive:true});
+      window.addEventListener("keydown", handleKeyDown);
+
+      animatePageLoad();
+      handleScroll();
+      console.log("✅ Cash For Your Home app initialized!");
+    } catch(err){
+      console.error("Init error", err);
+    }
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+
+  // --- EXPOSE PUBLIC METHODS ---
+  window.CashForYourHome = {
+    scrollToSection,
+    showNotification,
+    state: Object.freeze(state)
+  };
 
 })();

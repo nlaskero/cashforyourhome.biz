@@ -454,6 +454,16 @@
         </div>
       </section>
       
+      
+        
+              
+
+            
+              
+              
+
+      
+
               <div class="owner-stats">
                 <div class="stat-item">
                   <svg
@@ -611,168 +621,6 @@
     </div>
 
     <!-- Main JavaScript -->
-    <script>
-(function(){
-  'use strict';
-
-  const state = {
-    isMobileMenuOpen: false,
-    activeDropdown: null,
-    isScrolled: false,
-    activeSection: "home"
-  };
-
-  const CONFIG = {
-    SCROLL_THRESHOLD: 10,
-    DEBOUNCE_DELAY: 20
-  };
-
-  function validate(el) {
-    if (!(el instanceof Element)) {
-      console.warn("Invalid element:", el);
-      return null;
-    }
-    return el;
-  }
-
-  function debounce(fn, wait) {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => fn(...args), wait);
-    };
-  }
-
-  function updateActiveNav(sectionId) {
-    state.activeSection = sectionId;
-    document.querySelectorAll("[data-section]").forEach(btn => {
-      btn.classList.toggle("active", btn.getAttribute("data-section") === sectionId);
-    });
-  }
-
-  function scrollToSection(sectionId) {
-    const target = document.getElementById(sectionId);
-    if (!target) {
-      console.warn(`Section "${sectionId}" not found`);
-      return;
-    }
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-    updateActiveNav(sectionId);
-    if (state.isMobileMenuOpen) toggleMobileMenu();
-    closeDropdown();
-  }
-
-  function toggleMobileMenu() {
-    state.isMobileMenuOpen = !state.isMobileMenuOpen;
-    const btn = validate(document.getElementById("mobileMenuBtn"));
-    const menu = validate(document.getElementById("mobileMenu"));
-    const overlay = validate(document.getElementById("mobileOverlay"));
-
-    if (!btn || !menu || !overlay) return;
-
-    btn.classList.toggle("active", state.isMobileMenuOpen);
-    menu.classList.toggle("active", state.isMobileMenuOpen);
-    overlay.classList.toggle("active", state.isMobileMenuOpen);
-    document.body.style.overflow = state.isMobileMenuOpen ? "hidden" : "";
-
-    btn.setAttribute("aria-expanded", state.isMobileMenuOpen);
-    menu.setAttribute("aria-hidden", !state.isMobileMenuOpen);
-  }
-
-  function closeDropdown() {
-    if (!state.activeDropdown) return;
-
-    const btn = document.querySelector(`[data-dropdown="${state.activeDropdown}"]`);
-    const container = btn?.closest(".dropdown-container");
-    if (container) {
-      container.classList.remove("active");
-      btn.setAttribute("aria-expanded", "false");
-    }
-    state.activeDropdown = null;
-  }
-
-  function toggleDropdown(name) {
-    if (state.activeDropdown === name) {
-      closeDropdown();
-      return;
-    }
-
-    closeDropdown();
-    const btn = document.querySelector(`[data-dropdown="${name}"]`);
-    const container = btn?.closest(".dropdown-container");
-
-    if (!container) return;
-
-    container.classList.add("active");
-    btn.setAttribute("aria-expanded", "true");
-    state.activeDropdown = name;
-  }
-
-  function handleScroll() {
-    const isNowScrolled = window.scrollY > CONFIG.SCROLL_THRESHOLD;
-    if (isNowScrolled !== state.isScrolled) {
-      state.isScrolled = isNowScrolled;
-      document.getElementById("navbar")?.classList.toggle("scrolled", isNowScrolled);
-      document.getElementById("backToTop")?.classList.toggle("visible", isNowScrolled);
-    }
-  }
-
-  function bindEvents() {
-    // nav buttons
-    document.querySelectorAll("[data-section]").forEach(el => {
-      el.addEventListener("click", e => {
-        e.preventDefault();
-        scrollToSection(el.getAttribute("data-section"));
-      });
-    });
-
-    // dropdown toggles
-    document.querySelectorAll("[data-dropdown]").forEach(el => {
-      el.addEventListener("click", e => {
-        e.preventDefault();
-        toggleDropdown(el.getAttribute("data-dropdown"));
-      });
-    });
-
-    // close dropdown if clicked outside
-    document.addEventListener("click", e => {
-      if (!e.target.closest(".dropdown-container")) {
-        closeDropdown();
-      }
-    });
-
-    // mobile menu
-    document.getElementById("mobileMenuBtn")?.addEventListener("click", e => {
-      e.preventDefault();
-      toggleMobileMenu();
-    });
-    document.getElementById("mobileOverlay")?.addEventListener("click", e => {
-      e.preventDefault();
-      toggleMobileMenu();
-    });
-
-    // back to top
-    document.getElementById("backToTop")?.addEventListener("click", e => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    // scroll listener
-    window.addEventListener("scroll", debounce(handleScroll, CONFIG.DEBOUNCE_DELAY), { passive: true });
-  }
-
-  function init() {
-    bindEvents();
-    handleScroll(); // Initial check
-    console.log("Cash For Your Home UI initialized.");
-  }
-
-  // DOM ready
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
-
-})();
-</script>
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>

@@ -1,6 +1,8 @@
 // Enhanced and Secured Cash For Your Home App
+import sanitizeHtml from 'sanitize-html';
+
 (function() {
-‘use strict’;
+  'use strict';
 
 // Global State - Using Object.freeze to prevent mutation
 const state = Object.seal({
@@ -44,17 +46,16 @@ const MOBILE_BREAKPOINT = 768;
 
 // Utility Functions
 function sanitizeHTML(str) {
-const div = document.createElement(‘div’);
-div.textContent = str;
-return div.innerHTML;
+  return sanitizeHtml(str);
 }
 
-function validateElement(element, elementName = ‘Element’) {
-if (!element) {
-console.warn(`${elementName} not found`);
-return false;
-}
-return true;
+function validateElement(element, elementName = 'Element') {
+  if (!element) {
+    // Avoid leaking potentially sensitive element names in logs
+    console.warn('Requested DOM element not found');
+    return false;
+  }
+  return true;
 }
 
 function showNotification(message) {
@@ -62,7 +63,7 @@ const notification = document.getElementById(“notification”);
 const notificationText = document.getElementById(“notificationText”);
 
 if (!validateElement(notification, ‘Notification’) || !validateElement(notificationText, ‘NotificationText’)) {
-console.error(‘Notification elements not found’);
+console.error(‘Required UI elements missing’);
 return;
 }
 
@@ -404,7 +405,7 @@ console.error(‘Analytics error:’, error);
 }
 }
 
-console.log(“Form submitted with sanitized data:”, sanitizedData);
+console.log('Form submitted successfully.');
 showNotification(“Thank you! We’ll contact you within 24 hours with your cash offer.”);
 
 // Reset form
@@ -442,61 +443,80 @@ console.error(‘Analytics error:’, error);
 }
 }
 
-console.log(“Address submitted:”, sanitizeHTML(address));
+console.log('Address submitted');
 showNotification(“Thank you! We’ll analyze your property and contact you soon.”);
 
 // Reset form
 e.target.reset();
 }
-
 function renderTestimonials() {
-const testimonialsGrid = document.getElementById(“testimonialsGrid”);
-if (!validateElement(testimonialsGrid, ‘Testimonials grid’)) return;
+  const testimonialsGrid = document.getElementById("testimonialsGrid");
+  if (!validateElement(testimonialsGrid, "Testimonials grid")) return;
 
-try {
-testimonialsGrid.innerHTML = testimonials
-.map((testimonial) => {
-// Sanitize all testimonial data
-const sanitizedText = sanitizeHTML(testimonial.text);
-const sanitizedAuthor = sanitizeHTML(testimonial.author);
-const sanitizedLocation = sanitizeHTML(testimonial.location);
-const authorInitial = sanitizedAuthor.charAt(0).toUpperCase();
+  try {
+    testimonialsGrid.innerHTML = "";
+    testimonials.forEach((testimonial) => {
+      const sanitizedText = sanitizeHTML(testimonial.text);
+      const sanitizedAuthor = sanitizeHTML(testimonial.author);
+      const sanitizedLocation = sanitizeHTML(testimonial.location);
+      const authorInitial = sanitizedAuthor.charAt(0).toUpperCase();
 
-```
-    return `
-      <div class="testimonial-card">
-        <div class="testimonial-rating">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F2ca4d2d95beb49ea8dfac4bd2fd46469?format=webp&width=800"
-            alt="5 Star Rating"
-            class="rating-img"
-            loading="lazy"
-          />
-        </div>
-        <blockquote class="testimonial-text">
-          "${sanitizedText}"
-        </blockquote>
-        <footer class="testimonial-footer">
-          <div class="testimonial-author">
-            <div class="author-avatar" aria-hidden="true">
-              ${authorInitial}
-            </div>
-            <div class="author-info">
-              <cite class="author-name">${sanitizedAuthor}</cite>
-              <div class="author-location">${sanitizedLocation}</div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    `;
-  })
-  .join("");
-```
+      const card = document.createElement("div");
+      card.className = "testimonial-card";
 
-} catch (error) {
-console.error(‘Error rendering testimonials:’, error);
+      const ratingDiv = document.createElement("div");
+      ratingDiv.className = "testimonial-rating";
+
+      const ratingImg = document.createElement("img");
+      ratingImg.src = "https://cdn.builder.io/api/v1/image/assets%2F1268a8aa36364ef795a07a801a639f41%2F2ca4d2d95beb49ea8dfac4bd2fd46469?format=webp&width=800";
+      ratingImg.alt = "5 Star Rating";
+      ratingImg.className = "rating-img";
+      ratingImg.loading = "lazy";
+      ratingDiv.appendChild(ratingImg);
+
+      const quote = document.createElement("blockquote");
+      quote.className = "testimonial-text";
+      quote.textContent = `"${sanitizedText}"`;
+
+      const footer = document.createElement("footer");
+      footer.className = "testimonial-footer";
+
+      const authorDiv = document.createElement("div");
+      authorDiv.className = "testimonial-author";
+
+      const avatar = document.createElement("div");
+      avatar.className = "author-avatar";
+      avatar.setAttribute("aria-hidden", "true");
+      avatar.textContent = authorInitial;
+
+      const info = document.createElement("div");
+      info.className = "author-info";
+
+      const cite = document.createElement("cite");
+      cite.className = "author-name";
+      cite.textContent = sanitizedAuthor;
+
+      const location = document.createElement("div");
+      location.className = "author-location";
+      location.textContent = sanitizedLocation;
+
+      info.appendChild(cite);
+      info.appendChild(location);
+      authorDiv.appendChild(avatar);
+      authorDiv.appendChild(info);
+      footer.appendChild(authorDiv);
+
+      card.appendChild(ratingDiv);
+      card.appendChild(quote);
+      card.appendChild(footer);
+
+      testimonialsGrid.appendChild(card);
+    });
+  } catch (error) {
+    console.error("Error rendering testimonials:", error);
+  }
 }
-}
+
 
 function updateGradient() {
 try {

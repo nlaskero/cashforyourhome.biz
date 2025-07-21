@@ -20,6 +20,5 @@
     "live-server": "^1.2.2"
   },
   "dependencies": {
-    "sanitize-html": "^2.17.0"
   }
 }

@@ -60,3 +60,22 @@ See the React DOM documentation for more details:
 - <https://react.dev/reference/react-dom>
 - <https://react.dev/reference/react-dom/client>
 - <https://react.dev/reference/react-dom/server>
+
+## Containerization
+
+A simple `Dockerfile` is provided for serving the static site with Nginx. Build and run the image with:
+
+```bash
+docker build -t cashforyourhome .
+docker run -p 8080:80 cashforyourhome
+```
+
+## CodeQL Threat Models
+
+To install the optional CodeQL threat-models query pack locally, run:
+
+```bash
+codeql pack install codeql/threat-models
+```
+
+

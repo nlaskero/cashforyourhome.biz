@@ -1,89 +1,89 @@
-(function() {
+(function () {
   'use strict';
 
   // State
   const state = {
     isMobileMenuOpen: false,
     activeDropdown: null,
-    colors: ["#8E8E93","#1B4332","#40916C","#F1F3F4"],
+    colors: ["#8E8E93", "#1B4332", "#40916C", "#F1F3F4"],
     gradientAngle: -45,
     animationSpeed: 15,
     backgroundSize: 400
   };
-  const CONFIG = { SCROLL_THRESHOLD:10, DEBOUNCE:20 };
+  const CONFIG = { SCROLL_THRESHOLD: 10, DEBOUNCE: 20 };
 
   const testimonials = [
-    { text:"Fast sale, fair offer!", author:"Maria J.", location:"Phoenix, AZ" },
-    { text:"No hassle, closed quick!", author:"Robert S.", location:"Denver, CO" },
-    { text:"Easy process, professional.", author:"Linda W.", location:"Tampa, FL" }
+    { text: "Fast sale, fair offer!", author: "Maria J.", location: "Phoenix, AZ" },
+    { text: "No hassle, closed quick!", author: "Robert S.", location: "Denver, CO" },
+    { text: "Easy process, professional.", author: "Linda W.", location: "Tampa, FL" }
   ];
 
   // Utility
   const validate = el => el instanceof Element ? el : null;
-  const debounce = (fn,wait) => {
-    let t; return (...a) => { clearTimeout(t); t = setTimeout(()=>fn(...a), wait); };
+  const debounce = (fn, wait) => {
+    let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); };
   };
-  const sanitize = str => { const d=document.createElement("div"); d.textContent=str; return d.innerHTML; };
+  const sanitize = str => { const d = document.createElement("div"); d.textContent = str; return d.innerHTML; };
   const notify = msg => {
-    const n=validate(document.getElementById("notification")),
-          t=validate(document.getElementById("notificationText"));
-    if(!n||!t) return;
-    t.textContent=msg; n.classList.add("visible");
-    setTimeout(()=>n.classList.remove("visible"),3000);
+    const n = validate(document.getElementById("notification")),
+      t = validate(document.getElementById("notificationText"));
+    if (!n || !t) return;
+    t.textContent = msg; n.classList.add("visible");
+    setTimeout(() => n.classList.remove("visible"), 3000);
   };
 
   // UI Controls
   function updateNav(section) {
     document.querySelectorAll("[data-section]").forEach(btn => {
-      btn.classList.toggle("active", btn.getAttribute("data-section")===section);
+      btn.classList.toggle("active", btn.getAttribute("data-section") === section);
     });
   }
   function closeDropdown() {
-    if(state.activeDropdown) {
+    if (state.activeDropdown) {
       const btn = document.querySelector(`[data-dropdown="${state.activeDropdown}"]`);
       btn && btn.closest(".dropdown-container")?.classList.remove("active");
-      state.activeDropdown=null;
+      state.activeDropdown = null;
     }
   }
   function toggleDropdown(name) {
-    if(state.activeDropdown===name){ closeDropdown(); return; }
+    if (state.activeDropdown === name) { closeDropdown(); return; }
     closeDropdown();
     const btn = document.querySelector(`[data-dropdown="${name}"]`);
     btn && btn.closest(".dropdown-container")?.classList.add("active");
-    state.activeDropdown=name;
+    state.activeDropdown = name;
   }
   function toggleMobile() {
     state.isMobileMenuOpen = !state.isMobileMenuOpen;
-    ["mobileMenuBtn","mobileMenu","mobileOverlay"].forEach(id => {
+    ["mobileMenuBtn", "mobileMenu", "mobileOverlay"].forEach(id => {
       validate(document.getElementById(id))?.classList.toggle("active", state.isMobileMenuOpen);
     });
     document.body.style.overflow = state.isMobileMenuOpen ? "hidden" : "";
   }
   function scrollToSection(id) {
-    const el = validate(document.getElementById(id)); if(!el) return;
-    el.scrollIntoView({behavior:"smooth",block:"start"});
+    const el = validate(document.getElementById(id)); if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
     updateNav(id); toggleMobile(); closeDropdown();
   }
   function handleScroll() {
-    const sc = window.scrollY>CONFIG.SCROLL_THRESHOLD;
-    validate(document.getElementById("navbar"))?.classList.toggle("scrolled",sc);
-    validate(document.getElementById("backToTop"))?.classList.toggle("visible",sc);
+    const sc = window.scrollY > CONFIG.SCROLL_THRESHOLD;
+    validate(document.getElementById("navbar"))?.classList.toggle("scrolled", sc);
+    validate(document.getElementById("backToTop"))?.classList.toggle("visible", sc);
   }
 
   // Forms
   function handleSubmit(e) {
     e.preventDefault();
     const form = e.target,
-          data = Object.fromEntries(new FormData(form)),
-          errs = [];
-    ["property-address","seller-name","seller-phone"].forEach(f => {
-      if(!data[f]?.trim()) errs.push(f+" required");
+      data = Object.fromEntries(new FormData(form)),
+      errs = [];
+    ["property-address", "seller-name", "seller-phone"].forEach(f => {
+      if (!data[f]?.trim()) errs.push(f + " required");
     });
-    if(data["seller-email"] && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data["seller-email"]))
+    if (data["seller-email"] && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data["seller-email"]))
       errs.push("Invalid email");
     const errBox = validate(document.getElementById("formErrors"));
-    errBox.innerHTML = errs.length ? errs.map(e=>`<div>${e}</div>`).join("") : "";
-    if(errs.length) return;
+    errBox.innerHTML = errs.length ? errs.map(e => `<div>${e}</div>`).join("") : "";
+    if (errs.length) return;
     notify("Thanks! You'll hear from us shortly.");
     form.reset();
   }
@@ -91,58 +91,65 @@
   // Cookie
   function handleCookie(type) {
     localStorage.setItem("cookieConsent", type);
-    validate(document.getElementById("cookieBanner"))?.classList.add("hidden");
+    const banner = validate(document.getElementById("cookieBanner"));
+    if (banner) {
+      banner.style.display = "none"; // 👈 DIRECTLY hides it instead of relying on .hidden class
+    }
   }
+
   function initCookie() {
     const saved = localStorage.getItem("cookieConsent");
-    if(saved) handleCookie(saved);
-    else {
-      validate(document.getElementById("acceptAllCookies"))?.addEventListener("click", ()=>handleCookie("all"));
-      validate(document.getElementById("essentialOnlyCookies"))?.addEventListener("click", ()=>handleCookie("essential"));
+    if (saved) {
+      handleCookie(saved);
+    } else {
+      validate(document.getElementById("acceptAllCookies"))?.addEventListener("click", () => handleCookie("all"));
+      validate(document.getElementById("essentialOnlyCookies"))?.addEventListener("click", () => handleCookie("essential"));
     }
   }
 
   // Gradient & Motion
   function updateGradient() {
     const r = document.documentElement;
-    state.colors.forEach((c,i)=>r.style.setProperty(`--gradient-color-${i+1}`,c));
-    r.style.setProperty("--gradient-angle", state.gradientAngle+"deg");
-    r.style.setProperty("--animation-speed", state.animationSpeed+"s");
-    r.style.setProperty("--background-size", state.backgroundSize+"%");
+    state.colors.forEach((c, i) => r.style.setProperty(`--gradient-color-${i + 1}`, c));
+    r.style.setProperty("--gradient-angle", state.gradientAngle + "deg");
+    r.style.setProperty("--animation-speed", state.animationSpeed + "s");
+    r.style.setProperty("--background-size", state.backgroundSize + "%");
   }
-  function respectMotion(){
-    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-      document.documentElement.style.setProperty("--animation-speed","0s");
-      document.documentElement.style.scrollBehavior="auto";
+  function respectMotion() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.style.setProperty("--animation-speed", "0s");
+      document.documentElement.style.scrollBehavior = "auto";
     }
   }
 
   // Render Testimonials
   function renderTestimonials() {
     const grid = validate(document.getElementById("testimonialsGrid"));
-    grid.innerHTML = testimonials.map(t=>`
-      <div class="testimonial-card">
-        <blockquote>"${sanitize(t.text)}"</blockquote>
-        <footer><cite>${sanitize(t.author)}</cite> – ${sanitize(t.location)}</footer>
-      </div>`).join("");
+    if (grid) {
+      grid.innerHTML = testimonials.map(t => `
+        <div class="testimonial-card">
+          <blockquote>"${sanitize(t.text)}"</blockquote>
+          <footer><cite>${sanitize(t.author)}</cite> – ${sanitize(t.location)}</footer>
+        </div>`).join("");
+    }
   }
 
   // Setup
   function bind() {
-    document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",e=>{
+    document.querySelectorAll("[data-section]").forEach(b => b.addEventListener("click", e => {
       e.preventDefault(); scrollToSection(b.getAttribute("data-section"));
     }));
-    document.querySelectorAll("[data-dropdown]").forEach(b=>b.addEventListener("click",e=>{
+    document.querySelectorAll("[data-dropdown]").forEach(b => b.addEventListener("click", e => {
       e.preventDefault(); toggleDropdown(b.getAttribute("data-dropdown"));
     }));
-    document.addEventListener("click", e=>{
-      if(!e.target.closest(".dropdown-container")) closeDropdown();
+    document.addEventListener("click", e => {
+      if (!e.target.closest(".dropdown-container")) closeDropdown();
     });
-    validate(document.getElementById("mobileMenuBtn"))?.addEventListener("click",e=>{e.preventDefault(); toggleMobile();});
-    validate(document.getElementById("mobileOverlay"))?.addEventListener("click",e=>{e.preventDefault(); toggleMobile();});
-    validate(document.getElementById("backToTop"))?.addEventListener("click",e=>{e.preventDefault(); window.scrollTo({top:0,behavior:"smooth"});});
+    validate(document.getElementById("mobileMenuBtn"))?.addEventListener("click", e => { e.preventDefault(); toggleMobile(); });
+    validate(document.getElementById("mobileOverlay"))?.addEventListener("click", e => { e.preventDefault(); toggleMobile(); });
+    validate(document.getElementById("backToTop"))?.addEventListener("click", e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); });
     validate(document.getElementById("contactForm"))?.addEventListener("submit", handleSubmit);
-    window.addEventListener("scroll", debounce(handleScroll, CONFIG.DEBOUNCE), {passive:true});
+    window.addEventListener("scroll", debounce(handleScroll, CONFIG.DEBOUNCE), { passive: true });
   }
 
   function init() {
@@ -155,5 +162,5 @@
     console.log("UI ready");
   }
 
-  document.readyState==="loading" ? document.addEventListener("DOMContentLoaded", init) : init();
+  document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", init) : init();
 })();

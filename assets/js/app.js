@@ -1,8 +1,17 @@
 // Enhanced and Secured Cash For Your Home App
-import sanitizeHtml from 'sanitize-html';
 
 (function() {
   'use strict';
+
+  // CSS.escape polyfill for older browsers
+  if (typeof window.CSS === 'undefined') {
+    window.CSS = {};
+  }
+  if (typeof window.CSS.escape !== 'function') {
+    window.CSS.escape = function(value) {
+      return String(value).replace(/[\s\W]/g, '\\$&');
+    };
+  }
 
 // Global State - Using Object.freeze to prevent mutation
 const state = Object.seal({
@@ -46,7 +55,9 @@ const MOBILE_BREAKPOINT = 768;
 
 // Utility Functions
 function sanitizeHTML(str) {
-  return sanitizeHtml(str);
+  const temp = document.createElement('div');
+  temp.textContent = str;
+  return temp.innerHTML;
 }
 
 function validateElement(element, elementName = 'Element') {

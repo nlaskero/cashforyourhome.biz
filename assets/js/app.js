@@ -1,6 +1,8 @@
 // Enhanced and Secured Cash For Your Home App
+import sanitizeHtml from 'sanitize-html';
+
 (function() {
-‘use strict’;
+  'use strict';
 
 // Global State - Using Object.freeze to prevent mutation
 const state = Object.seal({
@@ -44,9 +46,7 @@ const MOBILE_BREAKPOINT = 768;
 
 // Utility Functions
 function sanitizeHTML(str) {
-const div = document.createElement(‘div’);
-div.textContent = str;
-return div.innerHTML;
+  return sanitizeHtml(str);
 }
 
 function validateElement(element, elementName = ‘Element’) {

@@ -9,9 +9,9 @@ const state = Object.seal({
 isMobileMenuOpen: false,
 activeDropdown: null,
 isScrolled: false,
-activeSection: “home”,
+activeSection: "home",
 showCookieBanner: true,
-colors: Object.freeze([”#8E8E93”, “#1B4332”, “#40916C”, “#F1F3F4”]),
+colors: Object.freeze(["#8E8E93", "#1B4332", "#40916C", "#F1F3F4"]),
 animationSpeed: 15,
 gradientAngle: -45,
 backgroundSize: 400,
@@ -20,19 +20,19 @@ backgroundSize: 400,
 // Testimonials Data - Sanitized and validated
 const testimonials = Object.freeze([
 {
-text: “I needed to sell my house quickly due to a job relocation. Cash for Your Home made me a fair offer and closed in just 10 days. The process was smooth and professional from start to finish.”,
-author: “Maria Johnson”,
-location: “Phoenix, AZ”,
+text: "I needed to sell my house quickly due to a job relocation. Cash for Your Home made me a fair offer and closed in just 10 days. The process was smooth and professional from start to finish.",
+author: "Maria Johnson",
+location: "Phoenix, AZ",
 },
 {
-text: “After my divorce, I needed to sell the house fast. They bought it as-is, even with all the needed repairs. No stress, no hassle, just a fair cash offer and quick closing.”,
-author: “Robert Smith”,
-location: “Denver, CO”,
+text: "After my divorce, I needed to sell the house fast. They bought it as-is, even with all the needed repairs. No stress, no hassle, just a fair cash offer and quick closing.",
+author: "Robert Smith",
+location: "Denver, CO",
 },
 {
-text: “We inherited a property that needed significant work. Instead of dealing with contractors and realtors, we sold to Cash for Your Home. They handled everything and paid us fairly.”,
-author: “Linda Wilson”,
-location: “Tampa, FL”,
+text: "We inherited a property that needed significant work. Instead of dealing with contractors and realtors, we sold to Cash for Your Home. They handled everything and paid us fairly.",
+author: "Linda Wilson",
+location: "Tampa, FL",
 },
 ]);
 
@@ -59,27 +59,27 @@ function validateElement(element, elementName = 'Element') {
 }
 
 function showNotification(message) {
-const notification = document.getElementById(“notification”);
-const notificationText = document.getElementById(“notificationText”);
+const notification = document.getElementById("notification");
+const notificationText = document.getElementById("notificationText");
 
-if (!validateElement(notification, ‘Notification’) || !validateElement(notificationText, ‘NotificationText’)) {
-console.error(‘Required UI elements missing’);
+if (!validateElement(notification, 'Notification') || !validateElement(notificationText, 'NotificationText')) {
+console.error('Required UI elements missing');
 return;
 }
 
 // Sanitize the message to prevent XSS
 notificationText.textContent = String(message);
-notification.classList.add(“visible”);
+notification.classList.add("visible");
 
 setTimeout(() => {
-notification.classList.remove(“visible”);
+notification.classList.remove("visible");
 }, NOTIFICATION_TIMEOUT);
 }
 
 function scrollToSection(sectionId) {
 // Validate section ID to prevent potential issues
-if (typeof sectionId !== ‘string’ || !sectionId.match(/^[a-zA-Z0-9-_]+$/)) {
-console.error(‘Invalid section ID:’, sectionId);
+if (typeof sectionId !== 'string' || !sectionId.match(/^[a-zA-Z0-9-_]+$/)) {
+console.error('Invalid section ID:', sectionId);
 return;
 }
 
@@ -87,10 +87,10 @@ const element = document.getElementById(sectionId);
 if (!validateElement(element, `Section ${sectionId}`)) return;
 
 try {
-element.scrollIntoView({ behavior: “smooth”, block: “start” });
+element.scrollIntoView({ behavior: "smooth", block: "start" });
 updateActiveSection(sectionId);
 
-```
+
 if (state.isMobileMenuOpen) {
   toggleMobileMenu();
 }
@@ -98,10 +98,10 @@ if (state.isMobileMenuOpen) {
 if (state.activeDropdown) {
   closeDropdown();
 }
-```
+
 
 } catch (error) {
-console.error(‘Error scrolling to section:’, error);
+console.error('Error scrolling to section:', error);
 }
 }
 
@@ -109,10 +109,10 @@ function scrollToTop() {
 try {
 window.scrollTo({
 top: 0,
-behavior: “smooth”,
+behavior: "smooth",
 });
 
-```
+
 // Track back to top button usage - with safety check
 if (typeof window.gtag === 'function') {
   window.gtag("event", "click", {
@@ -120,26 +120,26 @@ if (typeof window.gtag === 'function') {
     event_label: "Back to Top",
   });
 }
-```
+
 
 } catch (error) {
-console.error(‘Error scrolling to top:’, error);
+console.error('Error scrolling to top:', error);
 }
 }
 
 function updateActiveSection(sectionId) {
-if (typeof sectionId !== ‘string’) return;
+if (typeof sectionId !== 'string') return;
 
 state.activeSection = sectionId;
 
 // Update navigation active states
-document.querySelectorAll(”.nav-link”).forEach((link) => {
-link.classList.remove(“active”);
+document.querySelectorAll(".nav-link").forEach((link) => {
+link.classList.remove("active");
 });
 
 const activeLink = document.querySelector(`[data-section="${CSS.escape(sectionId)}"]`);
-if (activeLink && activeLink.classList.contains(“nav-link”)) {
-activeLink.classList.add(“active”);
+if (activeLink && activeLink.classList.contains("nav-link")) {
+activeLink.classList.add("active");
 }
 }
 
@@ -147,9 +147,9 @@ function toggleMobileMenu() {
 state.isMobileMenuOpen = !state.isMobileMenuOpen;
 
 const elements = {
-mobileMenuBtn: document.getElementById(“mobileMenuBtn”),
-mobileMenu: document.getElementById(“mobileMenu”),
-mobileOverlay: document.getElementById(“mobileOverlay”)
+mobileMenuBtn: document.getElementById("mobileMenuBtn"),
+mobileMenu: document.getElementById("mobileMenu"),
+mobileOverlay: document.getElementById("mobileOverlay")
 };
 
 // Validate all required elements exist
@@ -159,28 +159,28 @@ if (!allElementsExist) return;
 const { mobileMenuBtn, mobileMenu, mobileOverlay } = elements;
 
 if (state.isMobileMenuOpen) {
-mobileMenuBtn.classList.add(“active”);
-mobileMenu.classList.add(“active”);
-mobileOverlay.classList.add(“active”);
-document.body.style.overflow = “hidden”;
+mobileMenuBtn.classList.add("active");
+mobileMenu.classList.add("active");
+mobileOverlay.classList.add("active");
+document.body.style.overflow = "hidden";
 
-```
+
 // Add ARIA attributes for accessibility
 mobileMenuBtn.setAttribute('aria-expanded', 'true');
 mobileMenu.setAttribute('aria-hidden', 'false');
-```
+
 
 } else {
-mobileMenuBtn.classList.remove(“active”);
-mobileMenu.classList.remove(“active”);
-mobileOverlay.classList.remove(“active”);
-document.body.style.overflow = “”;
+mobileMenuBtn.classList.remove("active");
+mobileMenu.classList.remove("active");
+mobileOverlay.classList.remove("active");
+document.body.style.overflow = "";
 
-```
+
 // Update ARIA attributes
 mobileMenuBtn.setAttribute('aria-expanded', 'false');
 mobileMenu.setAttribute('aria-hidden', 'true');
-```
+
 
 }
 
@@ -190,13 +190,13 @@ closeDropdown();
 }
 
 function toggleDropdown(dropdownName) {
-if (typeof dropdownName !== ‘string’) return;
+if (typeof dropdownName !== 'string') return;
 
 const dropdownTrigger = document.querySelector(`[data-dropdown="${CSS.escape(dropdownName)}"]`);
 if (!dropdownTrigger) return;
 
-const dropdown = dropdownTrigger.closest(”.dropdown-container”);
-if (!validateElement(dropdown, ‘Dropdown container’)) return;
+const dropdown = dropdownTrigger.closest(".dropdown-container");
+if (!validateElement(dropdown, 'Dropdown container')) return;
 
 if (state.activeDropdown === dropdownName) {
 closeDropdown();
@@ -204,13 +204,13 @@ closeDropdown();
 // Close any open dropdown first
 closeDropdown();
 
-```
+
 state.activeDropdown = dropdownName;
 dropdown.classList.add("active");
 
 // Add ARIA attributes
 dropdownTrigger.setAttribute('aria-expanded', 'true');
-```
+
 
 }
 }
@@ -219,10 +219,10 @@ function closeDropdown() {
 if (state.activeDropdown) {
 const dropdownTrigger = document.querySelector(`[data-dropdown="${CSS.escape(state.activeDropdown)}"]`);
 if (dropdownTrigger) {
-const dropdown = dropdownTrigger.closest(”.dropdown-container”);
+const dropdown = dropdownTrigger.closest(".dropdown-container");
 if (dropdown) {
-dropdown.classList.remove(“active”);
-dropdownTrigger.setAttribute(‘aria-expanded’, ‘false’);
+dropdown.classList.remove("active");
+dropdownTrigger.setAttribute('aria-expanded', 'false');
 }
 }
 state.activeDropdown = null;
@@ -236,7 +236,7 @@ const newIsScrolled = scrollY > SCROLL_THRESHOLD;
 if (newIsScrolled !== state.isScrolled) {
 state.isScrolled = newIsScrolled;
 
-```
+
 const navbar = document.getElementById("navbar");
 const backToTop = document.getElementById("backToTop");
 
@@ -247,7 +247,7 @@ if (navbar) {
 if (backToTop) {
   backToTop.classList.toggle("visible", state.isScrolled);
 }
-```
+
 
 }
 
@@ -256,12 +256,12 @@ updateActiveSectionOnScroll();
 }
 
 function updateActiveSectionOnScroll() {
-const sections = [“home”, “services”, “about”, “contact”];
+const sections = ["home", "services", "about", "contact"];
 const sectionElements = sections
 .map((id) => document.getElementById(id))
 .filter(Boolean);
 
-for (let i = sectionElements.length - 1; i >= 0; i–) {
+for (let i = sectionElements.length - 1; i >= 0; i--) {
 const element = sectionElements[i];
 if (element && element.getBoundingClientRect().top <= SECTION_OFFSET) {
 if (state.activeSection !== sections[i]) {
@@ -273,28 +273,28 @@ break;
 }
 
 function handleKeyDown(e) {
-// Don’t interfere with form inputs
+// Don't interfere with form inputs
 const activeElement = document.activeElement;
 if (activeElement && (
-activeElement.tagName === “INPUT” ||
-activeElement.tagName === “TEXTAREA” ||
-activeElement.tagName === “SELECT” ||
+activeElement.tagName === "INPUT" ||
+activeElement.tagName === "TEXTAREA" ||
+activeElement.tagName === "SELECT" ||
 activeElement.isContentEditable
 )) return;
 
 switch (e.key) {
-case “Home”:
+case "Home":
 e.preventDefault();
 scrollToTop();
 break;
-case “End”:
+case "End":
 e.preventDefault();
 window.scrollTo({
 top: document.documentElement.scrollHeight,
-behavior: “smooth”,
+behavior: "smooth",
 });
 break;
-case “Escape”:
+case "Escape":
 if (state.isMobileMenuOpen) {
 toggleMobileMenu();
 }
@@ -312,61 +312,61 @@ toggleMobileMenu();
 }
 
 function handleCookieConsent(type) {
-if (typeof type !== ‘string’ || ![‘all’, ‘essential’].includes(type)) {
-console.error(‘Invalid cookie consent type:’, type);
+if (typeof type !== 'string' || !['all', 'essential'].includes(type)) {
+console.error('Invalid cookie consent type:', type);
 return;
 }
 
-if (typeof window.gtag === ‘function’) {
+if (typeof window.gtag === 'function') {
 try {
-if (type === “all”) {
-window.gtag(“consent”, “update”, {
-analytics_storage: “granted”,
-ad_storage: “granted”,
+if (type === "all") {
+window.gtag("consent", "update", {
+analytics_storage: "granted",
+ad_storage: "granted",
 });
 } else {
-window.gtag(“consent”, “update”, {
-analytics_storage: “denied”,
-ad_storage: “denied”,
+window.gtag("consent", "update", {
+analytics_storage: "denied",
+ad_storage: "denied",
 });
 }
 } catch (error) {
-console.error(‘Error updating consent:’, error);
+console.error('Error updating consent:', error);
 }
 }
 
 state.showCookieBanner = false;
-const cookieBanner = document.getElementById(“cookieBanner”);
+const cookieBanner = document.getElementById("cookieBanner");
 if (cookieBanner) {
-cookieBanner.classList.add(“hidden”);
+cookieBanner.classList.add("hidden");
 }
 
 // Store consent preference
 try {
-localStorage.setItem(‘cookieConsent’, type);
+localStorage.setItem('cookieConsent', type);
 } catch (error) {
-console.warn(‘Could not store cookie consent:’, error);
+console.warn('Could not store cookie consent:', error);
 }
 }
 
 function validateFormData(data) {
-const requiredFields = [‘name’, ‘email’, ‘phone’, ‘property-address’];
+const requiredFields = ['name', 'email', 'phone', 'property-address'];
 const errors = [];
 
 requiredFields.forEach(field => {
-if (!data[field] || String(data[field]).trim() === ‘’) {
+if (!data[field] || String(data[field]).trim() === '') {
 errors.push(`${field} is required`);
 }
 });
 
 // Email validation
 if (data.email && !/^[^\s@]+@[^\s@]+.[^\s@]+$/.test(data.email)) {
-errors.push(‘Invalid email format’);
+errors.push('Invalid email format');
 }
 
 // Phone validation (basic)
 if (data.phone && !/^[\d\s-+()]{10,}$/.test(data.phone)) {
-errors.push(‘Invalid phone number’);
+errors.push('Invalid phone number');
 }
 
 return errors;
@@ -393,20 +393,20 @@ sanitizedData[key] = sanitizeHTML(String(value).trim());
 }
 
 // Google Analytics event tracking - with safety check
-if (typeof window.gtag === ‘function’) {
+if (typeof window.gtag === 'function') {
 try {
-window.gtag(“event”, “form_submit”, {
-event_category: “Lead Generation”,
-event_label: “Cash Offer Form”,
+window.gtag("event", "form_submit", {
+event_category: "Lead Generation",
+event_label: "Cash Offer Form",
 value: 1,
 });
 } catch (error) {
-console.error(‘Analytics error:’, error);
+console.error('Analytics error:', error);
 }
 }
 
 console.log('Form submitted successfully.');
-showNotification(“Thank you! We’ll contact you within 24 hours with your cash offer.”);
+showNotification("Thank you! We'll contact you within 24 hours with your cash offer.");
 
 // Reset form
 form.reset();
@@ -415,36 +415,36 @@ form.reset();
 function handleAddressFormSubmit(e) {
 e.preventDefault();
 
-const addressInput = e.target.elements[“property-address”];
+const addressInput = e.target.elements["property-address"];
 if (!addressInput) return;
 
 const address = String(addressInput.value).trim();
 
 if (!address) {
-showNotification(“Please enter a property address.”);
+showNotification("Please enter a property address.");
 return;
 }
 
 // Basic address validation
 if (address.length < 10) {
-showNotification(“Please enter a complete address.”);
+showNotification("Please enter a complete address.");
 return;
 }
 
-if (typeof window.gtag === ‘function’) {
+if (typeof window.gtag === 'function') {
 try {
-window.gtag(“event”, “address_submit”, {
-event_category: “Lead Generation”,
-event_label: “Quick Address Form”,
+window.gtag("event", "address_submit", {
+event_category: "Lead Generation",
+event_label: "Quick Address Form",
 value: 1,
 });
 } catch (error) {
-console.error(‘Analytics error:’, error);
+console.error('Analytics error:', error);
 }
 }
 
 console.log('Address submitted');
-showNotification(“Thank you! We’ll analyze your property and contact you soon.”);
+showNotification("Thank you! We'll analyze your property and contact you soon.");
 
 // Reset form
 e.target.reset();
@@ -522,7 +522,7 @@ function updateGradient() {
 try {
 const root = document.documentElement;
 
-```
+
 // Validate colors array
 if (!Array.isArray(state.colors) || state.colors.length < 4) {
   console.error('Invalid colors array');
@@ -545,20 +545,20 @@ if (typeof state.animationSpeed === 'number' && state.animationSpeed > 0) {
 if (typeof state.backgroundSize === 'number' && state.backgroundSize > 0) {
   root.style.setProperty("--background-size", `${state.backgroundSize}%`);
 }
-```
+
 
 } catch (error) {
-console.error(‘Error updating gradient:’, error);
+console.error('Error updating gradient:', error);
 }
 }
 
 // Event Listeners Setup
 function setupEventListeners() {
 // Navigation - with error handling
-document.querySelectorAll(”[data-section]”).forEach((element) => {
-element.addEventListener(“click”, (e) => {
+document.querySelectorAll("[data-section]").forEach((element) => {
+element.addEventListener("click", (e) => {
 e.preventDefault();
-const section = element.getAttribute(“data-section”);
+const section = element.getAttribute("data-section");
 if (section) {
 scrollToSection(section);
 }
@@ -566,24 +566,24 @@ scrollToSection(section);
 });
 
 // Mobile Menu
-const mobileMenuBtn = document.getElementById(“mobileMenuBtn”);
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 if (mobileMenuBtn) {
-mobileMenuBtn.addEventListener(“click”, (e) => {
+mobileMenuBtn.addEventListener("click", (e) => {
 e.preventDefault();
 toggleMobileMenu();
 });
 }
 
-const mobileOverlay = document.getElementById(“mobileOverlay”);
+const mobileOverlay = document.getElementById("mobileOverlay");
 if (mobileOverlay) {
-mobileOverlay.addEventListener(“click”, toggleMobileMenu);
+mobileOverlay.addEventListener("click", toggleMobileMenu);
 }
 
 // Dropdown
-document.querySelectorAll(”[data-dropdown]”).forEach((element) => {
-element.addEventListener(“click”, (e) => {
+document.querySelectorAll("[data-dropdown]").forEach((element) => {
+element.addEventListener("click", (e) => {
 e.preventDefault();
-const dropdown = element.getAttribute(“data-dropdown”);
+const dropdown = element.getAttribute("data-dropdown");
 if (dropdown) {
 toggleDropdown(dropdown);
 }
@@ -591,49 +591,49 @@ toggleDropdown(dropdown);
 });
 
 // Close dropdown when clicking outside
-document.addEventListener(“click”, (e) => {
-if (!e.target.closest(”.dropdown-container”) && state.activeDropdown) {
+document.addEventListener("click", (e) => {
+if (!e.target.closest(".dropdown-container") && state.activeDropdown) {
 closeDropdown();
 }
 });
 
 // Forms with enhanced error handling
-const contactForm = document.getElementById(“contactForm”);
+const contactForm = document.getElementById("contactForm");
 if (contactForm) {
-contactForm.addEventListener(“submit”, handleFormSubmit);
+contactForm.addEventListener("submit", handleFormSubmit);
 }
 
-const addressForm = document.getElementById(“addressForm”);
+const addressForm = document.getElementById("addressForm");
 if (addressForm) {
-addressForm.addEventListener(“submit”, handleAddressFormSubmit);
+addressForm.addEventListener("submit", handleAddressFormSubmit);
 }
 
 // Cookie Banner
-const acceptAllCookies = document.getElementById(“acceptAllCookies”);
+const acceptAllCookies = document.getElementById("acceptAllCookies");
 if (acceptAllCookies) {
-acceptAllCookies.addEventListener(“click”, () => handleCookieConsent(“all”));
+acceptAllCookies.addEventListener("click", () => handleCookieConsent("all"));
 }
 
-const essentialOnlyCookies = document.getElementById(“essentialOnlyCookies”);
+const essentialOnlyCookies = document.getElementById("essentialOnlyCookies");
 if (essentialOnlyCookies) {
-essentialOnlyCookies.addEventListener(“click”, () => handleCookieConsent(“essential”));
+essentialOnlyCookies.addEventListener("click", () => handleCookieConsent("essential"));
 }
 
 // Back to Top
-const backToTop = document.getElementById(“backToTop”);
+const backToTop = document.getElementById("backToTop");
 if (backToTop) {
-backToTop.addEventListener(“click”, (e) => {
+backToTop.addEventListener("click", (e) => {
 e.preventDefault();
 scrollToTop();
 });
 }
 
 // Dropdown menu items
-document.querySelectorAll(”.dropdown-item”).forEach((item) => {
-item.addEventListener(“click”, (e) => {
+document.querySelectorAll(".dropdown-item").forEach((item) => {
+item.addEventListener("click", (e) => {
 e.preventDefault();
-const href = item.getAttribute(“href”);
-if (href && href.startsWith(”#”)) {
+const href = item.getAttribute("href");
+if (href && href.startsWith("#")) {
 const sectionId = href.substring(1);
 scrollToSection(sectionId);
 }
@@ -643,20 +643,20 @@ scrollToSection(sectionId);
 
 // Intersection Observer for animations
 function setupIntersectionObserver() {
-if (!(‘IntersectionObserver’ in window)) {
-console.warn(‘IntersectionObserver not supported’);
+if (!('IntersectionObserver' in window)) {
+console.warn('IntersectionObserver not supported');
 return;
 }
 
 const observerOptions = {
 threshold: 0.1,
-rootMargin: “0px 0px -50px 0px”,
+rootMargin: "0px 0px -50px 0px",
 };
 
 const observer = new IntersectionObserver((entries) => {
 entries.forEach((entry) => {
 if (entry.isIntersecting) {
-entry.target.classList.add(“animate-on-scroll”);
+entry.target.classList.add("animate-on-scroll");
 observer.unobserve(entry.target);
 }
 });
@@ -664,7 +664,7 @@ observer.unobserve(entry.target);
 
 // Observe elements that should animate
 document.querySelectorAll(
-“.services-section, .process-section, .testimonials-section, .location-section”
+".services-section, .process-section, .testimonials-section, .location-section"
 ).forEach((section) => {
 observer.observe(section);
 });
@@ -673,13 +673,13 @@ observer.observe(section);
 // Page Load Animation
 function animatePageLoad() {
 // Add loading class to body initially
-document.body.classList.add(“loading”);
+document.body.classList.add("loading");
 
 // Remove loading class and trigger animations
 setTimeout(() => {
-document.body.classList.remove(“loading”);
+document.body.classList.remove("loading");
 
-```
+
 // Trigger hero animations
 const heroElements = document.querySelectorAll(
   ".hero-title, .hero-description, .hero-image, .hero-subtext, .hero-cta, .hero-quote"
@@ -693,23 +693,23 @@ heroElements.forEach((element, index) => {
     }
   }, index * ANIMATION_DELAY);
 });
-```
+
 
 }, 100);
 }
 
 // Initialize smooth scrolling for anchor links
 function initSmoothScrolling() {
-document.querySelectorAll(‘a[href^=”#”]’).forEach((anchor) => {
-anchor.addEventListener(“click”, function (e) {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+anchor.addEventListener("click", function (e) {
 e.preventDefault();
-const href = this.getAttribute(“href”);
-if (href && href !== “#”) {
+const href = this.getAttribute("href");
+if (href && href !== "#") {
 const target = document.querySelector(href);
 if (target) {
 target.scrollIntoView({
-behavior: “smooth”,
-block: “start”,
+behavior: "smooth",
+block: "start",
 });
 }
 }
@@ -721,16 +721,16 @@ block: “start”,
 function respectMotionPreferences() {
 if (!window.matchMedia) return;
 
-const prefersReducedMotion = window.matchMedia(”(prefers-reduced-motion: reduce)”).matches;
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (prefersReducedMotion) {
 // Disable animations
-document.documentElement.style.setProperty(”–animation-speed”, “0s”);
+document.documentElement.style.setProperty("--animation-speed", "0s");
 
-```
+
 // Override smooth scrolling
 document.documentElement.style.scrollBehavior = "auto";
-```
+
 
 }
 }
@@ -738,7 +738,7 @@ document.documentElement.style.scrollBehavior = "auto";
 // Performance optimization: Debounce function
 function debounce(func, wait) {
 let timeout;
-return function executedFunction(…args) {
+return function executedFunction(...args) {
 const later = () => {
 clearTimeout(timeout);
 func.apply(this, args);
@@ -751,12 +751,12 @@ timeout = setTimeout(later, wait);
 // Check for stored cookie consent
 function checkStoredConsent() {
 try {
-const storedConsent = localStorage.getItem(‘cookieConsent’);
+const storedConsent = localStorage.getItem('cookieConsent');
 if (storedConsent) {
 handleCookieConsent(storedConsent);
 }
 } catch (error) {
-console.warn(‘Could not check stored consent:’, error);
+console.warn('Could not check stored consent:', error);
 }
 }
 
@@ -772,7 +772,7 @@ initSmoothScrolling();
 respectMotionPreferences();
 checkStoredConsent();
 
-```
+
 // Optimize scroll handler with debouncing
 const debouncedScroll = debounce(handleScroll, DEBOUNCE_DELAY);
 window.addEventListener("scroll", debouncedScroll, { passive: true });
@@ -786,16 +786,16 @@ animatePageLoad();
 handleScroll();
 
 console.log("Cash For Your Home website initialized successfully!");
-```
+
 
 } catch (error) {
-console.error(“Error initializing website:”, error);
+console.error("Error initializing website:", error);
 }
 }
 
 // Wait for DOM to be ready
-if (document.readyState === ‘loading’) {
-document.addEventListener(“DOMContentLoaded”, init);
+if (document.readyState === 'loading') {
+document.addEventListener("DOMContentLoaded", init);
 } else {
 init();
 }

@@ -268,12 +268,6 @@ function handleAddressFormSubmit(e) {
     });
   }
 
-  showNotification(
-    `Thank you! We'll evaluate ${address} and contact you within 24 hours.`,
-  );
-  e.target.reset();
-}
-
 function renderTestimonials() {
   const testimonialsGrid = document.getElementById("testimonialsGrid");
   if (!testimonialsGrid) return;

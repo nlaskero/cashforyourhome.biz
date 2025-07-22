@@ -1399,13 +1399,13 @@ body {
 .form-textarea {
   display: block;
   width: 100%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   padding: 12px 16px;
   margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.3s ease;
   color: white;
 }

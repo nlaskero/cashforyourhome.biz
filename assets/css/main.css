@@ -1321,7 +1321,8 @@ body {
   margin-right: auto;
 }
 
-.contact-form-container {
+.contact-form-container,
+.contact-form-overlay {
   max-width: 448px;
   margin: 0 auto 64px;
 }

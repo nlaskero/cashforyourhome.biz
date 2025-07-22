@@ -543,23 +543,36 @@ body {
   font-weight: 600;
 }
 
-.hero-image {
+.hero-background {
+  position: relative;
   animation: fadeInUp 0.8s ease-out 0.4s both;
   margin-bottom: 32px;
   text-align: center;
   padding: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero-img {
-  border-radius: 0;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+.hero-background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  margin: 0;
+  z-index: 1;
+}
+
+.contact-form-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 448px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .hero-caption {

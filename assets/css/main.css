@@ -1756,6 +1756,19 @@ body {
     width: 95%;
   }
 
+  .phone-cta span {
+    font-size: 12px;
+  }
+
+  .footer-content {
+    gap: 16px;
+  }
+
+  .footer-logo {
+    flex-direction: column;
+    gap: 8px;
+  }
+
   .cookie-content {
     flex-direction: column;
     gap: 16px;

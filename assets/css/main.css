@@ -1308,6 +1308,23 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Phone CTA Button */
+.phone-cta {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.phone-cta .button-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phone-cta .button-icon {
+  width: 16px;
+  height: 16px;
+}
+
 /* Contact Section */
 .contact-section {
   padding: 80px 16px;

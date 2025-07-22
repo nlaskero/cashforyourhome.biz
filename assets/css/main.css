@@ -1677,8 +1677,16 @@ body {
     padding: 20px 16px 60px;
   }
 
-  .hero-img {
+  .hero-background {
+    min-height: 400px;
+  }
+
+  .hero-background-img {
     max-width: 100%;
+  }
+
+  .contact-form-overlay {
+    width: 95%;
   }
 
   .cookie-content {

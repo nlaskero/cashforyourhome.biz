@@ -190,7 +190,7 @@
             </button>
           </div>
 
-          <!-- Mobile Menu Button -->
+                   <!-- Mobile Menu Button -->
           <button class="mobile-menu-btn" id="mobileMenuBtn">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -202,30 +202,16 @@
         <div class="mobile-menu" id="mobileMenu">
           <div class="mobile-menu-content">
             <button class="mobile-nav-link" data-section="home">Home</button>
-            <button class="mobile-nav-link" data-section="services">
-              How It Works
-            </button>
-                        <button class="mobile-nav-link" data-section="testimonials">
-              Testimonials
-            </button>
-            <button class="mobile-nav-link" data-section="contact">
-              Contact
-            </button>
+            <button class="mobile-nav-link" data-section="services">How It Works</button>
+            <button class="mobile-nav-link" data-section="testimonials">Testimonials</button>
+            <button class="mobile-nav-link" data-section="contact">Contact</button>
             <a class="mobile-nav-link" href='terms.html'>Terms</a>
-  <div class="mobile-cta">
-              <button
-                class="glass-button primary w-full"
-                data-section="contact"
-              >
-                Get Started
-              </button>
+            <div class="mobile-cta">
+              <button class="glass-button primary w-full" data-section="contact">Get Started</button>
             </div>
           </div>
         </div>
     </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -233,7 +219,6 @@
       <section id="home" class="hero-section">
         <article class="hero-content">
           <h1 class="hero-title">Cash For Your Home</h1>
-
           <p class="hero-description">
             Need to sell your house quickly? We buy houses for cash in any
             condition, anywhere in the area. Skip the traditional real estate
@@ -241,8 +226,7 @@
             24 hours. No repairs, no showings, no hassles - just a fast, simple
             sale that closes on your timeline.
           </p>
-
-                    <figure class="hero-image">
+          <figure class="hero-image">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Fd86ad443e90f49f6824eddb927a8e06f%2F009f70caaedd4988bdda60ce8563cc15?format=webp&width=800"
               alt="Beautiful modern home with landscaping"
@@ -252,88 +236,41 @@
         </article>
       </section>
 
-            <!-- Contact Form -->
-        <div class="contact-form-container">
-          <div class="form-background">
-            <div class="background-shape shape-1"></div>
-            <div class="background-shape shape-2"></div>
-            <form class="contact-form" id="contactForm">
-              <div class="form-content">
-                <h3 class="form-title">Get Your Cash Offer</h3>
-                <input
-                  type="text"
-                  name="property-address"
-                  placeholder="Enter Address"
-                  class="address-input"
-                  required
-                />
-                <label for="property-condition" class="form-label"
-                  >Property Condition</label
-                >
-                <select
-                  id="property-condition"
-                  name="property-condition"
-                  class="form-select"
-                >
-                  <option value="">Select condition</option>
-                  <option value="excellent">Excellent</option>
-                  <option value="good">Good</option>
-                  <option value="fair">Fair</option>
-                  <option value="needs-work">Needs Work</option>
-                  <option value="major-repairs">Major Repairs Needed</option>
-                </select>
-
-                <label for="timeline" class="form-label"
-                  >When do you need to sell?</label
-                >
-                <select id="timeline" name="timeline" class="form-select">
-                  <option value="">Select timeline</option>
-                  <option value="asap">ASAP</option>
-                  <option value="30-days">Within 30 days</option>
-                  <option value="60-days">Within 60 days</option>
-                  <option value="90-days">Within 90 days</option>
-                  <option value="flexible">Flexible</option>
-                </select>
-
-                <label for="seller-name" class="form-label">Your Name *</label>
-                <input
-                  type="text"
-                  id="seller-name"
-                  name="seller-name"
-                  placeholder="Full name"
-                  class="form-input"
-                  required
-                />
-
-                <label for="seller-phone" class="form-label"
-                  >Phone Number *</label
-                >
-                <input
-                  type="tel"
-                  id="seller-phone"
-                  name="seller-phone"
-                  placeholder="(555) 123-4567"
-                  class="form-input"
-                  required
-                />
-
-                <label for="seller-email" class="form-label"
-                  >Email Address</label
-                >
-                                <input
-                  type="email"
-                  id="seller-email"
-                  name="seller-email"
-                  placeholder="your@email.com"
-                  class="form-input"
-                />
-
-                <button type="submit" class="glass-button primary form-submit">Submit</button>
-              </div>
-
-                <label for="additional-info" class="form-label"
-                  >Additional Information</label
-               >
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+        <div class="form-background">
+          <div class="background-shape shape-1"></div>
+          <div class="background-shape shape-2"></div>
+          <form class="contact-form" id="contactForm" action="https://hooks.zapier.com/hooks/catch/20831222/uu4zs7c/" method="POST">
+            <div class="form-content">
+              <h3 class="form-title">Get Your Cash Offer</h3>
+              <input type="text" name="property-address" placeholder="Enter Address" class="address-input" required />
+              <label for="property-condition" class="form-label">Property Condition</label>
+              <select id="property-condition" name="property-condition" class="form-select">
+                <option value="">Select condition</option>
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+                <option value="needs-work">Needs Work</option>
+                <option value="major-repairs">Major Repairs Needed</option>
+              </select>
+              <label for="timeline" class="form-label">When do you need to sell?</label>
+              <select id="timeline" name="timeline" class="form-select">
+                <option value="">Select timeline</option>
+                <option value="asap">ASAP</option>
+                <option value="30-days">Within 30 days</option>
+                <option value="60-days">Within 60 days</option>
+                <option value="90-days">Within 90 days</option>
+                <option value="flexible">Flexible</option>
+              </select>
+              <label for="seller-name" class="form-label">Your Name *</label>
+              <input type="text" id="seller-name" name="seller-name" placeholder="Full name" class="form-input" required />
+              <label for="seller-phone" class="form-label">Phone Number *</label>
+              <input type="tel" id="seller-phone" name="seller-phone" placeholder="(555) 123-4567" class="form-input" required />
+              <label for="seller-email" class="form-label">Email Address</label>
+              <input type="email" id="seller-email" name="seller-email" placeholder="your@email.com" class="form-input" />
+              <button type="submit" class="glass-button primary form-submit">Submit</button>
+            </div>
                     24Hr Response
                   </div>
                 </div>
@@ -576,51 +513,59 @@
       </section>
     </main>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookieBanner" class="cookie-banner">
-      <div class="cookie-content">
-        <div class="cookie-text">
-          <h3 class="cookie-title">We Use Cookies</h3>
-          <p class="cookie-description">
-            We use essential cookies to make our site work and analytics cookies
-            to understand how visitors use our site. By clicking "Accept All",
-            you consent to our use of cookies for analytics and marketing.
-          </p>
-        </div>
-        <div class="cookie-buttons">
-          <button class="glass-button primary" id="acceptAllCookies">
-            Accept All
-          </button>
-          <button class="glass-button secondary" id="essentialOnlyCookies">
-            Essential Only
-          </button>
+         <!-- Cookie Consent Banner -->
+      <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+          <div class="cookie-text">
+            <h3 class="cookie-title">We Use Cookies</h3>
+            <p class="cookie-description">
+              We use essential cookies to make our site work and analytics cookies
+              to understand how visitors use our site. By clicking "Accept All",
+              you consent to our use of cookies for analytics and marketing.
+            </p>
+          </div>
+          <div class="cookie-buttons">
+            <button class="glass-button primary" id="acceptAllCookies">Accept All</button>
+            <button class="glass-button secondary" id="essentialOnlyCookies">Essential Only</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-      <svg
-        class="back-to-top-icon"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 10l7-7m0 0l7 7m-7-7v18"
-        />
-      </svg>
-    </button>
+      <!-- Back to Top Button -->
+      <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg class="back-to-top-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
 
-    <!-- Notification -->
-    <div id="notification" class="notification">
-      <span id="notificationText"></span>
-    </div>
+      <!-- Notification -->
+      <div id="notification" class="notification" style="display:none;">
+        <span id="notificationText"></span>
+      </div>
 
-    <!-- Main JavaScript -->
-    <script type="module" src="assets/js/app.js"></script>
-  </body>
+      <!-- Main JavaScript -->
+      <script type="module" src="assets/js/app.js"></script>
+
+      <!-- Zapier Webhook Script -->
+      <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const form = e.target;
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+
+          await fetch("https://hooks.zapier.com/hooks/catch/20831222/uu4zs7c/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+
+          document.getElementById("notificationText").innerText = "Thank you! We’ll contact you within 24 hours.";
+          document.getElementById("notification").style.display = "block";
+          form.reset();
+        });
+      </script>
+    </body>
 </html>

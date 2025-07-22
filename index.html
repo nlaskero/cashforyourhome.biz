@@ -479,51 +479,59 @@
       </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookieBanner" class="cookie-banner">
-      <div class="cookie-content">
-        <div class="cookie-text">
-          <h3 class="cookie-title">We Use Cookies</h3>
-          <p class="cookie-description">
-            We use essential cookies to make our site work and analytics cookies
-            to understand how visitors use our site. By clicking "Accept All",
-            you consent to our use of cookies for analytics and marketing.
-          </p>
-        </div>
-        <div class="cookie-buttons">
-          <button class="glass-button primary" id="acceptAllCookies">
-            Accept All
-          </button>
-          <button class="glass-button secondary" id="essentialOnlyCookies">
-            Essential Only
-          </button>
+      <!-- Cookie Consent Banner -->
+      <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+          <div class="cookie-text">
+            <h3 class="cookie-title">We Use Cookies</h3>
+            <p class="cookie-description">
+              We use essential cookies to make our site work and analytics cookies
+              to understand how visitors use our site. By clicking "Accept All",
+              you consent to our use of cookies for analytics and marketing.
+            </p>
+          </div>
+          <div class="cookie-buttons">
+            <button class="glass-button primary" id="acceptAllCookies">Accept All</button>
+            <button class="glass-button secondary" id="essentialOnlyCookies">Essential Only</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-      <svg
-        class="back-to-top-icon"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 10l7-7m0 0l7 7m-7-7v18"
-        />
-      </svg>
-    </button>
+      <!-- Back to Top Button -->
+      <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg class="back-to-top-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
 
-    <!-- Notification -->
-    <div id="notification" class="notification">
-      <span id="notificationText"></span>
-    </div>
+      <!-- Notification -->
+      <div id="notification" class="notification" style="display:none;">
+        <span id="notificationText"></span>
+      </div>
 
-    <!-- Main JavaScript -->
-    <script type="module" src="assets/js/app.js"></script>
+      <!-- Main JavaScript -->
+      <script type="module" src="assets/js/app.js"></script>
+
+      <!-- Zapier Webhook Script -->
+      <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
+          e.preventDefault();
+          const form = e.target;
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+
+          await fetch("https://hooks.zapier.com/hooks/catch/20831222/uu4zs7c/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+
+          document.getElementById("notificationText").innerText = "Thank you! We’ll contact you within 24 hours.";
+          document.getElementById("notification").style.display = "block";
+          form.reset();
+        });
+      </script>
   </body>
 </html>

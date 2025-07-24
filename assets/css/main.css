@@ -509,6 +509,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 16px 80px;
+  position: relative;
 }
 
 .hero-content {

@@ -509,6 +509,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 16px 80px;
+  position: relative;
 }
 
 .hero-content {
@@ -550,6 +551,7 @@ body {
   padding: 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  position: relative;
 }
 
 .hero-img {

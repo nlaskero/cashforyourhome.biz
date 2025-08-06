@@ -515,12 +515,12 @@
           const formData = new FormData(form);
           const data = Object.fromEntries(formData.entries());
 
-          await fetch("https://hooks.zapier.com/hooks/catch/20831222/uu4zs7c/", {
+          const response = await fetch(form.action, {
             method: "POST",
+            body: formData,
             headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+              'Accept': 'application/json'
+            }
           });
 
           document.getElementById("notificationText").innerText = "Thank you! We’ll contact you within 24 hours.";

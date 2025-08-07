@@ -77,7 +77,7 @@
               </p>
             </div>
 
-            <form class="inquiry-form" id="inquiryForm">
+            <form class="inquiry-form" id="inquiryForm" action="https://formspree.io/f/xpwaqolv" method="POST">
               <div class="form-row">
                 <div class="form-group">
                   <label for="firstName">First Name *</label>
@@ -243,6 +243,11 @@
                 ></textarea>
               </div>
 
+              <!-- Hidden fields for Formspree -->
+              <input type="hidden" name="_next" value="#">
+              <input type="hidden" name="_cc" value="sabamatt89@gmail.com,hunter@cashformyhome.biz">
+              <input type="hidden" name="_subject" value="Detailed Property Inquiry - Cash For My Home">
+
               <button type="submit" class="submit-btn">
                 Get My Free Cash Offer
               </button>
@@ -370,7 +375,7 @@
         // Form submission handling
         document
           .getElementById("inquiryForm")
-          .addEventListener("submit", function (e) {
+          .addEventListener("submit", async function (e) {
             e.preventDefault();
 
             // Track form submission
@@ -379,16 +384,42 @@
               event_label: "inquiry_form",
             });
 
-            // Get form data
-            const formData = new FormData(this);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-              data[key] = value;
-            }
+            const form = e.target;
+            const submitBtn = form.querySelector(".submit-btn");
+            const originalBtnText = submitBtn.textContent;
 
-            // For demo purposes, show success message
-            // In a real application, you would send this data to your server
-            showSuccessMessage();
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            try {
+              const formData = new FormData(form);
+              const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                  'Accept': 'application/json'
+                }
+              });
+
+              if (response.ok) {
+                showSuccessMessage();
+              } else {
+                const data = await response.json();
+                if (data.errors) {
+                  throw new Error(data.errors.map(error => error.message).join(", "));
+                } else {
+                  throw new Error('Form submission failed');
+                }
+              }
+            } catch (error) {
+              console.error('Error:', error);
+              showErrorMessage();
+            } finally {
+              // Reset button
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalBtnText;
+            }
           });
 
         function showSuccessMessage() {
@@ -400,6 +431,19 @@
                     <p style="margin-bottom: 1rem;">Your information has been submitted successfully.</p>
                     <p style="color: #666;">We'll review your property details and contact you within 24-48 hours with a cash offer.</p>
                     <a href="index.html" style="display: inline-block; margin-top: 1rem; background: linear-gradient(135deg, #ff6b6b, #ffa500); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: bold;">Return to Home</a>
+                </div>
+            `;
+        }
+
+        function showErrorMessage() {
+          const form = document.getElementById("inquiryForm");
+          form.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff4444, #cc0000); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; color: white;">⚠</div>
+                    <h3 style="color: #cc0000; margin-bottom: 1rem;">Submission Error</h3>
+                    <p style="margin-bottom: 1rem;">Sorry, there was an error sending your information.</p>
+                    <p style="color: #666;">Please try again or call us directly at (602) 755-2654 for immediate assistance.</p>
+                    <a href="inquiry.html" style="display: inline-block; margin-top: 1rem; background: linear-gradient(135deg, #ff6b6b, #ffa500); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: bold;">Try Again</a>
                 </div>
             `;
         }

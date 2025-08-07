@@ -158,14 +158,6 @@
         anonymize_ip: true,
       });
     </script>
-    <meta
-      name="description"
-      content="Get a fast cash offer for your home in 24-48 hours! Cash for Your Home LLC is a trusted real estate wholesale company serving nationwide from Scottsdale, Arizona. No fees, no commissions, quick closing."
-    />
-    <meta
-      name="keywords"
-      content="cash for homes, sell house fast, cash home buyers, real estate wholesale, property investors, Scottsdale Arizona, quick home sale"
-    />
 
     <!-- Google Fonts -->
     <link
@@ -189,29 +181,6 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/main.css" />
-
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-R60T4YV9KK"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      gtag("consent", "default", {
-        analytics_storage: "denied",
-        ad_storage: "denied",
-        wait_for_update: 500,
-      });
-
-      gtag("js", new Date());
-      gtag("config", "G-R60T4YV9KK", {
-        anonymize_ip: true,
-      });
-    </script>
   </head>
   <body>
     <!-- Navigation -->
@@ -373,7 +342,7 @@
         <div class="form-background">
           <div class="background-shape shape-1"></div>
           <div class="background-shape shape-2"></div>
-          <form class="contact-form" id="contactForm" action="https://hooks.zapier.com/hooks/catch/20831222/uu4zs7c/" method="POST">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpwaqolv" method="POST">
             <div class="form-content">
               <h3 class="form-title">Get Your Cash Offer</h3>
               <input type="text" name="property-address" placeholder="Enter Address" class="address-input" required />
@@ -401,6 +370,10 @@
               <input type="tel" id="seller-phone" name="seller-phone" placeholder="(555) 123-4567" class="form-input" required />
               <label for="seller-email" class="form-label">Email Address</label>
               <input type="email" id="seller-email" name="seller-email" placeholder="your@email.com" class="form-input" />
+              <!-- Hidden fields for Formspree -->
+              <input type="hidden" name="_next" value="#">
+              <input type="hidden" name="_cc" value="sabamatt89@gmail.com,hunter@cashformyhome.biz">
+              <input type="hidden" name="_subject" value="New Cash For My Home Inquiry">
               <button type="submit" class="glass-button primary form-submit">Submit</button>
                   </div>
                 </form>
@@ -560,6 +533,7 @@
           </div>
         </div>
       </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer-section">
@@ -614,25 +588,49 @@
       <!-- Main JavaScript -->
       <script type="module" src="assets/js/app.js"></script>
 
-      <!-- Zapier Webhook Script -->
+      <!-- Formspree Email Integration Script -->
       <script>
         document.getElementById("contactForm").addEventListener("submit", async function (e) {
           e.preventDefault();
           const form = e.target;
-          const formData = new FormData(form);
-          const data = Object.fromEntries(formData.entries());
+          const submitBtn = form.querySelector(".form-submit");
+          const originalBtnText = submitBtn.textContent;
+          
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending...";
+          
+          try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
 
-          await fetch("https://hooks.zapier.com/hooks/catch/20831222/uu4zs7c/", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-          });
-
-          document.getElementById("notificationText").innerText = "Thank you! We’ll contact you within 24 hours.";
-          document.getElementById("notification").style.display = "block";
-          form.reset();
+            if (response.ok) {
+              document.getElementById("notificationText").innerText = "Thank you! We'll contact you within 24 hours.";
+              document.getElementById("notification").style.display = "block";
+              form.reset();
+            } else {
+              const data = await response.json();
+              if (data.errors) {
+                throw new Error(data.errors.map(error => error.message).join(", "));
+              } else {
+                throw new Error('Form submission failed');
+              }
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            document.getElementById("notificationText").innerText = "Sorry, there was an error sending your message. Please try again or call us directly at (602) 755-2654.";
+            document.getElementById("notification").style.display = "block";
+          } finally {
+            // Reset button
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+          }
         });
       </script>
     </body>

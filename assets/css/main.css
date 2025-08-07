@@ -1339,8 +1339,16 @@ body {
   margin-right: auto;
 }
 
-.contact-form-container,
+.contact-form-container {
+  position: relative;
+  z-index: 2;
+  max-width: 448px;
+  margin: 0 auto 64px;
+}
+
 .contact-form-overlay {
+  position: relative;
+  z-index: 2;
   max-width: 448px;
   margin: 0 auto 64px;
 }

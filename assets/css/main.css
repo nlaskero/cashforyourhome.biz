@@ -1997,9 +1997,11 @@ body {
 
 .phone-icon,
 .location-icon {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #52b788;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  color: #74c69d;
+  box-shadow: 0 8px 32px rgba(82, 183, 136, 0.2);
 }
 
 .contact-card-inner:hover .phone-icon,

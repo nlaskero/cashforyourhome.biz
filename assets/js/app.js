@@ -226,6 +226,7 @@
     updateGradient();
     respectMotion();
     initCookie();
+    initStatsAnimation();
     handleScroll();
     console.log("UI ready");
   }

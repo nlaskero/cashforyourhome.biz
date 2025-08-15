@@ -568,6 +568,24 @@ body {
   color: #74c69d;
   line-height: 1;
   letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.stat-number.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-number.counting {
+  animation: pulse 0.1s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .stat-description {

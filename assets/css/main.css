@@ -1988,10 +1988,11 @@ body {
 }
 
 .email-icon {
-  background: linear-gradient(-45deg, #40916c, #52b788, #74c69d, #95d5b2);
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
-  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  color: #74c69d;
+  box-shadow: 0 8px 32px rgba(82, 183, 136, 0.2);
 }
 
 .phone-icon,

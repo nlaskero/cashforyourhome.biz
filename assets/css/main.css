@@ -946,7 +946,7 @@ body {
 /* Process Section */
 .process-section {
   padding: 80px 16px;
-  background: linear-gradient(135deg, var(--gradient-color-3) 0%, var(--gradient-color-2) 100%);
+  background: transparent;
 }
 
 .process-container {

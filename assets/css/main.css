@@ -725,6 +725,7 @@ body {
   padding: 20px 16px 40px;
   animation: scaleIn 0.8s ease-out;
   margin-top: -20px;
+  background: linear-gradient(135deg, var(--gradient-color-2) 0%, var(--gradient-color-3) 100%);
 }
 
 .address-container {

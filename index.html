@@ -702,43 +702,41 @@
       <!-- Zapier Integration Script -->
       <script>
         // Capture page URL for context in your Zap
-        document.querySelector('input[name="page_url"]').value = window.location.href;
+        document.addEventListener('DOMContentLoaded', function() {
+          const pageUrlField = document.querySelector('input[name="page_url"]');
+          if (pageUrlField) {
+            pageUrlField.value = window.location.href;
+          }
+        });
 
-        document.getElementById("contactForm").addEventListener("submit", async function (e) {
-          e.preventDefault();
+        // Simple form submission handler for UI feedback only
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
           const form = e.target;
           const submitBtn = form.querySelector(".form-submit");
-          const originalBtnText = submitBtn.textContent;
 
           // Show loading state
           submitBtn.disabled = true;
           submitBtn.textContent = "Sending...";
 
-          try {
-            const formData = new FormData(form);
-            const response = await fetch(form.action, {
-              method: "POST",
-              body: formData,
-              mode: 'no-cors'
-            });
-
-            // Zapier webhooks return a successful response even with no-cors
+          // Let the form submit naturally to Zapier
+          // After a brief delay, show success message and reset form
+          setTimeout(function() {
             document.getElementById("notificationText").innerText = "Thank you! We'll contact you within 24 hours.";
             document.getElementById("notification").style.display = "block";
-            form.reset();
 
-          } catch (error) {
-            console.error('Error:', error);
-            document.getElementById("notificationText").innerText = "Sorry, there was an error sending your message. Please try again or call us directly at (480) 244-2752.";
-            document.getElementById("notification").style.display = "block";
-          } finally {
-            // Reset button
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
+            // Reset form after showing message
+            setTimeout(function() {
+              form.reset();
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Submit";
 
-            // Reset page_url for next submission
-            document.querySelector('input[name="page_url"]').value = window.location.href;
-          }
+              // Reset page URL
+              const pageUrlField = document.querySelector('input[name="page_url"]');
+              if (pageUrlField) {
+                pageUrlField.value = window.location.href;
+              }
+            }, 1000);
+          }, 500);
         });
       </script>
     </body>

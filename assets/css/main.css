@@ -152,11 +152,11 @@ body {
 /* Glass Button Styles */
 .glass-button {
   position: relative;
-  padding: 12px 24px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -165,27 +165,40 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 15px;
   min-width: fit-content;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .glass-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(82, 183, 136, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(82, 183, 136, 0.2);
 }
 
 .glass-button.primary {
   background: linear-gradient(-45deg, #40916c, #52b788, #74c69d, #95d5b2);
   background-size: 400% 400%;
-  animation: buttonGradient 10s ease infinite;
+  animation: gradientShift 8s ease infinite;
   border-color: rgba(64, 145, 108, 0.3);
+  box-shadow: 0 8px 32px rgba(64, 145, 108, 0.2);
+}
+
+.glass-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(64, 145, 108, 0.3);
+  border-color: rgba(64, 145, 108, 0.5);
 }
 
 .glass-button.secondary {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.glass-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.3);
 }
 

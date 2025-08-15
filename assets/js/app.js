@@ -202,6 +202,29 @@
     }
   }
 
+  // Text Animation Initialization
+  function initTextAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll(
+      '.animate-text, .animate-text-stagger, .animate-fade, .animate-slide-left, .animate-slide-right'
+    );
+
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+
   // Setup
   function bind() {
     document.querySelectorAll("[data-section]").forEach(b => b.addEventListener("click", e => {

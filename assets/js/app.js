@@ -250,6 +250,7 @@
     respectMotion();
     initCookie();
     initStatsAnimation();
+    initTextAnimations();
     handleScroll();
     console.log("UI ready");
   }

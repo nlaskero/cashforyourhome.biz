@@ -1872,7 +1872,7 @@ body {
 .contact-info-section {
   position: relative;
   padding: 6rem 0 9rem;
-  background: linear-gradient(135deg, var(--gradient-color-2) 0%, var(--gradient-color-3) 50%, var(--gradient-color-1) 100%);
+  background: transparent;
   overflow: hidden;
 }
 

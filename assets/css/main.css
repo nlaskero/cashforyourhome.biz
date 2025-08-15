@@ -1077,7 +1077,7 @@ body {
 
 .trustindex-widget {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   text-align: center;
   position: static;
   z-index: 1;

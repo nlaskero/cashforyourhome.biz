@@ -134,6 +134,97 @@
     }
   }
 
+  // Animated Numbers
+  function animateNumber(element, target, suffix = '', duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+
+    function updateNumber() {
+      start += increment;
+      if (start >= target) {
+        element.textContent = target + suffix;
+        element.classList.remove('counting');
+        return;
+      }
+      element.textContent = Math.floor(start) + suffix;
+      requestAnimationFrame(updateNumber);
+    }
+
+    element.classList.add('counting');
+    updateNumber();
+  }
+
+  function initStatsAnimation() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statNumbers = entry.target.querySelectorAll('.stat-number');
+          statNumbers.forEach((number, index) => {
+            setTimeout(() => {
+              number.classList.add('animate');
+
+              // Extract number and suffix from text content
+              const text = number.textContent.trim();
+              let targetNum, suffix;
+
+              if (text === '500+') {
+                targetNum = 500;
+                suffix = '+';
+              } else if (text === '7 Days') {
+                targetNum = 7;
+                suffix = ' Days';
+              } else if (text === '100%') {
+                targetNum = 100;
+                suffix = '%';
+              } else {
+                return; // Skip if format doesn't match
+              }
+
+              // Start animation after a brief delay
+              setTimeout(() => {
+                animateNumber(number, targetNum, suffix);
+              }, 200);
+
+            }, index * 200); // Stagger animations
+          });
+
+          // Disconnect observer after animation
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    const statsSection = validate(document.querySelector('.stats-section'));
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  }
+
+  // Text Animation Initialization
+  function initTextAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll(
+      '.animate-text, .animate-text-stagger, .animate-fade, .animate-slide-left, .animate-slide-right'
+    );
+
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+
   // Setup
   function bind() {
     document.querySelectorAll("[data-section]").forEach(b => b.addEventListener("click", e => {
@@ -158,6 +249,8 @@
     updateGradient();
     respectMotion();
     initCookie();
+    initStatsAnimation();
+    initTextAnimations();
     handleScroll();
     console.log("UI ready");
   }

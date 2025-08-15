@@ -840,6 +840,7 @@ body {
 .services-section {
   padding: 80px 16px;
   margin-top: 40px;
+  background: linear-gradient(135deg, var(--gradient-color-3) 0%, var(--gradient-color-1) 100%);
 }
 
 .services-container {

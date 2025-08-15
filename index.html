@@ -130,26 +130,41 @@
     />
 
     <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-R60T4YV9KK"
-    ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+      // Only load Google Analytics in production
+      if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && !window.location.hostname.includes('fly.dev')) {
+        // Load gtag script
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-R60T4YV9KK';
+        script.onerror = function() {
+          console.warn('Google Analytics failed to load');
+        };
+        document.head.appendChild(script);
+
+        // Initialize gtag
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+
+        gtag("consent", "default", {
+          analytics_storage: "denied",
+          ad_storage: "denied",
+          wait_for_update: 500,
+        });
+
+        gtag("js", new Date());
+        gtag("config", "G-R60T4YV9KK", {
+          anonymize_ip: true,
+        });
+      } else {
+        // Mock gtag for development
+        console.log('Development mode: Google Analytics disabled');
+        window.gtag = function() {
+          console.log('gtag call:', arguments);
+        };
       }
-
-      gtag("consent", "default", {
-        analytics_storage: "denied",
-        ad_storage: "denied",
-        wait_for_update: 500,
-      });
-
-      gtag("js", new Date());
-      gtag("config", "G-R60T4YV9KK", {
-        anonymize_ip: true,
-      });
     </script>
 
     <!-- Google Fonts -->

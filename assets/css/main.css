@@ -513,6 +513,90 @@ body {
   padding-top: 80px;
 }
 
+/* Stats Section */
+.stats-section {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--gradient-color-2) 0%, var(--gradient-color-3) 100%);
+  overflow: hidden;
+}
+
+.stats-container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.stats-content {
+  position: relative;
+  z-index: 10;
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -2rem;
+}
+
+.stats-item {
+  width: 100%;
+  padding: 2rem;
+}
+
+.stats-main {
+  margin-bottom: 2rem;
+}
+
+.stats-main-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.stat-card {
+  text-align: left;
+  max-width: 14rem;
+}
+
+.stat-number {
+  margin-bottom: 0.75rem;
+  font-size: 3.75rem;
+  font-weight: 800;
+  color: #74c69d;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .stats-item {
+    width: 50%;
+  }
+
+  .stats-main {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .stats-item {
+    width: 25%;
+  }
+
+  .stat-number {
+    font-size: 4.5rem;
+  }
+}
+
 /* Hero Section */
 .hero-section {
   min-height: calc(100vh - 80px);
@@ -523,6 +607,7 @@ body {
   text-align: center;
   padding: 40px 16px 80px;
   position: relative;
+  background: transparent;
 }
 
 .hero-content {

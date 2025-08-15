@@ -946,8 +946,7 @@ body {
 /* Process Section */
 .process-section {
   padding: 80px 16px;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(5px);
+  background: linear-gradient(135deg, var(--gradient-color-3) 0%, var(--gradient-color-2) 100%);
 }
 
 .process-container {
@@ -1067,8 +1066,7 @@ body {
 
 .trustindex-section {
   padding: 40px 16px;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(5px);
+  background: linear-gradient(135deg, var(--gradient-color-1) 0%, var(--gradient-color-2) 100%);
 }
 
 .trustindex-widget {
@@ -1356,8 +1354,7 @@ body {
 /* Location Section */
 .location-section {
   padding: 80px 16px;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(5px);
+  background: linear-gradient(135deg, var(--gradient-color-2) 0%, var(--gradient-color-1) 100%);
 }
 
 .location-container {

@@ -2004,11 +2004,14 @@ body {
   box-shadow: 0 8px 32px rgba(82, 183, 136, 0.2);
 }
 
+.contact-card-inner:hover .email-icon,
 .contact-card-inner:hover .phone-icon,
 .contact-card-inner:hover .location-icon {
-  background: rgba(82, 183, 136, 0.1);
-  border-color: rgba(82, 183, 136, 0.3);
-  color: #74c69d;
+  background: rgba(82, 183, 136, 0.15);
+  border-color: rgba(82, 183, 136, 0.5);
+  color: #95d5b2;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(82, 183, 136, 0.3);
 }
 
 .contact-card-title {

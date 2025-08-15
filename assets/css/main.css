@@ -1066,7 +1066,7 @@ body {
 
 .trustindex-section {
   padding: 40px 16px;
-  background: linear-gradient(135deg, var(--gradient-color-1) 0%, var(--gradient-color-2) 100%);
+  background: transparent;
 }
 
 .trustindex-widget {

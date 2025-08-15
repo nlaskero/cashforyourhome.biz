@@ -400,14 +400,10 @@
               });
 
               if (response.ok) {
-                showSuccessMessage();
+                // Redirect to thank you page on successful submission
+                window.location.href = "thank-you.html";
               } else {
-                const data = await response.json();
-                if (data.errors) {
-                  throw new Error(data.errors.map(error => error.message).join(", "));
-                } else {
-                  throw new Error('Form submission failed');
-                }
+                throw new Error('Form submission failed');
               }
             } catch (error) {
               console.error('Error:', error);

@@ -1753,6 +1753,159 @@ body {
   }
 }
 
+/* Contact Info Section */
+.contact-info-section {
+  position: relative;
+  padding: 6rem 0 9rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  overflow: hidden;
+}
+
+.contact-info-section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(ellipse at center, rgba(82, 183, 136, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-info-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.contact-info-content {
+  text-align: center;
+}
+
+.contact-info-title {
+  margin-bottom: 1.25rem;
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.contact-info-description {
+  margin-bottom: 5rem;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.75rem;
+}
+
+.contact-card {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card-inner {
+  padding: 2.75rem;
+  height: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.contact-card-inner:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(82, 183, 136, 0.3);
+  box-shadow: 0 35px 60px -12px rgba(82, 183, 136, 0.15);
+}
+
+.contact-icon {
+  position: relative;
+  margin: 0 auto 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.email-icon {
+  background: linear-gradient(-45deg, #40916c, #52b788, #74c69d, #95d5b2);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  color: white;
+}
+
+.phone-icon,
+.location-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #52b788;
+}
+
+.contact-card-inner:hover .phone-icon,
+.contact-card-inner:hover .location-icon {
+  background: rgba(82, 183, 136, 0.1);
+  border-color: rgba(82, 183, 136, 0.3);
+  color: #74c69d;
+}
+
+.contact-card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+}
+
+.contact-card-text {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+
+.contact-card-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .contact-info-title {
+    font-size: 4rem;
+  }
+
+  .contact-card {
+    width: 33.333333%;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .contact-info-title {
+    font-size: 5rem;
+  }
+}
+
 /* Back to Top Button */
 .back-to-top {
   position: fixed;

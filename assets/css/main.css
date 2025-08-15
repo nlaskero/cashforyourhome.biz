@@ -1354,7 +1354,7 @@ body {
 /* Location Section */
 .location-section {
   padding: 80px 16px;
-  background: linear-gradient(135deg, var(--gradient-color-2) 0%, var(--gradient-color-1) 100%);
+  background: transparent;
 }
 
 .location-container {

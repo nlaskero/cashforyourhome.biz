@@ -1065,8 +1065,14 @@ body {
 }
 
 .trustindex-section {
-  padding: 40px 16px;
+  padding: 80px 16px;
   background: transparent;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .trustindex-widget {

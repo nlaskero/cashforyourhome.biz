@@ -2279,6 +2279,18 @@ body {
   }
 }
 
+@media (max-width: 639px) {
+  .form-fields-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-form-container,
+  .contact-form-overlay {
+    max-width: 95%;
+  }
+}
+
 @media (min-width: 640px) {
   .address-input-group {
     flex-direction: row;

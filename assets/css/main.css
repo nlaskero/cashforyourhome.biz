@@ -1463,14 +1463,14 @@ body {
 .contact-form-container {
   position: relative;
   z-index: 2;
-  max-width: 448px;
+  max-width: 720px;
   margin: 0 auto 64px;
 }
 
 .contact-form-overlay {
   position: relative;
   z-index: 2;
-  max-width: 448px;
+  max-width: 720px;
   margin: 0 auto 64px;
 }
 
@@ -1519,26 +1519,38 @@ body {
   font-size: 24px;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .form-subtitle {
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+}
+
+.form-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
 }
 
 .form-label {
   display: block;
-  margin-top: 20px;
+  margin-bottom: 6px;
   font-size: 14px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
-}
-
-.form-label:first-of-type {
-  margin-top: 0;
 }
 
 .form-input,
@@ -1549,7 +1561,6 @@ body {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   padding: 12px 16px;
-  margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1577,7 +1588,7 @@ body {
 
 .form-submit {
   width: 100%;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .trust-indicators {
@@ -1631,7 +1642,7 @@ body {
   border-radius: 16px;
   padding: 32px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 448px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -2265,6 +2276,18 @@ body {
   .cookie-buttons {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 639px) {
+  .form-fields-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-form-container,
+  .contact-form-overlay {
+    max-width: 95%;
   }
 }
 

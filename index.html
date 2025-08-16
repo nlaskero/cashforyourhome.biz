@@ -291,36 +291,50 @@
                 <div class="form-content">
                   <h3 class="form-title">Get Your Cash Offer</h3>
 
-                  <input type="text" name="property-address" placeholder="Enter Address" class="address-input" required />
+                  <div class="form-field-group form-field-full">
+                    <input type="text" name="property-address" placeholder="Enter Address" class="address-input" required />
+                  </div>
 
-                  <label for="property-condition" class="form-label">Property Condition</label>
-                  <select id="property-condition" name="property-condition" class="form-select" required>
-                    <option value="" selected disabled>Select condition</option>
-                    <option value="excellent">Excellent</option>
-                    <option value="good">Good</option>
-                    <option value="fair">Fair</option>
-                    <option value="needs-work">Needs Work</option>
-                    <option value="major-repairs">Major Repairs Needed</option>
-                  </select>
+                  <div class="form-fields-grid">
+                    <div class="form-field-group">
+                      <label for="property-condition" class="form-label">Property Condition</label>
+                      <select id="property-condition" name="property-condition" class="form-select" required>
+                        <option value="" selected disabled>Select condition</option>
+                        <option value="excellent">Excellent</option>
+                        <option value="good">Good</option>
+                        <option value="fair">Fair</option>
+                        <option value="needs-work">Needs Work</option>
+                        <option value="major-repairs">Major Repairs Needed</option>
+                      </select>
+                    </div>
 
-                  <label for="timeline" class="form-label">When do you need to sell?</label>
-                  <select id="timeline" name="timeline" class="form-select" required>
-                    <option value="" selected disabled>Select timeline</option>
-                    <option value="asap">ASAP</option>
-                    <option value="30-days">Within 30 days</option>
-                    <option value="60-days">Within 60 days</option>
-                    <option value="90-days">Within 90 days</option>
-                    <option value="flexible">Flexible</option>
-                  </select>
+                    <div class="form-field-group">
+                      <label for="timeline" class="form-label">When do you need to sell?</label>
+                      <select id="timeline" name="timeline" class="form-select" required>
+                        <option value="" selected disabled>Select timeline</option>
+                        <option value="asap">ASAP</option>
+                        <option value="30-days">Within 30 days</option>
+                        <option value="60-days">Within 60 days</option>
+                        <option value="90-days">Within 90 days</option>
+                        <option value="flexible">Flexible</option>
+                      </select>
+                    </div>
 
-                  <label for="seller-name" class="form-label">Your Name *</label>
-                  <input type="text" id="seller-name" name="seller-name" placeholder="Full name" class="form-input" required />
+                    <div class="form-field-group">
+                      <label for="seller-name" class="form-label">Your Name *</label>
+                      <input type="text" id="seller-name" name="seller-name" placeholder="Full name" class="form-input" required />
+                    </div>
 
-                  <label for="seller-phone" class="form-label">Phone Number *</label>
-                  <input type="tel" id="seller-phone" name="seller-phone" placeholder="(480) 244-2752" class="form-input" required />
+                    <div class="form-field-group">
+                      <label for="seller-phone" class="form-label">Phone Number *</label>
+                      <input type="tel" id="seller-phone" name="seller-phone" placeholder="(480) 244-2752" class="form-input" required />
+                    </div>
 
-                  <label for="seller-email" class="form-label">Email Address</label>
-                  <input type="email" id="seller-email" name="email" placeholder="your@email.com" class="form-input" />
+                    <div class="form-field-group form-field-full">
+                      <label for="seller-email" class="form-label">Email Address</label>
+                      <input type="email" id="seller-email" name="email" placeholder="your@email.com" class="form-input" />
+                    </div>
+                  </div>
 
                   <!-- Spam honeypot -->
                   <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">

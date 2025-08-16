@@ -1463,14 +1463,14 @@ body {
 .contact-form-container {
   position: relative;
   z-index: 2;
-  max-width: 448px;
+  max-width: 720px;
   margin: 0 auto 64px;
 }
 
 .contact-form-overlay {
   position: relative;
   z-index: 2;
-  max-width: 448px;
+  max-width: 720px;
   margin: 0 auto 64px;
 }
 

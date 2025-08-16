@@ -1519,26 +1519,38 @@ body {
   font-size: 24px;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .form-subtitle {
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+}
+
+.form-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
 }
 
 .form-label {
   display: block;
-  margin-top: 20px;
+  margin-bottom: 6px;
   font-size: 14px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
-}
-
-.form-label:first-of-type {
-  margin-top: 0;
 }
 
 .form-input,

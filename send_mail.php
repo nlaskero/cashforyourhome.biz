@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Where the email should go
-    $to = "yourcustomer@email.com"; 
+    $to = "nlaskero@email.com"; 
 
     // Subject line
     $subject = "New Cash Offer Request from Website";

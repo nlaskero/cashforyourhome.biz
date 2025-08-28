@@ -21,7 +21,7 @@ export default async function handler(req, res) {
   try {
     await transporter.sendMail({
       from: `"Cash For Your Home" <${process.env.SMTP_USER}>`,
-      to: "yourcustomer@email.com", // your inbox
+      to: "nlaskero@email.com", // your inbox
       subject: "New Cash Offer Request",
       text: `
         🏠 Address: ${address}
